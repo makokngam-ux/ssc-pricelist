@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC Price List Q2/2569</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            --primary-mid: #1e293b;
+            --primary-light: #334155;
+            --accent: #f59e0b;
+            --accent-glow: rgba(245,158,11,0.15);
+            --accent2: #3b82f6;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-mid: #475569;
+            --text-light: #94a3b8;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --green: #10b981;
+            --green-dark: #059669;
+            --green-bg: #ecfdf5;
+            --blue-bg: #eff6ff;
+            --purple-bg: #f5f3ff;
+            --orange-bg: #fffbeb;
+            --red-bg: #fef2f2;
+            --pink-bg: #fdf2f8;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --radius: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Sarabun', 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== PREMIUM HEADER ===== */
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(59,130,246,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(245,158,11,0.1) 0%, transparent 50%),
+                linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 50%, var(--primary) 100%);
+        }
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 32px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .header-left {}
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), #f97316);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+        }
+        .logo-text { font-size: 13px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; }
+        .header h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .header h1 span { color: var(--accent); }
+        .header-right { text-align: right; }
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 13px;
+            opacity: 0.75;
+        }
+        .header-meta .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+        .header-meta .tag.highlight {
+            background: rgba(245,158,11,0.2);
+            border-color: rgba(245,158,11,0.3);
+            color: #fcd34d;
+        }
+        .header-bar {
+            position: relative;
+            z-index: 1;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #3b82f6, var(--accent));
+        }
+
+        /* ===== CONTROLS ===== */
+        .controls {
+            max-width: 1280px;
+            margin: 24px auto 0;
+            padding: 0 24px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .filter-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            padding: 4px 0;
+            flex-shrink: 0;
+        }
+        .filter-scroll::-webkit-scrollbar { display: none; }
+        .search-box {
+            flex: 1;
+            min-width: 260px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 11px 16px 11px 44px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-family: inherit;
+            background: white;
+            transition: all 0.2s;
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+        .search-box input:focus {
+            border-color: var(--accent2);
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+        }
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        /* CSS-Only Filter — ไม่ต้องพึ่ง JavaScript */
+        .filter-radio { display: none; }
+        .filter-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 18px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            background: white;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text-mid);
+            box-shadow: var(--shadow-sm);
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-height: 44px;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            text-decoration: none;
+        }
+        .filter-btn:hover { border-color: var(--accent); color: var(--primary); background: var(--orange-bg); }
+
+        /* Active state via CSS :checked */
+        #filter-all:checked ~ .controls .filter-scroll label[for="filter-all"],
+        #filter-inverter:checked ~ .controls .filter-scroll label[for="filter-inverter"],
+        #filter-optimizer:checked ~ .controls .filter-scroll label[for="filter-optimizer"],
+        #filter-battery:checked ~ .controls .filter-scroll label[for="filter-battery"],
+        #filter-panel:checked ~ .controls .filter-scroll label[for="filter-panel"],
+        #filter-accessory:checked ~ .controls .filter-scroll label[for="filter-accessory"],
+        #filter-hybrid:checked ~ .controls .filter-scroll label[for="filter-hybrid"] {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(15,23,42,0.2);
+        }
+
+        /* Show/hide tables via CSS :checked */
+        #filter-all:checked ~ .table-container { display: block; }
+        #filter-inverter:checked ~ .table-container:not([data-category="inverter"]),
+        #filter-optimizer:checked ~ .table-container:not([data-category="optimizer"]),
+        #filter-battery:checked ~ .table-container:not([data-category="battery"]),
+        #filter-panel:checked ~ .table-container:not([data-category="panel"]),
+        #filter-accessory:checked ~ .table-container:not([data-category="accessory"]),
+        #filter-hybrid:checked ~ .table-container:not([data-category="hybrid"]) {
+            display: none !important;
+        }
+
+        /* ===== SUMMARY ===== */
+        .summary-bar {
+            max-width: 1280px;
+            margin: 20px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .summary-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+        .summary-card:nth-child(1)::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+        .summary-card:nth-child(2)::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .summary-card:nth-child(3)::before { background: linear-gradient(90deg, #10b981, #34d399); }
+        .summary-card:nth-child(4)::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+        .summary-card .label { font-size: 11px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-card .value { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); margin: 4px 0 2px; }
+        .summary-card .sub { font-size: 12px; color: var(--text-mid); }
+
+        /* ===== TABLES ===== */
+        .table-container {
+            max-width: 1280px;
+            margin: 0 auto 24px;
+            padding: 0 24px;
+        }
+        .category-header {
+            background: var(--primary);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 0.2px;
+        }
+        .category-header .icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .category-header .count {
+            margin-left: auto;
+            background: rgba(255,255,255,0.15);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow-md);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            overflow: hidden;
+        }
+        thead th {
+            background: #f8fafc;
+            padding: 14px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            text-align: left;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1.5px solid var(--border);
+        }
+        tbody td {
+            padding: 14px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+        tbody tr { transition: all 0.15s; }
+        tbody tr:hover { background: #fafbfe; }
+        tbody tr:last-child td { border-bottom: none; }
+
+        .model-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+        }
+        .price {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            color: var(--green-dark);
+            white-space: nowrap;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        .badge-inverter { background: var(--blue-bg); color: #2563eb; }
+        .badge-optimizer { background: var(--orange-bg); color: #d97706; }
+        .badge-battery { background: var(--pink-bg); color: #be185d; }
+        .badge-panel { background: var(--green-bg); color: #059669; }
+        .badge-sensor { background: var(--purple-bg); color: #7c3aed; }
+        .badge-controller { background: var(--blue-bg); color: #1d4ed8; }
+        .badge-new {
+            background: linear-gradient(135deg, #ef4444, #f97316);
+            color: white;
+            animation: glow 2s ease-in-out infinite;
+        }
+        .badge-tis { background: #fef3c7; color: #92400e; }
+        .badge-hybrid { background: #dcfce7; color: #166534; }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+            50% { box-shadow: 0 0 8px 2px rgba(239,68,68,0.3); }
+        }
+
+        .note { font-size: 12px; color: var(--text-light); max-width: 200px; line-height: 1.4; }
+        .warranty {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-mid);
+        }
+
+        .spec-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 14px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .spec-link:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: var(--shadow); }
+        .spec-link.pending {
+            background: var(--border-light);
+            color: var(--text-light);
+            border: 1px dashed var(--border);
+            cursor: default;
+        }
+        .spec-link.pending:hover { transform: none; box-shadow: none; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            max-width: 1280px;
+            margin: 16px auto 0;
+            padding: 32px 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-light);
+        }
+        .footer h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer ul { list-style: none; padding: 0; }
+        .footer ul li {
+            font-size: 13px;
+            color: var(--text-mid);
+            padding: 4px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .footer ul li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        .contact-card {
+            margin-top: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+        .contact-left {}
+        .contact-name { font-size: 17px; font-weight: 700; }
+        .contact-title { font-size: 13px; opacity: 0.7; margin-top: 2px; }
+        .contact-right {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .contact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .disclaimer {
+            margin-top: 16px;
+            padding: 14px 20px;
+            background: white;
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.25s;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .print-btn:hover { background: var(--accent2); transform: translateY(-2px); }
+
+        .no-results {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--text-light);
+            font-size: 16px;
+            display: none;
+        }
+
+        @media print {
+            .controls, .print-btn, .summary-bar { display: none !important; }
+            .header-inner { padding: 24px; }
+            .table-container { margin-bottom: 12px; }
+            table { box-shadow: none; border: 1px solid #ddd; }
+            tbody tr:hover { background: none; }
+            .contact-card { color-adjust: exact; -webkit-print-color-adjust: exact; }
+        }
+
+        @media (max-width: 900px) {
+            .summary-bar { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .header-inner { padding: 24px 16px; flex-direction: column; text-align: center; }
+            .header-right { text-align: center; }
+            .header h1 { font-size: 24px; }
+            .controls { flex-direction: column; align-items: stretch; padding: 0 16px; }
+            .search-box { min-width: unset; width: 100%; }
+            .filter-scroll { width: 100%; padding: 4px 2px; }
+            .filter-btn { padding: 12px 16px; font-size: 14px; min-height: 48px; }
+            .summary-bar { grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; }
+            .table-container { padding: 0 16px; }
+            .footer { padding: 24px 16px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            table { font-size: 13px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            thead, tbody, tr { min-width: 700px; }
+            thead th, tbody td { padding: 10px 12px; }
+            .note { max-width: 120px; }
+            .contact-card { flex-direction: column; text-align: center; }
+            .contact-right { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+    <div class="header-bg"></div>
+    <div class="header-inner">
+        <div class="header-left" style="flex:1;">
+            <div class="header-logo" style="justify-content:center;">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">SSC</div>
+            </div>
+            <h1 style="text-align:center;">Product <span>Price List</span></h1>
+            <div style="text-align:center; margin-top:16px;">
+                <span class="tag highlight" style="font-size:18px; padding:8px 24px; letter-spacing:1px;">เมษายน 2569</span>
+            </div>
+            <div style="text-align:center; margin-top:10px; display:flex; justify-content:center; gap:8px;">
+                <span class="tag">Version 2.0</span>
+                <span class="tag">Prices exclude VAT 7%</span>
+            </div>
+        </div>
+    </div>
+    <div class="header-bar"></div>
+</div>
+
+<!-- CSS-Only Filter: Radio inputs ต้องอยู่ระดับเดียวกับ .table-container -->
+<input type="radio" name="filter" id="filter-all" class="filter-radio" checked>
+<input type="radio" name="filter" id="filter-inverter" class="filter-radio">
+<input type="radio" name="filter" id="filter-optimizer" class="filter-radio">
+<input type="radio" name="filter" id="filter-battery" class="filter-radio">
+<input type="radio" name="filter" id="filter-panel" class="filter-radio">
+<input type="radio" name="filter" id="filter-accessory" class="filter-radio">
+<input type="radio" name="filter" id="filter-hybrid" class="filter-radio">
+
+<!-- ===== CONTROLS ===== -->
+<div class="controls">
+    <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="ค้นหาสินค้า... (ชื่อรุ่น, ประเภท, กำลังไฟ)">
+    </div>
+    <div class="filter-scroll">
+        <label for="filter-all" class="filter-btn">ทั้งหมด</label>
+        <label for="filter-inverter" class="filter-btn">Inverter</label>
+        <label for="filter-optimizer" class="filter-btn">Optimizer</label>
+        <label for="filter-battery" class="filter-btn">Battery</label>
+        <label for="filter-panel" class="filter-btn">แผงโซล่าร์</label>
+        <label for="filter-accessory" class="filter-btn">Sensor / Accessory</label>
+        <label for="filter-hybrid" class="filter-btn">KStar Hybrid</label>
+    </div>
+</div>
+
+<!-- ===== SUMMARY ===== -->
+<div class="summary-bar">
+    <div class="summary-card">
+        <div class="label">Total Products</div>
+        <div class="value">23</div>
+        <div class="sub">รายการสินค้า</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Brands</div>
+        <div class="value">5</div>
+        <div class="sub">SolarEdge / IMT / KStar / Solar PPM / Leapton</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Starting Price</div>
+        <div class="value">4.99 <span style="font-size:14px;font-weight:500;">฿/W</span></div>
+        <div class="sub">Leapton PV Module</div>
+    </div>
+    <div class="summary-card">
+        <div class="label">Last Updated</div>
+        <div class="value">เมษายน</div>
+        <div class="sub">2569</div>
+    </div>
+</div>
+
+<!-- ===== SolarEdge C&I Inverter ===== -->
+<div class="table-container" data-category="inverter">
+    <div class="category-header">
+        <div class="icon">&#9889;</div>
+        SolarEdge &mdash; Grid-Connected Inverter (C&I)
+        <span class="count">2 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Power</th>
+                <th>Type</th>
+                <th>Price (THB)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">SE33.3K</td>
+                <td>33.3 kW</td>
+                <td><span class="badge badge-inverter">C&I Inverter</span></td>
+                <td class="price">฿59,000</td>
+                <td class="warranty">12 ปี</td>
+                <td class="note">3-Phase, Synergy Technology</td>
+                <td><a href="https://drive.google.com/file/d/1ncCj1Kd8R4kpEDXCTq0Rc8jlpnCjY2hB/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">SE100K</td>
+                <td>100 kW</td>
+                <td><span class="badge badge-inverter">C&I Inverter</span></td>
+                <td class="price">฿129,000</td>
+                <td class="warranty">12 ปี</td>
+                <td class="note">3-Phase, Synergy Technology</td>
+                <td><a href="https://drive.google.com/file/d/1GSwnjiTocHDaDiartw7p_5wOUkTpNJzp/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== SolarEdge C&I Optimizer ===== -->
+<div class="table-container" data-category="optimizer">
+    <div class="category-header">
+        <div class="icon">&#9881;</div>
+        SolarEdge &mdash; Power Optimizer (C&I)
+        <span class="count">3 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Max Input</th>
+                <th>Type</th>
+                <th>Price (THB)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">S1200</td>
+                <td>1,200 W</td>
+                <td><span class="badge badge-optimizer">C&I Optimizer</span></td>
+                <td class="price">฿2,190</td>
+                <td class="warranty">25 ปี</td>
+                <td class="note">ใช้คู่กับ SE33.3K / SE100K</td>
+                <td><a href="https://drive.google.com/file/d/1DD1zQjKLq1ryWPLFcygEQDNKihk1AqoT/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">S1400</td>
+                <td>1,400 W</td>
+                <td><span class="badge badge-optimizer">C&I Optimizer</span></td>
+                <td class="price">฿2,290</td>
+                <td class="warranty">25 ปี</td>
+                <td class="note">รุ่นยอดนิยม &mdash; เหมาะกับแผง 500-700W</td>
+                <td><a href="https://drive.google.com/file/d/1cusf90_xXPSl7EmfkVlkFCbWDrl_CmS7/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="model-name">S1500</td>
+                <td>1,500 W</td>
+                <td><span class="badge badge-optimizer">C&I Optimizer</span> <span class="badge badge-new">NEW</span></td>
+                <td class="price">฿2,390</td>
+                <td class="warranty">25 ปี</td>
+                <td class="note">สำหรับแผงกำลังสูง 750W</td>
+                <td><a href="https://drive.google.com/file/d/1VIilqGG8odBhuNTUYw6LoeTsIHdue5u9/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== SolarEdge Residential ===== -->
+<div class="table-container" data-category="inverter">
+    <div class="category-header">
+        <div class="icon">&#127968;</div>
+        SolarEdge &mdash; Residential Inverter & Optimizer
+        <span class="count">3 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Power</th>
+                <th>Type</th>
+                <th>Price (THB)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">SE5000H</td>
+                <td>5 kW</td>
+                <td><span class="badge badge-inverter">Residential Inverter</span></td>
+                <td class="price">฿39,990</td>
+                <td class="warranty">12 ปี</td>
+                <td class="note">1 Phase, Backup option</td>
+                <td><a href="https://drive.google.com/file/d/1dsz9AX5gkzz8wGYantOBGOy6-l2I0XkU/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">SE10K-RWB48</td>
+                <td>10 kW</td>
+                <td><span class="badge badge-inverter">Residential Inverter</span></td>
+                <td class="price">฿69,990</td>
+                <td class="warranty">12 ปี</td>
+                <td class="note">3 Phase, Backup option</td>
+                <td><a href="https://drive.google.com/file/d/1nS3u5JbrJ_7uyW3AkwUKRbXQtSgSLG-D/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="model-name">S650B</td>
+                <td>650 W</td>
+                <td><span class="badge badge-optimizer">Residential Optimizer</span></td>
+                <td class="price">฿2,190</td>
+                <td class="warranty">25 ปี</td>
+                <td class="note">ใช้คู่กับ SE5000H / SE10K</td>
+                <td><a href="https://drive.google.com/file/d/1XH_QtDDskG1jnqhwHQcQSQluQMExf4VO/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== Battery ===== -->
+<div class="table-container" data-category="battery">
+    <div class="category-header">
+        <div class="icon">&#128267;</div>
+        SolarEdge &mdash; Energy Storage (Battery System)
+        <span class="count">1 item</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Specification</th>
+                <th>Type</th>
+                <th>Price (THB)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">CSS-OU-197 / PCS050</td>
+                <td>Batt 197 kWh + PCS 100 kW</td>
+                <td><span class="badge badge-battery">Battery System</span> <span class="badge badge-new">NEW</span></td>
+                <td class="price">฿1,390,000</td>
+                <td class="warranty">10 ปี</td>
+                <td class="note">PCS050 50kW &times;2 + Battery 197kWh &times;1, แบต 8,000 cycle</td>
+                <td><a href="https://drive.google.com/file/d/1lz3bnxgvhvYBfqYY4HETsdTeklnmwT2T/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== Solar PPM ===== -->
+<div class="table-container" data-category="panel">
+    <div class="category-header">
+        <div class="icon">&#9728;</div>
+        Solar PPM &mdash; PV Module (มอก.)
+        <span class="count">3 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Power</th>
+                <th>Type</th>
+                <th>Price (THB/W)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">SPPM-MG12-GG 600W</td>
+                <td>600 W</td>
+                <td><span class="badge badge-panel">PV Module</span> <span class="badge badge-tis">มอก.</span></td>
+                <td class="price">12-13 ฿/W</td>
+                <td class="warranty">12/30 ปี</td>
+                <td class="note">Glass-Glass, มาตรฐาน มอก. &mdash; พร้อมส่ง</td>
+                <td><a href="https://drive.google.com/file/d/1hWYWM_2RBnWDYT2dHQsGXXdyD0TsqH0S/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">SPPM-NG12-GG 630W</td>
+                <td>630 W</td>
+                <td><span class="badge badge-panel">PV Module</span> <span class="badge badge-tis">มอก.</span> <span class="badge badge-new">NEW</span></td>
+                <td class="price">12-13 ฿/W</td>
+                <td class="warranty">12/30 ปี</td>
+                <td class="note">Glass-Glass, มาตรฐาน มอก. &mdash; ผลิต ก.ย. 2569</td>
+                <td><a href="https://drive.google.com/file/d/1VnvEq_SpWAHAtCUp0WLUTGBcpsqnScPE/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="model-name">SPPM-NG12-GG 720W</td>
+                <td>720 W</td>
+                <td><span class="badge badge-panel">PV Module</span> <span class="badge badge-tis">มอก.</span> <span class="badge badge-new">NEW</span></td>
+                <td class="price">12-13 ฿/W</td>
+                <td class="warranty">12/30 ปี</td>
+                <td class="note">Glass-Glass, มาตรฐาน มอก. &mdash; ผลิต ก.ย. 2569</td>
+                <td><a href="https://drive.google.com/file/d/1LXC60yBb5Aoa_gavkjqXPLEmHIG9AJYL/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== Leapton ===== -->
+<div class="table-container" data-category="panel">
+    <div class="category-header">
+        <div class="icon">&#9728;</div>
+        Leapton Solar &mdash; PV Module
+        <span class="count">2 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Power</th>
+                <th>Type</th>
+                <th>Price (THB/W)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">LP182-210-M-66-NB</td>
+                <td>620 W</td>
+                <td><span class="badge badge-panel">PV Module</span></td>
+                <td class="price">4.99 ฿/W</td>
+                <td class="warranty">12/30 ปี</td>
+                <td class="note">N-Type Bifacial, 182mm Cell</td>
+                <td><a href="https://drive.google.com/file/d/1c5jf2wMxvlcb6IIss081Q7H2ZIBIgpci/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">LP210-210-M-66-NB</td>
+                <td>715 W</td>
+                <td><span class="badge badge-panel">PV Module</span></td>
+                <td class="price">4.99 ฿/W</td>
+                <td class="warranty">12/30 ปี</td>
+                <td class="note">N-Type Bifacial, 210mm Cell</td>
+                <td><a href="https://drive.google.com/file/d/1n_AMYbTDo1ddhzns1NIJBbfCy8IlObMz/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== Sensor & Accessory ===== -->
+<div class="table-container" data-category="accessory">
+    <div class="category-header">
+        <div class="icon">&#128225;</div>
+        IMT Technology & SolarEdge &mdash; Sensor / Accessory
+        <span class="count">5 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Brand</th>
+                <th>Type</th>
+                <th>Price (THB)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">Si-RS485TC-2T-v-MB</td>
+                <td>IMT Technology</td>
+                <td><span class="badge badge-sensor">Irradiance Sensor</span></td>
+                <td class="price">฿17,000</td>
+                <td class="warranty">1 ปี</td>
+                <td class="note">วัดความเข้มแสงอาทิตย์ RS485 Modbus</td>
+                <td><a href="https://drive.google.com/file/d/1VXKujGe-JvI3gNfPY-TWRxQUeQHrSfcK/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">Ta-ext-RS485-MB</td>
+                <td>IMT Technology</td>
+                <td><span class="badge badge-sensor">Ambient Temp Sensor</span></td>
+                <td class="price">฿15,000</td>
+                <td class="warranty">1 ปี</td>
+                <td class="note">วัดอุณหภูมิอากาศแวดล้อม RS485 Modbus</td>
+                <td><a href="https://drive.google.com/file/d/1rzla9Igdnp1xZBDrXw_1VQPR0nM_0GHG/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="model-name">Tmodul-SI</td>
+                <td>IMT Technology</td>
+                <td><span class="badge badge-sensor">Module Temp Sensor</span></td>
+                <td class="price">฿15,500</td>
+                <td class="warranty">1 ปี</td>
+                <td class="note">วัดอุณหภูมิแผงโซล่าร์</td>
+                <td><a href="https://drive.google.com/file/d/1f-pwKnDU8SyMJwEN1NQ3_87oPBZ0HrJ7/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="model-name">Vwind-Si</td>
+                <td>IMT Technology</td>
+                <td><span class="badge badge-sensor">Wind Velocity Sensor</span></td>
+                <td class="price">฿45,000</td>
+                <td class="warranty">1 ปี</td>
+                <td class="note">วัดความเร็วลม</td>
+                <td><a href="https://drive.google.com/file/d/1nDeYTxmY-GoslNLlOFrAZJwD0DO0F5rh/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="model-name">CLC1</td>
+                <td>SolarEdge</td>
+                <td><span class="badge badge-controller">ONE Controller</span></td>
+                <td class="price">฿42,000</td>
+                <td class="warranty">5 ปี</td>
+                <td class="note">SolarEdge ONE Controller สำหรับ Residential</td>
+                <td><a href="https://drive.google.com/file/d/1ClfY1Jd0fcZg61BCq_AeVH59vovKrjAH/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== KStar Hybrid ===== -->
+<div class="table-container" data-category="hybrid">
+    <div class="category-header">
+        <div class="icon">&#9889;</div>
+        KStar &mdash; Hybrid Inverter + Battery System
+        <span class="count">4 items</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Model</th>
+                <th>Specification</th>
+                <th>Type</th>
+                <th>Price (THB)</th>
+                <th>Warranty</th>
+                <th>Note</th>
+                <th>Spec</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td class="model-name">BluE-H 5-5</td>
+                <td>Inverter 5 kW + Battery 5 kWh</td>
+                <td><span class="badge badge-hybrid">Hybrid System</span></td>
+                <td class="price">฿99,000</td>
+                <td class="warranty">5 ปี</td>
+                <td class="note">Residential Hybrid, แบต 10,000 cycle</td>
+                <td><a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="model-name">BluE-H 5-10</td>
+                <td>Inverter 5 kW + Battery 10 kWh</td>
+                <td><span class="badge badge-hybrid">Hybrid System</span></td>
+                <td class="price">฿154,000</td>
+                <td class="warranty">5 ปี</td>
+                <td class="note">Residential Hybrid, แบต 10,000 cycle</td>
+                <td><a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="model-name">BluE-S 10 KT</td>
+                <td>Inverter 10 kW + Battery 10 kWh</td>
+                <td><span class="badge badge-hybrid">Hybrid System</span></td>
+                <td class="price">฿169,000</td>
+                <td class="warranty">5 ปี</td>
+                <td class="note">Residential / Small C&I, แบต 10,000 cycle</td>
+                <td><a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="model-name">BluE-S 10 KT</td>
+                <td>Inverter 10 kW + Battery 20 kWh</td>
+                <td><span class="badge badge-hybrid">Hybrid System</span></td>
+                <td class="price">฿269,000</td>
+                <td class="warranty">5 ปี</td>
+                <td class="note">Residential / Small C&I, แบต 10,000 cycle</td>
+                <td><a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="no-results" id="noResults">
+    ไม่พบสินค้าที่ตรงกับคำค้นหา
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+    <div class="footer-grid">
+        <div>
+            <h3>Terms & Conditions</h3>
+            <ul>
+                <li>ราคายังไม่รวม VAT 7%</li>
+                <li>ราคาอาจเปลี่ยนแปลงโดยไม่แจ้งล่วงหน้า</li>
+                <li>กรุณาสอบถามราคาพิเศษสำหรับโครงการขนาดใหญ่</li>
+                <li>เงื่อนไขการชำระเงิน: สอบถามเพิ่มเติม</li>
+                <li>Lead Time: สินค้าพร้อมส่ง (ยกเว้นรุ่นใหม่)</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Why SSC?</h3>
+            <ul>
+                <li>ตัวแทนจำหน่าย SolarEdge อย่างเป็นทางการในประเทศไทย</li>
+                <li>Safety: Rapid Shutdown ตามมาตรฐาน NEC 2017/2020</li>
+                <li>Monitoring ระดับแผง &mdash; ลด Mismatch Loss สูงสุด</li>
+                <li>ทีม Technical Support พร้อมบริการ After-Sales</li>
+                <li>สนับสนุนเอกสาร TOR สำหรับหน่วยงานราชการ</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-left">
+            <div class="contact-name">คุณธีรวัฒน์ ฉัตรพรมราช (บอย)</div>
+            <div class="contact-title">Sales Manager</div>
+        </div>
+        <div class="contact-right">
+            <a href="mailto:Teerawat@siamsolar.co.th" class="contact-chip" style="text-decoration:none;color:inherit;">&#9993; Teerawat@siamsolar.co.th</a>
+            <a href="tel:+66848255036" class="contact-chip" style="text-decoration:none;color:inherit;">&#128222; 084-825-5036</a>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        Confidential &mdash; เอกสารนี้เป็นความลับทางการค้า กรุณาอย่าเผยแพร่โดยไม่ได้รับอนุญาต For authorized recipients only.
+    </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print / Save PDF
+</button>
+
+<script>
+    // Search only — Filter ทำด้วย CSS ล้วนแล้ว
+    document.getElementById('searchInput').addEventListener('input', function() {
+        var query = this.value.toLowerCase().trim();
+        var tables = document.querySelectorAll('.table-container');
+        var noResults = document.getElementById('noResults');
+        var anyVisible = false;
+
+        for (var i = 0; i < tables.length; i++) {
+            var rows = tables[i].querySelectorAll('tbody tr');
+            var tableHasMatch = false;
+
+            for (var j = 0; j < rows.length; j++) {
+                var text = rows[j].textContent.toLowerCase();
+                if (!query || text.indexOf(query) !== -1) {
+                    rows[j].style.display = '';
+                    tableHasMatch = true;
+                } else {
+                    rows[j].style.display = 'none';
+                }
+            }
+
+            if (query) {
+                tables[i].style.display = tableHasMatch ? '' : 'none';
+            } else {
+                tables[i].style.display = '';
+                for (var k = 0; k < rows.length; k++) { rows[k].style.display = ''; }
+                tableHasMatch = true;
+            }
+            if (tableHasMatch) anyVisible = true;
+        }
+
+        noResults.style.display = anyVisible ? 'none' : 'block';
+    });
+</script>
+
+</body>
+</html>
