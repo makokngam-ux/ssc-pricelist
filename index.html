@@ -6,7 +6,7 @@
     <title>SSC Price List Q2/2569</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap');
-
+ 
         :root {
             --primary: #0f172a;
             --primary-mid: #1e293b;
@@ -37,9 +37,9 @@
             --radius: 12px;
             --radius-lg: 16px;
         }
-
+ 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
         body {
             font-family: 'Sarabun', 'Inter', -apple-system, sans-serif;
             background: var(--bg);
@@ -47,7 +47,7 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
+ 
         /* ===== PREMIUM HEADER ===== */
         .header {
             background: var(--primary);
@@ -132,7 +132,7 @@
             height: 3px;
             background: linear-gradient(90deg, var(--accent), #3b82f6, var(--accent));
         }
-
+ 
         /* ===== CONTROLS ===== */
         .controls {
             max-width: 1280px;
@@ -181,7 +181,7 @@
             transform: translateY(-50%);
             color: var(--text-light);
         }
-
+ 
         /* CSS-Only Filter — ไม่ต้องพึ่ง JavaScript */
         .filter-radio { display: none; }
         .filter-btn {
@@ -207,7 +207,7 @@
             text-decoration: none;
         }
         .filter-btn:hover { border-color: var(--accent); color: var(--primary); background: var(--orange-bg); }
-
+ 
         /* Active state via CSS :checked */
         #filter-all:checked ~ .controls .filter-scroll label[for="filter-all"],
         #filter-inverter:checked ~ .controls .filter-scroll label[for="filter-inverter"],
@@ -221,7 +221,7 @@
             border-color: var(--primary);
             box-shadow: 0 2px 8px rgba(15,23,42,0.2);
         }
-
+ 
         /* Show/hide tables via CSS :checked */
         #filter-all:checked ~ .table-container { display: block; }
         #filter-inverter:checked ~ .table-container:not([data-category="inverter"]),
@@ -232,7 +232,7 @@
         #filter-hybrid:checked ~ .table-container:not([data-category="hybrid"]) {
             display: none !important;
         }
-
+ 
         /* ===== SUMMARY ===== */
         .summary-bar {
             max-width: 1280px;
@@ -266,7 +266,7 @@
         .summary-card .label { font-size: 11px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .summary-card .value { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: var(--primary); margin: 4px 0 2px; }
         .summary-card .sub { font-size: 12px; color: var(--text-mid); }
-
+ 
         /* ===== TABLES ===== */
         .table-container {
             max-width: 1280px;
@@ -303,7 +303,7 @@
             font-size: 12px;
             font-weight: 500;
         }
-
+ 
         table {
             width: 100%;
             border-collapse: collapse;
@@ -332,7 +332,7 @@
         tbody tr { transition: all 0.15s; }
         tbody tr:hover { background: #fafbfe; }
         tbody tr:last-child td { border-bottom: none; }
-
+ 
         .model-name {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
@@ -368,19 +368,19 @@
         }
         .badge-tis { background: #fef3c7; color: #92400e; }
         .badge-hybrid { background: #dcfce7; color: #166534; }
-
+ 
         @keyframes glow {
             0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
             50% { box-shadow: 0 0 8px 2px rgba(239,68,68,0.3); }
         }
-
+ 
         .note { font-size: 12px; color: var(--text-light); max-width: 200px; line-height: 1.4; }
         .warranty {
             font-size: 13px;
             font-weight: 600;
             color: var(--text-mid);
         }
-
+ 
         .spec-link {
             display: inline-flex;
             align-items: center;
@@ -403,7 +403,7 @@
             cursor: default;
         }
         .spec-link.pending:hover { transform: none; box-shadow: none; }
-
+ 
         /* ===== FOOTER ===== */
         .footer {
             max-width: 1280px;
@@ -449,7 +449,7 @@
             margin-top: 7px;
             flex-shrink: 0;
         }
-
+ 
         .contact-card {
             margin-top: 20px;
             background: linear-gradient(135deg, var(--primary), var(--primary-mid));
@@ -483,7 +483,7 @@
             font-weight: 500;
             backdrop-filter: blur(4px);
         }
-
+ 
         .disclaimer {
             margin-top: 16px;
             padding: 14px 20px;
@@ -494,7 +494,7 @@
             font-size: 12px;
             color: var(--text-light);
         }
-
+ 
         .print-btn {
             position: fixed;
             bottom: 28px;
@@ -516,7 +516,7 @@
             gap: 8px;
         }
         .print-btn:hover { background: var(--accent2); transform: translateY(-2px); }
-
+ 
         .no-results {
             max-width: 1280px;
             margin: 0 auto;
@@ -526,7 +526,7 @@
             font-size: 16px;
             display: none;
         }
-
+ 
         @media print {
             .controls, .print-btn, .summary-bar { display: none !important; }
             .header-inner { padding: 24px; }
@@ -535,7 +535,7 @@
             tbody tr:hover { background: none; }
             .contact-card { color-adjust: exact; -webkit-print-color-adjust: exact; }
         }
-
+ 
         @media (max-width: 900px) {
             .summary-bar { grid-template-columns: repeat(2, 1fr); }
         }
@@ -561,7 +561,7 @@
     </style>
 </head>
 <body>
-
+ 
 <!-- ===== HEADER ===== -->
 <div class="header">
     <div class="header-bg"></div>
@@ -583,7 +583,7 @@
     </div>
     <div class="header-bar"></div>
 </div>
-
+ 
 <!-- CSS-Only Filter: Radio inputs ต้องอยู่ระดับเดียวกับ .table-container -->
 <input type="radio" name="filter" id="filter-all" class="filter-radio" checked>
 <input type="radio" name="filter" id="filter-inverter" class="filter-radio">
@@ -592,7 +592,7 @@
 <input type="radio" name="filter" id="filter-panel" class="filter-radio">
 <input type="radio" name="filter" id="filter-accessory" class="filter-radio">
 <input type="radio" name="filter" id="filter-hybrid" class="filter-radio">
-
+ 
 <!-- ===== CONTROLS ===== -->
 <div class="controls">
     <div class="search-box">
@@ -609,7 +609,7 @@
         <label for="filter-hybrid" class="filter-btn">KStar Hybrid</label>
     </div>
 </div>
-
+ 
 <!-- ===== SUMMARY ===== -->
 <div class="summary-bar">
     <div class="summary-card">
@@ -633,7 +633,7 @@
         <div class="sub">2569</div>
     </div>
 </div>
-
+ 
 <!-- ===== SolarEdge C&I Inverter ===== -->
 <div class="table-container" data-category="inverter">
     <div class="category-header">
@@ -678,7 +678,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== SolarEdge C&I Optimizer ===== -->
 <div class="table-container" data-category="optimizer">
     <div class="category-header">
@@ -733,7 +733,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== SolarEdge Residential ===== -->
 <div class="table-container" data-category="inverter">
     <div class="category-header">
@@ -788,7 +788,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== Battery ===== -->
 <div class="table-container" data-category="battery">
     <div class="category-header">
@@ -823,7 +823,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== Solar PPM ===== -->
 <div class="table-container" data-category="panel">
     <div class="category-header">
@@ -878,7 +878,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== Leapton ===== -->
 <div class="table-container" data-category="panel">
     <div class="category-header">
@@ -923,7 +923,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== Sensor & Accessory ===== -->
 <div class="table-container" data-category="accessory">
     <div class="category-header">
@@ -998,7 +998,7 @@
         </tbody>
     </table>
 </div>
-
+ 
 <!-- ===== KStar Hybrid ===== -->
 <div class="table-container" data-category="hybrid">
     <div class="category-header">
@@ -1027,7 +1027,7 @@
                 <td><span class="badge badge-hybrid">Hybrid System</span></td>
                 <td class="price">฿99,000</td>
                 <td class="warranty">5 ปี</td>
-                <td class="note">Residential Hybrid, แบต 10,000 cycle</td>
+                <td class="note">Residential Hybrid, 1 Phase, แบต 10,000 cycle</td>
                 <td><a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
             </tr>
             <tr>
@@ -1035,9 +1035,9 @@
                 <td class="model-name">BluE-H 5-10</td>
                 <td>Inverter 5 kW + Battery 10 kWh</td>
                 <td><span class="badge badge-hybrid">Hybrid System</span></td>
-                <td class="price">฿154,000</td>
+                <td class="price">฿149,000</td>
                 <td class="warranty">5 ปี</td>
-                <td class="note">Residential Hybrid, แบต 10,000 cycle</td>
+                <td class="note">Residential Hybrid, 1 Phase, แบต 10,000 cycle</td>
                 <td><a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
             </tr>
             <tr>
@@ -1047,7 +1047,7 @@
                 <td><span class="badge badge-hybrid">Hybrid System</span></td>
                 <td class="price">฿169,000</td>
                 <td class="warranty">5 ปี</td>
-                <td class="note">Residential / Small C&I, แบต 10,000 cycle</td>
+                <td class="note">Residential / Small C&I, 3 Phase, แบต 10,000 cycle</td>
                 <td><a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
             </tr>
             <tr>
@@ -1057,17 +1057,17 @@
                 <td><span class="badge badge-hybrid">Hybrid System</span></td>
                 <td class="price">฿269,000</td>
                 <td class="warranty">5 ปี</td>
-                <td class="note">Residential / Small C&I, แบต 10,000 cycle</td>
+                <td class="note">Residential / Small C&I, 3 Phase, แบต 10,000 cycle</td>
                 <td><a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="spec-link" target="_blank">Datasheet</a></td>
             </tr>
         </tbody>
     </table>
 </div>
-
+ 
 <div class="no-results" id="noResults">
     ไม่พบสินค้าที่ตรงกับคำค้นหา
 </div>
-
+ 
 <!-- ===== FOOTER ===== -->
 <div class="footer">
     <div class="footer-grid">
@@ -1092,7 +1092,7 @@
             </ul>
         </div>
     </div>
-
+ 
     <div class="contact-card">
         <div class="contact-left">
             <div class="contact-name">คุณธีรวัฒน์ ฉัตรพรมราช (บอย)</div>
@@ -1103,17 +1103,17 @@
             <a href="tel:+66848255036" class="contact-chip" style="text-decoration:none;color:inherit;">&#128222; 084-825-5036</a>
         </div>
     </div>
-
+ 
     <div class="disclaimer">
         Confidential &mdash; เอกสารนี้เป็นความลับทางการค้า กรุณาอย่าเผยแพร่โดยไม่ได้รับอนุญาต For authorized recipients only.
     </div>
 </div>
-
+ 
 <button class="print-btn" onclick="window.print()">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
     Print / Save PDF
 </button>
-
+ 
 <script>
     // Search only — Filter ทำด้วย CSS ล้วนแล้ว
     document.getElementById('searchInput').addEventListener('input', function() {
@@ -1121,11 +1121,11 @@
         var tables = document.querySelectorAll('.table-container');
         var noResults = document.getElementById('noResults');
         var anyVisible = false;
-
+ 
         for (var i = 0; i < tables.length; i++) {
             var rows = tables[i].querySelectorAll('tbody tr');
             var tableHasMatch = false;
-
+ 
             for (var j = 0; j < rows.length; j++) {
                 var text = rows[j].textContent.toLowerCase();
                 if (!query || text.indexOf(query) !== -1) {
@@ -1135,7 +1135,7 @@
                     rows[j].style.display = 'none';
                 }
             }
-
+ 
             if (query) {
                 tables[i].style.display = tableHasMatch ? '' : 'none';
             } else {
@@ -1145,10 +1145,10 @@
             }
             if (tableHasMatch) anyVisible = true;
         }
-
+ 
         noResults.style.display = anyVisible ? 'none' : 'block';
     });
 </script>
-
+ 
 </body>
 </html>
