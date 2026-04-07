@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSAR BluE Series — โปรโมชั่นพิเศษ | SSC</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --orange: #f26522;
+            --orange-dark: #d4551a;
+            --orange-light: #fff3ed;
+            --dark: #1a1a2e;
+            --dark-mid: #16213e;
+            --blue: #0f3460;
+            --green: #10b981;
+            --green-dark: #059669;
+            --gold: #f59e0b;
+            --bg: #fafafa;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-mid: #475569;
+            --text-light: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Sarabun', 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 50%, var(--blue) 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(242,101,34,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(59,130,246,0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 span { color: var(--orange); }
+
+        .hero-sub {
+            font-size: 22px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 16px;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .hero-feature .icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Section */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .section-title h2 span { color: var(--orange); }
+
+        .section-title p {
+            font-size: 16px;
+            color: var(--text-mid);
+            margin-top: 8px;
+        }
+
+        /* Product Cards */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-card.featured {
+            border: 2px solid var(--orange);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--orange);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .card-badge.best {
+            background: linear-gradient(135deg, var(--orange), #e74c3c);
+        }
+
+        .card-phase {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--blue) 100%);
+            padding: 40px 24px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .card-model {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .card-spec-brief {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 4px;
+        }
+
+        .card-body { padding: 24px; }
+
+        .card-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .spec-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .spec-icon.inverter { background: #eff6ff; }
+        .spec-icon.battery { background: #fef2f2; }
+        .spec-icon.panel { background: #ecfdf5; }
+
+        .spec-item.panel-highlight {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            position: relative;
+        }
+
+        .panel-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .spec-icon.warranty { background: #fffbeb; }
+
+        .spec-text { flex: 1; }
+        .spec-label { font-size: 12px; color: var(--text-light); font-weight: 500; }
+        .spec-value { font-size: 15px; font-weight: 700; color: var(--text); }
+
+        .card-price {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .price-label {
+            font-size: 13px;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .price-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--orange);
+        }
+
+        .price-value .currency {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .price-unit {
+            font-size: 14px;
+            color: var(--text-mid);
+        }
+
+        .card-cta {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Sarabun', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 16px;
+        }
+
+        .card-cta:hover { background: var(--orange-dark); }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        .comparison-table th {
+            background: var(--dark);
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+            border-radius: 12px 0 0 0;
+        }
+
+        .comparison-table th:last-child {
+            border-radius: 0 12px 0 0;
+        }
+
+        .comparison-table td {
+            padding: 12px 16px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-mid);
+        }
+
+        .comparison-table tr:hover td {
+            background: #fef7f0;
+        }
+
+        .comparison-table .highlight-col {
+            background: var(--orange-light);
+            font-weight: 700;
+        }
+
+        .check { color: var(--green); font-weight: 700; }
+
+        /* ROI Section */
+        .roi-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--blue) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .roi-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .roi-section h2 span { color: var(--orange); }
+
+        .roi-section > p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+        }
+
+        .roi-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .roi-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .roi-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--orange);
+        }
+
+        .roi-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 4px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--orange);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .cta-section h2 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Sarabun', sans-serif;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn.primary {
+            background: white;
+            color: var(--orange);
+        }
+
+        .cta-btn.secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        /* Footer */
+        .promo-footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .promo-footer .company {
+            font-weight: 700;
+            color: var(--text-mid);
+        }
+
+        /* Countdown Bar */
+        .countdown-bar {
+            background: linear-gradient(90deg, #e74c3c, #f26522);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 15px;
+            margin-bottom: 16px;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(231,76,60,0.4); }
+            50% { box-shadow: 0 0 25px rgba(231,76,60,0.7); }
+        }
+
+        /* Calculator Section */
+        .calc-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+            border: 2px solid var(--orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-section::before {
+            content: '🔌';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .calc-input-group { margin-bottom: 20px; }
+
+        .calc-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            transition: border-color 0.2s;
+            text-align: center;
+        }
+
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .calc-slider {
+            width: 100%;
+            margin-top: 8px;
+            accent-color: var(--orange);
+            height: 6px;
+        }
+
+        .calc-result-card {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--blue) 100%);
+            border-radius: 16px;
+            padding: 30px;
+            color: white;
+        }
+
+        .calc-result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .calc-result-item:last-child { border: none; }
+
+        .calc-result-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .calc-result-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--orange);
+        }
+
+        .calc-recommend {
+            margin-top: 20px;
+            padding: 16px;
+            background: rgba(242,101,34,0.15);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .calc-recommend-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .calc-recommend-value {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--orange);
+            margin-top: 4px;
+        }
+
+        /* Datasheet Button */
+        .card-datasheet {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: transparent;
+            color: var(--text-mid);
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Sarabun', sans-serif;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .card-datasheet:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        /* Spec detail in comparison */
+        .spec-detail {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero-sub { font-size: 18px; }
+            .hero-features { gap: 16px; }
+            .products-grid { grid-template-columns: 1fr; }
+            .comparison-section { padding: 20px; overflow-x: auto; }
+            .comparison-table { min-width: 600px; }
+            .roi-cards { grid-template-columns: repeat(2, 1fr); }
+            .cta-section { padding: 30px 20px; }
+            .cta-section h2 { font-size: 24px; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .calc-section { padding: 24px; }
+        }
+
+        /* Navigation Bar */
+        .site-nav {
+            background: #0f172a;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .site-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .site-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 12px 0;
+        }
+        .site-nav-brand span { color: #f59e0b; }
+        .site-nav-links {
+            display: flex;
+            gap: 0;
+        }
+        .site-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 20px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+        .site-nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.05);
+        }
+        .site-nav-link.active {
+            color: #f59e0b;
+            border-bottom-color: #f59e0b;
+        }
+        @media (max-width: 600px) {
+            .site-nav-link { padding: 12px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+    <div class="site-nav-inner">
+        <a class="site-nav-brand" href="index.html">SSC <span>Online</span></a>
+        <div class="site-nav-links">
+            <a class="site-nav-link" href="index.html">📋 ราคาสินค้า</a>
+            <a class="site-nav-link active" href="promo.html">🔥 โปรโมชั่น</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="countdown-bar" id="countdown">
+            <span>⏰ โปรโมชั่นนี้สิ้นสุด <strong id="countdown-text"></strong></span>
+        </div>
+        <div class="hero-badge">🔥 โปรโมชั่นพิเศษ เมษายน 2569</div>
+        <h1>KSAR <span>BluE</span> Series</h1>
+        <p class="hero-sub">ระบบโซลาร์เซลล์พร้อมแบตเตอรี่ ครบชุด พร้อมติดตั้ง</p>
+        <p class="hero-desc">Hybrid Inverter + แบตเตอรี่ CATL LFP + แผง Leapton N-Type TOPCon 620W — รับประกัน 5 ปี</p>
+        <div class="hero-features">
+            <div class="hero-feature">
+                <div class="icon">⚡</div>
+                <span>Hybrid Inverter</span>
+            </div>
+            <div class="hero-feature">
+                <div class="icon">🔋</div>
+                <span>CATL LFP Battery</span>
+            </div>
+            <div class="hero-feature">
+                <div class="icon">☀️</div>
+                <span>Leapton N-Type</span>
+            </div>
+            <div class="hero-feature">
+                <div class="icon">🛡️</div>
+                <span>รับประกัน 5 ปี</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Cards -->
+<div class="section">
+    <div class="section-title">
+        <h2>เลือก <span>แพ็คเกจ</span> ที่เหมาะกับคุณ</h2>
+        <p>ครบชุด Inverter + Battery + แผง Leapton 620W</p>
+    </div>
+
+    <div class="products-grid">
+
+        <!-- BluE-S 5000D-1 -->
+        <div class="product-card">
+            <span class="card-badge">NEW</span>
+            <span class="card-phase">1 Phase</span>
+            <div class="card-header">
+                <div class="card-icon">🏠</div>
+                <div class="card-model">BluE-S 5000D-1</div>
+                <div class="card-spec-brief">สำหรับบ้านขนาดเล็ก-กลาง</div>
+            </div>
+            <div class="card-body">
+                <div class="card-specs">
+                    <div class="spec-item">
+                        <div class="spec-icon inverter">⚡</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Inverter</div>
+                            <div class="spec-value">5 kW (1P)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon battery">🔋</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Battery CATL LFP</div>
+                            <div class="spec-value">5 kWh (1 pack)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item panel-highlight">
+                        <div class="spec-icon panel">☀️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">แผง Leapton LP182-210-M-66-NB 620W <span class="panel-badge">N-Type TOPCon</span></div>
+                            <div class="spec-value">10 แผง (6.2 kWp)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon warranty">🛡️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Warranty</div>
+                            <div class="spec-value">5 ปี / แบต 10,000 cycle</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-price">
+                    <div class="price-label">ราคาแพ็คเกจ</div>
+                    <div class="price-value"><span class="currency">฿</span>129,900</div>
+                    <div class="price-unit">รวม VAT แล้ว</div>
+                </div>
+                <a href="https://line.me/ti/p/u9eTiTrfL9" class="card-cta">สอบถาม / สั่งซื้อ</a>
+                <a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="card-datasheet" target="_blank">📄 ดูสเปคสินค้า (Datasheet)</a>
+            </div>
+        </div>
+
+        <!-- BluE-S 5000D-2 -->
+        <div class="product-card">
+            <span class="card-phase">1 Phase</span>
+            <div class="card-header">
+                <div class="card-icon">🏠</div>
+                <div class="card-model">BluE-S 5000D-2</div>
+                <div class="card-spec-brief">สำหรับบ้านที่ใช้ไฟมาก</div>
+            </div>
+            <div class="card-body">
+                <div class="card-specs">
+                    <div class="spec-item">
+                        <div class="spec-icon inverter">⚡</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Inverter</div>
+                            <div class="spec-value">5 kW (1P)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon battery">🔋</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Battery CATL LFP</div>
+                            <div class="spec-value">10 kWh (2 pack)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item panel-highlight">
+                        <div class="spec-icon panel">☀️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">แผง Leapton LP182-210-M-66-NB 620W <span class="panel-badge">N-Type TOPCon</span></div>
+                            <div class="spec-value">10 แผง (6.2 kWp)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon warranty">🛡️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Warranty</div>
+                            <div class="spec-value">5 ปี / แบต 10,000 cycle</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-price">
+                    <div class="price-label">ราคาแพ็คเกจ</div>
+                    <div class="price-value"><span class="currency">฿</span>179,900</div>
+                    <div class="price-unit">รวม VAT แล้ว</div>
+                </div>
+                <a href="https://line.me/ti/p/u9eTiTrfL9" class="card-cta">สอบถาม / สั่งซื้อ</a>
+                <a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="card-datasheet" target="_blank">📄 ดูสเปคสินค้า (Datasheet)</a>
+            </div>
+        </div>
+
+        <!-- E10KT-1 -->
+        <div class="product-card featured">
+            <span class="card-badge best">🔥 BEST SELLER</span>
+            <span class="card-phase">3 Phase</span>
+            <div class="card-header" style="background: linear-gradient(135deg, #1a1a2e 0%, var(--orange-dark) 100%);">
+                <div class="card-icon">🏢</div>
+                <div class="card-model">E10KT-1</div>
+                <div class="card-spec-brief">สำหรับบ้านใหญ่ / ธุรกิจขนาดเล็ก</div>
+            </div>
+            <div class="card-body">
+                <div class="card-specs">
+                    <div class="spec-item">
+                        <div class="spec-icon inverter">⚡</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Inverter</div>
+                            <div class="spec-value">10 kW (3P)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon battery">🔋</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Battery CATL LFP</div>
+                            <div class="spec-value">10 kWh (2 pack)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item panel-highlight">
+                        <div class="spec-icon panel">☀️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">แผง Leapton LP182-210-M-66-NB 620W <span class="panel-badge">N-Type TOPCon</span></div>
+                            <div class="spec-value">20 แผง (12.4 kWp)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon warranty">🛡️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Warranty</div>
+                            <div class="spec-value">5 ปี / แบต 10,000 cycle</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-price">
+                    <div class="price-label">ราคาแพ็คเกจ</div>
+                    <div class="price-value"><span class="currency">฿</span>230,900</div>
+                    <div class="price-unit">รวม VAT แล้ว</div>
+                </div>
+                <a href="https://line.me/ti/p/u9eTiTrfL9" class="card-cta">สอบถาม / สั่งซื้อ</a>
+                <a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="card-datasheet" target="_blank">📄 ดูสเปคสินค้า (Datasheet)</a>
+            </div>
+        </div>
+
+        <!-- E10KT-2 -->
+        <div class="product-card">
+            <span class="card-badge">NEW</span>
+            <span class="card-phase">3 Phase</span>
+            <div class="card-header">
+                <div class="card-icon">🏢</div>
+                <div class="card-model">E10KT-2</div>
+                <div class="card-spec-brief">สำหรับธุรกิจ ใช้ไฟหนัก</div>
+            </div>
+            <div class="card-body">
+                <div class="card-specs">
+                    <div class="spec-item">
+                        <div class="spec-icon inverter">⚡</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Inverter</div>
+                            <div class="spec-value">10 kW (3P)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon battery">🔋</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Battery CATL LFP</div>
+                            <div class="spec-value">20 kWh (4 pack)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item panel-highlight">
+                        <div class="spec-icon panel">☀️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">แผง Leapton LP182-210-M-66-NB 620W <span class="panel-badge">N-Type TOPCon</span></div>
+                            <div class="spec-value">20 แผง (12.4 kWp)</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon warranty">🛡️</div>
+                        <div class="spec-text">
+                            <div class="spec-label">Warranty</div>
+                            <div class="spec-value">5 ปี / แบต 10,000 cycle</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-price">
+                    <div class="price-label">ราคาแพ็คเกจ</div>
+                    <div class="price-value"><span class="currency">฿</span>333,900</div>
+                    <div class="price-unit">รวม VAT แล้ว</div>
+                </div>
+                <a href="https://line.me/ti/p/u9eTiTrfL9" class="card-cta">สอบถาม / สั่งซื้อ</a>
+                <a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="card-datasheet" target="_blank">📄 ดูสเปคสินค้า (Datasheet)</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-section">
+        <div class="section-title">
+            <h2>เปรียบเทียบ <span>แพ็คเกจ</span></h2>
+            <p>เลือกแพ็คเกจที่ตอบโจทย์การใช้งานของคุณ</p>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>คุณสมบัติ</th>
+                    <th>BluE-S 5000D-1</th>
+                    <th>BluE-S 5000D-2</th>
+                    <th style="background: var(--orange);">E10KT-1 ⭐</th>
+                    <th>E10KT-2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ระบบไฟ</td>
+                    <td>1 Phase</td>
+                    <td>1 Phase</td>
+                    <td class="highlight-col">3 Phase</td>
+                    <td>3 Phase</td>
+                </tr>
+                <tr>
+                    <td>กำลัง Inverter</td>
+                    <td>5 kW</td>
+                    <td>5 kW</td>
+                    <td class="highlight-col">10 kW</td>
+                    <td>10 kW</td>
+                </tr>
+                <tr>
+                    <td>ความจุแบตเตอรี่</td>
+                    <td>5 kWh</td>
+                    <td>10 kWh</td>
+                    <td class="highlight-col">10 kWh</td>
+                    <td>20 kWh</td>
+                </tr>
+                <tr style="background: #ecfdf5;">
+                    <td style="font-weight:700; color:#059669;">☀️ แผง Leapton 620W<br><span style="font-size:11px; font-weight:400; color:#10b981;">LP182-210-M-66-NB · N-Type TOPCon</span></td>
+                    <td style="font-weight:700; color:#059669;">10 แผง</td>
+                    <td style="font-weight:700; color:#059669;">10 แผง</td>
+                    <td class="highlight-col" style="font-weight:700; color:#059669;">20 แผง</td>
+                    <td style="font-weight:700; color:#059669;">20 แผง</td>
+                </tr>
+                <tr style="background: #ecfdf5;">
+                    <td style="font-weight:700; color:#059669;">กำลังผลิตไฟฟ้า</td>
+                    <td style="font-weight:700; color:#059669;">6.2 kWp</td>
+                    <td style="font-weight:700; color:#059669;">6.2 kWp</td>
+                    <td class="highlight-col" style="font-weight:700; color:#059669;">12.4 kWp</td>
+                    <td style="font-weight:700; color:#059669;">12.4 kWp</td>
+                </tr>
+                <tr>
+                    <td>Battery Cycle</td>
+                    <td>10,000</td>
+                    <td>10,000</td>
+                    <td class="highlight-col">10,000</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td>ประเภทแบตเตอรี่</td>
+                    <td>CATL LFP</td>
+                    <td>CATL LFP</td>
+                    <td class="highlight-col">CATL LFP</td>
+                    <td>CATL LFP</td>
+                </tr>
+                <tr>
+                    <td>Battery Cycle</td>
+                    <td>10,000 cycle</td>
+                    <td>10,000 cycle</td>
+                    <td class="highlight-col">10,000 cycle</td>
+                    <td>10,000 cycle</td>
+                </tr>
+                <tr>
+                    <td>DOD (Depth of Discharge)</td>
+                    <td>90%</td>
+                    <td>90%</td>
+                    <td class="highlight-col">90%</td>
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <td>Backup (สำรองไฟ)</td>
+                    <td class="check">✓ รองรับ</td>
+                    <td class="check">✓ รองรับ</td>
+                    <td class="highlight-col check">✓ รองรับ</td>
+                    <td class="check">✓ รองรับ</td>
+                </tr>
+                <tr>
+                    <td>Warranty</td>
+                    <td>5 ปี</td>
+                    <td>5 ปี</td>
+                    <td class="highlight-col">5 ปี</td>
+                    <td>5 ปี</td>
+                </tr>
+                <tr>
+                    <td>เหมาะกับ</td>
+                    <td>บ้านเล็ก</td>
+                    <td>บ้านกลาง</td>
+                    <td class="highlight-col">บ้านใหญ่ / SME</td>
+                    <td>ธุรกิจ</td>
+                </tr>
+                <tr style="font-size: 18px; font-weight: 800;">
+                    <td style="color: var(--orange);">ราคา</td>
+                    <td style="color: var(--orange);">฿129,900</td>
+                    <td style="color: var(--orange);">฿179,900</td>
+                    <td class="highlight-col" style="color: var(--orange-dark); font-size: 20px;">฿230,900</td>
+                    <td style="color: var(--orange);">฿333,900</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ROI Section -->
+    <div class="roi-section">
+        <h2>คุ้มค่า <span>คืนทุนเร็ว</span></h2>
+        <p>ตัวอย่างการประหยัดค่าไฟสำหรับแพ็คเกจ E10KT-1 (10 kW + 10 kWh) ราคา ฿230,900</p>
+        <div class="roi-cards">
+            <div class="roi-card">
+                <div class="roi-number">12.4 kWp</div>
+                <div class="roi-label">กำลังผลิตไฟฟ้า (20 แผง)</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-number">~4,000</div>
+                <div class="roi-label">บาท/เดือน ที่ประหยัดได้*</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-number">5-7 ปี</div>
+                <div class="roi-label">ระยะคืนทุน (โดยประมาณ)*</div>
+            </div>
+            <div class="roi-card">
+                <div class="roi-number">25+</div>
+                <div class="roi-label">ปี อายุการใช้งานแผง</div>
+            </div>
+        </div>
+        <p style="font-size: 12px; margin-top: 20px; opacity: 0.5;">* ประมาณการจาก Peak Sun Hours ~4 ชม./วัน, ค่าไฟ ~4 บาท/kWh, Self-consumption ~60-70% — ตัวเลขจริงขึ้นอยู่กับพฤติกรรมการใช้ไฟของแต่ละครัวเรือน</p>
+    </div>
+
+    <!-- Interactive Calculator -->
+    <div class="calc-section">
+        <div class="section-title">
+            <h2>🔌 คำนวณ <span>ค่าไฟ</span> ของคุณ</h2>
+            <p>กรอกค่าไฟรายเดือนเพื่อดูว่าประหยัดได้เท่าไหร่ และแพ็คเกจไหนเหมาะกับคุณ</p>
+        </div>
+
+        <div class="calc-grid">
+            <div>
+                <div class="calc-input-group">
+                    <label class="calc-label">💡 ค่าไฟต่อเดือนของคุณ (บาท)</label>
+                    <input type="number" class="calc-input" id="electricBill" value="3000" min="500" max="50000">
+                    <input type="range" class="calc-slider" id="electricSlider" min="500" max="15000" step="100" value="3000">
+                </div>
+                <div class="calc-input-group">
+                    <label class="calc-label">☀️ ค่าไฟเฉลี่ยต่อหน่วย (บาท/kWh)</label>
+                    <input type="number" class="calc-input" id="electricRate" value="4.0" min="2" max="8" step="0.1">
+                </div>
+                <div class="calc-input-group">
+                    <label class="calc-label">🏠 ระบบไฟบ้านคุณ</label>
+                    <div style="display:flex; gap:12px; margin-top:8px;">
+                        <label style="flex:1; padding:12px; border:2px solid #e2e8f0; border-radius:12px; text-align:center; cursor:pointer; transition:all 0.2s;" id="phase1-label">
+                            <input type="radio" name="phase" value="1" checked style="display:none;" id="phase1"> ⚡ 1 เฟส
+                        </label>
+                        <label style="flex:1; padding:12px; border:2px solid #e2e8f0; border-radius:12px; text-align:center; cursor:pointer; transition:all 0.2s;" id="phase3-label">
+                            <input type="radio" name="phase" value="3" style="display:none;" id="phase3"> ⚡⚡⚡ 3 เฟส
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-result-card">
+                <h3 style="font-size:18px; margin-bottom:16px;">📊 ผลคำนวณ</h3>
+                <div class="calc-result-item">
+                    <span class="calc-result-label">ใช้ไฟเฉลี่ย</span>
+                    <span class="calc-result-value" id="r-kwh">750 kWh</span>
+                </div>
+                <div class="calc-result-item">
+                    <span class="calc-result-label">ประหยัดได้/เดือน</span>
+                    <span class="calc-result-value" id="r-save">~2,100 ฿</span>
+                </div>
+                <div class="calc-result-item">
+                    <span class="calc-result-label">ประหยัดได้/ปี</span>
+                    <span class="calc-result-value" id="r-save-year">~25,200 ฿</span>
+                </div>
+                <div class="calc-result-item">
+                    <span class="calc-result-label">คืนทุนประมาณ</span>
+                    <span class="calc-result-value" id="r-payback">~5.1 ปี</span>
+                </div>
+                <div class="calc-recommend">
+                    <div class="calc-recommend-label">แพ็คเกจที่แนะนำ</div>
+                    <div class="calc-recommend-value" id="r-recommend">BluE-S 5000D-1</div>
+                    <div style="font-size:13px; color:rgba(255,255,255,0.6); margin-top:4px;" id="r-recommend-price">฿129,900</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2>สนใจแพ็คเกจ KSAR BluE Series?</h2>
+        <p>ติดต่อ คุณบอย (Sales and Relationship Manager) เพื่อรับคำปรึกษาฟรี พร้อมออกแบบระบบให้เหมาะกับบ้านคุณ</p>
+        <div class="cta-buttons">
+            <a href="tel:0848255036" class="cta-btn primary">📞 โทร 084-825-5036</a>
+            <a href="https://line.me/ti/p/u9eTiTrfL9" class="cta-btn secondary">💬 LINE สอบถาม</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="promo-footer">
+    <p class="company">บริษัท สยาม โซล่าร์ เซลล์ จำกัด (SSC)</p>
+    <p>ตัวแทนจำหน่ายอย่างเป็นทางการ | ติดต่อ: ธีรวัฒน์ ฉัตรพรมราช (บอย) — Sales and Relationship Manager | โทร 084-825-5036</p>
+    <p>อัปเดต: เมษายน 2569</p>
+</div>
+
+<script>
+// Countdown - สิ้นเดือนเมษายน 2569 (April 30, 2026)
+function updateCountdown() {
+    const end = new Date('2026-04-30T23:59:59');
+    const now = new Date();
+    const diff = end - now;
+    if (diff <= 0) {
+        document.getElementById('countdown-text').textContent = 'หมดเวลาแล้ว';
+        return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    document.getElementById('countdown-text').textContent = d + ' วัน ' + h + ' ชม. ' + m + ' นาที';
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+// Calculator
+const packages = [
+    { name: 'BluE-S 5000D-1', kw: 5, kwp: 6.2, price: 129900, phase: 1 },
+    { name: 'BluE-S 5000D-2', kw: 5, kwp: 6.2, price: 179900, phase: 1 },
+    { name: 'E10KT-1', kw: 10, kwp: 12.4, price: 230900, phase: 3 },
+    { name: 'E10KT-2', kw: 10, kwp: 12.4, price: 333900, phase: 3 }
+];
+
+function calculate() {
+    const bill = parseFloat(document.getElementById('electricBill').value) || 3000;
+    const rate = parseFloat(document.getElementById('electricRate').value) || 4;
+    const phase = document.querySelector('input[name="phase"]:checked').value;
+
+    const monthlyKwh = bill / rate;
+    const selfConsumption = 0.65;
+
+    // Filter by phase
+    const filtered = packages.filter(p => p.phase == phase);
+
+    // Find best package
+    let best = filtered[0];
+    for (const pkg of filtered) {
+        const dailyProd = pkg.kwp * 4;
+        const monthlyProd = dailyProd * 30;
+        if (monthlyProd * selfConsumption <= monthlyKwh * 1.2) {
+            best = pkg;
+        }
+    }
+
+    const dailyProd = best.kwp * 4;
+    const monthlyProd = dailyProd * 30;
+    const monthlySave = Math.min(monthlyProd * selfConsumption, monthlyKwh) * rate;
+    const yearlySave = monthlySave * 12;
+    const payback = best.price / yearlySave;
+
+    document.getElementById('r-kwh').textContent = Math.round(monthlyKwh).toLocaleString() + ' kWh';
+    document.getElementById('r-save').textContent = '~' + Math.round(monthlySave).toLocaleString() + ' ฿';
+    document.getElementById('r-save-year').textContent = '~' + Math.round(yearlySave).toLocaleString() + ' ฿';
+    document.getElementById('r-payback').textContent = '~' + payback.toFixed(1) + ' ปี';
+    document.getElementById('r-recommend').textContent = best.name;
+    document.getElementById('r-recommend-price').textContent = '฿' + best.price.toLocaleString();
+
+    // Phase label styling
+    document.getElementById('phase1-label').style.borderColor = phase === '1' ? '#f26522' : '#e2e8f0';
+    document.getElementById('phase1-label').style.background = phase === '1' ? '#fff3ed' : 'transparent';
+    document.getElementById('phase3-label').style.borderColor = phase === '3' ? '#f26522' : '#e2e8f0';
+    document.getElementById('phase3-label').style.background = phase === '3' ? '#fff3ed' : 'transparent';
+}
+
+document.getElementById('electricBill').addEventListener('input', function() {
+    document.getElementById('electricSlider').value = this.value;
+    calculate();
+});
+document.getElementById('electricSlider').addEventListener('input', function() {
+    document.getElementById('electricBill').value = this.value;
+    calculate();
+});
+document.getElementById('electricRate').addEventListener('input', calculate);
+document.getElementById('phase1').addEventListener('change', calculate);
+document.getElementById('phase3').addEventListener('change', calculate);
+
+calculate();
+</script>
+</body>
+</html>
