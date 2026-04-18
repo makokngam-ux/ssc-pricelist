@@ -691,72 +691,72 @@
             .calc-section { padding: 24px; }
         }
 
-        /* Navigation Bar */
-        .site-nav {
-            background: #0f172a;
-            padding: 0;
+        /* Navigation Bar — matches new template */
+        .nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            background: #0f172a;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px);
         }
-        .site-nav-inner {
+        .nav-inner {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            height: 56px;
         }
-        .site-nav-brand {
+        .nav-brand {
             display: flex;
             align-items: center;
-            gap: 8px;
-            color: white;
-            font-weight: 700;
-            font-size: 15px;
+            gap: 10px;
             text-decoration: none;
-            padding: 12px 0;
+            color: white;
         }
-        .site-nav-brand span { color: #f59e0b; }
-        .site-nav-links {
-            display: flex;
-            gap: 0;
+        .nav-brand svg { width: 28px; height: 28px; }
+        .nav-brand span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
         }
-        .site-nav-link {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            padding: 14px 20px;
-            color: rgba(255,255,255,0.7);
+        .nav-links { display: flex; gap: 4px; }
+        .nav-link {
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
             transition: all 0.2s;
-            border-bottom: 3px solid transparent;
         }
-        .site-nav-link:hover {
-            color: white;
-            background: rgba(255,255,255,0.05);
-        }
-        .site-nav-link.active {
+        .nav-link:hover { color: white; background: rgba(255,255,255,0.08); }
+        .nav-link.active {
             color: #f59e0b;
-            border-bottom-color: #f59e0b;
+            background: rgba(245,158,11,0.1);
         }
         @media (max-width: 600px) {
-            .site-nav-link { padding: 12px 14px; font-size: 13px; }
+            .nav-inner { padding: 0 12px; height: 48px; }
+            .nav-link { font-size: 12px; padding: 6px 10px; }
         }
     </style>
 </head>
 <body>
 
 <!-- Navigation -->
-<nav class="site-nav">
-    <div class="site-nav-inner">
-        <a class="site-nav-brand" href="index.html">SSC <span>Online</span></a>
-        <div class="site-nav-links">
-            <a class="site-nav-link" href="index.html">📋 ราคาสินค้า</a>
-            <a class="site-nav-link active" href="promo.html">🔥 โปรโมชั่น</a>
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" stroke="#f59e0b" stroke-width="2"/><circle cx="14" cy="14" r="4" fill="#f59e0b"/><line x1="14" y1="0" x2="14" y2="6" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="22" x2="14" y2="28" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="14" x2="6" y2="14" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="14" x2="28" y2="14" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>SSC Online</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">&#128200; ราคาสินค้า</a>
+            <a href="promo.html" class="nav-link active">&#128293; โปรโมชั่น</a>
+            <a href="contact.html" class="nav-link">&#128222; ติดต่อเรา</a>
         </div>
     </div>
 </nav>
