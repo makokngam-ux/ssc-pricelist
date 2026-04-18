@@ -219,7 +219,8 @@
             gap: 12px;
             padding: 16px 20px;
             border-bottom: 1px solid var(--border);
-            background: var(--bg);
+            background: var(--navy);
+            border-radius: 14px 14px 0 0;
         }
         .section-icon {
             width: 36px;
@@ -242,15 +243,15 @@
             font-family: 'Inter', sans-serif;
             font-size: 15px;
             font-weight: 700;
-            color: var(--navy);
+            color: var(--white);
         }
         .section-count {
             margin-left: auto;
             font-size: 12px;
             font-weight: 600;
-            color: var(--text-light);
-            background: var(--white);
-            border: 1px solid var(--border);
+            color: var(--white);
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
             padding: 2px 10px;
             border-radius: 20px;
         }
@@ -524,6 +525,309 @@
         }
         .scroll-top:hover { transform: scale(1.05); }
 
+        /* ===== CART SYSTEM ===== */
+        .add-cart-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            touch-action: manipulation;
+            min-height: 36px;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .add-cart-btn:hover { background: var(--gold-hover); }
+        .add-cart-btn.added {
+            background: var(--green);
+            color: white;
+            animation: addBounce 0.4s ease;
+        }
+        @keyframes addBounce {
+            0% { transform: scale(1); }
+            30% { transform: scale(1.25); }
+            60% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+
+        .cart-fab {
+            position: fixed;
+            bottom: 90px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(245,158,11,0.4);
+            transition: all 0.3s;
+            z-index: 999;
+            font-size: 22px;
+        }
+        .cart-fab:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(245,158,11,0.5); }
+        .cart-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--red);
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Cart Panel */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .cart-overlay.open { opacity: 1; visibility: visible; }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--white);
+            z-index: 2001;
+            box-shadow: -8px 0 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cart-panel.open { right: 0; }
+
+        .cart-header {
+            padding: 20px 24px;
+            background: var(--navy);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .cart-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cart-close {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .cart-close:hover { background: rgba(255,255,255,0.2); }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+        }
+        .cart-empty-icon { font-size: 48px; margin-bottom: 12px; }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .cart-item-info { flex: 1; min-width: 0; }
+        .cart-item-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--navy);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .cart-item-price {
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 600;
+        }
+        .cart-qty {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .cart-qty button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: var(--bg);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: manipulation;
+        }
+        .cart-qty button:hover { background: var(--border); }
+        .cart-qty span {
+            width: 36px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--navy);
+        }
+        .cart-remove {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px;
+            transition: color 0.2s;
+            touch-action: manipulation;
+        }
+        .cart-remove:hover { color: var(--red); }
+
+        /* Cart Footer */
+        .cart-footer {
+            padding: 16px 24px 24px;
+            border-top: 1px solid var(--border);
+            background: var(--white);
+            flex-shrink: 0;
+        }
+        .cart-summary { margin-bottom: 16px; }
+        .cart-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 14px;
+            color: var(--text-mid);
+        }
+        .cart-row.total {
+            padding: 10px 0 0;
+            margin-top: 8px;
+            border-top: 2px solid var(--navy);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--navy);
+            font-family: 'Inter', sans-serif;
+        }
+        .cart-row.vat { color: var(--text-light); font-size: 13px; }
+
+        .cart-actions { display: flex; flex-direction: column; gap: 8px; }
+        .cart-send-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            touch-action: manipulation;
+            min-height: 48px;
+        }
+        .cart-send-line {
+            background: #06c755;
+            color: white;
+        }
+        .cart-send-line:hover { background: #05b04c; }
+        .cart-send-email {
+            background: var(--navy);
+            color: white;
+        }
+        .cart-send-email:hover { background: var(--navy-light); }
+        .cart-send-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        .cart-clear {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px;
+            color: var(--text-mid);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .cart-clear:hover { border-color: var(--red); color: var(--red); }
+
+        .cart-note {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 100%;
+            font-size: 13px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 60px;
+            outline: none;
+        }
+        .cart-note:focus { border-color: var(--gold); }
+        .cart-note-label { font-size: 12px; color: var(--text-light); margin-bottom: 4px; font-weight: 600; }
+
+        @media print {
+            .cart-fab, .cart-overlay, .cart-panel { display: none !important; }
+        }
+
         /* ===== HIDDEN RADIO FILTERS ===== */
         input[name="cat-filter"] { display: none; }
         #f-all:checked ~ .main [data-cat] { display: block; }
@@ -622,7 +926,7 @@
         <div class="section-count">2 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -656,7 +960,7 @@
         <div class="section-count">3 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Max Input</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Max Input</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -700,7 +1004,7 @@
         <div class="section-count">3 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -744,7 +1048,7 @@
         <div class="section-count">1 item</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -768,7 +1072,7 @@
         <div class="section-count">3 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB/W)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB/W)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -812,7 +1116,7 @@
         <div class="section-count">2 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB/W)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB/W)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -846,7 +1150,7 @@
         <div class="section-count">5 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Brand</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Brand</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -910,7 +1214,7 @@
         <div class="section-count">6 items</div>
     </div>
     <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th></tr></thead>
+        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
         <tbody>
             <tr>
                 <td class="row-num">1</td>
@@ -1031,6 +1335,44 @@
 </div>
 
 <!-- FABs -->
+<!-- Cart FAB -->
+<button class="cart-fab" id="cartFab" onclick="toggleCart()" title="ตะกร้าสินค้า">
+    &#128722;
+    <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+</button>
+
+<!-- Cart Overlay -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<!-- Cart Panel -->
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h2>&#128722; ตะกร้าขอใบเสนอราคา</h2>
+        <button class="cart-close" onclick="toggleCart()">&#10005;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <div class="cart-empty" id="cartEmpty">
+            <div class="cart-empty-icon">&#128722;</div>
+            <div>ยังไม่มีสินค้าในตะกร้า</div>
+            <div style="font-size:13px;margin-top:8px;">กดปุ่ม <strong style="color:var(--gold);">+ เพิ่ม</strong> ที่แถวสินค้าเพื่อเริ่มต้น</div>
+        </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+        <div class="cart-summary">
+            <div class="cart-row"><span>รวมก่อน VAT</span><span id="cartSubtotal">&#3647;0</span></div>
+            <div class="cart-row vat"><span>VAT 7%</span><span id="cartVat">&#3647;0</span></div>
+            <div class="cart-row total"><span>รวมทั้งสิ้น</span><span id="cartTotal">&#3647;0</span></div>
+        </div>
+        <div class="cart-note-label">หมายเหตุถึงเซลล์ (ไม่บังคับ)</div>
+        <textarea class="cart-note" id="cartNote" placeholder="เช่น ชื่อโครงการ, ต้องการส่วนลด, นัดคุยวันไหน..."></textarea>
+        <div class="cart-actions" style="margin-top:12px;">
+            <button class="cart-send-btn cart-send-line" onclick="sendViaLine()">&#128172; ส่งรายการผ่าน LINE</button>
+            <button class="cart-send-btn cart-send-email" onclick="sendViaEmail()">&#9993; ส่งรายการผ่าน Email</button>
+            <button class="cart-clear" onclick="clearCart()">&#128465; ล้างตะกร้า</button>
+        </div>
+    </div>
+</div>
+
 <button class="print-fab" onclick="window.print()" title="Print / Save PDF">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
 </button>
@@ -1068,6 +1410,189 @@ document.getElementById('searchInput').addEventListener('input', function() {
     });
     noRes.style.display = any ? 'none' : 'block';
 });
+
+// ===== CART SYSTEM =====
+var cart = [];
+
+// Add "เพิ่ม" buttons to all product rows
+document.querySelectorAll('.section tbody tr').forEach(function(row) {
+    if (row.classList.contains('new-divider')) return;
+    var modelEl = row.querySelector('.model-name');
+    var priceEl = row.querySelector('.price');
+    if (!modelEl || !priceEl) return;
+
+    var model = modelEl.childNodes[0].textContent.trim();
+    var priceText = priceEl.textContent.trim();
+
+    var td = document.createElement('td');
+    td.style.textAlign = 'center';
+    var btn = document.createElement('button');
+    btn.className = 'add-cart-btn';
+    btn.innerHTML = '+ เพิ่ม';
+    btn.setAttribute('data-model', model);
+    btn.setAttribute('data-price', priceText);
+    btn.onclick = function() {
+        addToCart(model, priceText);
+        btn.classList.add('added');
+        btn.innerHTML = '&#10003; เพิ่มแล้ว!';
+        setTimeout(function() {
+            btn.classList.remove('added');
+            btn.innerHTML = '+ เพิ่ม';
+        }, 1500);
+    };
+    td.appendChild(btn);
+    row.appendChild(td);
+});
+
+function parsePrice(priceText) {
+    var cleaned = priceText.replace(/[^\d.,-]/g, '').replace(/,/g, '');
+    if (cleaned.indexOf('-') !== -1) {
+        // Range like "12-13" for per-watt pricing — not summable
+        return 0;
+    }
+    var num = parseFloat(cleaned);
+    return isNaN(num) ? 0 : num;
+}
+
+function addToCart(model, priceText) {
+    var existing = cart.find(function(item) { return item.model === model; });
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({ model: model, priceText: priceText, price: parsePrice(priceText), qty: 1 });
+    }
+    renderCart();
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    renderCart();
+}
+
+function changeQty(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty < 1) cart[index].qty = 1;
+    renderCart();
+}
+
+function clearCart() {
+    if (confirm('ล้างสินค้าทั้งหมดในตะกร้า?')) {
+        cart = [];
+        renderCart();
+    }
+}
+
+function formatNum(n) {
+    return n.toLocaleString('th-TH', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+function renderCart() {
+    var container = document.getElementById('cartItems');
+    var empty = document.getElementById('cartEmpty');
+    var footer = document.getElementById('cartFooter');
+    var badge = document.getElementById('cartBadge');
+
+    var totalQty = cart.reduce(function(s, i) { return s + i.qty; }, 0);
+    badge.textContent = totalQty;
+    badge.style.display = totalQty > 0 ? 'flex' : 'none';
+
+    if (cart.length === 0) {
+        empty.style.display = 'block';
+        footer.style.display = 'none';
+        // Remove item elements but keep empty div
+        container.querySelectorAll('.cart-item').forEach(function(el) { el.remove(); });
+        return;
+    }
+
+    empty.style.display = 'none';
+    footer.style.display = 'block';
+
+    var html = '';
+    var subtotal = 0;
+    var hasPerWatt = false;
+
+    cart.forEach(function(item, i) {
+        var lineTotal = item.price * item.qty;
+        subtotal += lineTotal;
+        if (item.price === 0) hasPerWatt = true;
+
+        html += '<div class="cart-item">' +
+            '<div class="cart-item-info">' +
+                '<div class="cart-item-name">' + item.model + '</div>' +
+                '<div class="cart-item-price">' + item.priceText + (item.price > 0 ? ' &times; ' + item.qty + ' = &#3647;' + formatNum(lineTotal) : ' (ราคาต่อวัตต์)') + '</div>' +
+            '</div>' +
+            '<div class="cart-qty">' +
+                '<button onclick="changeQty(' + i + ',-1)">-</button>' +
+                '<span>' + item.qty + '</span>' +
+                '<button onclick="changeQty(' + i + ',1)">+</button>' +
+            '</div>' +
+            '<button class="cart-remove" onclick="removeFromCart(' + i + ')" title="ลบ">&#128465;</button>' +
+        '</div>';
+    });
+
+    // Remove old items and insert new
+    container.querySelectorAll('.cart-item').forEach(function(el) { el.remove(); });
+    container.insertAdjacentHTML('beforeend', html);
+
+    var vat = subtotal * 0.07;
+    var total = subtotal + vat;
+
+    document.getElementById('cartSubtotal').innerHTML = '&#3647;' + formatNum(subtotal);
+    document.getElementById('cartVat').innerHTML = '&#3647;' + formatNum(vat);
+    document.getElementById('cartTotal').innerHTML = '&#3647;' + formatNum(total);
+
+    if (hasPerWatt) {
+        document.getElementById('cartSubtotal').innerHTML += ' *';
+    }
+}
+
+function toggleCart() {
+    var panel = document.getElementById('cartPanel');
+    var overlay = document.getElementById('cartOverlay');
+    panel.classList.toggle('open');
+    overlay.classList.toggle('open');
+    document.body.style.overflow = panel.classList.contains('open') ? 'hidden' : '';
+}
+
+function buildMessage() {
+    var lines = ['=== SSC ขอใบเสนอราคา ===', ''];
+    var subtotal = 0;
+    cart.forEach(function(item, i) {
+        var lineTotal = item.price * item.qty;
+        subtotal += lineTotal;
+        lines.push((i + 1) + '. ' + item.model + ' x ' + item.qty + ' (' + item.priceText + ')');
+    });
+    lines.push('');
+    lines.push('รวมก่อน VAT: ' + formatNum(subtotal) + ' บาท');
+    lines.push('VAT 7%: ' + formatNum(subtotal * 0.07) + ' บาท');
+    lines.push('รวมทั้งสิ้น: ' + formatNum(subtotal * 1.07) + ' บาท');
+    lines.push('* ราคายังไม่สุดท้าย กรุณายืนยันกับเซลล์');
+
+    var note = document.getElementById('cartNote').value.trim();
+    if (note) {
+        lines.push('');
+        lines.push('หมายเหตุ: ' + note);
+    }
+
+    lines.push('');
+    lines.push('ส่งจาก SSC Online Price List');
+    return lines.join('\n');
+}
+
+function sendViaLine() {
+    if (cart.length === 0) return;
+    var msg = buildMessage();
+    var encoded = encodeURIComponent(msg);
+    window.open('https://line.me/ti/p/u9eTiTrfL9', '_blank');
+}
+
+function sendViaEmail() {
+    if (cart.length === 0) return;
+    var msg = buildMessage();
+    var subject = encodeURIComponent('ขอใบเสนอราคา - SSC Online');
+    var body = encodeURIComponent(msg);
+    window.location.href = 'mailto:teerawat@siamsolar.co.th?subject=' + subject + '&body=' + body;
+}
 
 // Filter chips
 document.querySelectorAll('.filter-chip').forEach(function(chip) {
