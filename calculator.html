@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar ROI Calculator — SSC Siam Solar Cell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --navy-mid: #1e293b;
+            --navy-light: #334155;
+            --gold: #f59e0b;
+            --gold-hover: #d97706;
+            --gold-bg: rgba(245,158,11,0.08);
+            --blue: #3b82f6;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #1e293b;
+            --text-mid: #475569;
+            --text-light: #94a3b8;
+            --border: #e2e8f0;
+            --green: #10b981;
+            --red: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            height: auto;
+            font-family: 'Sarabun', 'Inter', sans-serif;
+            background: var(--navy);
+            color: white;
+        }
+
+        /* ===== HEADER ===== */
+        .calc-header {
+            background: var(--navy-mid);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .calc-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .calc-header-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--gold);
+        }
+        .calc-header-sep {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.15);
+        }
+        .calc-header-page {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 500;
+        }
+        .calc-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 3px;
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .calc-back-btn:hover {
+            background: rgba(255,255,255,0.12);
+            color: white;
+        }
+
+        /* ===== MAIN ===== */
+        .calc-main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 24px 60px;
+        }
+
+        /* ===== ROI SECTION ===== */
+        .roi-section {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            padding: 32px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .roi-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.08) 0%, transparent 60%);
+        }
+        .roi-inner { position: relative; z-index: 1; }
+        .roi-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .roi-subtitle {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 28px;
+        }
+        .roi-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            align-items: end;
+        }
+        .roi-field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .roi-field input, .roi-field select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 3px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .roi-field input:focus, .roi-field select:focus {
+            border-color: var(--gold);
+        }
+        .roi-field input::placeholder { color: rgba(255,255,255,0.3); }
+        .roi-field select option { background: #1e293b; color: white; }
+        .roi-calc-btn {
+            padding: 14px 36px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            min-height: 48px;
+            white-space: nowrap;
+            touch-action: manipulation;
+        }
+        .roi-calc-btn:hover { background: #fbbf24; transform: translateY(-1px); }
+
+        .roi-slider-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .roi-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.15);
+            outline: none;
+        }
+        .roi-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--gold);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(245,158,11,0.4);
+        }
+        .roi-rate-hint {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            margin-top: 4px;
+        }
+
+        .roi-results {
+            display: none;
+            margin-top: 28px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .roi-results.show { display: block; }
+
+        .roi-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .roi-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 18px;
+            text-align: center;
+        }
+        .roi-card-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .roi-card-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .roi-card-value .roi-unit {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.4);
+        }
+        .roi-card.highlight {
+            background: rgba(245,158,11,0.12);
+            border-color: rgba(245,158,11,0.3);
+        }
+
+        .roi-equip {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            padding: 24px;
+        }
+        .roi-equip-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .roi-equip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .roi-equip-item {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            padding: 16px;
+            text-align: center;
+        }
+        .roi-equip-item-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.45);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .roi-equip-item-model {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2px;
+        }
+        .roi-equip-item-qty {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .roi-equip-item-price {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
+        }
+        .roi-equip-total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .roi-equip-total-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            font-weight: 600;
+        }
+        .roi-equip-total-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+        }
+        .roi-equip-note {
+            font-size: 11px;
+            color: rgba(255,255,255,0.35);
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+        .roi-cta {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+        .roi-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 24px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            touch-action: manipulation;
+        }
+        .roi-cta-line { background: #06c755; color: white; }
+        .roi-cta-line:hover { background: #05b04c; }
+        .roi-cta-cart { background: var(--gold); color: var(--navy); }
+        .roi-cta-cart:hover { background: #fbbf24; }
+
+        /* ===== INFO BOX ===== */
+        .info-box {
+            margin-top: 24px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            padding: 24px;
+        }
+        .info-box-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .info-box p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+        .info-box strong { color: rgba(255,255,255,0.65); }
+
+        /* ===== FOOTER ===== */
+        .calc-footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.25);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin-top: 40px;
+        }
+        .calc-footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .roi-form { grid-template-columns: 1fr; }
+            .roi-stats { grid-template-columns: 1fr 1fr; }
+            .roi-equip-grid { grid-template-columns: 1fr 1fr; }
+            .roi-section { padding: 24px 16px; }
+            .calc-main { padding: 20px 16px 40px; }
+            .roi-title { font-size: 20px; }
+        }
+        @media (max-width: 480px) {
+            .roi-equip-grid { grid-template-columns: 1fr; }
+            .calc-header { padding: 12px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="calc-header">
+    <div class="calc-header-left">
+        <div class="calc-header-logo">SSC</div>
+        <div class="calc-header-sep"></div>
+        <div class="calc-header-page">Solar ROI Calculator</div>
+    </div>
+    <a href="index.html" class="calc-back-btn">&#8592; กลับหน้าสินค้า</a>
+</div>
+
+<!-- Main -->
+<div class="calc-main">
+
+<div class="roi-section">
+    <div class="roi-inner">
+        <div class="roi-title">&#128200; Solar ROI Calculator</div>
+        <div class="roi-subtitle">กรอกข้อมูลค่าไฟของคุณ &#8212; ระบบจะคำนวณคืนทุนและแนะนำชุดอุปกรณ์ SolarEdge + Leapton ให้อัตโนมัติ</div>
+        <div class="roi-form">
+            <div class="roi-field">
+                <label>ประเภทผู้ใช้ไฟ</label>
+                <select id="roiUserType" onchange="updateRate()">
+                    <option value="res">ประเภท 1 &#8212; บ้านอยู่อาศัย</option>
+                    <option value="small">ประเภท 2 &#8212; กิจการขนาดเล็ก</option>
+                    <option value="medium" selected>ประเภท 3 &#8212; กิจการขนาดกลาง</option>
+                    <option value="large">ประเภท 4 &#8212; กิจการขนาดใหญ่</option>
+                    <option value="gov">หน่วยงานราชการ / สูบน้ำ</option>
+                </select>
+                <div class="roi-rate-hint" id="roiRateHint">On-peak ~5.28 / Off-peak ~2.77 &#3647;/หน่วย</div>
+            </div>
+            <div class="roi-field" id="phaseField" style="display:none;">
+                <label>ระบบไฟฟ้าที่บ้าน</label>
+                <div style="display:flex;gap:12px;margin-top:6px;">
+                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;color:rgba(255,255,255,0.8);">
+                        <input type="radio" name="phaseType" value="1p" checked style="accent-color:var(--gold);"> 1 เฟส (SE5000H-MM)
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;color:rgba(255,255,255,0.8);">
+                        <input type="radio" name="phaseType" value="3p"> 3 เฟส (SE10K-RWB48)
+                    </label>
+                </div>
+            </div>
+            <div class="roi-field">
+                <label>ค่าไฟต่อเดือน (บาท)</label>
+                <input type="number" id="roiBill" placeholder="เช่น 50000" min="100" value="">
+            </div>
+            <div class="roi-field" style="grid-column: span 2;">
+                <label>สัดส่วนใช้ไฟกลางวัน <span id="dayLabel">70%</span> / กลางคืน <span id="nightLabel">30%</span></label>
+                <div class="roi-slider-wrap">
+                    <span style="font-size:12px;color:rgba(255,255,255,0.4);">&#127774; กลางวัน</span>
+                    <input type="range" class="roi-slider" id="roiDayRatio" min="30" max="90" value="70" oninput="updateSlider()">
+                    <span style="font-size:12px;color:rgba(255,255,255,0.4);">&#127769; กลางคืน</span>
+                </div>
+            </div>
+            <div class="roi-field">
+                <label>ค่าติดตั้งรวม (บาท) <span style="font-size:11px;color:rgba(255,255,255,0.35);">&#8212; ไม่บังคับ</span></label>
+                <input type="number" id="roiInstallCost" placeholder="ค่าแรง + โครงสร้าง + สายไฟ" min="0" value="">
+            </div>
+            <div class="roi-field" id="installHintField">
+                <label style="font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;padding-top:22px;">&#9432; ถ้าไม่กรอก ระบบคำนวณ Payback จากราคาอุปกรณ์อย่างเดียว<br>กรอกค่าติดตั้งเพื่อให้ได้ระยะคืนทุนที่แม่นยำขึ้น</label>
+            </div>
+        </div>
+        <div style="margin-top:20px;text-align:center;">
+            <button class="roi-calc-btn" onclick="calcROI()" style="min-width:240px;">&#9889; คำนวณ & แนะนำอุปกรณ์</button>
+        </div>
+        <div class="roi-results" id="roiResults">
+            <div class="roi-stats">
+                <div class="roi-card highlight">
+                    <div class="roi-card-label">คืนทุนใน</div>
+                    <div class="roi-card-value" id="roiPayback">-</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-card-label">ประหยัด/ปี</div>
+                    <div class="roi-card-value" id="roiSaveYear">-</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-card-label">ประหยัด 25 ปี</div>
+                    <div class="roi-card-value" id="roiSave25">-</div>
+                </div>
+                <div class="roi-card">
+                    <div class="roi-card-label">ขนาดระบบแนะนำ</div>
+                    <div class="roi-card-value" id="roiKwpResult">-</div>
+                </div>
+            </div>
+            <div class="roi-equip">
+                <div class="roi-equip-title">&#128230; อุปกรณ์แนะนำ &#8212; SSC Package</div>
+                <div class="roi-equip-grid" id="roiEquipGrid"></div>
+                <div class="roi-equip-total">
+                    <div class="roi-equip-total-label">ราคาอุปกรณ์รวม (ไม่รวม VAT)</div>
+                    <div class="roi-equip-total-value" id="roiEquipTotal">-</div>
+                </div>
+                <div class="roi-equip-note">
+                    * ราคาเฉพาะอุปกรณ์ (Inverter + Optimizer + แผง) ยังไม่รวมค่าติดตั้ง, โครงสร้าง, สายไฟ และอุปกรณ์เสริม<br>
+                    * C&I: String Layout ตามมาตรฐาน SolarEdge (2:1 Mode, S1500) | Residential: S650B (1:1 Mode, แผง 620W)<br>
+                    * ขนาดระบบและจำนวนอุปกรณ์เป็นการประมาณเบื้องต้น กรุณาติดต่อทีมขายเพื่อ sizing ที่แม่นยำ
+                </div>
+                <div class="roi-cta">
+                    <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="roi-cta-line">&#128172; ปรึกษาเซลล์ผ่าน LINE</a>
+                    <a href="mailto:teerawat@siamsolar.co.th?subject=ขอใบเสนอราคา Solar Rooftop" target="_blank" class="roi-cta-cart">&#9993; ขอใบเสนอราคา</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Info Box -->
+<div class="info-box">
+    <div class="info-box-title">&#9432; วิธีคำนวณ</div>
+    <p><strong>อัตราค่าไฟ:</strong> ใช้อัตราตามประเภทผู้ใช้ไฟ กฟน./กฟภ. (On-peak สำหรับกิจการ TOU, เฉลี่ยสำหรับบ้านอยู่อาศัย)</p>
+    <p><strong>ขนาดระบบ (kWp):</strong> คำนวณจากปริมาณไฟฟ้าที่ใช้กลางวัน &#247; (Peak Sun Hours 3.7 ชม. &#215; 30 วัน) บวก kWp สำหรับชาร์จแบตเตอรี่ (ถ้ามี)</p>
+    <p><strong>แบตเตอรี่:</strong> แนะนำเมื่อใช้ไฟกลางคืน &#8805;40% &#8212; Residential ใช้ KSTAR BluE-H/BluE-S, C&I ใช้ KSTAR BluePulse</p>
+    <p><strong>String Layout:</strong> คำนวณตามมาตรฐาน SolarEdge &#8212; 2:1 Mode (1 Optimizer ต่อ 2 แผง), min 27 แผง/string, max 60 แผง/string, Opt diff &#8804;5 ต่อ Inverter</p>
+    <p><strong>Optimizer:</strong> C&amp;I: แผง >700W ใช้ S1500 (2:1 Mode), แผง &#8804;700W ใช้ S1400 (2:1 Mode) | Residential: S650B (1:1 Mode) + แผง &#8804;650W</p>
+    <p><strong>Residential:</strong> 1 เฟส = SE5000H-MM (5kW, max 10 แผง) | 3 เฟส = SE10K-RWB48 (10kW, max 24 แผง) | แผง Leapton 620W</p>
+</div>
+
+<div class="calc-footer">
+    &#169; 2026 Siam Solar Cell Co., Ltd. | <a href="index.html">ดูราคาสินค้าทั้งหมด</a> | ข้อมูล ณ Q2/2569
+</div>
+
+</div>
+
+<script src="prices.js"></script>
+<script>
+var tariffData = {
+    res:    { avg: 4.15, onPeak: 4.15, offPeak: 4.15, hint: 'เฉลี่ย ~4.15 ฿/หน่วย (ขั้นบันได)', solarRate: 4.15 },
+    small:  { avg: 4.20, onPeak: 4.20, offPeak: 4.20, hint: 'เฉลี่ย ~4.20 ฿/หน่วย', solarRate: 4.20 },
+    medium: { avg: 4.18, onPeak: 5.28, offPeak: 2.77, hint: 'On-peak ~5.28 / Off-peak ~2.77 ฿/หน่วย', solarRate: 5.28 },
+    large:  { avg: 4.10, onPeak: 5.27, offPeak: 2.69, hint: 'On-peak ~5.27 / Off-peak ~2.69 ฿/หน่วย', solarRate: 5.27 },
+    gov:    { avg: 3.95, onPeak: 3.95, offPeak: 3.95, hint: 'เฉลี่ย ~3.95 ฿/หน่วย', solarRate: 3.95 }
+};
+
+function updateRate() {
+    var t = document.getElementById('roiUserType').value;
+    document.getElementById('roiRateHint').textContent = tariffData[t].hint;
+    document.getElementById('phaseField').style.display = (t === 'res') ? '' : 'none';
+}
+
+function updateSlider() {
+    var v = document.getElementById('roiDayRatio').value;
+    document.getElementById('dayLabel').textContent = v + '%';
+    document.getElementById('nightLabel').textContent = (100 - v) + '%';
+}
+
+function calcROI() {
+    var userType = document.getElementById('roiUserType').value;
+    var bill = parseFloat(document.getElementById('roiBill').value);
+    var dayRatio = parseInt(document.getElementById('roiDayRatio').value) / 100;
+
+    if (!bill || bill <= 0) {
+        alert('กรุณากรอกค่าไฟต่อเดือน');
+        return;
+    }
+
+    var tariff = tariffData[userType];
+    var avgRate = tariff.avg;
+    var solarSaveRate = tariff.solarRate;
+
+    var monthlyKwh = bill / avgRate;
+    var nightRatio = 1 - dayRatio;
+    var dayKwh = monthlyKwh * dayRatio;
+    var nightKwh = monthlyKwh * nightRatio;
+    var dailyNightKwh = nightKwh / 30;
+
+    var peakSunHours = 3.7;
+    var baseKwp = dayKwh / (peakSunHours * 30);
+
+    var needBattery = nightRatio >= 0.40;
+    var batteryKwh = 0;
+    var extraKwpForBatt = 0;
+    if (needBattery) {
+        batteryKwh = dailyNightKwh;
+        extraKwpForBatt = batteryKwh / (peakSunHours * 0.9);
+    }
+
+    var kWp = baseKwp + extraKwpForBatt;
+    if (userType === 'res') {
+        kWp = Math.ceil(kWp);
+    } else {
+        kWp = Math.ceil(kWp / 10) * 10;
+    }
+
+    var annualProd = kWp * 1350;
+    var annualSave = needBattery ? (bill * 12 * 0.85) : (annualProd * solarSaveRate);
+    var save25 = annualSave * 25;
+
+    var equip = recommendEquipment(kWp, userType, needBattery, dailyNightKwh);
+
+    // ค่าติดตั้ง (ถ้ากรอก)
+    var installCost = parseFloat(document.getElementById('roiInstallCost').value) || 0;
+    var grandTotal = equip.totalCost + installCost;
+    var payback = grandTotal / annualSave;
+
+    document.getElementById('roiPayback').innerHTML = payback.toFixed(1) + ' <span class="roi-unit">ปี</span>';
+    document.getElementById('roiSaveYear').innerHTML = '฿' + Math.round(annualSave).toLocaleString() + ' <span class="roi-unit">/ปี</span>';
+    document.getElementById('roiSave25').innerHTML = '฿' + Math.round(save25).toLocaleString();
+    document.getElementById('roiKwpResult').innerHTML = kWp + ' <span class="roi-unit">kWp</span>';
+
+    var gridHtml = '';
+    equip.items.forEach(function(item) {
+        gridHtml += '<div class="roi-equip-item">' +
+            '<div class="roi-equip-item-label">' + item.type + '</div>' +
+            '<div class="roi-equip-item-model">' + item.model + '</div>' +
+            '<div class="roi-equip-item-qty">' + (item.qty === '-' ? '' : item.qty + ' <span style="font-size:12px;color:rgba(255,255,255,0.4);">' + item.unit + '</span>') + '</div>' +
+            '<div class="roi-equip-item-price">' + (item.subtotal > 0 ? '฿' + item.subtotal.toLocaleString() : '') + '</div>' +
+            '</div>';
+    });
+    // แสดงค่าติดตั้ง (ถ้ากรอก)
+    if (installCost > 0) {
+        gridHtml += '<div class="roi-equip-item">' +
+            '<div class="roi-equip-item-label">\ud83d\udee0\ufe0f \u0e04\u0e48\u0e32\u0e15\u0e34\u0e14\u0e15\u0e31\u0e49\u0e07</div>' +
+            '<div class="roi-equip-item-model">\u0e04\u0e48\u0e32\u0e41\u0e23\u0e07 + \u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07 + \u0e2a\u0e32\u0e22\u0e44\u0e1f</div>' +
+            '<div class="roi-equip-item-qty"></div>' +
+            '<div class="roi-equip-item-price">\u0e3f' + installCost.toLocaleString() + '</div>' +
+            '</div>';
+    }
+    document.getElementById('roiEquipGrid').innerHTML = gridHtml;
+    document.getElementById('roiEquipTotal').innerHTML = '฿' + grandTotal.toLocaleString();
+
+    var battNote = document.getElementById('roiBattNote');
+    if (battNote) battNote.remove();
+    if (needBattery) {
+        var noteDiv = document.createElement('div');
+        noteDiv.id = 'roiBattNote';
+        noteDiv.style.cssText = 'margin-top:12px;padding:12px 16px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:4px;font-size:13px;color:rgba(255,255,255,0.8);line-height:1.7;';
+        noteDiv.innerHTML = '&#128267; <strong style="color:var(--gold);">แนะนำ: ติดตั้งระบบแบตเตอรี่</strong><br>' +
+            'คุณใช้ไฟกลางคืน ' + Math.round(nightRatio * 100) + '% (~' + Math.round(dailyNightKwh) + ' kWh/วัน) ' +
+            'การเพิ่มแบตเตอรี่จะช่วยเก็บพลังงานกลางวันไว้ใช้กลางคืน ลดการซื้อไฟจากการไฟฟ้าได้มากขึ้น';
+        document.getElementById('roiEquipGrid').parentNode.insertBefore(noteDiv, document.getElementById('roiEquipGrid').nextSibling);
+    }
+
+    document.getElementById('roiResults').classList.add('show');
+    document.getElementById('roiResults').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function recommendEquipment(kWp, userType, needBattery, dailyNightKwh) {
+    var P = SSC_PRICES; // shorthand
+    var items = [];
+    var totalCost = 0;
+    var panel = P.getPanelCI();
+    var panelWatt = panel.watt;
+    var panelPricePerW = panel.price_per_w;
+    var panelCount = Math.ceil((kWp * 1000) / panelWatt);
+
+    if (userType === 'res') {
+        // ===== Residential Sizing — SE5000H-MM (1P) / SE10K-RWB48 (3P) =====
+        panel = P.getPanelRes();
+        panelWatt = panel.watt;
+        panelPricePerW = panel.price_per_w;
+        panelCount = Math.ceil((kWp * 1000) / panelWatt);
+        var phase = document.querySelector('input[name="phaseType"]:checked').value;
+        var inv = P.getInvRes(phase);
+        var opt = P.optimizer_res.S650B;
+
+        var invModel = inv.model, invAC = inv.ac_kw, invPrice = inv.price;
+        var minOpt = inv.min_opt, maxPw1Str = inv.max_pw_1str, maxPw2Str = inv.max_pw_2str;
+
+        // Max/Min panels per inverter
+        var maxPanelsPerInv = Math.floor(maxPw2Str / panelWatt);
+        var minPanelsPerInv = minOpt;
+
+        // จำนวน Inverter
+        var invCount = Math.ceil(panelCount / maxPanelsPerInv);
+        var lastInvPanels = panelCount - ((invCount - 1) * maxPanelsPerInv);
+        if (lastInvPanels < minPanelsPerInv && invCount > 1) {
+            var perInv = Math.floor(panelCount / invCount);
+            lastInvPanels = panelCount - ((invCount - 1) * perInv);
+            if (lastInvPanels < minPanelsPerInv) {
+                panelCount = invCount * minPanelsPerInv;
+                lastInvPanels = minPanelsPerInv;
+            }
+        }
+        if (panelCount < minPanelsPerInv) panelCount = minPanelsPerInv;
+
+        var optCount = panelCount; // 1:1 mode
+        var perInv = Math.floor(panelCount / invCount);
+        var extraInv = panelCount % invCount;
+
+        // สร้าง string info
+        var stringInfo = '';
+        for (var iv = 0; iv < invCount; iv++) {
+            var pInv = perInv + (iv < extraInv ? 1 : 0);
+            var totalPw = pInv * panelWatt;
+            var numStr, strPanels;
+            if (totalPw <= maxPw1Str) {
+                numStr = 1; strPanels = [pInv];
+            } else {
+                numStr = 2;
+                var s1 = Math.ceil(pInv / 2), s2 = pInv - s1;
+                strPanels = [s1, s2];
+            }
+            if (stringInfo) stringInfo += ' | ';
+            stringInfo += invModel + ': ' + numStr + ' str (' + strPanels.join('/') + ' panels)';
+        }
+        if (invCount > 1) stringInfo = invModel + ' x' + invCount + ' | ' + stringInfo.split(' | ').slice(0,1)[0];
+
+        var invCost = invCount * invPrice;
+        var optCost = optCount * opt.price;
+        var panelCost = panelCount * panelWatt * panelPricePerW;
+
+        // DC/AC
+        var acTotal = invCount * invAC;
+        var dcKwp = (panelCount * panelWatt) / 1000;
+        var dcAc = acTotal > 0 ? (dcKwp / acTotal) : 0;
+
+        items.push({ type: 'Inverter', model: invModel, qty: invCount, unit: '\u0e15\u0e31\u0e27', subtotal: invCost });
+        items.push({ type: 'Optimizer', model: opt.model + ' (1:1)', qty: optCount, unit: '\u0e15\u0e31\u0e27', subtotal: optCost });
+        items.push({ type: '\u0e41\u0e1c\u0e07', model: 'Leapton ' + panelWatt + 'W', qty: panelCount, unit: '\u0e41\u0e1c\u0e07', subtotal: panelCost });
+        if (stringInfo) {
+            items.push({ type: '\ud83d\udd0c String Layout', model: stringInfo, qty: '-', unit: '', subtotal: 0 });
+        }
+        var dcAcLabel = 'DC/AC: ' + dcAc.toFixed(2);
+        if (dcAc > 1.25) dcAcLabel += ' \u26a0\ufe0f \u0e40\u0e01\u0e34\u0e19 1.25';
+        items.push({ type: '\u26a1 DC/AC Ratio', model: dcAcLabel, qty: '-', unit: '', subtotal: 0 });
+        totalCost = invCost + optCost + panelCost;
+
+        if (needBattery && dailyNightKwh > 0) {
+            var br = P.getBatteryRes(dailyNightKwh);
+            var battCost = br.qty * br.m.price;
+            items.push({ type: '&#128267; \u0e41\u0e1a\u0e15\u0e40\u0e15\u0e2d\u0e23\u0e35\u0e48', model: 'KSTAR ' + br.m.model + ' (' + br.m.kw + 'kW/' + br.m.kwh + 'kWh)', qty: br.qty, unit: '\u0e0a\u0e38\u0e14', subtotal: battCost });
+            totalCost += battCost;
+        }
+
+    } else {
+        // ===== C&I Sizing ตาม SolarEdge Skill =====
+        var optCI = P.getOptCI(panelWatt);
+        var optModel = optCI.model;
+        var optPrice = optCI.price;
+
+        // Constraints from SKILL.md
+        var MIN_OPT = 14, MAX_OPT = 30, MAX_OPT_DIFF = 5;
+        var MIN_P_2TO1 = 27, MAX_P_2TO1 = 60;  // 2:1 mode
+        var MIN_P_1TO1 = 14, MAX_P_1TO1 = 30;  // 1:1 mode
+        var MAX_PW_1STR = 20250;   // Max connected power (single string)
+        var MAX_PW_2PLUS = 28000;  // Max connected power (2+ strings)
+        var SE100K_STR = 6, SE33K_STR = 2;
+        var MAX_100K = 192, MAX_33K = 64, MIN_100K = 120;
+
+        // กระจายแผงเข้า n ช่อง
+        function dist(total, n) {
+            var b = Math.floor(total / n), e = total % n, r = [];
+            for (var i = 0; i < n; i++) r.push(b + (i < e ? 1 : 0));
+            return r;
+        }
+
+        // ลอง pure 2:1 layout
+        function try2to1(panels, maxStr) {
+            var best = null;
+            for (var s = 1; s <= maxStr; s++) {
+                var strs = dist(panels, s);
+                var maxPw = (s === 1) ? MAX_PW_1STR : MAX_PW_2PLUS;
+                var ppsLim = Math.min(MAX_P_2TO1, Math.floor(maxPw / panelWatt));
+                var ok = true, opts = [], tOpt = 0;
+                for (var j = 0; j < strs.length; j++) {
+                    if (strs[j] < MIN_P_2TO1 || strs[j] > ppsLim) { ok = false; break; }
+                    var o = Math.ceil(strs[j] / 2);
+                    if (o < MIN_OPT || o > MAX_OPT) { ok = false; break; }
+                    opts.push(o); tOpt += o;
+                }
+                if (!ok) continue;
+                if (Math.max.apply(null,opts) - Math.min.apply(null,opts) > MAX_OPT_DIFF) continue;
+                var pen = 0;
+                for (var k = 0; k < opts.length; k++) if (opts[k] === MIN_OPT) pen++;
+                var sp = Math.max.apply(null,opts) - Math.min.apply(null,opts);
+                var sc = [pen, tOpt, s, sp];
+                if (!best || scLess(sc, best.sc)) {
+                    best = { strings: s, panels: strs, opts: opts, modes: arr('2:1',s), totalOpt: tOpt, sc: sc };
+                }
+            }
+            return best;
+        }
+
+        // ลอง pure 1:1 layout (dead zone fallback)
+        function try1to1(panels, maxStr) {
+            var best = null;
+            for (var s = 1; s <= maxStr; s++) {
+                var strs = dist(panels, s);
+                var maxPw = (s === 1) ? MAX_PW_1STR : MAX_PW_2PLUS;
+                var ppsLim = Math.min(MAX_P_1TO1, Math.floor(maxPw / panelWatt));
+                var ok = true, opts = [], tOpt = 0;
+                for (var j = 0; j < strs.length; j++) {
+                    if (strs[j] < MIN_P_1TO1 || strs[j] > ppsLim) { ok = false; break; }
+                    var o = strs[j]; // 1:1 → opt = panels
+                    if (o < MIN_OPT || o > MAX_OPT) { ok = false; break; }
+                    opts.push(o); tOpt += o;
+                }
+                if (!ok) continue;
+                if (Math.max.apply(null,opts) - Math.min.apply(null,opts) > MAX_OPT_DIFF) continue;
+                var sp = Math.max.apply(null,opts) - Math.min.apply(null,opts);
+                var sc = [0, tOpt, s, sp];
+                if (!best || scLess(sc, best.sc)) {
+                    best = { strings: s, panels: strs, opts: opts, modes: arr('1:1',s), totalOpt: tOpt, sc: sc };
+                }
+            }
+            return best;
+        }
+
+        // Score comparison (lower is better)
+        function scLess(a, b) {
+            for (var i = 0; i < a.length; i++) {
+                if (a[i] !== b[i]) return a[i] < b[i];
+            }
+            return false;
+        }
+        function arr(v, n) { var r = []; for (var i = 0; i < n; i++) r.push(v); return r; }
+
+        // หา layout: 2:1 ก่อน → 1:1 fallback (dead zone)
+        function findLayout(panels, maxStr) {
+            var lay = try2to1(panels, maxStr);
+            if (lay) return lay;
+            return try1to1(panels, maxStr);
+        }
+
+        // จัดแบ่ง Inverter
+        var inv100Count = 0, inv33Count = 0;
+        var panels100 = 0, panels33 = 0;
+
+        if (panelCount >= MIN_100K) {
+            inv100Count = Math.floor(panelCount / MAX_100K);
+            var remain = panelCount - (inv100Count * MAX_100K);
+            if (remain >= MIN_100K) { inv100Count++; remain = panelCount - (inv100Count * MAX_100K); if (remain < 0) remain = 0; }
+            if (remain > 0 && remain < MIN_P_1TO1) { remain = MIN_P_1TO1; }
+            panels100 = panelCount - remain;
+            panels33 = remain;
+            if (remain > 0) inv33Count = Math.ceil(remain / MAX_33K);
+        } else {
+            inv33Count = Math.ceil(panelCount / MAX_33K);
+            panels33 = panelCount;
+        }
+
+        // หา Layout + นับ Optimizer จริง
+        var lay100 = null, lay33 = null;
+        var totalOpt = 0;
+        var uses1to1 = false;
+
+        if (inv100Count > 0) {
+            var p100 = Math.floor(panels100 / inv100Count);
+            lay100 = findLayout(p100, SE100K_STR);
+            if (lay100) {
+                totalOpt += lay100.totalOpt * inv100Count;
+                if (lay100.modes.indexOf('1:1') >= 0) uses1to1 = true;
+            }
+        }
+        if (inv33Count > 0) {
+            var p33 = Math.min(Math.ceil(panels33 / inv33Count), MAX_33K);
+            lay33 = findLayout(p33, SE33K_STR);
+            if (lay33) {
+                totalOpt += lay33.totalOpt * inv33Count;
+                if (lay33.modes.indexOf('1:1') >= 0) uses1to1 = true;
+            }
+        }
+        // Fallback ถ้าไม่มี layout
+        if (totalOpt === 0) totalOpt = Math.ceil(panelCount / 2);
+
+        // สร้าง String Info
+        var stringInfo = '';
+        if (lay100) {
+            var modeStr = uses1to1 ? lay100.modes.join('/') : '2:1';
+            stringInfo += 'SE100K: ' + lay100.strings + ' str (' + lay100.opts.join('/') + ' opt) [' + modeStr + ']';
+            if (inv100Count > 1) stringInfo += ' \u00d7' + inv100Count;
+        }
+        if (lay33) {
+            if (stringInfo) stringInfo += ' | ';
+            var modeStr33 = lay33.modes[0];
+            stringInfo += 'SE33.3K: ' + lay33.strings + ' str (' + lay33.opts.join('/') + ' opt) [' + modeStr33 + ']';
+            if (inv33Count > 1) stringInfo += ' \u00d7' + inv33Count;
+        }
+
+        // DC/AC Ratio
+        var acTotal = (inv100Count * 100) + (inv33Count * 33.3);
+        var dcAc = acTotal > 0 ? (kWp / acTotal) : 0;
+
+        // ราคา
+        var inv100Cost = inv100Count * P.inverter_ci.SE100K.price;
+        var inv33Cost = inv33Count * P.inverter_ci.SE33K.price;
+        var optCost = totalOpt * optPrice;
+        var panelCost = panelCount * panelWatt * panelPricePerW;
+
+        // Optimizer mode label
+        var optModeLabel = uses1to1 ? optModel + ' (mixed)' : optModel + ' (2:1)';
+
+        if (inv100Count > 0) items.push({ type: 'Inverter', model: 'SE100K', qty: inv100Count, unit: '\u0e15\u0e31\u0e27', subtotal: inv100Cost });
+        if (inv33Count > 0) items.push({ type: 'Inverter', model: 'SE33.3K', qty: inv33Count, unit: '\u0e15\u0e31\u0e27', subtotal: inv33Cost });
+        items.push({ type: 'Optimizer', model: optModeLabel, qty: totalOpt, unit: '\u0e15\u0e31\u0e27', subtotal: optCost });
+        items.push({ type: '\u0e41\u0e1c\u0e07', model: 'Leapton ' + panelWatt + 'W', qty: panelCount, unit: '\u0e41\u0e1c\u0e07', subtotal: panelCost });
+        if (stringInfo) {
+            items.push({ type: '\ud83d\udd0c String Layout', model: stringInfo, qty: '-', unit: '', subtotal: 0 });
+        }
+        // DC/AC row
+        var dcAcLabel = 'DC/AC: ' + dcAc.toFixed(2);
+        if (dcAc > 1.25) dcAcLabel += ' \u26a0\ufe0f \u0e40\u0e01\u0e34\u0e19 1.25';
+        items.push({ type: '\u26a1 DC/AC Ratio', model: dcAcLabel, qty: '-', unit: '', subtotal: 0 });
+
+        totalCost = inv100Cost + inv33Cost + optCost + panelCost;
+
+        if (needBattery && dailyNightKwh > 0) {
+            var bc = P.getBatteryCI(dailyNightKwh);
+            var battCost = bc.qty * bc.m.price;
+            items.push({ type: '&#128267; \u0e41\u0e1a\u0e15\u0e40\u0e15\u0e2d\u0e23\u0e35\u0e48', model: bc.m.model + ' (' + bc.m.kw + 'kW/' + bc.m.kwh + 'kWh)', qty: bc.qty, unit: '\u0e0a\u0e38\u0e14', subtotal: battCost });
+            totalCost += battCost;
+        }
+    }
+
+    return { items: items, totalCost: totalCost };
+}
+
+// Battery functions ย้ายไป prices.js (SSC_PRICES.getBatteryRes / getBatteryCI)
+</script>
+</body>
+</html>

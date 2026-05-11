@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSC Price List Q2/2569 — Siam Solar Cell</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>SSC Price List Q2/2569</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #0f172a;
@@ -33,7 +33,7 @@
             -webkit-overflow-scrolling: touch;
         }
         body {
-            font-family: 'Sarabun', 'Inter', -apple-system, sans-serif;
+            font-family: 'IBM Plex Sans Thai', 'Inter', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -45,9 +45,10 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: var(--navy);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            backdrop-filter: blur(20px);
+            background: linear-gradient(135deg, rgba(2,6,23,0.92), rgba(15,23,42,0.88));
+            border-bottom: 1px solid rgba(245,158,11,0.1);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
         }
         .nav-inner {
             max-width: 1200px;
@@ -56,42 +57,97 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 56px;
+            height: 52px;
         }
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
             color: white;
         }
-        .nav-brand svg { width: 28px; height: 28px; }
-        .nav-brand span {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.5px;
+        .nav-brand-mark {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--gold), #f97316);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px rgba(245,158,11,0.3);
         }
-        .nav-links { display: flex; gap: 4px; }
+        .nav-brand-mark svg { width: 20px; height: 20px; }
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+        .nav-brand-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #fff 30%, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-brand-sub {
+            font-size: 10px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .nav-links { display: flex; gap: 2px; align-items: center; }
         .nav-link {
-            color: rgba(255,255,255,0.65);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 500;
             padding: 8px 16px;
-            border-radius: 3px;
+            border-radius: 8px;
             transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .nav-link:hover { color: white; background: rgba(255,255,255,0.08); }
         .nav-link.active {
-            color: var(--gold);
-            background: rgba(245,158,11,0.1);
+            color: white;
+            background: rgba(255,255,255,0.1);
+            font-weight: 600;
         }
+        .nav-link.active::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            background: linear-gradient(135deg, var(--gold), #f97316);
+            color: #0f172a;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.25s;
+            box-shadow: 0 2px 12px rgba(245,158,11,0.25);
+            margin-left: 8px;
+        }
+        .nav-cta:hover { box-shadow: 0 4px 20px rgba(245,158,11,0.45); transform: translateY(-1px); }
+        .nav-cta svg { width: 15px; height: 15px; }
 
         /* ===== HERO ===== */
         .hero {
-            background: var(--navy);
-            padding: 48px 24px 40px;
+            background: linear-gradient(160deg, #020617 0%, #0c1a3a 35%, #0f1d44 50%, #0a1628 75%, #030712 100%);
+            padding: 18px 24px 16px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -100,73 +156,142 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(59,130,246,0.08) 0%, transparent 60%),
-                        radial-gradient(ellipse at 70% 50%, rgba(245,158,11,0.06) 0%, transparent 60%);
+            background:
+                radial-gradient(ellipse 800px 500px at 15% 30%, rgba(245,158,11,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 600px 400px at 85% 70%, rgba(59,130,246,0.1) 0%, transparent 70%),
+                radial-gradient(ellipse 400px 300px at 50% 90%, rgba(99,102,241,0.07) 0%, transparent 70%);
         }
-        .hero-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-conic-gradient(rgba(255,255,255,0.012) 0% 25%, transparent 0% 50%) 0 0 / 60px 60px;
+            animation: heroGrid 40s linear infinite;
+        }
+        @keyframes heroGrid {
+            to { transform: translate(30px, 30px); }
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: rgba(245,158,11,0.12);
-            color: var(--gold);
-            padding: 4px 14px;
-            border-radius: 4px;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(251,146,60,0.08));
+            border: 1px solid rgba(245,158,11,0.25);
+            color: #fbbf24;
+            padding: 6px 18px;
+            border-radius: 100px;
             font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 20px rgba(245,158,11,0.08);
+        }
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(245,158,11,0); }
         }
         .hero h1 {
             font-family: 'Inter', sans-serif;
             color: white;
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+        .hero h1 .text-gold {
+            background: linear-gradient(135deg, #fbbf24, #f97316, #fbbf24);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: goldShimmer 4s ease-in-out infinite;
+        }
+        @keyframes goldShimmer {
+            0%,100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         .hero p {
-            color: rgba(255,255,255,0.5);
-            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            font-size: 13px;
             font-weight: 400;
+            line-height: 1.5;
+        }
+        .hero-brands {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+        .hero-brand-chip {
+            padding: 2px 8px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.6);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+        .hero-brand-chip:hover {
+            border-color: rgba(245,158,11,0.3);
+            color: rgba(255,255,255,0.8);
+            background: rgba(245,158,11,0.08);
         }
         .hero-btns {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 12px;
             flex-wrap: wrap;
         }
         .hero-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
-            border-radius: 4px;
-            font-size: 14px;
+            gap: 6px;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 13px;
             font-weight: 700;
             text-decoration: none;
-            transition: all 0.25s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-family: inherit;
-            min-height: 44px;
+            min-height: 40px;
             touch-action: manipulation;
         }
         .hero-btn-primary {
-            background: var(--gold);
-            color: var(--navy);
-            box-shadow: 0 4px 16px rgba(245,158,11,0.35);
+            background: linear-gradient(135deg, #fbbf24, var(--gold), #f97316);
+            color: #030712;
+            box-shadow: 0 4px 24px rgba(245,158,11,0.35), 0 0 0 1px rgba(245,158,11,0.15), inset 0 1px 0 rgba(255,255,255,0.25);
         }
-        .hero-btn-primary:hover { background: #fbbf24; box-shadow: 0 6px 24px rgba(245,158,11,0.5); }
+        .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,158,11,0.5), 0 0 0 1px rgba(245,158,11,0.3), inset 0 1px 0 rgba(255,255,255,0.25); }
         .hero-btn-secondary {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
         }
-        .hero-btn-secondary:hover { background: rgba(255,255,255,0.18); }
+        .hero-btn-secondary:hover { background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06)); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
 
         /* ===== LIVE TICKER ===== */
         .ticker {
-            background: linear-gradient(135deg, #020617, #0f172a);
-            border-bottom: 1px solid rgba(245,158,11,0.15);
+            background: linear-gradient(135deg, #030712, #0c1a3a, #0a1628);
+            border-bottom: 1px solid rgba(245,158,11,0.08);
             padding: 0;
             overflow: hidden;
         }
@@ -175,7 +300,7 @@
             margin: 0 auto;
             display: flex;
             align-items: stretch;
-            min-height: 48px;
+            min-height: 38px;
         }
         .ticker-item {
             flex: 1;
@@ -183,19 +308,25 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px 16px;
-            border-right: 1px solid rgba(255,255,255,0.06);
+            padding: 6px 14px;
+            border-right: 1px solid rgba(255,255,255,0.04);
             transition: background 0.2s;
         }
         .ticker-item:last-child { border-right: none; }
         .ticker-item:hover { background: rgba(255,255,255,0.03); }
         .ticker-icon {
-            font-size: 18px;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
+            background: rgba(255,255,255,0.04);
         }
         .ticker-label {
-            font-size: 11px;
-            color: rgba(255,255,255,0.45);
+            font-size: 10px;
+            color: rgba(255,255,255,0.4);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -250,40 +381,40 @@
         }
 
         /* ===== MAIN CONTAINER ===== */
-        .main { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        .main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; }
 
         /* ===== STATS BAR ===== */
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 8px;
+            margin-bottom: 14px;
         }
         .stat-card {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 16px 20px;
+            border-radius: 8px;
+            padding: 8px 10px;
             text-align: center;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .stat-card:hover { border-color: var(--gold); box-shadow: 0 4px 12px rgba(245,158,11,0.08); }
-        .stat-label { font-size: 11px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-        .stat-value { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 800; color: var(--navy); }
-        .stat-sub { font-size: 12px; color: var(--text-mid); margin-top: 2px; }
+        .stat-card:hover { border-color: var(--gold); box-shadow: 0 4px 14px rgba(245,158,11,0.1); transform: translateY(-1px); }
+        .stat-label { font-size: 10px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .stat-value { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--navy); }
+        .stat-sub { font-size: 11px; color: var(--text-mid); margin-top: 1px; }
 
         /* ===== SEARCH & FILTER ===== */
         .toolbar {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
             position: sticky;
-            top: 56px;
+            top: 52px;
             z-index: 900;
             background: var(--bg);
-            padding: 12px 0;
+            padding: 8px 0;
             transition: box-shadow 0.2s, background 0.3s;
         }
         .toolbar.stuck {
@@ -309,59 +440,71 @@
             width: 100%;
             padding: 10px 14px 10px 42px;
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 10px;
             font-size: 14px;
             font-family: inherit;
             background: var(--white);
-            transition: all 0.2s;
+            transition: all 0.25s;
             outline: none;
         }
-        .search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245,158,11,0.1); }
+        .search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245,158,11,0.1), 0 2px 8px rgba(245,158,11,0.06); }
         .search-input::placeholder { color: var(--text-light); }
 
         .filters { display: flex; gap: 6px; flex-wrap: wrap; }
         .filter-chip {
-            padding: 6px 14px;
+            padding: 6px 16px;
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 13px;
             font-weight: 500;
             color: var(--text-mid);
             background: var(--white);
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             user-select: none;
         }
-        .filter-chip:hover { border-color: var(--navy); color: var(--navy); }
-        .filter-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+        .filter-chip:hover { border-color: var(--gold); color: var(--navy); box-shadow: 0 2px 8px rgba(245,158,11,0.1); }
+        .filter-chip.active { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; border-color: var(--navy); box-shadow: 0 2px 8px rgba(15,23,42,0.2); }
 
         /* ===== PRODUCT SECTIONS ===== */
         .section {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 10px;
             margin-bottom: 16px;
             overflow: visible;
-            transition: box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .section:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+        .section:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
         .section-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 20px;
+            gap: 8px;
+            padding: 10px 16px;
             border-bottom: 1px solid var(--border);
-            background: var(--navy);
-            border-radius: 3px 3px 0 0;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border-radius: 7px 7px 0 0;
+            border-left: 3px solid var(--gold);
+            position: relative;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            background: linear-gradient(90deg, rgba(245,158,11,0.08), transparent);
+            pointer-events: none;
         }
         .section-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 4px;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 14px;
             flex-shrink: 0;
         }
         .section-icon.inv { background: #eff6ff; }
@@ -373,19 +516,19 @@
         .section-icon.hyb { background: #fce7f3; }
         .section-title {
             font-family: 'Inter', sans-serif;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--white);
         }
         .section-count {
             margin-left: auto;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            color: var(--white);
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
             padding: 2px 10px;
-            border-radius: 4px;
+            border-radius: 100px;
         }
 
         /* ===== TABLES ===== */
@@ -397,46 +540,65 @@
         thead th {
             text-align: left;
             padding: 10px 16px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             color: var(--text-light);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
             white-space: nowrap;
+            vertical-align: bottom;
+            font-family: 'Inter', sans-serif;
         }
         tbody tr {
-            transition: background 0.15s;
+            transition: all 0.2s ease;
+            position: relative;
+            border-bottom: 1px solid rgba(226,232,240,0.6);
         }
-        tbody tr:hover { background: var(--bg); }
+        tbody tr:last-child { border-bottom: none; }
+        tbody tr:hover {
+            background: linear-gradient(90deg, rgba(245,158,11,0.04), rgba(245,158,11,0.02), transparent);
+        }
+        tbody tr:hover .model-name { color: var(--gold-hover); }
+        tbody tr:hover .price { transform: scale(1.03); }
         tbody td {
-            padding: 12px 16px;
+            padding: 14px 16px;
             font-size: 14px;
-            border-bottom: 1px solid #f1f5f9;
-            vertical-align: middle;
+            border-bottom: none;
+            vertical-align: top;
+            line-height: 1.6;
         }
-        tbody tr:last-child td { border-bottom: none; }
 
         .model-name {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
             color: var(--navy);
             font-size: 14px;
+            transition: color 0.2s;
         }
         .price {
             font-family: 'Inter', sans-serif;
-            font-weight: 700;
+            font-weight: 800;
+            font-size: 15px;
             color: var(--green);
             white-space: nowrap;
+            transition: transform 0.2s;
+            display: block;
+            line-height: 1.6;
         }
         .warranty { color: var(--text-mid); font-size: 13px; }
         .note { color: var(--text-mid); font-size: 13px; max-width: 220px; }
+
+        /* Column alignment */
+        table { table-layout: auto; }
+        tbody td { word-break: normal; }
+        tbody td:nth-child(5) { white-space: nowrap; }  /* Price — no wrap */
 
         /* ===== BADGES ===== */
         .badge {
             display: inline-block;
             padding: 3px 10px;
-            border-radius: 2px;
+            border-radius: 6px;
             font-size: 11px;
             font-weight: 600;
             letter-spacing: 0.3px;
@@ -487,30 +649,31 @@
         .spec-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             color: white;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            padding: 10px 18px;
-            background: linear-gradient(135deg, var(--blue), #2563eb);
+            padding: 6px 14px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
             border: none;
-            border-radius: 3px;
-            transition: background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 6px rgba(59,130,246,0.25);
+            border-radius: 6px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(59,130,246,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
             letter-spacing: 0.3px;
             -webkit-tap-highlight-color: rgba(59,130,246,0.3);
             touch-action: manipulation;
             cursor: pointer;
-            min-height: 40px;
+            min-height: 30px;
             white-space: nowrap;
         }
         .spec-link:hover {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(59,130,246,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
         }
         .spec-link:active {
-            background: #1d4ed8;
+            transform: translateY(0);
+            box-shadow: 0 1px 4px rgba(59,130,246,0.3);
         }
 
         /* ===== NEW PRODUCT HIGHLIGHT ===== */
@@ -533,10 +696,20 @@
 
         /* ===== FOOTER ===== */
         .footer {
-            background: var(--navy);
+            background: linear-gradient(160deg, #020617, #0c1a3a, #0a1628, #030712);
             color: rgba(255,255,255,0.6);
-            padding: 40px 24px;
+            padding: 48px 24px 40px;
             margin-top: 32px;
+            position: relative;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245,158,11,0.4), transparent);
         }
         .footer-inner {
             max-width: 1200px;
@@ -549,11 +722,11 @@
             margin-bottom: 24px;
         }
         .footer h3 {
-            color: var(--gold);
-            font-size: 13px;
+            color: #fbbf24;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 12px;
         }
         .footer ul { list-style: none; }
@@ -568,35 +741,57 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 16px;
-            padding: 20px 24px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 4px;
+            padding: 24px 28px;
+            background: linear-gradient(135deg, rgba(245,158,11,0.06), rgba(255,255,255,0.03));
+            border: 1px solid rgba(245,158,11,0.15);
+            border-radius: 12px;
             margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(245,158,11,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245,158,11,0.3), transparent);
         }
         .footer-contact-name { color: white; font-weight: 700; font-size: 15px; }
-        .footer-contact-title { color: var(--gold); font-size: 13px; }
+        .footer-contact-title { color: #fbbf24; font-size: 13px; font-weight: 600; }
         .footer-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
         .footer-chip {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 14px;
+            padding: 6px 16px;
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 3px;
+            border-radius: 8px;
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-size: 13px;
-            transition: all 0.2s;
+            transition: all 0.25s;
         }
-        .footer-chip:hover { background: rgba(255,255,255,0.1); color: white; }
+        .footer-chip:hover { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); color: #fbbf24; }
         .footer-disclaimer {
             text-align: center;
             font-size: 11px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            color: rgba(255,255,255,0.3);
+            border-top: none;
+            color: rgba(255,255,255,0.25);
+            position: relative;
+        }
+        .footer-disclaimer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
         }
 
         /* ===== ROW NUMBER ===== */
@@ -616,16 +811,38 @@
         }
         @media (max-width: 640px) {
             .stats { grid-template-columns: 1fr 1fr; }
-            .nav-inner { padding: 0 12px; height: 48px; }
-            .nav-link { font-size: 12px; padding: 6px 10px; }
-            .toolbar { top: 48px; }
-            .hero { padding: 32px 16px 28px; }
-            .hero h1 { font-size: 22px; }
+            .nav-inner { padding: 0 12px; height: 46px; }
+            .nav-brand-sub { display: none; }
+            .nav-brand-mark { width: 28px; height: 28px; border-radius: 6px; }
+            .nav-brand-mark svg { width: 16px; height: 16px; }
+            .nav-brand-name { font-size: 14px; }
+            .nav-link { font-size: 11px; padding: 5px 8px; }
+            .nav-cta { font-size: 11px; padding: 5px 10px; margin-left: 4px; }
+            .nav-cta svg { display: none; }
+            .toolbar { top: 46px; }
+            .hero { padding: 24px 16px 20px; }
+            .hero h1 { font-size: 20px; }
+            .hero p { font-size: 12px; }
+            .hero-brand-chip { font-size: 10px; padding: 2px 8px; }
             .main { padding: 16px; }
             table { font-size: 13px; }
             thead th, tbody td { padding: 8px 10px; }
             .note { max-width: 140px; }
         }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal:nth-child(2) { transition-delay: 0.08s; }
+        .reveal:nth-child(3) { transition-delay: 0.16s; }
+        .reveal:nth-child(4) { transition-delay: 0.24s; }
 
         /* ===== PRINT ===== */
         @media print {
@@ -641,19 +858,19 @@
             right: 24px;
             width: 48px;
             height: 48px;
-            background: var(--navy);
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
             border: none;
-            border-radius: 50%;
+            border-radius: 14px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 100;
         }
-        .print-fab:hover { background: var(--navy-light); transform: scale(1.05); }
+        .print-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
 
         /* ===== SCROLL TO TOP ===== */
         .scroll-top {
@@ -662,44 +879,46 @@
             right: 84px;
             width: 48px;
             height: 48px;
-            background: var(--gold);
-            color: white;
+            background: linear-gradient(135deg, #fbbf24, var(--gold));
+            color: #030712;
             border: none;
-            border-radius: 50%;
+            border-radius: 14px;
             cursor: pointer;
             display: none;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 16px rgba(245,158,11,0.3);
-            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(245,158,11,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 100;
         }
-        .scroll-top:hover { transform: scale(1.05); }
+        .scroll-top:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.45); }
 
         /* ===== CART SYSTEM ===== */
         .add-cart-btn {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            padding: 6px 12px;
-            background: var(--gold);
-            color: var(--navy);
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #fbbf24, var(--gold), #d97706);
+            color: #030712;
             border: none;
-            border-radius: 3px;
-            font-size: 12px;
+            border-radius: 6px;
+            font-size: 11px;
             font-weight: 700;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             touch-action: manipulation;
-            min-height: 36px;
+            min-height: 30px;
             white-space: nowrap;
             font-family: inherit;
+            box-shadow: 0 2px 6px rgba(245,158,11,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
         }
-        .add-cart-btn:hover { background: var(--gold-hover); }
+        .add-cart-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(245,158,11,0.35), inset 0 1px 0 rgba(255,255,255,0.2); }
         .add-cart-btn.added {
-            background: var(--green);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
             animation: addBounce 0.4s ease;
+            box-shadow: 0 2px 8px rgba(34,197,94,0.3);
         }
         @keyframes addBounce {
             0% { transform: scale(1); }
@@ -714,20 +933,20 @@
             right: 24px;
             width: 56px;
             height: 56px;
-            background: var(--gold);
-            color: var(--navy);
+            background: linear-gradient(135deg, #fbbf24, var(--gold), #d97706);
+            color: #030712;
             border: none;
-            border-radius: 50%;
+            border-radius: 16px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(245,158,11,0.4);
-            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(245,158,11,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 999;
             font-size: 22px;
         }
-        .cart-fab:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(245,158,11,0.5); }
+        .cart-fab:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
         .cart-badge {
             position: absolute;
             top: -4px;
@@ -1476,21 +1695,21 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: #06c755;
+            background: linear-gradient(135deg, #06c755, #05a748);
             color: white;
             text-decoration: none;
             padding: 12px 20px;
-            border-radius: 6px;
+            border-radius: 14px;
             font-size: 14px;
             font-weight: 700;
-            box-shadow: 0 4px 20px rgba(6,199,85,0.4);
+            box-shadow: 0 4px 20px rgba(6,199,85,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
             z-index: 100;
-            transition: all 0.25s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-family: inherit;
             touch-action: manipulation;
         }
         .line-float:hover {
-            box-shadow: 0 6px 28px rgba(6,199,85,0.55);
+            box-shadow: 0 6px 28px rgba(6,199,85,0.5), inset 0 1px 0 rgba(255,255,255,0.15);
             transform: translateY(-2px);
         }
         .line-float-icon { font-size: 20px; }
@@ -1504,7 +1723,7 @@
         /* ===== DARK MODE ===== */
         .dark-toggle {
             position: fixed;
-            top: 70px;
+            top: 62px;
             right: 24px;
             width: 44px;
             height: 44px;
@@ -1531,8 +1750,8 @@
             --text-light: #64748b;
             --border: #334155;
         }
-        body.dark .nav { background: #020617; }
-        body.dark .hero { background: #020617; }
+        body.dark .nav { background: linear-gradient(135deg, rgba(2,6,23,0.95), rgba(10,22,40,0.92)); }
+        body.dark .hero { background: linear-gradient(160deg, #010409, #081028, #0a1230, #060e1f, #010409); }
         body.dark .stat-card { background: #1e293b; }
         body.dark .model-name { color: #e2e8f0; }
         body.dark .stat-value { color: #f1f5f9; }
@@ -1585,13 +1804,18 @@
 <nav class="nav">
     <div class="nav-inner">
         <a href="index.html" class="nav-brand">
-            <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" stroke="#f59e0b" stroke-width="2"/><circle cx="14" cy="14" r="4" fill="#f59e0b"/><line x1="14" y1="0" x2="14" y2="6" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="22" x2="14" y2="28" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="14" x2="6" y2="14" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="14" x2="28" y2="14" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
-            <span>SSC Online</span>
+            <div class="nav-brand-mark">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#0f172a"/><line x1="12" y1="1" x2="12" y2="5" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="23" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="1" y1="12" x2="5" y2="12" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="12" x2="23" y2="12" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="nav-brand-text">
+                <span class="nav-brand-name">SSC Online</span>
+            </div>
         </a>
         <div class="nav-links">
-            <a href="index.html" class="nav-link active">&#128200; ราคาสินค้า</a>
-            <a href="promo.html" class="nav-link">&#128293; โปรโมชั่น</a>
-            <a href="contact.html" class="nav-link">&#128222; ติดต่อเรา</a>
+            <a href="index.html" class="nav-link active">ราคาสินค้า</a>
+            <a href="promo-packages.html" class="nav-link">โปรโมชั่น</a>
+            <a href="calculator.html" class="nav-link">คำนวณ ROI</a>
+            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="nav-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>LINE สอบถาม</a>
         </div>
     </div>
 </nav>
@@ -1599,12 +1823,12 @@
 <!-- ===== HERO ===== -->
 <div class="hero">
     <div class="hero-content">
-        <div class="hero-badge">&#9889; OFFICIAL DISTRIBUTOR</div>
-        <h1>SSC Product Price List</h1>
-        <p>Q2/2569 &mdash; SolarEdge &middot; KSTAR &middot; Solar PPM &middot; Leapton &middot; IMT</p>
+        <div class="hero-badge"><div class="hero-badge-dot"></div> OFFICIAL DISTRIBUTOR</div>
+        <h1>SSC <span class="text-gold">Product</span> Price List</h1>
+        <p>SolarEdge &middot; KSTAR &middot; Sunwoda &middot; Solar PPM &middot; Leapton &middot; IMT &mdash; Q2/2569 ไม่รวม VAT</p>
         <div class="hero-btns">
-            <a href="#products" class="hero-btn hero-btn-primary">&#128270; ดูสินค้าทั้งหมด</a>
-            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="hero-btn hero-btn-secondary">&#128172; ติดต่อสอบถาม</a>
+            <a href="#products" class="hero-btn hero-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>ดูสินค้าทั้งหมด</a>
+            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="hero-btn hero-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>LINE สอบถาม</a>
         </div>
     </div>
 </div>
@@ -1613,28 +1837,30 @@
 <div class="ticker">
     <div class="ticker-inner">
         <a href="https://www.bot.or.th/th/statistics/exchange-rate.html" target="_blank" class="ticker-item" style="text-decoration:none;cursor:pointer;">
-            <div class="ticker-icon">&#128181;</div>
+            <div class="ticker-icon" style="background:rgba(245,158,11,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
             <div class="ticker-text">
-                <div class="ticker-label">USD / THB &#8599;</div>
+                <div class="ticker-label">USD / THB</div>
                 <div class="ticker-value" id="tickerFx"><span class="ticker-loading">loading...</span></div>
             </div>
         </a>
         <a href="https://www.erc.or.th/th/automatic/" target="_blank" class="ticker-item" style="text-decoration:none;cursor:pointer;">
-            <div class="ticker-icon">&#9889;</div>
+            <div class="ticker-icon" style="background:rgba(59,130,246,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
             <div class="ticker-text">
-                <div class="ticker-label">ค่าไฟ FT (พ.ค.-ส.ค. 69) &#8599;</div>
+                <div class="ticker-label">ค่าไฟ FT (พ.ค.-ส.ค. 69)</div>
                 <div class="ticker-value">3.95 <span class="unit">฿/หน่วย</span></div>
             </div>
         </a>
         <div class="ticker-item">
-            <div class="ticker-icon">&#127774;</div>
+            <div class="ticker-icon" style="background:rgba(16,185,129,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
             <div class="ticker-text">
                 <div class="ticker-label">Solar ประหยัดกว่า</div>
                 <div class="ticker-value" id="tickerSaving">~60% <span class="unit">vs ค่าไฟ</span></div>
             </div>
         </div>
         <div class="ticker-item">
-            <div class="ticker-dot"></div>
+            <div class="ticker-icon" style="background:rgba(168,85,247,0.1);">
+                <div class="ticker-dot" style="margin:0;"></div>
+            </div>
             <div class="ticker-text">
                 <div class="ticker-label">ผู้เข้าชม</div>
                 <div class="ticker-value"><span id="tickerVisitors"><span class="ticker-loading">loading...</span></span></div>
@@ -1649,28 +1875,28 @@
 <!-- Stats -->
 <div class="stats">
     <div class="stat-card">
-        <div style="font-size:28px;margin-bottom:4px;">&#128230;</div>
+        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
         <div class="stat-label">Products</div>
-        <div class="stat-value">25</div>
+        <div class="stat-value">26</div>
         <div class="stat-sub">รายการสินค้า</div>
     </div>
     <div class="stat-card">
-        <div style="font-size:28px;margin-bottom:4px;">&#127942;</div>
+        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a7 7 0 100-14 7 7 0 000 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div>
         <div class="stat-label">Brands</div>
-        <div class="stat-value">5</div>
+        <div class="stat-value">6</div>
         <div class="stat-sub">แบรนด์ชั้นนำ</div>
     </div>
     <div class="stat-card">
-        <div style="font-size:28px;margin-bottom:4px;">&#128176;</div>
+        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
         <div class="stat-label">Starting</div>
-        <div class="stat-value">4.99 <span style="font-size:13px;font-weight:500;">฿/W</span></div>
+        <div class="stat-value">4.99 <span style="font-size:11px;font-weight:500;">฿/W</span></div>
         <div class="stat-sub">ราคาเริ่มต้น</div>
     </div>
     <div class="stat-card">
-        <div style="font-size:28px;margin-bottom:4px;">&#128197;</div>
+        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
         <div class="stat-label">Updated</div>
         <div class="stat-value">Q2</div>
-        <div class="stat-sub">เมษายน 2569</div>
+        <div class="stat-sub">พฤษภาคม 2569</div>
     </div>
 </div>
 
@@ -1694,7 +1920,7 @@
 <!-- ===== SolarEdge C&I Inverter ===== -->
 <div class="section" data-cat="inverter">
     <div class="section-header">
-        <div class="section-icon inv">&#9889;</div>
+        <div class="section-icon inv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="section-title">SolarEdge &mdash; Grid-Connected Inverter (C&I)</div>
         <div class="section-count">2 items</div>
     </div>
@@ -1706,7 +1932,7 @@
                 <td class="model-name">SE33.3K</td>
                 <td>33.3 kW</td>
                 <td><span class="badge b-inv">C&I Inverter</span></td>
-                <td class="price">&#3647;59,000</td>
+                <td class="price">&#3647;69,000</td>
                 <td class="warranty">12 ปี</td>
                 <td class="note">3-Phase, Synergy Technology</td>
                 <td><a href="https://drive.google.com/file/d/1ncCj1Kd8R4kpEDXCTq0Rc8jlpnCjY2hB/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
@@ -1715,7 +1941,7 @@
                 <td class="row-num">2</td>
                 <td class="model-name">SE100K</td>
                 <td>100 kW</td>
-                <td><span class="badge b-inv">C&I Inverter</span> <span class="badge b-best">&#11088; ขายดี</span></td>
+                <td><span class="badge b-inv">C&I Inverter</span> <span class="badge b-best"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align:-1px;margin-right:2px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>ขายดี</span></td>
                 <td class="price">&#3647;129,000</td>
                 <td class="warranty">12 ปี</td>
                 <td class="note">3-Phase, Synergy Technology</td>
@@ -1728,7 +1954,7 @@
 <!-- ===== SolarEdge C&I Optimizer ===== -->
 <div class="section" data-cat="optimizer">
     <div class="section-header">
-        <div class="section-icon opt">&#9881;</div>
+        <div class="section-icon opt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
         <div class="section-title">SolarEdge &mdash; Power Optimizer (C&I)</div>
         <div class="section-count">3 items</div>
     </div>
@@ -1749,7 +1975,7 @@
                 <td class="row-num">2</td>
                 <td class="model-name">S1400</td>
                 <td>1,400 W</td>
-                <td><span class="badge b-opt">C&I Optimizer</span> <span class="badge b-best">&#11088; ขายดี</span></td>
+                <td><span class="badge b-opt">C&I Optimizer</span> <span class="badge b-best"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align:-1px;margin-right:2px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>ขายดี</span></td>
                 <td class="price">&#3647;2,290</td>
                 <td class="warranty">25 ปี</td>
                 <td class="note">รุ่นยอดนิยม &mdash; เหมาะกับแผง 500-700W</td>
@@ -1772,7 +1998,7 @@
 <!-- ===== SolarEdge Residential ===== -->
 <div class="section" data-cat="inverter">
     <div class="section-header">
-        <div class="section-icon res">&#127968;</div>
+        <div class="section-icon res"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <div class="section-title">SolarEdge &mdash; Residential Inverter & Optimizer</div>
         <div class="section-count">3 items</div>
     </div>
@@ -1816,7 +2042,7 @@
 <!-- ===== Battery ===== -->
 <div class="section" data-cat="battery">
     <div class="section-header">
-        <div class="section-icon bat">&#128267;</div>
+        <div class="section-icon bat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></svg></div>
         <div class="section-title">SolarEdge &mdash; Energy Storage (Battery System)</div>
         <div class="section-count">1 item</div>
     </div>
@@ -1837,10 +2063,34 @@
     </table></div>
 </div>
 
+<!-- ===== Sunwoda ===== -->
+<div class="section" data-cat="battery">
+    <div class="section-header">
+        <div class="section-icon bat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></svg></div>
+        <div class="section-title">Sunwoda &mdash; Energy Storage Battery</div>
+        <div class="section-count">1 item</div>
+    </div>
+    <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
+        <tbody>
+            <tr>
+                <td class="row-num">1</td>
+                <td class="model-name">Atrix Max-16L-P <span class="badge b-new">NEW</span></td>
+                <td>LFP Battery 16 kWh / 51.2V</td>
+                <td><span class="badge b-bat">Battery System</span> <span class="badge b-new">NEW</span></td>
+                <td class="price">&#3647;69,900</td>
+                <td class="warranty">10 ปี</td>
+                <td class="note">100% DoD, 10,000 cycles, IP65, ต่อขนานได้ 32 ตัว (512 kWh), WiFi + Fire Extinguisher ในตัว</td>
+                <td><a href="https://drive.google.com/file/d/1U-oxaOx3U_m4jKa-jDLRLpZUMcS2KK36/view?usp=share_link" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
+            </tr>
+        </tbody>
+    </table></div>
+</div>
+
 <!-- ===== Solar PPM ===== -->
 <div class="section" data-cat="panel">
     <div class="section-header">
-        <div class="section-icon pan">&#9728;</div>
+        <div class="section-icon pan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
         <div class="section-title">Solar PPM &mdash; PV Module (มอก.)</div>
         <div class="section-count">3 items</div>
     </div>
@@ -1851,7 +2101,7 @@
                 <td class="row-num">1</td>
                 <td class="model-name">SPPM-MG12-GG 600W</td>
                 <td>600 W</td>
-                <td><span class="badge b-pan">PV Module</span> <span class="badge b-tis">มอก.</span> <span class="badge b-rec">&#128077; แนะนำ</span></td>
+                <td><span class="badge b-pan">PV Module</span> <span class="badge b-tis">มอก.</span> <span class="badge b-rec"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:2px;"><polyline points="20 6 9 17 4 12"/></svg>แนะนำ</span></td>
                 <td class="price">12-13 &#3647;/W</td>
                 <td class="warranty">12/30 ปี</td>
                 <td class="note">Glass-Glass, มาตรฐาน มอก. &mdash; พร้อมส่ง</td>
@@ -1884,7 +2134,7 @@
 <!-- ===== Leapton ===== -->
 <div class="section" data-cat="panel">
     <div class="section-header">
-        <div class="section-icon pan">&#9728;</div>
+        <div class="section-icon pan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
         <div class="section-title">Leapton Solar &mdash; PV Module</div>
         <div class="section-count">2 items</div>
     </div>
@@ -1918,7 +2168,7 @@
 <!-- ===== Sensor & Accessory ===== -->
 <div class="section" data-cat="accessory">
     <div class="section-header">
-        <div class="section-icon sen">&#128225;</div>
+        <div class="section-icon sen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg></div>
         <div class="section-title">IMT Technology & SolarEdge &mdash; Sensor / Accessory</div>
         <div class="section-count">5 items</div>
     </div>
@@ -1982,7 +2232,7 @@
 <!-- ===== KSTAR Hybrid ===== -->
 <div class="section" data-cat="hybrid">
     <div class="section-header">
-        <div class="section-icon hyb">&#9889;</div>
+        <div class="section-icon hyb"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><polygon points="8 10 5 14 8.5 14 8 17 12 13 9 13 10 10 8 10" fill="none"/></svg></div>
         <div class="section-title">KSTAR &mdash; Hybrid Inverter + Battery System</div>
         <div class="section-count">6 items</div>
     </div>
@@ -1993,7 +2243,7 @@
                 <td class="row-num">1</td>
                 <td class="model-name">BluE-H 5-5</td>
                 <td>Inverter 5 kW + Battery 5 kWh</td>
-                <td><span class="badge b-hyb">Hybrid System</span> <span class="badge b-rec">&#128077; แนะนำ</span></td>
+                <td><span class="badge b-hyb">Hybrid System</span> <span class="badge b-rec"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:2px;"><polyline points="20 6 9 17 4 12"/></svg>แนะนำ</span></td>
                 <td class="price">&#3647;99,000</td>
                 <td class="warranty">5 ปี</td>
                 <td class="note">Residential Hybrid, 1 Phase, แบต 10,000 cycle</td>
@@ -2031,7 +2281,7 @@
             </tr>
             <!-- NEW BluePulse -->
             <tr class="new-divider">
-                <td colspan="8">&#127381; NEW &mdash; BluePulse Series &mdash; C&I Backup Power (ใช้ได้ตอนไฟดับ)</td>
+                <td colspan="8"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>NEW &mdash; BluePulse Series &mdash; C&I Backup Power (ใช้ได้ตอนไฟดับ)</td>
             </tr>
             <tr class="new-row">
                 <td class="row-num">5</td>
@@ -2089,13 +2339,9 @@
             </div>
             <div>
                 <h3>Why SSC?</h3>
-                <ul>
-                    <li>ตัวแทนจำหน่าย SolarEdge อย่างเป็นทางการในไทย</li>
-                    <li>Safety: Rapid Shutdown ตามมาตรฐาน NEC 2017/2020</li>
-                    <li>Monitoring ระดับแผง &mdash; ลด Mismatch Loss สูงสุด</li>
-                    <li>ทีม Technical Support พร้อมบริการ After-Sales</li>
-                    <li>สนับสนุนเอกสาร TOR สำหรับหน่วยงานราชการ</li>
-                </ul>
+                <p style="font-size:13px; color:#e2e8f0; line-height:1.8; margin-top:8px;">เพราะระบบโซลาร์ไม่ใช่แค่ &quot;ซื้อแล้วจบ&quot; แต่คือการมีทีมที่พร้อมดูแล ให้คำปรึกษา และอยู่เคียงข้างคุณในทุกขั้นตอน</p>
+                <p style="font-size:15px; color:#fbbf24; font-weight:700; margin-top:12px;">&#9889; เลือกสินค้าที่ดี&hellip;สำคัญ แต่เลือก &quot;ทีมดูแลที่ไว้ใจได้&quot; สำคัญกว่า</p>
+                <p style="font-size:13px; color:#f1f5f9; font-weight:500; margin-top:8px;">SSC พร้อมดูแลทั้งก่อนและหลังการขายอย่างมืออาชีพ</p>
             </div>
         </div>
 
@@ -2106,14 +2352,14 @@
             </div>
             <div class="footer-contact-links">
                 <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="footer-chip" style="background:#06c755;border-color:#06c755;color:white;font-weight:700;">&#128172; LINE พี่บอย</a>
-                <a href="mailto:Teerawat@siamsolar.co.th" class="footer-chip">&#9993; Teerawat@siamsolar.co.th</a>
-                <a href="tel:+66848255036" class="footer-chip">&#128222; 084-825-5036</a>
-                <a href="contact.html" class="footer-chip">&#128203; Contact Page</a>
+                <a href="mailto:Teerawat@siamsolar.co.th" class="footer-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg> ส่งอีเมล</a>
+                <a href="tel:+66848255036" class="footer-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 084-825-5036</a>
+                <a href="contact.html" class="footer-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> Contact Page</a>
             </div>
         </div>
 
         <div class="footer-disclaimer">
-            &copy; 2026 Siam Solar Cell Co., Ltd. &mdash; Confidential &mdash; เอกสารนี้เป็นความลับทางการค้า กรุณาอย่าเผยแพร่โดยไม่ได้รับอนุญาต
+            &copy; 2026 SSC &mdash; Confidential &mdash; เอกสารนี้เป็นความลับทางการค้า กรุณาอย่าเผยแพร่โดยไม่ได้รับอนุญาต
         </div>
     </div>
 </div>
@@ -2642,6 +2888,27 @@ document.addEventListener('click', function(e) {
         document.getElementById('shareMenu').classList.remove('open');
     }
 });
+</script>
+
+<script>
+// === Scroll Reveal ===
+(function() {
+    var els = document.querySelectorAll('.section, .stat-card');
+    els.forEach(function(el) { el.classList.add('reveal'); });
+    if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function(el) { obs.observe(el); });
+    } else {
+        els.forEach(function(el) { el.classList.add('visible'); });
+    }
+})();
 </script>
 
 </body>

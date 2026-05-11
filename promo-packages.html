@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรโมชั่น Solar Rooftop พร้อมติดตั้ง</title>
+    <style>
+        :root { --bg: #0f1117; --card: #1a1d27; --border: #2a2d3a; --gold: #f5a623; --text: #e8e8ed; --dim: rgba(255,255,255,0.45); --green: #22c55e; --blue: #ef4444; --purple: #a855f7; --orange: #f97316; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+        .header { background: var(--card); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .header-left { display: flex; align-items: center; gap: 12px; }
+        .header-logo { background: linear-gradient(135deg, var(--gold), #e8950a); color: #000; font-weight: 800; font-size: 16px; padding: 6px 14px; border-radius: 4px; letter-spacing: 1px; }
+        .header-title { font-size: 15px; color: var(--dim); }
+        .header-nav { display: flex; gap: 8px; }
+        .header-nav a { color: var(--dim); text-decoration: none; font-size: 13px; padding: 6px 14px; border: 1px solid var(--border); border-radius: 4px; transition: all 0.2s; }
+        .header-nav a:hover { color: var(--gold); border-color: var(--gold); }
+
+        .main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 60px; }
+        .page-title { text-align: center; margin-bottom: 12px; }
+        .page-title h1 { font-size: 26px; color: var(--gold); margin-bottom: 6px; }
+        .page-title p { font-size: 14px; color: var(--dim); }
+
+        /* Filter tabs */
+        .filter-tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+        .filter-tab { padding: 8px 20px; border: 1px solid var(--border); border-radius: 4px; background: transparent; color: var(--dim); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+        .filter-tab.active, .filter-tab:hover { background: rgba(245,166,35,0.15); border-color: var(--gold); color: var(--gold); }
+
+        /* Package cards */
+        .packages { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+
+        .pkg-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; position: relative; }
+        .pkg-card:hover { transform: translateY(-3px); }
+        .pkg-card[data-type="hybrid"] { border-top: 3px solid #3b82f6; }
+        .pkg-card[data-type="hybrid"]:hover { border-color: #3b82f6; box-shadow: 0 8px 24px rgba(59,130,246,0.15); }
+        .pkg-card[data-type="ongrid"] { border-top: 3px solid #ef4444; }
+        .pkg-card[data-type="ongrid"]:hover { border-color: #ef4444; box-shadow: 0 8px 24px rgba(239,68,68,0.15); }
+
+        .pkg-badge { position: absolute; top: 12px; right: 12px; padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 5px; }
+        .pkg-badge.hybrid { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+        .pkg-badge.ongrid { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+
+        .pkg-brand-strip { padding: 10px 20px 0; display: flex; align-items: center; gap: 8px; }
+        .pkg-brand-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+        .pkg-brand-icon.hybrid-icon { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .pkg-brand-icon.ongrid-icon { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .pkg-brand-label { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+        .pkg-brand-label.hybrid-label { color: #60a5fa; }
+        .pkg-brand-label.ongrid-label { color: #f87171; }
+
+        .pkg-header { padding: 8px 20px 0; }
+        .pkg-type { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--dim); margin-bottom: 4px; }
+        .pkg-name { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 2px; }
+        .pkg-phase { font-size: 13px; font-weight: 600; }
+        .pkg-card[data-type="hybrid"] .pkg-phase { color: #60a5fa; }
+        .pkg-card[data-type="ongrid"] .pkg-phase { color: #f87171; }
+
+        .pkg-items { padding: 16px 20px; }
+        .pkg-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .pkg-item:last-child { border-bottom: none; }
+        .pkg-item-label { font-size: 13px; color: var(--dim); }
+        .pkg-item-value { font-size: 14px; font-weight: 600; color: var(--text); text-align: right; }
+
+        .pkg-price { padding: 16px 20px; text-align: center; }
+        .pkg-card[data-type="hybrid"] .pkg-price { background: rgba(59,130,246,0.06); border-top: 1px solid rgba(59,130,246,0.15); }
+        .pkg-card[data-type="ongrid"] .pkg-price { background: rgba(239,68,68,0.06); border-top: 1px solid rgba(239,68,68,0.15); }
+        .pkg-price-label { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .pkg-price-value { font-size: 28px; font-weight: 900; font-family: 'SF Mono', 'Consolas', monospace; }
+        .pkg-card[data-type="hybrid"] .pkg-price-value { color: #60a5fa; }
+        .pkg-card[data-type="ongrid"] .pkg-price-value { color: #f87171; }
+        .pkg-price-unit { font-size: 13px; color: var(--dim); }
+        .pkg-price-vat { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 2px; }
+
+        .pkg-free { padding: 12px 20px; background: rgba(245,166,35,0.05); border-top: 1px solid rgba(245,166,35,0.1); }
+        .pkg-free-title { font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .pkg-free-list { display: flex; flex-wrap: wrap; gap: 6px; }
+        .pkg-free-tag { padding: 3px 10px; background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.15); border-radius: 3px; font-size: 11px; color: rgba(255,255,255,0.7); }
+
+        /* Warranty section */
+        .warranty-section { margin-top: 36px; }
+        .warranty-title { font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 16px; text-align: center; }
+        .warranty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        .warranty-card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 20px; }
+        .warranty-card-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .warranty-card-title .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot-purple { background: #3b82f6; }
+        .dot-blue { background: #ef4444; }
+
+        .warranty-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .warranty-row:last-child { border-bottom: none; }
+        .warranty-label { font-size: 13px; color: var(--dim); }
+        .warranty-value { font-size: 13px; font-weight: 700; color: var(--green); }
+
+        .note-box { margin-top: 24px; padding: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; text-align: center; font-size: 12px; color: var(--dim); }
+        .note-box strong { color: var(--gold); }
+
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: var(--dim); border-top: 1px solid var(--border); margin-top: 20px; }
+
+        @media (max-width: 768px) {
+            .packages { grid-template-columns: 1fr; }
+            .warranty-grid { grid-template-columns: 1fr; }
+            .pkg-price-value { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-left">
+        <div class="header-logo">SSC</div>
+        <div class="header-title">โปรโมชั่นพร้อมติดตั้ง</div>
+    </div>
+    <div class="header-nav">
+        <a href="prices.html">&#128203; ราคาสินค้า</a>
+        <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank">&#128172; LINE</a>
+    </div>
+</div>
+
+<div class="main">
+    <div class="page-title">
+        <h1>&#9889; แพ็กเกจ Solar Rooftop พร้อมติดตั้ง</h1>
+        <p>ราคาพิเศษรวมอุปกรณ์ + ติดตั้ง + โครงสร้าง &#8212; ไม่รวม VAT</p>
+    </div>
+
+    <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterPkg('all')">&#128204; ทั้งหมด</button>
+        <button class="filter-tab" onclick="filterPkg('ongrid')">&#9889; On-Grid (SolarEdge)</button>
+        <button class="filter-tab" onclick="filterPkg('hybrid')">&#128267; Hybrid (KSTAR)</button>
+        <button class="filter-tab" onclick="filterPkg('1p')">1 เฟส</button>
+        <button class="filter-tab" onclick="filterPkg('3p')">3 เฟส</button>
+    </div>
+
+    <div class="packages" id="pkgGrid"></div>
+
+    <!-- Warranty -->
+    <div class="warranty-section">
+        <div class="warranty-title">&#128737;&#65039; เงื่อนไขการรับประกัน</div>
+        <div class="warranty-grid">
+            <div class="warranty-card">
+                <div class="warranty-card-title"><span class="dot dot-purple"></span> KSTAR Hybrid (แพ็กเกจ 1, 4, 5)</div>
+                <div class="warranty-row"><span class="warranty-label">แผงโซลาร์เซลล์ Leapton 620W</span><span class="warranty-value">30 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">อินเวอร์เตอร์ KSTAR</span><span class="warranty-value">5 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">แบตเตอรี่ KSTAR CATL+</span><span class="warranty-value">10 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">โครงสร้างรองรับแผง (อลูมิเนียม สกรู สแตนเลส)</span><span class="warranty-value">12 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">งานติดตั้ง</span><span class="warranty-value">2 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">Service ฟรี (ล้างแผงปีละ 2 ครั้ง)</span><span class="warranty-value">2 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">หลังคารั่วซึม</span><span class="warranty-value">2 ปี</span></div>
+            </div>
+            <div class="warranty-card">
+                <div class="warranty-card-title"><span class="dot dot-blue"></span> SolarEdge On-Grid (แพ็กเกจ 2, 3)</div>
+                <div class="warranty-row"><span class="warranty-label">แผงโซลาร์เซลล์ Leapton 620W</span><span class="warranty-value">30 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">Optimizer S650B</span><span class="warranty-value">25 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">อินเวอร์เตอร์ SolarEdge</span><span class="warranty-value">12 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">โครงสร้างติดตั้ง</span><span class="warranty-value">12 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">งานติดตั้ง & หลังคารั่ว</span><span class="warranty-value">2 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">ล้างแผงฟรี (ปีละ 2 ครั้ง)</span><span class="warranty-value">2 ปี</span></div>
+                <div class="warranty-row"><span class="warranty-label">ระบบ Monitoring</span><span class="warranty-value">ฟรี</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="note-box">
+        <strong>&#9432; หมายเหตุ:</strong> ราคายังไม่รวมภาษีมูลค่าเพิ่ม (VAT 7%) &#8212; ราคาอาจเปลี่ยนแปลงได้โดยไม่ต้องแจ้งล่วงหน้า<br>
+        ฟรีสำรวจหน้างานโดยวิศวกรผู้เชี่ยวชาญ &#8212; ฟรีขออนุญาตการไฟฟ้านครหลวง (เฉพาะแพ็กเกจ SolarEdge)
+    </div>
+</div>
+
+<div class="footer">
+    &#169; 2026 SSC | ข้อมูล ณ Q2/2569
+</div>
+
+<script>
+var packages = [
+    {
+        id: 1, type: 'hybrid', phase: '1p',
+        name: 'KSTAR Hybrid 1P + 5kWh',
+        phaseLabel: '1 Phase &#8212; 5kW + 5kWh',
+        price: 250000,
+        items: [
+            { label: 'แผงโซลาร์เซลล์', value: 'Leapton 620W x 8 แผง' },
+            { label: 'กำลังผลิต', value: '4.96 kWp' },
+            { label: 'อินเวอร์เตอร์', value: 'KSTAR 1Phase 5kW x 1' },
+            { label: 'แบตเตอรี่', value: 'KSTAR CATL+ 5kWh x 1' },
+            { label: 'Optimizer', value: '-' }
+        ],
+        free: ['สำรวจหน้างานฟรี', 'ติดตั้งฟรี', 'แอปฯ ดูการผลิตไฟ']
+    },
+    {
+        id: 2, type: 'ongrid', phase: '1p',
+        name: 'SolarEdge On-Grid 1P',
+        phaseLabel: '1 Phase &#8212; 5kW (On-Grid)',
+        price: 209000,
+        items: [
+            { label: 'แผงโซลาร์เซลล์', value: 'Leapton 620W x 8 แผง' },
+            { label: 'กำลังผลิต', value: '4.96 kWp' },
+            { label: 'อินเวอร์เตอร์', value: 'SolarEdge SE5000H x 1' },
+            { label: 'Optimizer', value: 'S650B x 8 ตัว' },
+            { label: 'แบตเตอรี่', value: '-' },
+            { label: 'พื้นที่ติดตั้งขั้นต่ำ', value: '>30 ตร.ม.' }
+        ],
+        free: ['สำรวจหน้างานฟรี', 'ขออนุญาต กฟน.', 'ล้างแผง 2 ปี', 'Monitoring ฟรี']
+    },
+    {
+        id: 3, type: 'ongrid', phase: '3p',
+        name: 'SolarEdge On-Grid 3P',
+        phaseLabel: '3 Phase &#8212; 10kW (On-Grid)',
+        price: 324000,
+        items: [
+            { label: 'แผงโซลาร์เซลล์', value: 'Leapton 620W x 16 แผง' },
+            { label: 'กำลังผลิต', value: '9.92 kWp' },
+            { label: 'อินเวอร์เตอร์', value: 'SolarEdge SE10K x 1' },
+            { label: 'Optimizer', value: 'S650B x 16 ตัว' },
+            { label: 'แบตเตอรี่', value: '-' },
+            { label: 'พื้นที่ติดตั้งขั้นต่ำ', value: '>60 ตร.ม.' }
+        ],
+        free: ['สำรวจหน้างานฟรี', 'ขออนุญาต กฟน.', 'ล้างแผง 2 ปี', 'Monitoring ฟรี']
+    },
+    {
+        id: 4, type: 'hybrid', phase: '3p',
+        name: 'KSTAR Hybrid 3P + 10kWh',
+        phaseLabel: '3 Phase &#8212; 10kW + 10kWh',
+        price: 343000,
+        items: [
+            { label: 'แผงโซลาร์เซลล์', value: 'Leapton 620W x 15 แผง' },
+            { label: 'กำลังผลิต', value: '9.30 kWp' },
+            { label: 'อินเวอร์เตอร์', value: 'KSTAR 3Phase 10kW x 1' },
+            { label: 'แบตเตอรี่', value: 'KSTAR CATL+ 5kWh x 2 (10kWh)' },
+            { label: 'Optimizer', value: '-' }
+        ],
+        free: ['สำรวจหน้างานฟรี', 'ติดตั้งฟรี', 'แอปฯ ดูการผลิตไฟ']
+    },
+    {
+        id: 5, type: 'hybrid', phase: '1p',
+        name: 'KSTAR Hybrid 1P + 10kWh',
+        phaseLabel: '1 Phase &#8212; 5kW + 10kWh',
+        price: 310000,
+        items: [
+            { label: 'แผงโซลาร์เซลล์', value: 'Leapton 620W x 8 แผง' },
+            { label: 'กำลังผลิต', value: '4.96 kWp' },
+            { label: 'อินเวอร์เตอร์', value: 'KSTAR 1Phase 5kW x 1' },
+            { label: 'แบตเตอรี่', value: 'KSTAR CATL+ 5kWh x 2 (10kWh)' },
+            { label: 'Optimizer', value: '-' }
+        ],
+        free: ['สำรวจหน้างานฟรี', 'ติดตั้งฟรี', 'แอปฯ ดูการผลิตไฟ']
+    }
+];
+
+function renderPackages(filter) {
+    var grid = document.getElementById('pkgGrid');
+    var html = '';
+    packages.forEach(function(pkg) {
+        if (filter !== 'all' && pkg.type !== filter && pkg.phase !== filter) return;
+
+        var badgeClass = pkg.type === 'hybrid' ? 'hybrid' : 'ongrid';
+        var badgeText = pkg.type === 'hybrid' ? 'Hybrid' : 'On-Grid';
+        var brandIcon = pkg.type === 'hybrid' ? 'K' : 'SE';
+        var brandLabel = pkg.type === 'hybrid' ? 'KSTAR' : 'SolarEdge';
+        var iconClass = pkg.type === 'hybrid' ? 'hybrid-icon' : 'ongrid-icon';
+        var labelClass = pkg.type === 'hybrid' ? 'hybrid-label' : 'ongrid-label';
+
+        html += '<div class="pkg-card" data-type="' + pkg.type + '" data-phase="' + pkg.phase + '">';
+        html += '<div class="pkg-badge ' + badgeClass + '">' + badgeText + '</div>';
+        html += '<div class="pkg-brand-strip">';
+        html += '<div class="pkg-brand-icon ' + iconClass + '">' + brandIcon + '</div>';
+        html += '<span class="pkg-brand-label ' + labelClass + '">' + brandLabel + '</span>';
+        html += '</div>';
+        html += '<div class="pkg-header">';
+        html += '<div class="pkg-type">Package #' + pkg.id + '</div>';
+        html += '<div class="pkg-name">' + pkg.name + '</div>';
+        html += '<div class="pkg-phase">' + pkg.phaseLabel + '</div>';
+        html += '</div>';
+        html += '<div class="pkg-items">';
+        pkg.items.forEach(function(item) {
+            if (item.value === '-') return;
+            html += '<div class="pkg-item"><span class="pkg-item-label">' + item.label + '</span><span class="pkg-item-value">' + item.value + '</span></div>';
+        });
+        html += '</div>';
+        html += '<div class="pkg-price">';
+        html += '<div class="pkg-price-label">ราคาพิเศษ พร้อมติดตั้ง</div>';
+        html += '<div class="pkg-price-value">&#3647;' + pkg.price.toLocaleString() + '</div>';
+        html += '<div class="pkg-price-vat">* ราคายังไม่รวม VAT 7%</div>';
+        html += '</div>';
+        html += '<div class="pkg-free">';
+        html += '<div class="pkg-free-title">&#127873; ฟรี</div>';
+        html += '<div class="pkg-free-list">';
+        pkg.free.forEach(function(f) {
+            html += '<span class="pkg-free-tag">' + f + '</span>';
+        });
+        html += '</div></div>';
+        html += '</div>';
+    });
+    grid.innerHTML = html;
+}
+
+function filterPkg(type) {
+    document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+    event.target.classList.add('active');
+    renderPackages(type);
+}
+
+renderPackages('all');
+</script>
+</body>
+</html>
