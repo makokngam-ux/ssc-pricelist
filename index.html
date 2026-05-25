@@ -224,6 +224,151 @@ body {
     .brand-chip { padding: 5px 10px; font-size: 12px; }
 }
 
+/* ===== VIP BANNER ===== */
+.vip-banner {
+    background: linear-gradient(90deg, #78350f 0%, #b45309 50%, #78350f 100%);
+    color: #fef3c7;
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(245,158,11,0.4);
+    overflow: hidden;
+    position: relative;
+}
+.vip-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    animation: vipShimmer 3.5s linear infinite;
+}
+@keyframes vipShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+.vip-banner-inner {
+    max-width: 1200px; margin: 0 auto; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; flex-wrap: wrap;
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.vip-banner svg { width: 14px; height: 14px; color: var(--gold); flex-shrink: 0; }
+.vip-banner strong { color: #fbbf24; font-weight: 800; }
+.vip-banner .dot { color: rgba(254,243,199,0.4); }
+
+/* ===== PERKS BAR ===== */
+.perks-bar {
+    background: linear-gradient(90deg, rgba(16,185,129,0.06) 0%, rgba(245,158,11,0.06) 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+}
+.perks-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    justify-content: center;
+}
+.perks-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 800;
+    color: var(--gold-hover);
+    text-transform: uppercase; letter-spacing: 0.8px;
+}
+.perks-label svg { width: 14px; height: 14px; }
+.perk-item {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; color: var(--text);
+    font-weight: 500;
+}
+.perk-item svg { width: 13px; height: 13px; color: var(--green); flex-shrink: 0; }
+.perk-item strong { color: var(--navy); font-weight: 700; }
+
+/* ===== ACCOUNT MANAGER CARD ===== */
+.am-card {
+    position: fixed; bottom: 20px; left: 20px;
+    z-index: 199;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(15,23,42,0.18);
+    padding: 12px 14px;
+    display: flex; align-items: center; gap: 12px;
+    max-width: 340px;
+    border-left: 4px solid var(--gold);
+}
+.am-photo {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #f97316);
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(245,158,11,0.3);
+    display: flex; align-items: center; justify-content: center;
+}
+.am-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+.am-info { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
+.am-label {
+    font-size: 9.5px; font-weight: 700; color: var(--gold-hover);
+    text-transform: uppercase; letter-spacing: 0.8px;
+    display: flex; align-items: center; gap: 4px;
+}
+.am-label svg { width: 11px; height: 11px; }
+.am-name {
+    font-size: 14px; font-weight: 800; color: var(--navy);
+    margin: 1px 0;
+}
+.am-role {
+    font-size: 11px; color: var(--text-mid);
+    margin-bottom: 4px;
+}
+.am-actions { display: flex; gap: 4px; }
+.am-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all .15s;
+}
+.am-btn svg { width: 14px; height: 14px; }
+.am-btn-phone { background: var(--navy); color: #fff; }
+.am-btn-phone:hover { background: var(--gold); color: var(--navy); }
+.am-btn-line { background: var(--line); color: #fff; }
+.am-btn-line:hover { background: #05b04c; }
+.am-close {
+    position: absolute; top: -6px; right: -6px;
+    width: 22px; height: 22px;
+    border: 1px solid var(--border); background: #fff;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-light);
+    box-shadow: 0 2px 6px rgba(15,23,42,0.1);
+}
+.am-close:hover { color: var(--text); }
+.am-close svg { width: 12px; height: 12px; }
+@media (max-width: 720px) {
+    .am-card { bottom: 16px; left: 16px; right: 90px; max-width: none; padding: 10px 12px; }
+    .am-photo { width: 44px; height: 44px; }
+    .am-name { font-size: 13px; }
+    .am-role { font-size: 10px; }
+}
+
+/* ===== CONFIDENTIALITY NOTICE ===== */
+.confidential {
+    background: #fef3c7;
+    border-top: 1px solid #fde68a;
+    border-bottom: 1px solid #fde68a;
+    padding: 8px 20px;
+}
+.confidential-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px;
+    font-size: 11.5px; color: #78350f;
+    font-weight: 600;
+    text-align: center;
+}
+.confidential svg { width: 14px; height: 14px; color: #b45309; flex-shrink: 0; }
+.confidential strong { color: #422006; font-weight: 800; }
+
 /* ===== STATS STRIP ===== */
 .stats-strip {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
@@ -538,6 +683,23 @@ body {
     0%, 100% { transform: scale(1); box-shadow: 0 2px 6px rgba(239,68,68,0.4); }
     50% { transform: scale(1.05); box-shadow: 0 3px 10px rgba(239,68,68,0.55); }
 }
+
+/* ===== FEATURE HIGHLIGHT ===== */
+.feature-highlight {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: linear-gradient(90deg, rgba(59,130,246,0.12), rgba(59,130,246,0.04));
+    color: #1d4ed8;
+    border: 1px solid rgba(59,130,246,0.25);
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 11px; font-weight: 700;
+    line-height: 1.3;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+.feature-highlight svg { width: 12px; height: 12px; flex-shrink: 0; }
+.feature-highlight strong { font-weight: 800; }
+.card-feature { display: inline-flex; }
 .card-tag {
     position: absolute; top: 10px; left: 10px;
     z-index: 2;
@@ -798,6 +960,18 @@ body {
 </head>
 <body>
 
+<!-- VIP BANNER -->
+<div class="vip-banner">
+    <div class="vip-banner-inner">
+        <i data-lucide="crown"></i>
+        <span>ราคาพิเศษสำหรับ <strong>Key Account</strong></span>
+        <span class="dot">·</span>
+        <span>ส่วนลดเพิ่ม <strong>8-15%</strong> จากราคา Retail</span>
+        <span class="dot">·</span>
+        <span><strong>VIP First Access</strong> — เห็นสินค้าใหม่ก่อนใคร</span>
+    </div>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
     <div class="nav-inner">
@@ -818,13 +992,13 @@ body {
 <!-- HERO -->
 <section class="hero">
     <div class="hero-inner">
-        <span class="hero-tag"><i data-lucide="zap"></i> สำหรับเซลล์ &amp; ลูกค้า</span>
-        <h1>รายการราคาที่ <span class="accent">แชร์ได้ใน 3 ขั้นตอน</span></h1>
-        <p>ราคาล่าสุด Q2/2569 (เมษายน-มิถุนายน 2026) — เลือกสินค้า สร้างใบเสนอราคา ส่ง LINE ให้ลูกค้าได้ทันที</p>
+        <span class="hero-tag"><i data-lucide="crown"></i> Exclusive Pricelist</span>
+        <h1>ราคา VIP <span class="accent">เฉพาะลูกค้าคนสำคัญ</span></h1>
+        <p>อัปเดต Q2/2569 (เมษายน-มิถุนายน 2026) — สิทธิ์เห็นราคา + สินค้าใหม่ก่อนใคร พร้อมส่วนลดและบริการพิเศษ</p>
         <div class="hero-steps">
-            <div class="hero-step"><span class="hero-step-num">1</span> เลือกสินค้าที่ลูกค้าสนใจ</div>
+            <div class="hero-step"><span class="hero-step-num">1</span> เลือกสินค้าที่สนใจ</div>
             <div class="hero-step"><span class="hero-step-num">2</span> ปรับจำนวน</div>
-            <div class="hero-step"><span class="hero-step-num">3</span> Copy &amp; ส่ง LINE</div>
+            <div class="hero-step"><span class="hero-step-num">3</span> ขอใบเสนอราคา</div>
         </div>
     </div>
 </section>
@@ -853,6 +1027,26 @@ body {
             <button class="brand-chip" data-brand="Solar PPM"><span class="brand-dot" style="background:#f7941d"></span>Solar PPM<span class="brand-close">×</span></button>
             <button class="brand-chip" data-brand="IMT"><span class="brand-dot" style="background:#5a5a5a"></span>IMT<span class="brand-close">×</span></button>
         </div>
+    </div>
+</div>
+
+<!-- PERKS BAR -->
+<div class="perks-bar">
+    <div class="perks-inner">
+        <span class="perks-label"><i data-lucide="gift"></i> สิทธิพิเศษ Key Account</span>
+        <span class="perk-item"><i data-lucide="graduation-cap"></i> <strong>Training</strong> &amp; Workshop</span>
+        <span class="perk-item"><i data-lucide="message-square-text"></i> <strong>ปรึกษาฟรี</strong> ทุกเรื่อง</span>
+        <span class="perk-item"><i data-lucide="compass"></i> <strong>ช่วยออกแบบระบบ</strong> ที่เหมาะสม</span>
+        <span class="perk-item"><i data-lucide="badge-percent"></i> <strong>ราคาพิเศษ</strong> Distributor</span>
+        <span class="perk-item"><i data-lucide="package-check"></i> <strong>Stock พร้อมส่ง</strong></span>
+    </div>
+</div>
+
+<!-- CONFIDENTIALITY -->
+<div class="confidential">
+    <div class="confidential-inner">
+        <i data-lucide="lock"></i>
+        <span>ราคาในหน้านี้สำหรับ <strong>ลูกค้า VIP</strong> เท่านั้น · กรุณา <strong>ไม่เผยแพร่</strong> ให้บุคคลภายนอก</span>
     </div>
 </div>
 
@@ -918,6 +1112,24 @@ body {
     </div>
 </main>
 
+<!-- ACCOUNT MANAGER CARD -->
+<aside class="am-card" id="am-card">
+    <button class="am-close" id="am-close" title="ซ่อน"><i data-lucide="x"></i></button>
+    <div class="am-photo">
+        <img src="account-manager.png" alt="Account Manager" onerror="this.parentElement.innerHTML='<i data-lucide=user style=color:white;width:24px;height:24px></i>';lucide.createIcons();">
+    </div>
+    <div class="am-info">
+        <span class="am-label"><i data-lucide="badge-check"></i> Your Account Manager</span>
+        <span class="am-name">คุณธีรวัฒน์</span>
+        <span class="am-role">Senior Sales · ตอบใน 1 ชม.</span>
+        <div class="am-actions">
+            <a href="tel:0848255036" class="am-btn am-btn-phone" title="โทร"><i data-lucide="phone"></i></a>
+            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="am-btn am-btn-line" title="LINE"><i data-lucide="message-circle"></i></a>
+            <a href="mailto:teerawat@siamsolar.co.th" class="am-btn am-btn-phone" title="Email"><i data-lucide="mail"></i></a>
+        </div>
+    </div>
+</aside>
+
 <!-- CART FAB -->
 <button class="cart-fab" id="cart-fab" title="ใบเสนอราคา">
     <i data-lucide="file-text"></i>
@@ -962,113 +1174,146 @@ body {
 const PRODUCTS = [
     // Inverter C&I
     { id:'se33', cat:'inverter', name:'SolarEdge SE33.3K', brand:'SolarEdge', model:'SE33.3K', subcat:'Inverter C&I', price:69000, stock:'in', tag:'hot',
+      feature:'DC Optimizer-based · ลด shading loss · monitoring รายแผง', featureIcon:'gauge',
       img:'se33-3k.jpg',
       specs:[{l:'AC',v:'33.3 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'2'},{l:'รับประกัน',v:'12 ปี'}] },
     { id:'se100', cat:'inverter', name:'SolarEdge SE100K Synergy', brand:'SolarEdge', model:'SE100K', subcat:'Inverter C&I', price:129000, stock:'in', tag:'hot',
+      feature:'Synergy 3-module · กระจายภาระความร้อน · เปลี่ยน module ง่าย', featureIcon:'layers',
       img:'https://cdn11.bigcommerce.com/s-3nrr5bfo5i/images/stencil/500x659/products/2342/8396/solaredge-synergy_inverter__26787.1604101548.png?c=2',
       specs:[{l:'AC',v:'100 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'6'},{l:'รับประกัน',v:'12 ปี'}] },
     // Inverter Residential
     { id:'se5000h', cat:'inverter', name:'SolarEdge SE5000H-MM', brand:'SolarEdge', model:'SE5000H-MM', subcat:'Inverter บ้าน', price:39900, stock:'in', tag:'hot',
+      feature:'HD-Wave · Energy Meter SE-MTR-3Y-400V-A ในตัว', featureIcon:'zap',
       img:'https://d3f7dpm96o8eu9.cloudfront.net/media/catalog/product/cache/9e6e15f15c64005f80b557b19e6068ef/s/i/single-phase-inverter-with-hd-wave_4.jpg',
       specs:[{l:'AC',v:'5 kW'},{l:'Phase',v:'1P'},{l:'Max',v:'6,800W'},{l:'รับประกัน',v:'12 ปี'}] },
     { id:'se10k', cat:'inverter', name:'SolarEdge SE10K-RWB48', brand:'SolarEdge', model:'SE10K-RWB48', subcat:'Inverter บ้าน', price:69900, stock:'in',
+      feature:'3 Phase สำหรับบ้านใหญ่ · พร้อมต่อ Battery', featureIcon:'house',
       img:'solaredge-se10k-rwb48.jpg',
       specs:[{l:'AC',v:'10 kW'},{l:'Phase',v:'3P'},{l:'Max',v:'15,000W'},{l:'รับประกัน',v:'12 ปี'}] },
     // Deye Hybrid
     { id:'sun6k', cat:'inverter', name:'Deye SUN-6K Hybrid', brand:'Deye', model:'SUN-6K-SG06LP1', subcat:'Hybrid Inverter', price:26500, stock:'in', tag:'new',
+      feature:'Hybrid 1P 6kW · ใช้กับ Battery ได้ทันที', featureIcon:'battery-charging',
       img:'deye.png',
       specs:[{l:'AC',v:'6 kW'},{l:'Phase',v:'1P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
     { id:'sun10k1', cat:'inverter', name:'Deye SUN-10K Hybrid 1P', brand:'Deye', model:'SUN-10K-SG06LP1', subcat:'Hybrid Inverter', price:47500, stock:'in', tag:'new',
+      feature:'Hybrid 1P 10kW · สำหรับบ้านใหญ่', featureIcon:'battery-charging',
       img:'deye.png',
       specs:[{l:'AC',v:'10 kW'},{l:'Phase',v:'1P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
     { id:'sun10k3', cat:'inverter', name:'Deye SUN-10K Hybrid 3P', brand:'Deye', model:'SUN-10K-SG05LP3', subcat:'Hybrid Inverter', price:55500, stock:'in', tag:'new',
+      feature:'Hybrid 3P 10kW · สำหรับบ้าน/ออฟฟิศ 3 เฟส', featureIcon:'battery-charging',
       img:'deye.png',
       specs:[{l:'AC',v:'10 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
     { id:'sun15k', cat:'inverter', name:'Deye SUN-15K Hybrid 3P', brand:'Deye', model:'SUN-15K-SG05LP3', subcat:'Hybrid Inverter', price:62500, stock:'in', tag:'new',
+      feature:'Hybrid 3P 15kW · กำลังสูงสุดในซีรีส์', featureIcon:'battery-charging',
       img:'deye.png',
       specs:[{l:'AC',v:'15 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
 
     // Optimizers
     { id:'s1200', cat:'optimizer', name:'SolarEdge S1200', brand:'SolarEdge', model:'S1200', subcat:'Power Optimizer', price:2190, stock:'in', tag:'hot',
+      feature:'DC-DC Optimizer · เพิ่ม yield · monitoring รายแผง', featureIcon:'sliders-horizontal',
       img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
       specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'630W'}] },
     { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'in',
+      feature:'DC-DC Optimizer · สำหรับแผง 600-730W', featureIcon:'sliders-horizontal',
       img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
       specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'730W'}] },
     { id:'s1500', cat:'optimizer', name:'SolarEdge S1500', brand:'SolarEdge', model:'S1500', subcat:'Power Optimizer', price:2390, stock:'in',
+      feature:'DC-DC Optimizer · รองรับแผงกำลังสูง >750W', featureIcon:'sliders-horizontal',
       img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
       specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'>750W'}] },
     { id:'s650b', cat:'optimizer', name:'SolarEdge S650B (บ้าน)', brand:'SolarEdge', model:'S650B', subcat:'Power Optimizer', price:2190, stock:'in',
+      feature:'DC-DC Optimizer สำหรับ Residential 1:1', featureIcon:'sliders-horizontal',
       img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
       specs:[{l:'Mode',v:'1:1'},{l:'Max',v:'650W'}] },
 
     // Panels
     { id:'lp620', cat:'panel', name:'Leapton 620W (บ้าน)', brand:'Leapton', model:'LP182-210-M-66-NB', subcat:'แผงโซล่าร์', price:3094, ppw:4.99, watt:620, stock:'in',
+      feature:'TopCon N-Type · 22.95% efficiency · 30 ปี Power Warranty', featureIcon:'sun',
       img:'leapton.jpeg',
       specs:[{l:'Watt',v:'620W'},{l:'฿/W',v:'4.99'}] },
     { id:'lp715', cat:'panel', name:'Leapton 715W (C&I)', brand:'Leapton', model:'LP210-210-M-66-NB', subcat:'แผงโซล่าร์', price:3568, ppw:4.99, watt:715, stock:'in', tag:'hot',
+      feature:'TopCon N-Type · กำลังสูงสำหรับ C&I · 22.95% efficiency', featureIcon:'sun',
       img:'leapton.jpeg',
       specs:[{l:'Watt',v:'715W'},{l:'฿/W',v:'4.99'}] },
     { id:'ppm600', cat:'panel', name:'Solar PPM 600W (มอก.)', brand:'Solar PPM', model:'SPPM-MG12-GG', subcat:'แผงโซล่าร์ มอก.', price:7500, ppw:12.5, watt:600, stock:'in',
+      feature:'มอก. รับรอง · ผลิตในประเทศไทย', featureIcon:'badge-check',
       img:'ppm-tis.png',
       specs:[{l:'Watt',v:'600W'},{l:'฿/W',v:'12.50'},{l:'มอก.',v:'✓'}] },
     { id:'ppm735', cat:'panel', name:'Solar PPM 735W (มอก.)', brand:'Solar PPM', model:'SPPM-NG12-HV-72', subcat:'แผงโซล่าร์ มอก.', price:9188, ppw:12.5, watt:735, stock:'preorder',
+      feature:'มอก. รับรอง · กำลังสูงสุดของ Solar PPM', featureIcon:'badge-check',
       img:'ppm-tis.png',
       specs:[{l:'Watt',v:'735W'},{l:'฿/W',v:'12.50'},{l:'ส่ง',v:'ก.ย.69'}] },
     { id:'longi545', cat:'panel', name:'LONGi Hi-MO X10 Light Design', brand:'LONGi', model:'LR7-60HVHL-545M', subcat:'แผงโซล่าร์ Premium', price:2861, ppw:5.25, watt:545, stock:'in',
+      feature:'HPBC 2.0 BC-Cell · Light Design 1.6mm · น้ำหนักเบาที่สุด', featureIcon:'feather',
       img:'longi.png',
       specs:[{l:'Watt',v:'545W'},{l:'฿/W',v:'5.25'},{l:'รับประกัน',v:'15/30 ปี'}] },
     { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3413, ppw:5.25, watt:650, stock:'in',
+      feature:'HPBC 2.0 BC-Cell · Single Glass · เทคโนโลยีรุ่นใหม่', featureIcon:'sun',
       img:'longi.png',
       specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.25'},{l:'รับประกัน',v:'15/30 ปี'}] },
     { id:'longi740', cat:'panel', name:'LONGi Hi-MO 9 740W', brand:'LONGi', model:'LR9-66HYD-740M', subcat:'แผงโซล่าร์ Premium', price:3885, ppw:5.25, watt:740, stock:'in', tag:'new',
+      feature:'Bifacial · เก็บไฟ 2 ด้าน · กำลังสูงสุด 740W', featureIcon:'layers',
       img:'longi.png',
       specs:[{l:'Watt',v:'740W'},{l:'Bifacial',v:'✓'},{l:'รับประกัน',v:'12/30 ปี'}] },
 
     // Battery Residential
     { id:'blueh51', cat:'battery', name:'KSTAR BluE-H 5-1', brand:'KSTAR', model:'BluE-H 5-1', subcat:'Battery บ้าน', price:99000, stock:'in',
+      feature:'Hybrid 5kW + แบต 5kWh · สำหรับบ้านขนาดเล็ก', featureIcon:'house',
       img:'kstar-blue-h-5-1.jpg',
       specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'5 kWh'}] },
     { id:'blueh52', cat:'battery', name:'KSTAR BluE-H 5-2', brand:'KSTAR', model:'BluE-H 5-2', subcat:'Battery บ้าน', price:149000, stock:'in',
+      feature:'Hybrid 5kW + แบต 10kWh · สำหรับบ้านขนาดกลาง', featureIcon:'house',
       img:'kstar-blue-h-5-2.jpg',
       specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'10 kWh'}] },
     { id:'blues101', cat:'battery', name:'KSTAR BluE-S 10 KT-1', brand:'KSTAR', model:'BluE-S 10 KT-1', subcat:'Battery บ้าน', price:169000, stock:'in',
+      feature:'Hybrid 10kW + แบต 10kWh · 3 Phase', featureIcon:'house',
       img:'kstar-blue-s-10-kt-1.jpg',
       specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'10 kWh'}] },
     { id:'blues102', cat:'battery', name:'KSTAR BluE-S 10 KT-2', brand:'KSTAR', model:'BluE-S 10 KT-2', subcat:'Battery บ้าน', price:269000, stock:'in', tag:'hot',
+      feature:'Hybrid 10kW + แบต 20kWh · 3 Phase สำหรับบ้านใหญ่', featureIcon:'house',
       img:'kstar-blue-s-10-kt-2.png',
       specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'20 kWh'}] },
     // Battery C&I
     { id:'sunwoda16', cat:'battery', name:'Sunwoda Atrix Max-16L-P ⭐', brand:'Sunwoda', model:'Atrix Max-16L-P', subcat:'Battery C&I', price:69900, stock:'in', tag:'new',
+      feature:'LFP · Fire Extinguisher ในตัว · IP65 · 10,000 cycles', featureIcon:'shield-check',
       img:'https://www.sunwodaess.com/static/upload/image/20260123/1769147016453506.png',
       specs:[{l:'Capacity',v:'16 kWh'},{l:'DoD',v:'100%'},{l:'Cycles',v:'10,000'},{l:'รับประกัน',v:'10 ปี'}] },
     { id:'cssou', cat:'battery', name:'SolarEdge CSS-OU-197 + PCS 50K', brand:'SolarEdge', model:'CSS-OU-197', subcat:'Battery C&I', price:1390000, stock:'preorder', stockNote:'45-60 วัน',
+      feature:'Outdoor cabinet · ติดตั้งกลางแจ้ง · 197 kWh', featureIcon:'cloud',
       img:'solaredge-css-ou.png',
       specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'197 kWh'}] },
     { id:'bp50_107', cat:'battery', name:'KSTAR BluePulse 50kW/107kWh', brand:'KSTAR', model:'KAC50DP2 + BC107DE2', subcat:'Battery C&I', price:999900, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
+      feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
       img:'kstar-bluepulse-50kw-107kwh.jpg',
       specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'107.5 kWh'},{l:'Cell',v:'CATL'}] },
     { id:'bp50_241', cat:'battery', name:'KSTAR BluePulse 50kW/241kWh', brand:'KSTAR', model:'KAC50DP2 + BC240DE2A', subcat:'Battery C&I', price:1390000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
+      feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
       img:'kstar-bluepulse-50kw-241kwh.png',
       specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'241.2 kWh'},{l:'Cell',v:'EVE'}] },
     { id:'bp125_261', cat:'battery', name:'KSTAR BluePulse 125kW/261kWh', brand:'KSTAR', model:'KAC125DP2 + BC260DE2A', subcat:'Battery C&I', price:1590000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
+      feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
       img:'kstar-bluepulse-125kw-261kwh.png',
       specs:[{l:'Power',v:'125 kW'},{l:'Capacity',v:'261.2 kWh'},{l:'Cell',v:'EVE'}] },
 
     // Sensors & Accessories
     { id:'irr', cat:'accessory', name:'IMT Irradiance Sensor', brand:'IMT', model:'Si-RS485TC-2T-v-MB', subcat:'Sensor', price:17000, stock:'in',
+      feature:'วัดความเข้มแสงอาทิตย์ · คำนวณ PR ของระบบ', featureIcon:'sun',
       img:'imt-irradiance.jpg',
       specs:[{l:'Type',v:'Irradiance'},{l:'I/O',v:'RS485'}] },
     { id:'amb', cat:'accessory', name:'IMT Ambient Temp Sensor', brand:'IMT', model:'Ta-ext-RS485-MB', subcat:'Sensor', price:15000, stock:'in',
+      feature:'วัดอุณหภูมิอากาศรอบข้าง · วิเคราะห์ประสิทธิภาพระบบ', featureIcon:'thermometer',
       img:'imt-ambient.jpg',
       specs:[{l:'Type',v:'Ambient'}] },
     { id:'mod', cat:'accessory', name:'IMT Module Temp Sensor', brand:'IMT', model:'Tmodul-SI', subcat:'Sensor', price:15500, stock:'in',
+      feature:'วัดอุณหภูมิด้านหลังแผง · ติดเซ็นเซอร์ PT1000', featureIcon:'thermometer-sun',
       img:'imt-module.jpg',
       specs:[{l:'Type',v:'Module Temp'}] },
     { id:'wind', cat:'accessory', name:'IMT Wind Sensor', brand:'IMT', model:'Vwind-Si', subcat:'Sensor', price:35000, stock:'in',
+      feature:'วัดความเร็วลม · มาตรฐาน MEA / SCADA', featureIcon:'wind',
       img:'imt-wind.jpg',
       specs:[{l:'Type',v:'Wind'}] },
     { id:'clc1', cat:'accessory', name:'SolarEdge CLC1 ONE Controller', brand:'SolarEdge', model:'CLC1', subcat:'Accessory', price:42000, stock:'in',
+      feature:'Smart Controller · จัดการ Solar + Battery + Grid ในตัวเดียว', featureIcon:'cpu',
       img:'solaredge-clc1.jpg',
       specs:[{l:'Type',v:'Controller'}] },
 ];
@@ -1201,6 +1446,12 @@ function tagBadgeHTML(p){
     return '';
 }
 
+function featureHTML(p){
+    if (!p.feature) return '';
+    const icon = p.featureIcon || 'sparkles';
+    return `<span class="feature-highlight"><i data-lucide="${icon}"></i> ${p.feature}</span>`;
+}
+
 function renderCard(p) {
     const inCart = cart[p.id] && cart[p.id].qty > 0;
     const stockBadge = p.stock === 'in'
@@ -1222,6 +1473,7 @@ function renderCard(p) {
             <div class="card-body">
                 <div class="card-brand">${p.subcat}</div>
                 <div class="card-model">${p.name}</div>
+                ${featureHTML(p)}
                 <div class="card-specs">
                     ${p.specs.map(s => `<div class="spec">${s.l} <strong>${s.v}</strong></div>`).join('')}
                 </div>
@@ -1265,6 +1517,7 @@ function renderRow(p) {
                     <span class="row-model">${p.name}</span>
                     ${tag}
                     ${stockBadge}
+                    ${featureHTML(p)}
                 </div>
                 <div class="row-specs">${specs}</div>
             </div>
@@ -1500,6 +1753,18 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         renderGrid();
     });
 });
+
+// AM card hide/restore
+(function(){
+    const card = document.getElementById('am-card');
+    const closeBtn = document.getElementById('am-close');
+    if (!card || !closeBtn) return;
+    if (localStorage.getItem('ssc-am-hidden') === '1') card.style.display = 'none';
+    closeBtn.addEventListener('click', () => {
+        card.style.display = 'none';
+        localStorage.setItem('ssc-am-hidden', '1');
+    });
+})();
 
 // ===== INIT =====
 renderFilters();
