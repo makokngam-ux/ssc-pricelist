@@ -1,2969 +1,1514 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSC Price List Q2/2569</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #0f172a;
-            --navy-mid: #1e293b;
-            --navy-light: #334155;
-            --gold: #f59e0b;
-            --gold-hover: #d97706;
-            --gold-bg: rgba(245,158,11,0.08);
-            --blue: #3b82f6;
-            --bg: #f8fafc;
-            --white: #ffffff;
-            --text: #1e293b;
-            --text-mid: #475569;
-            --text-light: #94a3b8;
-            --border: #e2e8f0;
-            --green: #10b981;
-            --red: #ef4444;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC Price List — แชร์ราคาให้ลูกค้า | Q2/2569</title>
+<meta name="description" content="รายการราคาอุปกรณ์โซล่าร์เซลล์ SolarEdge, Sunwoda, KSTAR, LONGi, Leapton — Q2/2569 จาก Siam Solar Cell. เลือก → คัดลอก → แชร์ผ่าน LINE ได้ทันที">
+<meta property="og:title" content="SSC Price List Q2/2569 — รายการราคาอุปกรณ์โซล่าร์เซลล์">
+<meta property="og:description" content="SolarEdge Inverter, Sunwoda/KSTAR Battery, LONGi/Leapton Panels — ราคาล่าสุดพร้อมแชร์ลูกค้า">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+:root {
+    --navy: #0f172a;
+    --navy-mid: #1e293b;
+    --navy-light: #334155;
+    --gold: #f59e0b;
+    --gold-hover: #d97706;
+    --gold-bg: rgba(245,158,11,0.08);
+    --blue: #3b82f6;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --text: #1e293b;
+    --text-mid: #475569;
+    --text-light: #94a3b8;
+    --border: #e2e8f0;
+    --green: #10b981;
+    --red: #ef4444;
+    --line: #06c755;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+body {
+    font-family: 'IBM Plex Sans Thai', 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 100px;
+}
 
-        html, body {
-            height: auto;
-            overflow-x: hidden;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        body {
-            font-family: 'IBM Plex Sans Thai', 'Inter', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+/* ===== NAV ===== */
+.nav {
+    position: sticky; top: 0; z-index: 100;
+    background: linear-gradient(135deg, rgba(2,6,23,0.95), rgba(15,23,42,0.92));
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(245,158,11,0.15);
+}
+.nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 20px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-brand-mark {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--gold), #f97316);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 12px rgba(245,158,11,0.35);
+    color: #0f172a; font-weight: 800; font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+.nav-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.nav-brand-name {
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: 16px; color: #fff; letter-spacing: 0.3px;
+}
+.nav-brand-sub {
+    font-size: 10px; font-weight: 500;
+    color: rgba(255,255,255,0.5); letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.nav-actions { display: flex; gap: 8px; }
+.nav-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff; background: rgba(255,255,255,0.04);
+    transition: all .2s;
+}
+.nav-btn:hover { background: rgba(245,158,11,0.15); border-color: var(--gold); color: var(--gold); }
+.nav-btn svg { width: 14px; height: 14px; }
+.nav-btn-line { background: var(--line); border-color: var(--line); }
+.nav-btn-line:hover { background: #05b04c; border-color: #05b04c; color: #fff; }
 
-        /* ===== NAVIGATION ===== */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: linear-gradient(135deg, rgba(2,6,23,0.92), rgba(15,23,42,0.88));
-            border-bottom: 1px solid rgba(245,158,11,0.1);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-        }
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 52px;
-        }
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: white;
-        }
-        .nav-brand-mark {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--gold), #f97316);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 12px rgba(245,158,11,0.3);
-        }
-        .nav-brand-mark svg { width: 20px; height: 20px; }
-        .nav-brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.15;
-        }
-        .nav-brand-name {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 17px;
-            letter-spacing: 0.5px;
-            background: linear-gradient(135deg, #fff 30%, var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .nav-brand-sub {
-            font-size: 10px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.4);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        .nav-links { display: flex; gap: 2px; align-items: center; }
-        .nav-link {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 13.5px;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .nav-link:hover { color: white; background: rgba(255,255,255,0.08); }
-        .nav-link.active {
-            color: white;
-            background: rgba(255,255,255,0.1);
-            font-weight: 600;
-        }
-        .nav-link.active::before {
-            content: '';
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--gold);
-            flex-shrink: 0;
-        }
-        .nav-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 18px;
-            background: linear-gradient(135deg, var(--gold), #f97316);
-            color: #0f172a;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.25s;
-            box-shadow: 0 2px 12px rgba(245,158,11,0.25);
-            margin-left: 8px;
-        }
-        .nav-cta:hover { box-shadow: 0 4px 20px rgba(245,158,11,0.45); transform: translateY(-1px); }
-        .nav-cta svg { width: 15px; height: 15px; }
+/* ===== HERO ===== */
+.hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: #fff;
+    padding: 24px 20px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(245,158,11,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(59,130,246,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+.hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
+.hero-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(245,158,11,0.15); color: var(--gold);
+    padding: 4px 11px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.4px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(245,158,11,0.3);
+}
+.hero-tag svg { width: 12px; height: 12px; }
+.hero h1 {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 800; line-height: 1.25;
+    margin-bottom: 6px;
+}
+.hero h1 .accent {
+    background: linear-gradient(135deg, var(--gold), #fbbf24);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero p {
+    font-size: 13px; color: rgba(255,255,255,0.65);
+    max-width: 560px; margin: 0 auto 14px;
+}
+.hero-steps {
+    display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;
+    margin-top: 4px;
+}
+.hero-step {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 5px 11px; border-radius: 999px;
+    font-size: 11.5px; color: rgba(255,255,255,0.85);
+}
+.hero-step svg { width: 14px; height: 14px; color: var(--gold); }
+.hero-step-num {
+    width: 17px; height: 17px; border-radius: 50%;
+    background: var(--gold); color: var(--navy);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 10px;
+}
 
-        /* ===== HERO ===== */
-        .hero {
-            background: linear-gradient(160deg, #020617 0%, #0c1a3a 35%, #0f1d44 50%, #0a1628 75%, #030712 100%);
-            padding: 18px 24px 16px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 800px 500px at 15% 30%, rgba(245,158,11,0.12) 0%, transparent 70%),
-                radial-gradient(ellipse 600px 400px at 85% 70%, rgba(59,130,246,0.1) 0%, transparent 70%),
-                radial-gradient(ellipse 400px 300px at 50% 90%, rgba(99,102,241,0.07) 0%, transparent 70%);
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-conic-gradient(rgba(255,255,255,0.012) 0% 25%, transparent 0% 50%) 0 0 / 60px 60px;
-            animation: heroGrid 40s linear infinite;
-        }
-        @keyframes heroGrid {
-            to { transform: translate(30px, 30px); }
-        }
-        .hero-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(251,146,60,0.08));
-            border: 1px solid rgba(245,158,11,0.25);
-            color: #fbbf24;
-            padding: 6px 18px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            margin-bottom: 6px;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 0 20px rgba(245,158,11,0.08);
-        }
-        .hero-badge-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--gold);
-            animation: badgePulse 2s ease-in-out infinite;
-        }
-        @keyframes badgePulse {
-            0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
-            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(245,158,11,0); }
-        }
-        .hero h1 {
-            font-family: 'Inter', sans-serif;
-            color: white;
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 6px;
-            letter-spacing: -0.3px;
-            line-height: 1.2;
-        }
-        .hero h1 .text-gold {
-            background: linear-gradient(135deg, #fbbf24, #f97316, #fbbf24);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: goldShimmer 4s ease-in-out infinite;
-        }
-        @keyframes goldShimmer {
-            0%,100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        .hero p {
-            color: rgba(255,255,255,0.45);
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        .hero-brands {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            margin-top: 6px;
-            flex-wrap: wrap;
-        }
-        .hero-brand-chip {
-            padding: 2px 8px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.6);
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s;
-        }
-        .hero-brand-chip:hover {
-            border-color: rgba(245,158,11,0.3);
-            color: rgba(255,255,255,0.8);
-            background: rgba(245,158,11,0.08);
-        }
-        .hero-btns {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-        .hero-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 22px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: inherit;
-            min-height: 40px;
-            touch-action: manipulation;
-        }
-        .hero-btn-primary {
-            background: linear-gradient(135deg, #fbbf24, var(--gold), #f97316);
-            color: #030712;
-            box-shadow: 0 4px 24px rgba(245,158,11,0.35), 0 0 0 1px rgba(245,158,11,0.15), inset 0 1px 0 rgba(255,255,255,0.25);
-        }
-        .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(245,158,11,0.5), 0 0 0 1px rgba(245,158,11,0.3), inset 0 1px 0 rgba(255,255,255,0.25); }
-        .hero-btn-secondary {
-            background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-            color: rgba(255,255,255,0.9);
-            border: 1px solid rgba(255,255,255,0.12);
-            backdrop-filter: blur(8px);
-        }
-        .hero-btn-secondary:hover { background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06)); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+/* ===== TRUST BAR ===== */
+.trust-bar {
+    background: #fff; border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+}
+.trust-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+}
+.trust-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--text-mid);
+}
+.trust-item svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; }
+.trust-item strong { color: var(--text); font-weight: 700; }
 
-        /* ===== LIVE TICKER ===== */
-        .ticker {
-            background: linear-gradient(135deg, #030712, #0c1a3a, #0a1628);
-            border-bottom: 1px solid rgba(245,158,11,0.08);
-            padding: 0;
-            overflow: hidden;
-        }
-        .ticker-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: stretch;
-            min-height: 38px;
-        }
-        .ticker-item {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 6px 14px;
-            border-right: 1px solid rgba(255,255,255,0.04);
-            transition: background 0.2s;
-        }
-        .ticker-item:last-child { border-right: none; }
-        .ticker-item:hover { background: rgba(255,255,255,0.03); }
-        .ticker-icon {
-            width: 26px;
-            height: 26px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            background: rgba(255,255,255,0.04);
-        }
-        .ticker-label {
-            font-size: 10px;
-            color: rgba(255,255,255,0.4);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-        .ticker-value {
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 800;
-            color: var(--gold);
-            white-space: nowrap;
-        }
-        .ticker-value .unit {
-            font-size: 11px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.4);
-            margin-left: 2px;
-        }
-        .ticker-value .change-up { color: #10b981; font-size: 12px; }
-        .ticker-value .change-down { color: #ef4444; font-size: 12px; }
-        .ticker-text {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
-        .ticker-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #10b981;
-            animation: blink 2s ease-in-out infinite;
-            flex-shrink: 0;
-        }
-        @keyframes blink {
-            0%,100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-        .ticker-loading {
-            color: rgba(255,255,255,0.3);
-            font-size: 13px;
-            font-family: 'Inter', sans-serif;
-        }
+/* ===== BRAND STRIP ===== */
+.brand-strip {
+    background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+}
+.brand-strip-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    justify-content: center;
+}
+.brand-strip-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase; letter-spacing: 1px;
+    white-space: nowrap;
+}
+.brand-strip-label svg { width: 14px; height: 14px; color: var(--gold); }
+.brand-list { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.brand-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--navy);
+    box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+    transition: all .15s;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+}
+.brand-chip:hover {
+    border-color: var(--gold);
+    box-shadow: 0 2px 8px rgba(245,158,11,0.15);
+    transform: translateY(-1px);
+}
+.brand-chip .brand-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    flex-shrink: 0;
+}
+.brand-chip.active {
+    background: var(--navy); color: #fff;
+    border-color: var(--navy);
+    box-shadow: 0 3px 10px rgba(15,23,42,0.18);
+}
+.brand-chip.active .brand-close {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%; margin-left: 2px;
+    font-size: 13px; line-height: 1;
+}
+.brand-chip .brand-close { display: none; }
+@media (max-width: 640px) {
+    .brand-strip { padding: 12px 14px; }
+    .brand-strip-label { display: none; }
+    .brand-chip { padding: 5px 10px; font-size: 12px; }
+}
 
-        @media (max-width: 900px) {
-            .ticker-inner { flex-wrap: wrap; }
-            .ticker-item { flex: 1 1 50%; min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.04); }
-            .ticker-item:nth-child(2) { border-right: none; }
-        }
-        @media (max-width: 480px) {
-            .ticker-item { flex: 1 1 100%; border-right: none; justify-content: flex-start; padding: 8px 20px; }
-            .ticker-inner { min-height: auto; }
-        }
+/* ===== STATS STRIP ===== */
+.stats-strip {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-bottom: 1px solid rgba(245,158,11,0.15);
+    padding: 12px 20px;
+}
+.stats-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+.stat-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 4px 16px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+.stat-item:last-child { border-right: none; }
+.stat-icon {
+    width: 32px; height: 32px;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.stat-icon svg { width: 16px; height: 16px; color: var(--gold); }
+.stat-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.stat-label {
+    font-size: 10px; font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase; letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+.stat-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 800;
+    color: #fff;
+    white-space: nowrap;
+}
+.stat-value .unit {
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    margin-left: 3px;
+}
+.stat-value .accent { color: var(--gold); }
+@media (max-width: 720px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .stat-item { padding: 6px 10px; border-right: none; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; }
+}
 
-        /* ===== MAIN CONTAINER ===== */
-        .main { max-width: 1200px; margin: 0 auto; padding: 16px 24px; }
+/* ===== MAIN ===== */
+.main { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
 
-        /* ===== STATS BAR ===== */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-        .stat-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 8px 10px;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .stat-card:hover { border-color: var(--gold); box-shadow: 0 4px 14px rgba(245,158,11,0.1); transform: translateY(-1px); }
-        .stat-label { font-size: 10px; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
-        .stat-value { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 800; color: var(--navy); }
-        .stat-sub { font-size: 11px; color: var(--text-mid); margin-top: 1px; }
+/* ===== CONTROLS ===== */
+.controls {
+    background: #fff; border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 16px; margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    position: sticky; top: 56px; z-index: 50;
+}
+.search-row { display: flex; gap: 10px; margin-bottom: 12px; }
+.search-box {
+    flex: 1; position: relative;
+}
+.search-box svg {
+    position: absolute; left: 12px; top: 50%;
+    transform: translateY(-50%);
+    width: 18px; height: 18px; color: var(--text-light);
+}
+.search-box input {
+    width: 100%; padding: 10px 14px 10px 40px;
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: 14px; font-family: inherit;
+    background: var(--bg); color: var(--text);
+}
+.search-box input:focus { outline: none; border-color: var(--gold); background: #fff; }
 
-        /* ===== SEARCH & FILTER ===== */
-        .toolbar {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 52px;
-            z-index: 900;
-            background: var(--bg);
-            padding: 8px 0;
-            transition: box-shadow 0.2s, background 0.3s;
-        }
-        .toolbar.stuck {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-            padding: 12px 16px;
-            margin-left: -16px;
-            margin-right: -16px;
-            border-radius: 0 0 3px 3px;
-        }
-        .search-wrap {
-            flex: 1;
-            min-width: 240px;
-            position: relative;
-        }
-        .search-wrap svg {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-light);
-        }
-        .search-input {
-            width: 100%;
-            padding: 10px 14px 10px 42px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            font-size: 14px;
-            font-family: inherit;
-            background: var(--white);
-            transition: all 0.25s;
-            outline: none;
-        }
-        .search-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245,158,11,0.1), 0 2px 8px rgba(245,158,11,0.06); }
-        .search-input::placeholder { color: var(--text-light); }
+.controls-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.filter-chips { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+.view-toggle {
+    display: inline-flex; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--bg); overflow: hidden;
+    flex-shrink: 0;
+}
+.view-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 7px 12px; border: none; background: transparent;
+    cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 600;
+    color: var(--text-mid); transition: all .15s;
+}
+.view-btn svg { width: 14px; height: 14px; }
+.view-btn.active { background: var(--navy); color: #fff; }
+.view-btn:not(.active):hover { color: var(--navy); }
+.chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 600;
+    border: 1px solid var(--border);
+    background: #fff; color: var(--text-mid);
+    cursor: pointer; transition: all .15s;
+    font-family: inherit;
+}
+.chip svg { width: 14px; height: 14px; }
+.chip:hover { border-color: var(--gold); color: var(--gold); }
+.chip.active {
+    background: var(--navy); color: #fff; border-color: var(--navy);
+}
+.chip-count {
+    background: rgba(255,255,255,0.15); padding: 1px 7px;
+    border-radius: 999px; font-size: 11px; font-weight: 700;
+}
+.chip:not(.active) .chip-count { background: var(--bg); color: var(--text-light); }
 
-        .filters { display: flex; gap: 6px; flex-wrap: wrap; }
-        .filter-chip {
-            padding: 6px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-mid);
-            background: var(--white);
-            cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            user-select: none;
-        }
-        .filter-chip:hover { border-color: var(--gold); color: var(--navy); box-shadow: 0 2px 8px rgba(245,158,11,0.1); }
-        .filter-chip.active { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; border-color: var(--navy); box-shadow: 0 2px 8px rgba(15,23,42,0.2); }
+/* ===== PRODUCT GRID ===== */
+.cat-section {
+    margin-top: 40px;
+}
+.cat-section:first-of-type { margin-top: 12px; }
+.cat-title {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 0 0 18px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.1);
+    border-left: 4px solid var(--gold);
+}
+.cat-title-icon {
+    width: 38px; height: 38px;
+    background: rgba(245,158,11,0.15);
+    border: 1px solid rgba(245,158,11,0.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.cat-title-icon svg { width: 20px; height: 20px; color: var(--gold); }
+.cat-title-text {
+    flex: 1;
+    font-size: 17px; font-weight: 700; color: #fff;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
+}
+.cat-title-count {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.75);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 11.5px; font-weight: 600;
+    white-space: nowrap;
+}
 
-        /* ===== PRODUCT SECTIONS ===== */
-        .section {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            margin-bottom: 16px;
-            overflow: visible;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .section:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            border-bottom: 1px solid var(--border);
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            border-radius: 7px 7px 0 0;
-            border-left: 3px solid var(--gold);
-            position: relative;
-        }
-        .section-header::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 60px;
-            background: linear-gradient(90deg, rgba(245,158,11,0.08), transparent);
-            pointer-events: none;
-        }
-        .section-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-        .section-icon.inv { background: #eff6ff; }
-        .section-icon.opt { background: #f5f3ff; }
-        .section-icon.res { background: #ecfdf5; }
-        .section-icon.bat { background: #fef3c7; }
-        .section-icon.pan { background: #fff7ed; }
-        .section-icon.sen { background: #f1f5f9; }
-        .section-icon.hyb { background: #fce7f3; }
-        .section-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--white);
-        }
-        .section-count {
-            margin-left: auto;
-            font-size: 11px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.8);
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 2px 10px;
-            border-radius: 100px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
 
-        /* ===== TABLES ===== */
-        .table-wrap {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        table { width: 100%; border-collapse: collapse; }
-        thead th {
-            text-align: left;
-            padding: 10px 16px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-light);
-            border-bottom: 2px solid var(--border);
-            white-space: nowrap;
-            vertical-align: bottom;
-            font-family: 'Inter', sans-serif;
-        }
-        tbody tr {
-            transition: all 0.2s ease;
-            position: relative;
-            border-bottom: 1px solid rgba(226,232,240,0.6);
-        }
-        tbody tr:last-child { border-bottom: none; }
-        tbody tr:hover {
-            background: linear-gradient(90deg, rgba(245,158,11,0.04), rgba(245,158,11,0.02), transparent);
-        }
-        tbody tr:hover .model-name { color: var(--gold-hover); }
-        tbody tr:hover .price { transform: scale(1.03); }
-        tbody td {
-            padding: 14px 16px;
-            font-size: 14px;
-            border-bottom: none;
-            vertical-align: top;
-            line-height: 1.6;
-        }
+/* ===== LIST VIEW ===== */
+.list { display: flex; flex-direction: column; gap: 6px; }
+.row {
+    display: grid;
+    grid-template-columns: 72px 1fr auto auto;
+    gap: 14px; align-items: center;
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 10px; padding: 8px 14px;
+    transition: border-color .15s, box-shadow .15s;
+}
+.row:hover { border-color: rgba(245,158,11,0.4); box-shadow: 0 2px 8px rgba(15,23,42,0.05); }
+.row-img {
+    width: 72px; height: 56px;
+    background: #fff; border: 1px solid var(--border);
+    border-radius: 8px; padding: 4px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; flex-shrink: 0;
+}
+.row-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.row-img-placeholder { color: var(--text-light); }
+.row-img-placeholder svg { width: 20px; height: 20px; }
+.row-info { min-width: 0; }
+.row-top {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 3px; flex-wrap: wrap;
+}
+.row-brand {
+    background: var(--bg); color: var(--text-mid);
+    padding: 2px 7px; border-radius: 5px;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.row-model {
+    font-size: 13.5px; font-weight: 700; color: var(--navy);
+    line-height: 1.2;
+}
+.row-stock {
+    display: inline-flex; align-items: center; gap: 3px;
+    background: rgba(16,185,129,0.12); color: var(--green);
+    padding: 1px 7px; border-radius: 999px;
+    font-size: 10px; font-weight: 700;
+    white-space: nowrap;
+}
+.row-stock.preorder { background: rgba(245,158,11,0.12); color: var(--gold-hover); }
+.row-stock svg { width: 10px; height: 10px; }
+.row-specs {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    font-size: 11.5px; color: var(--text-mid);
+}
+.row-spec strong { color: var(--navy); font-weight: 600; }
+.row-price {
+    text-align: right; white-space: nowrap; padding: 0 4px;
+}
+.row-price-val {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; font-weight: 800; color: var(--navy);
+    line-height: 1.1;
+}
+.row-price-unit { font-size: 10px; color: var(--text-light); }
+.row-actions {
+    display: flex; gap: 5px;
+}
+.row-actions .btn { padding: 7px 9px; }
+@media (max-width: 720px) {
+    .row {
+        grid-template-columns: 56px 1fr;
+        grid-template-areas: "img info" "price price" "actions actions";
+        gap: 10px; padding: 10px;
+    }
+    .row-img { grid-area: img; width: 56px; height: 56px; }
+    .row-info { grid-area: info; }
+    .row-price { grid-area: price; text-align: left; padding: 0; display: flex; align-items: baseline; gap: 8px; }
+    .row-price-unit { font-size: 11px; }
+    .row-actions { grid-area: actions; }
+    .row-actions .btn { flex: 1; }
+}
+.card {
+    background: #fff; border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+    border-color: rgba(245,158,11,0.3);
+}
+.card-img {
+    background: #fff;
+    height: 150px;
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+.card-img img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+}
+.card-img-placeholder {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 8px; color: var(--text-light);
+}
+.card-img-placeholder svg { width: 36px; height: 36px; }
+.card-img-placeholder span { font-size: 12px; font-weight: 500; }
+.card-badge {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(255,255,255,0.95);
+    color: var(--text-mid);
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.3px; text-transform: uppercase;
+    border: 1px solid var(--border);
+}
+.card-stock {
+    position: absolute; top: 10px; right: 10px;
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(16,185,129,0.95); color: #fff;
+    padding: 3px 8px; border-radius: 999px;
+    font-size: 10px; font-weight: 700;
+}
+.card-stock svg { width: 10px; height: 10px; }
+.card-stock.preorder { background: rgba(245,158,11,0.95); }
 
-        .model-name {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            color: var(--navy);
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        .price {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 15px;
-            color: var(--green);
-            white-space: nowrap;
-            transition: transform 0.2s;
-            display: block;
-            line-height: 1.6;
-        }
-        .warranty { color: var(--text-mid); font-size: 13px; }
-        .note { color: var(--text-mid); font-size: 13px; max-width: 220px; }
+/* ===== TAG BADGE (NEW / HOT) ===== */
+.tag-badge {
+    display: inline-flex; align-items: center; gap: 3px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.tag-badge svg { width: 11px; height: 11px; }
+.tag-hot {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(239,68,68,0.4);
+    animation: tagPulse 2.4s ease-in-out infinite;
+}
+.tag-new {
+    background: linear-gradient(135deg, #10b981, #14b8a6);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(16,185,129,0.35);
+}
+@keyframes tagPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 2px 6px rgba(239,68,68,0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 3px 10px rgba(239,68,68,0.55); }
+}
+.card-tag {
+    position: absolute; top: 10px; left: 10px;
+    z-index: 2;
+}
+.card-badge.has-tag { top: 36px; }
 
-        /* Column alignment */
-        table { table-layout: auto; }
-        tbody td { word-break: normal; }
-        tbody td:nth-child(5) { white-space: nowrap; }  /* Price — no wrap */
+.card-body { padding: 10px 14px; flex: 1; display: flex; flex-direction: column; }
+.card-brand {
+    font-size: 10px; font-weight: 700;
+    color: var(--text-light); text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+.card-model {
+    font-size: 14px; font-weight: 700; color: var(--navy);
+    margin: 1px 0 6px; line-height: 1.25;
+}
+.card-specs {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    margin-bottom: 8px;
+}
+.spec {
+    background: var(--bg); color: var(--text-mid);
+    padding: 2px 7px; border-radius: 5px;
+    font-size: 10.5px; font-weight: 500;
+}
+.spec strong { color: var(--navy); }
 
-        /* ===== BADGES ===== */
-        .badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
-        .b-inv { background: #eff6ff; color: #2563eb; }
-        .b-opt { background: #f5f3ff; color: #7c3aed; }
-        .b-bat { background: #fef3c7; color: #b45309; }
-        .b-pan { background: #fff7ed; color: #c2410c; }
-        .b-tis { background: #dcfce7; color: #166534; }
-        .b-sen { background: #f1f5f9; color: #475569; }
-        .b-ctrl { background: #e0f2fe; color: #0369a1; }
-        .b-hyb { background: #fce7f3; color: #be185d; }
-        .b-best {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            color: white;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 2px 8px;
-            border-radius: 4px;
-            letter-spacing: 0.3px;
-        }
-        .b-rec {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 2px 8px;
-            border-radius: 4px;
-            letter-spacing: 0.3px;
-        }
-        .b-new {
-            background: var(--red);
-            color: white;
-            font-size: 10px;
-            font-weight: 800;
-            padding: 2px 8px;
-            border-radius: 4px;
-            letter-spacing: 0.5px;
-            animation: pulse 2.5s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%,100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
+.card-price-row {
+    margin-top: auto; padding-top: 8px;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: flex-end; justify-content: space-between;
+}
+.card-price-label {
+    font-size: 9px; color: var(--text-light);
+    text-transform: uppercase; letter-spacing: 0.4px;
+    font-weight: 600;
+}
+.card-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px; font-weight: 800; color: var(--navy);
+    line-height: 1.1;
+}
+.card-price-unit { font-size: 10px; color: var(--text-light); font-weight: 500; }
 
-        /* ===== SPEC LINK ===== */
-        .spec-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: white;
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 14px;
-            background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
-            border: none;
-            border-radius: 6px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(59,130,246,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
-            letter-spacing: 0.3px;
-            -webkit-tap-highlight-color: rgba(59,130,246,0.3);
-            touch-action: manipulation;
-            cursor: pointer;
-            min-height: 30px;
-            white-space: nowrap;
-        }
-        .spec-link:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(59,130,246,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
-        }
-        .spec-link:active {
-            transform: translateY(0);
-            box-shadow: 0 1px 4px rgba(59,130,246,0.3);
-        }
+.card-actions {
+    display: grid; grid-template-columns: auto 1fr 1fr;
+    gap: 5px; padding: 0 14px 10px;
+}
+.btn-icon {
+    background: #fff; color: var(--text-mid); border-color: var(--border);
+    padding: 7px 9px;
+}
+.btn-icon:hover { color: var(--blue); border-color: var(--blue); background: rgba(59,130,246,0.05); }
+.btn-icon[aria-disabled="true"] {
+    color: var(--text-light); cursor: not-allowed; pointer-events: none; opacity: 0.5;
+}
+.btn-icon svg { width: 15px; height: 15px; }
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 4px; padding: 7px 8px;
+    border-radius: 7px; font-size: 11.5px; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+    font-family: inherit; border: 1px solid;
+    text-decoration: none;
+}
+.btn svg { width: 13px; height: 13px; }
+.btn-primary {
+    background: var(--navy); color: #fff; border-color: var(--navy);
+}
+.btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+.btn-primary.added { background: var(--green); border-color: var(--green); }
+.btn-ghost {
+    background: #fff; color: var(--text-mid); border-color: var(--border);
+}
+.btn-ghost:hover { color: var(--navy); border-color: var(--navy); background: var(--bg); }
+.btn-copied { background: var(--green) !important; border-color: var(--green) !important; color: #fff !important; }
 
-        /* ===== NEW PRODUCT HIGHLIGHT ===== */
-        .new-divider td {
-            background: linear-gradient(135deg, var(--gold), var(--gold-hover));
-            color: white;
-            text-align: center;
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            padding: 10px 16px;
-            border-bottom: none;
-        }
-        .new-row {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7) !important;
-            position: relative;
-        }
-        .new-row .model-name { color: #b45309; }
-        .new-row .price { color: var(--red); font-weight: 800; }
+/* ===== EMPTY ===== */
+.empty {
+    text-align: center; padding: 60px 20px;
+    color: var(--text-light);
+}
+.empty svg { width: 48px; height: 48px; margin-bottom: 12px; }
 
-        /* ===== FOOTER ===== */
-        .footer {
-            background: linear-gradient(160deg, #020617, #0c1a3a, #0a1628, #030712);
-            color: rgba(255,255,255,0.6);
-            padding: 48px 24px 40px;
-            margin-top: 32px;
-            position: relative;
-        }
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(245,158,11,0.4), transparent);
-        }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 24px;
-        }
-        .footer h3 {
-            color: #fbbf24;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-        }
-        .footer ul { list-style: none; }
-        .footer li {
-            font-size: 13px;
-            padding: 3px 0;
-            line-height: 1.7;
-        }
-        .footer-contact {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-            padding: 24px 28px;
-            background: linear-gradient(135deg, rgba(245,158,11,0.06), rgba(255,255,255,0.03));
-            border: 1px solid rgba(245,158,11,0.15);
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 30px rgba(245,158,11,0.04);
-            position: relative;
-            overflow: hidden;
-        }
-        .footer-contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(245,158,11,0.3), transparent);
-        }
-        .footer-contact-name { color: white; font-weight: 700; font-size: 15px; }
-        .footer-contact-title { color: #fbbf24; font-size: 13px; font-weight: 600; }
-        .footer-contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
-        .footer-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 16px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.25s;
-        }
-        .footer-chip:hover { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); color: #fbbf24; }
-        .footer-disclaimer {
-            text-align: center;
-            font-size: 11px;
-            padding-top: 20px;
-            border-top: none;
-            color: rgba(255,255,255,0.25);
-            position: relative;
-        }
-        .footer-disclaimer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20%;
-            right: 20%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-        }
+/* ===== QUOTATION CART (floating) ===== */
+.cart-fab {
+    position: fixed; bottom: 20px; right: 20px;
+    z-index: 200;
+    background: var(--gold);
+    color: var(--navy);
+    border: none; cursor: pointer;
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(245,158,11,0.45);
+    transition: all .2s;
+}
+.cart-fab svg { width: 26px; height: 26px; }
+.cart-fab:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(245,158,11,0.55); }
+.cart-badge {
+    position: absolute; top: -4px; right: -4px;
+    background: var(--red); color: #fff;
+    min-width: 22px; height: 22px;
+    border-radius: 999px; padding: 0 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+    border: 2px solid #fff;
+}
 
-        /* ===== ROW NUMBER ===== */
-        .row-num {
-            color: var(--text-light);
-            font-size: 12px;
-            font-weight: 500;
-            min-width: 24px;
-            text-align: center;
-        }
+.cart-panel {
+    position: fixed; bottom: 100px; right: 20px;
+    z-index: 200;
+    width: 380px; max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 140px);
+    background: #fff; border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(15,23,42,0.2);
+    display: none; flex-direction: column;
+    overflow: hidden;
+}
+.cart-panel.open { display: flex; }
+.cart-head {
+    padding: 16px 18px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: #fff;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.cart-head h3 {
+    font-size: 15px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+}
+.cart-head h3 svg { width: 18px; height: 18px; color: var(--gold); }
+.cart-close {
+    background: none; border: none; color: rgba(255,255,255,0.6);
+    cursor: pointer; padding: 4px;
+}
+.cart-close svg { width: 18px; height: 18px; }
+.cart-close:hover { color: #fff; }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1fr; }
-            .toolbar { flex-direction: column; align-items: stretch; }
-        }
-        @media (max-width: 640px) {
-            .stats { grid-template-columns: 1fr 1fr; }
-            .nav-inner { padding: 0 12px; height: 46px; }
-            .nav-brand-sub { display: none; }
-            .nav-brand-mark { width: 28px; height: 28px; border-radius: 6px; }
-            .nav-brand-mark svg { width: 16px; height: 16px; }
-            .nav-brand-name { font-size: 14px; }
-            .nav-link { font-size: 11px; padding: 5px 8px; }
-            .nav-cta { font-size: 11px; padding: 5px 10px; margin-left: 4px; }
-            .nav-cta svg { display: none; }
-            .toolbar { top: 46px; }
-            .hero { padding: 24px 16px 20px; }
-            .hero h1 { font-size: 20px; }
-            .hero p { font-size: 12px; }
-            .hero-brand-chip { font-size: 10px; padding: 2px 8px; }
-            .main { padding: 16px; }
-            table { font-size: 13px; }
-            thead th, tbody td { padding: 8px 10px; }
-            .note { max-width: 140px; }
-        }
+.cart-body { flex: 1; overflow-y: auto; padding: 12px 16px; }
+.cart-empty {
+    text-align: center; padding: 32px 16px;
+    color: var(--text-light); font-size: 13px;
+}
+.cart-empty svg { width: 40px; height: 40px; margin-bottom: 8px; opacity: 0.5; }
 
-        /* ===== SCROLL REVEAL ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal:nth-child(2) { transition-delay: 0.08s; }
-        .reveal:nth-child(3) { transition-delay: 0.16s; }
-        .reveal:nth-child(4) { transition-delay: 0.24s; }
+.cart-item {
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 10px;
+}
+.cart-item:last-child { border-bottom: none; }
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-name {
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    margin-bottom: 2px;
+}
+.cart-item-brand { font-size: 11px; color: var(--text-light); }
+.cart-item-controls { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.qty-btn {
+    width: 24px; height: 24px;
+    border: 1px solid var(--border); background: #fff;
+    border-radius: 6px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--text-mid);
+    font-family: inherit;
+}
+.qty-btn:hover { border-color: var(--navy); color: var(--navy); }
+.qty-val {
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    min-width: 24px; text-align: center;
+}
+.cart-item-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    text-align: right; white-space: nowrap;
+}
+.cart-item-remove {
+    background: none; border: none; cursor: pointer;
+    color: var(--text-light); padding: 4px;
+}
+.cart-item-remove svg { width: 14px; height: 14px; }
+.cart-item-remove:hover { color: var(--red); }
 
-        /* ===== PRINT ===== */
-        @media print {
-            .nav, .toolbar, .print-fab, .scroll-top, .dark-toggle, .ticker { display: none !important; }
-            .section { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
-            body { background: white; }
-        }
+.cart-foot {
+    border-top: 1px solid var(--border);
+    padding: 14px 16px;
+    background: var(--bg);
+}
+.cart-total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 4px;
+}
+.cart-total-label { font-size: 13px; color: var(--text-mid); }
+.cart-total-val {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px; font-weight: 800; color: var(--navy);
+}
+.cart-vat {
+    font-size: 11px; color: var(--text-light);
+    text-align: right; margin-bottom: 12px;
+}
+.cart-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cart-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 6px; padding: 11px;
+    border-radius: 8px; font-size: 13px; font-weight: 700;
+    cursor: pointer; border: none;
+    font-family: inherit; text-decoration: none;
+}
+.cart-btn svg { width: 15px; height: 15px; }
+.cart-btn-copy { background: var(--navy); color: #fff; }
+.cart-btn-copy:hover { background: var(--navy-mid); }
+.cart-btn-line { background: var(--line); color: #fff; }
+.cart-btn-line:hover { background: #05b04c; }
 
-        /* ===== FAB ===== */
-        .print-fab {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 100;
-        }
-        .print-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+/* ===== TOAST ===== */
+.toast {
+    position: fixed; top: 80px; left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: var(--navy); color: #fff;
+    padding: 12px 20px; border-radius: 10px;
+    font-size: 13px; font-weight: 600;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.25);
+    display: flex; align-items: center; gap: 8px;
+    opacity: 0; pointer-events: none;
+    transition: all .25s;
+    z-index: 300;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast svg { width: 18px; height: 18px; color: var(--green); }
 
-        /* ===== SCROLL TO TOP ===== */
-        .scroll-top {
-            position: fixed;
-            bottom: 24px;
-            right: 84px;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #fbbf24, var(--gold));
-            color: #030712;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(245,158,11,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 100;
-        }
-        .scroll-top:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.45); }
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center; padding: 24px 20px;
+    font-size: 12px; color: var(--text-light);
+    border-top: 1px solid var(--border);
+    background: #fff;
+}
+.footer strong { color: var(--text-mid); }
+.footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
 
-        /* ===== CART SYSTEM ===== */
-        .add-cart-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 4px 12px;
-            background: linear-gradient(135deg, #fbbf24, var(--gold), #d97706);
-            color: #030712;
-            border: none;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            touch-action: manipulation;
-            min-height: 30px;
-            white-space: nowrap;
-            font-family: inherit;
-            box-shadow: 0 2px 6px rgba(245,158,11,0.2), inset 0 1px 0 rgba(255,255,255,0.2);
-        }
-        .add-cart-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(245,158,11,0.35), inset 0 1px 0 rgba(255,255,255,0.2); }
-        .add-cart-btn.added {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white;
-            animation: addBounce 0.4s ease;
-            box-shadow: 0 2px 8px rgba(34,197,94,0.3);
-        }
-        @keyframes addBounce {
-            0% { transform: scale(1); }
-            30% { transform: scale(1.25); }
-            60% { transform: scale(0.95); }
-            100% { transform: scale(1); }
-        }
-
-        .cart-fab {
-            position: fixed;
-            bottom: 90px;
-            right: 24px;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #fbbf24, var(--gold), #d97706);
-            color: #030712;
-            border: none;
-            border-radius: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(245,158,11,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            font-size: 22px;
-        }
-        .cart-fab:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,0.5), inset 0 1px 0 rgba(255,255,255,0.2); }
-        .cart-badge {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            background: var(--red);
-            color: white;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            font-size: 11px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Cart Panel */
-        .cart-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.4);
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-        .cart-overlay.open { opacity: 1; visibility: visible; }
-
-        .cart-panel {
-            position: fixed;
-            top: 0;
-            right: -420px;
-            width: 400px;
-            max-width: 90vw;
-            height: 100vh;
-            background: var(--white);
-            z-index: 2001;
-            box-shadow: -8px 0 30px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
-            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .cart-panel.open { right: 0; }
-
-        .cart-header {
-            padding: 20px 24px;
-            background: var(--navy);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-shrink: 0;
-        }
-        .cart-header h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .cart-close {
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-        .cart-close:hover { background: rgba(255,255,255,0.2); }
-
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px;
-            -webkit-overflow-scrolling: touch;
-        }
-        .cart-empty {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-light);
-        }
-        .cart-empty-icon { font-size: 48px; margin-bottom: 12px; }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-        .cart-item-info { flex: 1; min-width: 0; }
-        .cart-item-name {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 13px;
-            color: var(--navy);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .cart-item-price {
-            font-size: 12px;
-            color: var(--green);
-            font-weight: 600;
-        }
-        .cart-qty {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .cart-qty button {
-            width: 32px;
-            height: 32px;
-            border: none;
-            background: var(--bg);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-mid);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            touch-action: manipulation;
-        }
-        .cart-qty button:hover { background: var(--border); }
-        .cart-qty span {
-            width: 36px;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--navy);
-        }
-        .cart-remove {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            cursor: pointer;
-            font-size: 16px;
-            padding: 4px;
-            transition: color 0.2s;
-            touch-action: manipulation;
-        }
-        .cart-remove:hover { color: var(--red); }
-
-        /* Cart Footer */
-        .cart-footer {
-            padding: 16px 24px 24px;
-            border-top: 1px solid var(--border);
-            background: var(--white);
-            flex-shrink: 0;
-        }
-        .cart-summary { margin-bottom: 16px; }
-        .cart-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 4px 0;
-            font-size: 14px;
-            color: var(--text-mid);
-        }
-        .cart-row.total {
-            padding: 10px 0 0;
-            margin-top: 8px;
-            border-top: 2px solid var(--navy);
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--navy);
-            font-family: 'Inter', sans-serif;
-        }
-        .cart-row.vat { color: var(--text-light); font-size: 13px; }
-
-        .cart-actions { display: flex; flex-direction: column; gap: 8px; }
-        .cart-send-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            touch-action: manipulation;
-            min-height: 48px;
-        }
-        .cart-send-line {
-            background: #06c755;
-            color: white;
-        }
-        .cart-send-line:hover { background: #05b04c; }
-        .cart-send-email {
-            background: var(--navy);
-            color: white;
-        }
-        .cart-send-email:hover { background: var(--navy-light); }
-        .cart-send-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-        .cart-clear {
-            background: none;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 10px;
-            color: var(--text-mid);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-        .cart-clear:hover { border-color: var(--red); color: var(--red); }
-
-        .cart-note {
-            margin-top: 12px;
-            padding: 10px 14px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            width: 100%;
-            font-size: 13px;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 60px;
-            outline: none;
-        }
-        .cart-note:focus { border-color: var(--gold); }
-        .cart-note-label { font-size: 12px; color: var(--text-light); margin-bottom: 4px; font-weight: 600; }
-
-        /* ===== SHARE FAB ===== */
-        .share-fab {
-            position: fixed;
-            bottom: 160px;
-            right: 24px;
-            width: 48px;
-            height: 48px;
-            background: var(--blue);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(59,130,246,0.3);
-            transition: all 0.2s;
-            z-index: 100;
-            font-size: 18px;
-            touch-action: manipulation;
-        }
-        .share-fab:hover { background: #2563eb; }
-        .share-menu {
-            position: fixed;
-            bottom: 215px;
-            right: 24px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            padding: 8px;
-            z-index: 100;
-            display: none;
-            min-width: 180px;
-        }
-        .share-menu.open { display: block; }
-        .share-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border: none;
-            background: none;
-            width: 100%;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text);
-            font-family: inherit;
-            transition: background 0.15s;
-            touch-action: manipulation;
-        }
-        .share-item:hover { background: var(--bg); }
-        .share-toast {
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: var(--navy);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 600;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 3000;
-        }
-        .share-toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-
-        @media print {
-            .cart-fab, .cart-overlay, .cart-panel, .share-fab, .share-menu, .dark-toggle { display: none !important; }
-        }
-
-        /* ===== ROI CALCULATOR ===== */
-        .roi-section {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            border-radius: 4px;
-            padding: 32px;
-            margin-bottom: 16px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .roi-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.08) 0%, transparent 60%);
-        }
-        .roi-inner { position: relative; z-index: 1; }
-        .roi-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .roi-subtitle {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 24px;
-        }
-        .roi-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr auto;
-            gap: 16px;
-            align-items: end;
-        }
-        .roi-field label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .roi-field input, .roi-field select {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 4px;
-            background: rgba(255,255,255,0.08);
-            color: white;
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .roi-field input:focus, .roi-field select:focus {
-            border-color: var(--gold);
-        }
-        .roi-field input::placeholder { color: rgba(255,255,255,0.3); }
-        .roi-field select option { background: #1e293b; color: white; }
-        .roi-calc-btn {
-            padding: 12px 28px;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            min-height: 46px;
-            white-space: nowrap;
-            touch-action: manipulation;
-        }
-        .roi-calc-btn:hover { background: #fbbf24; }
-
-        .roi-slider-wrap {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .roi-slider {
-            flex: 1;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 6px;
-            border-radius: 3px;
-            background: rgba(255,255,255,0.15);
-            outline: none;
-        }
-        .roi-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: var(--gold);
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(245,158,11,0.4);
-        }
-        .roi-slider-val {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--gold);
-            min-width: 48px;
-            text-align: center;
-        }
-        .roi-rate-hint {
-            font-size: 12px;
-            color: rgba(255,255,255,0.4);
-            margin-top: 4px;
-        }
-
-        .roi-results {
-            display: none;
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .roi-results.show { display: block; }
-
-        .roi-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-        .roi-card {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 4px;
-            padding: 16px;
-            text-align: center;
-        }
-        .roi-card-label {
-            font-size: 11px;
-            color: rgba(255,255,255,0.5);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-        .roi-card-value {
-            font-family: 'Inter', sans-serif;
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--gold);
-        }
-        .roi-card-value .roi-unit {
-            font-size: 12px;
-            font-weight: 500;
-            color: rgba(255,255,255,0.4);
-        }
-        .roi-card.highlight {
-            background: rgba(245,158,11,0.12);
-            border-color: rgba(245,158,11,0.3);
-        }
-
-        /* Equipment Recommendation */
-        .roi-equip {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 4px;
-            padding: 20px 24px;
-        }
-        .roi-equip-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .roi-equip-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-        .roi-equip-item {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 4px;
-            padding: 14px;
-            text-align: center;
-        }
-        .roi-equip-item-label {
-            font-size: 11px;
-            color: rgba(255,255,255,0.45);
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .roi-equip-item-model {
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 2px;
-        }
-        .roi-equip-item-qty {
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--gold);
-        }
-        .roi-equip-item-price {
-            font-size: 11px;
-            color: rgba(255,255,255,0.4);
-            margin-top: 2px;
-        }
-        .roi-equip-total {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 0 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .roi-equip-total-label {
-            font-size: 14px;
-            color: rgba(255,255,255,0.6);
-            font-weight: 600;
-        }
-        .roi-equip-total-value {
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            color: white;
-        }
-        .roi-equip-note {
-            font-size: 11px;
-            color: rgba(255,255,255,0.35);
-            margin-top: 12px;
-            line-height: 1.6;
-        }
-        .roi-cta {
-            display: flex;
-            gap: 10px;
-            margin-top: 16px;
-            flex-wrap: wrap;
-        }
-        .roi-cta a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 20px;
-            border-radius: 3px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
-            touch-action: manipulation;
-        }
-        .roi-cta-line { background: #06c755; color: white; }
-        .roi-cta-line:hover { background: #05b04c; }
-        .roi-cta-cart { background: var(--gold); color: var(--navy); }
-        .roi-cta-cart:hover { background: #fbbf24; }
-
-        @media (max-width: 900px) {
-            .roi-form { grid-template-columns: 1fr 1fr; }
-            .roi-stats { grid-template-columns: 1fr 1fr; }
-            .roi-equip-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
-        }
-        @media (max-width: 480px) {
-            .roi-form { grid-template-columns: 1fr; }
-            .roi-stats { grid-template-columns: 1fr 1fr; }
-            .roi-equip-grid { grid-template-columns: 1fr 1fr; }
-            .roi-section { padding: 24px 16px; }
-        }
-
-        /* ===== COMPARE ===== */
-        .compare-check {
-            width: 16px;
-            height: 16px;
-            accent-color: var(--blue);
-            cursor: pointer;
-            touch-action: manipulation;
-        }
-        .compare-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--navy);
-            color: white;
-            padding: 12px 24px;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            z-index: 1500;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
-        }
-        .compare-bar.show { display: flex; }
-        .compare-bar-text { font-size: 14px; font-weight: 600; }
-        .compare-bar-count {
-            background: var(--gold);
-            color: var(--navy);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 800;
-            font-family: 'Inter', sans-serif;
-        }
-        .compare-bar-btn {
-            padding: 8px 24px;
-            background: var(--gold);
-            color: var(--navy);
-            border: none;
-            border-radius: 3px;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: inherit;
-            touch-action: manipulation;
-        }
-        .compare-bar-btn:hover { background: #fbbf24; }
-        .compare-bar-clear {
-            background: none;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.7);
-            padding: 8px 16px;
-            border-radius: 3px;
-            font-size: 13px;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        /* Compare Modal */
-        .compare-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-        .compare-modal.show { display: flex; }
-        .compare-box {
-            background: var(--white);
-            border-radius: 4px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        .compare-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--border);
-            background: var(--navy);
-            border-radius: 4px 16px 0 0;
-            color: white;
-        }
-        .compare-header h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-        }
-        .compare-close {
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .compare-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .compare-table th, .compare-table td {
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-        .compare-table th {
-            background: var(--bg);
-            font-weight: 700;
-            color: var(--text-mid);
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-        .compare-table td:first-child {
-            font-weight: 600;
-            color: var(--text-mid);
-            width: 120px;
-        }
-        .compare-table .model-col {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            color: var(--navy);
-        }
-
-        /* ===== LINE FLOAT ===== */
-        .line-float {
-            position: fixed;
-            bottom: 24px;
-            left: 24px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #06c755, #05a748);
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 14px;
-            font-size: 14px;
-            font-weight: 700;
-            box-shadow: 0 4px 20px rgba(6,199,85,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
-            z-index: 100;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: inherit;
-            touch-action: manipulation;
-        }
-        .line-float:hover {
-            box-shadow: 0 6px 28px rgba(6,199,85,0.5), inset 0 1px 0 rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-        }
-        .line-float-icon { font-size: 20px; }
-        @media (max-width: 640px) {
-            .line-float { padding: 10px 16px; font-size: 13px; bottom: 16px; left: 16px; }
-        }
-        @media print {
-            .line-float, .compare-bar, .compare-modal { display: none !important; }
-        }
-
-        /* ===== DARK MODE ===== */
-        .dark-toggle {
-            position: fixed;
-            top: 62px;
-            right: 24px;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            background: var(--white);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            z-index: 998;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            touch-action: manipulation;
-        }
-        .dark-toggle:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
-
-        body.dark {
-            --bg: #0f172a;
-            --white: #1e293b;
-            --text: #e2e8f0;
-            --text-mid: #94a3b8;
-            --text-light: #64748b;
-            --border: #334155;
-        }
-        body.dark .nav { background: linear-gradient(135deg, rgba(2,6,23,0.95), rgba(10,22,40,0.92)); }
-        body.dark .hero { background: linear-gradient(160deg, #010409, #081028, #0a1230, #060e1f, #010409); }
-        body.dark .stat-card { background: #1e293b; }
-        body.dark .model-name { color: #e2e8f0; }
-        body.dark .stat-value { color: #f1f5f9; }
-        body.dark tbody tr:hover { background: #0f172a; }
-        body.dark .search-input { background: #1e293b; color: #e2e8f0; border-color: #334155; }
-        body.dark .filter-chip { background: #1e293b; color: #94a3b8; border-color: #334155; }
-        body.dark .filter-chip.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-        body.dark .dark-toggle { background: #1e293b; border-color: #334155; }
-        body.dark .ticker { background: linear-gradient(135deg, #000, #020617); }
-        body.dark .footer { background: #020617; }
-        body.dark .toolbar { background: #0f172a; }
-        body.dark .cart-panel { background: #1e293b; }
-        body.dark .cart-item { background: #0f172a; border-color: #334155; }
-        body.dark .cart-item-name { color: #e2e8f0; }
-        body.dark .cart-footer { background: #1e293b; }
-        body.dark .cart-note { background: #0f172a; color: #e2e8f0; border-color: #334155; }
-        body.dark .compare-box { background: #1e293b; }
-        body.dark .compare-table th { background: #0f172a; color: #94a3b8; }
-        body.dark .compare-table td { border-color: #334155; }
-        body.dark .compare-table .model-col { color: #e2e8f0; }
-        body.dark .compare-table td:first-child { color: #94a3b8; }
-
-        @media (max-width: 640px) {
-            .dark-toggle { top: 58px; right: 12px; width: 38px; height: 38px; font-size: 17px; }
-        }
-
-        /* ===== HIDDEN RADIO FILTERS ===== */
-        input[name="cat-filter"] { display: none; }
-        #f-all:checked ~ .main [data-cat] { display: block; }
-        #f-inv:checked ~ .main [data-cat]:not([data-cat="inverter"]) { display: none; }
-        #f-opt:checked ~ .main [data-cat]:not([data-cat="optimizer"]) { display: none; }
-        #f-bat:checked ~ .main [data-cat]:not([data-cat="battery"]) { display: none; }
-        #f-pan:checked ~ .main [data-cat]:not([data-cat="panel"]) { display: none; }
-        #f-acc:checked ~ .main [data-cat]:not([data-cat="accessory"]) { display: none; }
-        #f-hyb:checked ~ .main [data-cat]:not([data-cat="hybrid"]) { display: none; }
-    </style>
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+    .nav-brand-sub { display: none; }
+    .nav-btn span { display: none; }
+    .nav-btn { padding: 8px 10px; }
+    .hero { padding: 32px 16px 40px; }
+    .hero-step { font-size: 12px; padding: 6px 12px; }
+    .trust-inner { gap: 16px; }
+    .trust-item { font-size: 12px; }
+    .main { padding: 20px 14px; }
+    .grid { grid-template-columns: 1fr; }
+    .cart-panel { right: 10px; left: 10px; width: auto; bottom: 90px; }
+    .cart-fab { width: 56px; height: 56px; bottom: 16px; right: 16px; }
+    .controls { top: 56px; padding: 12px; }
+}
+</style>
 </head>
 <body>
 
-<!-- Hidden radio for CSS-only filter -->
-<input type="radio" name="cat-filter" id="f-all" checked>
-<input type="radio" name="cat-filter" id="f-inv">
-<input type="radio" name="cat-filter" id="f-opt">
-<input type="radio" name="cat-filter" id="f-bat">
-<input type="radio" name="cat-filter" id="f-pan">
-<input type="radio" name="cat-filter" id="f-acc">
-<input type="radio" name="cat-filter" id="f-hyb">
-
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <nav class="nav">
     <div class="nav-inner">
-        <a href="index.html" class="nav-brand">
-            <div class="nav-brand-mark">
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#0f172a"/><line x1="12" y1="1" x2="12" y2="5" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="23" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="1" y1="12" x2="5" y2="12" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="12" x2="23" y2="12" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/><line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/><line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
+        <a href="#" class="nav-brand">
+            <div class="nav-brand-mark">SSC</div>
             <div class="nav-brand-text">
-                <span class="nav-brand-name">SSC Online</span>
+                <span class="nav-brand-name">Siam Solar Cell</span>
+                <span class="nav-brand-sub">Price List · Q2/2569</span>
             </div>
         </a>
-        <div class="nav-links">
-            <a href="index.html" class="nav-link active">ราคาสินค้า</a>
-            <a href="promo-packages.html" class="nav-link">โปรโมชั่น</a>
-            <a href="calculator.html" class="nav-link">คำนวณ ROI</a>
-            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="nav-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>LINE สอบถาม</a>
+        <div class="nav-actions">
+            <a href="tel:0848255036" class="nav-btn"><i data-lucide="phone"></i><span>โทร</span></a>
+            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="nav-btn nav-btn-line"><i data-lucide="message-circle"></i><span>LINE</span></a>
         </div>
     </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<div class="hero">
-    <div class="hero-content">
-        <div class="hero-badge"><div class="hero-badge-dot"></div> OFFICIAL DISTRIBUTOR</div>
-        <h1>SSC <span class="text-gold">Product</span> Price List</h1>
-        <p>SolarEdge &middot; KSTAR &middot; Deye &middot; Sunwoda &middot; Solar PPM &middot; Leapton &middot; IMT &mdash; Q2/2569 ไม่รวม VAT</p>
-        <div class="hero-btns">
-            <a href="#products" class="hero-btn hero-btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>ดูสินค้าทั้งหมด</a>
-            <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="hero-btn hero-btn-secondary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>LINE สอบถาม</a>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <span class="hero-tag"><i data-lucide="zap"></i> สำหรับเซลล์ &amp; ลูกค้า</span>
+        <h1>รายการราคาที่ <span class="accent">แชร์ได้ใน 3 ขั้นตอน</span></h1>
+        <p>ราคาล่าสุด Q2/2569 (เมษายน-มิถุนายน 2026) — เลือกสินค้า สร้างใบเสนอราคา ส่ง LINE ให้ลูกค้าได้ทันที</p>
+        <div class="hero-steps">
+            <div class="hero-step"><span class="hero-step-num">1</span> เลือกสินค้าที่ลูกค้าสนใจ</div>
+            <div class="hero-step"><span class="hero-step-num">2</span> ปรับจำนวน</div>
+            <div class="hero-step"><span class="hero-step-num">3</span> Copy &amp; ส่ง LINE</div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-inner">
+        <div class="trust-item"><i data-lucide="badge-check"></i> <strong>Official Distributor</strong> SolarEdge / Sunwoda</div>
+        <div class="trust-item"><i data-lucide="shield-check"></i> รับประกัน <strong>10-30 ปี</strong></div>
+        <div class="trust-item"><i data-lucide="award"></i> มาตรฐาน <strong>มอก. / IEC / กฟน.</strong></div>
+        <div class="trust-item"><i data-lucide="truck"></i> มีสินค้า <strong>พร้อมส่ง</strong></div>
+    </div>
+</div>
+
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+    <div class="brand-strip-inner">
+        <span class="brand-strip-label"><i data-lucide="handshake"></i> ตัวแทนจำหน่ายอย่างเป็นทางการ</span>
+        <div class="brand-list" id="brand-filters">
+            <button class="brand-chip" data-brand="SolarEdge"><span class="brand-dot" style="background:#ed1c24"></span>SolarEdge<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Sunwoda"><span class="brand-dot" style="background:#0a4595"></span>Sunwoda<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="LONGi"><span class="brand-dot" style="background:#003c71"></span>LONGi<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="KSTAR"><span class="brand-dot" style="background:#0072ce"></span>KSTAR<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Leapton"><span class="brand-dot" style="background:#e60012"></span>Leapton<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Deye"><span class="brand-dot" style="background:#005bbb"></span>Deye<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Solar PPM"><span class="brand-dot" style="background:#f7941d"></span>Solar PPM<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="IMT"><span class="brand-dot" style="background:#5a5a5a"></span>IMT<span class="brand-close">×</span></button>
         </div>
     </div>
 </div>
 
-<!-- ===== LIVE TICKER ===== -->
-<div class="ticker">
-    <div class="ticker-inner">
-        <a href="https://www.bot.or.th/th/statistics/exchange-rate.html" target="_blank" class="ticker-item" style="text-decoration:none;cursor:pointer;">
-            <div class="ticker-icon" style="background:rgba(245,158,11,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div class="ticker-text">
-                <div class="ticker-label">USD / THB</div>
-                <div class="ticker-value" id="tickerFx"><span class="ticker-loading">loading...</span></div>
-            </div>
-        </a>
-        <a href="https://www.erc.or.th/th/automatic/" target="_blank" class="ticker-item" style="text-decoration:none;cursor:pointer;">
-            <div class="ticker-icon" style="background:rgba(59,130,246,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-            <div class="ticker-text">
-                <div class="ticker-label">ค่าไฟ FT (พ.ค.-ส.ค. 69)</div>
-                <div class="ticker-value">3.95 <span class="unit">฿/หน่วย</span></div>
-            </div>
-        </a>
-        <div class="ticker-item">
-            <div class="ticker-icon" style="background:rgba(16,185,129,0.1);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
-            <div class="ticker-text">
-                <div class="ticker-label">Solar ประหยัดกว่า</div>
-                <div class="ticker-value" id="tickerSaving">~60% <span class="unit">vs ค่าไฟ</span></div>
+<!-- STATS STRIP -->
+<div class="stats-strip">
+    <div class="stats-inner">
+        <div class="stat-item">
+            <div class="stat-icon"><i data-lucide="zap"></i></div>
+            <div class="stat-text">
+                <span class="stat-label">ค่าไฟ FT (พ.ค.-ส.ค. 69)</span>
+                <span class="stat-value">3.95<span class="unit">฿/หน่วย</span></span>
             </div>
         </div>
-        <div class="ticker-item">
-            <div class="ticker-icon" style="background:rgba(168,85,247,0.1);">
-                <div class="ticker-dot" style="margin:0;"></div>
+        <div class="stat-item">
+            <div class="stat-icon"><i data-lucide="sun"></i></div>
+            <div class="stat-text">
+                <span class="stat-label">Solar ประหยัดกว่า</span>
+                <span class="stat-value"><span class="accent">~60%</span><span class="unit">vs ค่าไฟ</span></span>
             </div>
-            <div class="ticker-text">
-                <div class="ticker-label">ผู้เข้าชม</div>
-                <div class="ticker-value"><span id="tickerVisitors"><span class="ticker-loading">loading...</span></span></div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i data-lucide="tag"></i></div>
+            <div class="stat-text">
+                <span class="stat-label">ราคาเริ่มต้น</span>
+                <span class="stat-value">4.99<span class="unit">฿/W</span></span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-icon"><i data-lucide="calendar-check"></i></div>
+            <div class="stat-text">
+                <span class="stat-label">อัปเดตล่าสุด</span>
+                <span class="stat-value">Q2<span class="unit">พ.ค. 2569</span></span>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ===== MAIN ===== -->
-<div class="main" id="products">
+<!-- MAIN -->
+<main class="main">
 
-<!-- Stats -->
-<div class="stats">
-    <div class="stat-card">
-        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
-        <div class="stat-label">Products</div>
-        <div class="stat-value">30</div>
-        <div class="stat-sub">รายการสินค้า</div>
-    </div>
-    <div class="stat-card">
-        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a7 7 0 100-14 7 7 0 000 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div>
-        <div class="stat-label">Brands</div>
-        <div class="stat-value">7</div>
-        <div class="stat-sub">แบรนด์ชั้นนำ</div>
-    </div>
-    <div class="stat-card">
-        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <div class="stat-label">Starting</div>
-        <div class="stat-value">4.99 <span style="font-size:11px;font-weight:500;">฿/W</span></div>
-        <div class="stat-sub">ราคาเริ่มต้น</div>
-    </div>
-    <div class="stat-card">
-        <div style="margin-bottom:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <div class="stat-label">Updated</div>
-        <div class="stat-value">Q2</div>
-        <div class="stat-sub">พฤษภาคม 2569</div>
-    </div>
-</div>
-
-<!-- Toolbar -->
-<div class="toolbar">
-    <div class="search-wrap">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาสินค้า...">
-    </div>
-    <div class="filters">
-        <label for="f-all" class="filter-chip active" data-filter="all">ทั้งหมด</label>
-        <label for="f-inv" class="filter-chip" data-filter="inv">Inverter</label>
-        <label for="f-opt" class="filter-chip" data-filter="opt">Optimizer</label>
-        <label for="f-bat" class="filter-chip" data-filter="bat">Battery</label>
-        <label for="f-pan" class="filter-chip" data-filter="pan">แผงโซล่าร์</label>
-        <label for="f-acc" class="filter-chip" data-filter="acc">Sensor</label>
-        <label for="f-hyb" class="filter-chip" data-filter="hyb">KSTAR</label>
-    </div>
-</div>
-
-<!-- ===== SolarEdge C&I Inverter ===== -->
-<div class="section" data-cat="inverter">
-    <div class="section-header">
-        <div class="section-icon inv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="section-title">SolarEdge &mdash; Grid-Connected Inverter (C&I)</div>
-        <div class="section-count">2 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">SE33.3K</td>
-                <td>33.3 kW</td>
-                <td><span class="badge b-inv">C&I Inverter</span></td>
-                <td class="price">&#3647;69,000</td>
-                <td class="warranty">12 ปี</td>
-                <td class="note">3-Phase, Synergy Technology</td>
-                <td><a href="https://drive.google.com/file/d/1ncCj1Kd8R4kpEDXCTq0Rc8jlpnCjY2hB/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">SE100K</td>
-                <td>100 kW</td>
-                <td><span class="badge b-inv">C&I Inverter</span> <span class="badge b-best"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align:-1px;margin-right:2px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>ขายดี</span></td>
-                <td class="price">&#3647;129,000</td>
-                <td class="warranty">12 ปี</td>
-                <td class="note">3-Phase, Synergy Technology</td>
-                <td><a href="https://drive.google.com/file/d/1GSwnjiTocHDaDiartw7p_5wOUkTpNJzp/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== SolarEdge C&I Optimizer ===== -->
-<div class="section" data-cat="optimizer">
-    <div class="section-header">
-        <div class="section-icon opt"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-        <div class="section-title">SolarEdge &mdash; Power Optimizer (C&I)</div>
-        <div class="section-count">3 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Max Input</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">S1200</td>
-                <td>1,200 W</td>
-                <td><span class="badge b-opt">C&I Optimizer</span></td>
-                <td class="price">&#3647;2,190</td>
-                <td class="warranty">25 ปี</td>
-                <td class="note">ใช้คู่กับ SE33.3K / SE100K</td>
-                <td><a href="https://drive.google.com/file/d/1DD1zQjKLq1ryWPLFcygEQDNKihk1AqoT/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">S1400</td>
-                <td>1,400 W</td>
-                <td><span class="badge b-opt">C&I Optimizer</span> <span class="badge b-best"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="vertical-align:-1px;margin-right:2px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>ขายดี</span></td>
-                <td class="price">&#3647;2,290</td>
-                <td class="warranty">25 ปี</td>
-                <td class="note">รุ่นยอดนิยม &mdash; เหมาะกับแผง 500-700W</td>
-                <td><a href="https://drive.google.com/file/d/1cusf90_xXPSl7EmfkVlkFCbWDrl_CmS7/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">3</td>
-                <td class="model-name">S1500</td>
-                <td>1,500 W</td>
-                <td><span class="badge b-opt">C&I Optimizer</span> <span class="badge b-new">NEW</span></td>
-                <td class="price">&#3647;2,390</td>
-                <td class="warranty">25 ปี</td>
-                <td class="note">สำหรับแผงกำลังสูง 750W+</td>
-                <td><a href="https://drive.google.com/file/d/1VIilqGG8odBhuNTUYw6LoeTsIHdue5u9/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== SolarEdge Residential ===== -->
-<div class="section" data-cat="inverter">
-    <div class="section-header">
-        <div class="section-icon res"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div class="section-title">SolarEdge &mdash; Residential Inverter & Optimizer</div>
-        <div class="section-count">3 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">SE5000H-MM</td>
-                <td>5 kW</td>
-                <td><span class="badge b-inv">Residential Inverter</span></td>
-                <td class="price">&#3647;39,900</td>
-                <td class="warranty">12 ปี</td>
-                <td class="note">1 Phase, Backup option</td>
-                <td><a href="https://drive.google.com/file/d/1dsz9AX5gkzz8wGYantOBGOy6-l2I0XkU/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">SE10K-RWB48</td>
-                <td>10 kW</td>
-                <td><span class="badge b-inv">Residential Inverter</span></td>
-                <td class="price">&#3647;69,900</td>
-                <td class="warranty">12 ปี</td>
-                <td class="note">3 Phase, Backup option</td>
-                <td><a href="https://drive.google.com/file/d/1nS3u5JbrJ_7uyW3AkwUKRbXQtSgSLG-D/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">3</td>
-                <td class="model-name">S650B</td>
-                <td>650 W</td>
-                <td><span class="badge b-opt">Residential Optimizer</span></td>
-                <td class="price">&#3647;2,190</td>
-                <td class="warranty">25 ปี</td>
-                <td class="note">ใช้คู่กับ SE5000H / SE10K</td>
-                <td><a href="https://drive.google.com/file/d/1XH_QtDDskG1jnqhwHQcQSQluQMExf4VO/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== Battery ===== -->
-<div class="section" data-cat="battery">
-    <div class="section-header">
-        <div class="section-icon bat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></svg></div>
-        <div class="section-title">SolarEdge &mdash; Energy Storage (Battery System)</div>
-        <div class="section-count">1 item</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">CSS-OU-197 / PCS050</td>
-                <td>Batt 197 kWh + PCS 100 kW</td>
-                <td><span class="badge b-bat">Battery System</span> <span class="badge b-new">NEW</span></td>
-                <td class="price">&#3647;1,390,000</td>
-                <td class="warranty">10 ปี</td>
-                <td class="note">PCS050 50kW &times;2 + Battery 197kWh, แบต 8,000 cycle</td>
-                <td><a href="https://drive.google.com/file/d/1lz3bnxgvhvYBfqYY4HETsdTeklnmwT2T/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== Sunwoda ===== -->
-<div class="section" data-cat="battery">
-    <div class="section-header">
-        <div class="section-icon bat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></svg></div>
-        <div class="section-title">Sunwoda &mdash; Energy Storage Battery</div>
-        <div class="section-count">1 item</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">Atrix Max-16L-P <span class="badge b-new">NEW</span></td>
-                <td>LFP Battery 16 kWh / 51.2V</td>
-                <td><span class="badge b-bat">Battery System</span> <span class="badge b-new">NEW</span></td>
-                <td class="price">&#3647;69,900</td>
-                <td class="warranty">10 ปี</td>
-                <td class="note">100% DoD, 10,000 cycles, IP65, ต่อขนานได้ 32 ตัว (512 kWh), WiFi + Fire Extinguisher ในตัว</td>
-                <td><a href="https://drive.google.com/file/d/1U-oxaOx3U_m4jKa-jDLRLpZUMcS2KK36/view?usp=share_link" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== Solar PPM ===== -->
-<div class="section" data-cat="panel">
-    <div class="section-header">
-        <div class="section-icon pan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
-        <div class="section-title">Solar PPM &mdash; PV Module (มอก.)</div>
-        <div class="section-count">3 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB/W)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">SPPM-MG12-GG 600W</td>
-                <td>600 W</td>
-                <td><span class="badge b-pan">PV Module</span> <span class="badge b-tis">มอก.</span> <span class="badge b-rec"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:2px;"><polyline points="20 6 9 17 4 12"/></svg>แนะนำ</span></td>
-                <td class="price">12-13 &#3647;/W</td>
-                <td class="warranty">12/30 ปี</td>
-                <td class="note">Glass-Glass, มาตรฐาน มอก. &mdash; พร้อมส่ง</td>
-                <td><a href="https://drive.google.com/file/d/1hWYWM_2RBnWDYT2dHQsGXXdyD0TsqH0S/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">SPPM-NG12-GG 630W</td>
-                <td>630 W</td>
-                <td><span class="badge b-pan">PV Module</span> <span class="badge b-tis">มอก.</span> <span class="badge b-new">NEW</span></td>
-                <td class="price">12-13 &#3647;/W</td>
-                <td class="warranty">12/30 ปี</td>
-                <td class="note">Glass-Glass, มอก. &mdash; ผลิต ก.ย. 2569</td>
-                <td><a href="https://drive.google.com/file/d/1VnvEq_SpWAHAtCUp0WLUTGBcpsqnScPE/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">3</td>
-                <td class="model-name">SPPM-NG12-GG 720W</td>
-                <td>720 W</td>
-                <td><span class="badge b-pan">PV Module</span> <span class="badge b-tis">มอก.</span> <span class="badge b-new">NEW</span></td>
-                <td class="price">12-13 &#3647;/W</td>
-                <td class="warranty">12/30 ปี</td>
-                <td class="note">Glass-Glass, มอก. &mdash; ผลิต ก.ย. 2569</td>
-                <td><a href="https://drive.google.com/file/d/1LXC60yBb5Aoa_gavkjqXPLEmHIG9AJYL/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== Leapton ===== -->
-<div class="section" data-cat="panel">
-    <div class="section-header">
-        <div class="section-icon pan"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
-        <div class="section-title">Leapton Solar &mdash; PV Module</div>
-        <div class="section-count">2 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Power</th><th>Type</th><th>Price (THB/W)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">LP182-210-M-66-NB</td>
-                <td>620 W</td>
-                <td><span class="badge b-pan">PV Module</span></td>
-                <td class="price">4.99 &#3647;/W</td>
-                <td class="warranty">12/30 ปี</td>
-                <td class="note">N-Type Bifacial, 182mm Cell</td>
-                <td><a href="https://drive.google.com/file/d/1c5jf2wMxvlcb6IIss081Q7H2ZIBIgpci/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">LP210-210-M-66-NB</td>
-                <td>715 W</td>
-                <td><span class="badge b-pan">PV Module</span></td>
-                <td class="price">4.99 &#3647;/W</td>
-                <td class="warranty">12/30 ปี</td>
-                <td class="note">N-Type Bifacial, 210mm Cell</td>
-                <td><a href="https://drive.google.com/file/d/1n_AMYbTDo1ddhzns1NIJBbfCy8IlObMz/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== Sensor & Accessory ===== -->
-<div class="section" data-cat="accessory">
-    <div class="section-header">
-        <div class="section-icon sen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg></div>
-        <div class="section-title">IMT Technology & SolarEdge &mdash; Sensor / Accessory</div>
-        <div class="section-count">5 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Brand</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">Si-RS485TC-2T-v-MB</td>
-                <td>IMT</td>
-                <td><span class="badge b-sen">Irradiance Sensor</span></td>
-                <td class="price">&#3647;17,000</td>
-                <td class="warranty">1 ปี</td>
-                <td class="note">วัดความเข้มแสงอาทิตย์ RS485 Modbus</td>
-                <td><a href="https://drive.google.com/file/d/1VXKujGe-JvI3gNfPY-TWRxQUeQHrSfcK/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">Ta-ext-RS485-MB</td>
-                <td>IMT</td>
-                <td><span class="badge b-sen">Ambient Temp</span></td>
-                <td class="price">&#3647;15,000</td>
-                <td class="warranty">1 ปี</td>
-                <td class="note">วัดอุณหภูมิอากาศ RS485 Modbus</td>
-                <td><a href="https://drive.google.com/file/d/1rzla9Igdnp1xZBDrXw_1VQPR0nM_0GHG/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">3</td>
-                <td class="model-name">Tmodul-SI</td>
-                <td>IMT</td>
-                <td><span class="badge b-sen">Module Temp</span></td>
-                <td class="price">&#3647;15,500</td>
-                <td class="warranty">1 ปี</td>
-                <td class="note">วัดอุณหภูมิแผงโซล่าร์</td>
-                <td><a href="https://drive.google.com/file/d/1f-pwKnDU8SyMJwEN1NQ3_87oPBZ0HrJ7/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">4</td>
-                <td class="model-name">Vwind-Si</td>
-                <td>IMT</td>
-                <td><span class="badge b-sen">Wind Sensor</span></td>
-                <td class="price">&#3647;35,000</td>
-                <td class="warranty">1 ปี</td>
-                <td class="note">วัดความเร็วลม</td>
-                <td><a href="https://drive.google.com/file/d/1nDeYTxmY-GoslNLlOFrAZJwD0DO0F5rh/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">5</td>
-                <td class="model-name">CLC1</td>
-                <td>SolarEdge</td>
-                <td><span class="badge b-ctrl">ONE Controller</span></td>
-                <td class="price">&#3647;42,000</td>
-                <td class="warranty">5 ปี</td>
-                <td class="note">Zero Export Controller ควบคุมการจ่ายไฟเข้าระบบ C&I</td>
-                <td><a href="https://drive.google.com/file/d/1ClfY1Jd0fcZg61BCq_AeVH59vovKrjAH/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== KSTAR Hybrid ===== -->
-<div class="section" data-cat="hybrid">
-    <div class="section-header">
-        <div class="section-icon hyb"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/><polygon points="8 10 5 14 8.5 14 8 17 12 13 9 13 10 10 8 10" fill="none"/></svg></div>
-        <div class="section-title">KSTAR &mdash; Hybrid Inverter + Battery System</div>
-        <div class="section-count">6 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">BluE-H 5-5</td>
-                <td>Inverter 5 kW + Battery 5 kWh</td>
-                <td><span class="badge b-hyb">Hybrid System</span> <span class="badge b-rec"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:2px;"><polyline points="20 6 9 17 4 12"/></svg>แนะนำ</span></td>
-                <td class="price">&#3647;99,000</td>
-                <td class="warranty">5 ปี</td>
-                <td class="note">Residential Hybrid, 1 Phase, แบต 10,000 cycle</td>
-                <td><a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">BluE-H 5-10</td>
-                <td>Inverter 5 kW + Battery 10 kWh</td>
-                <td><span class="badge b-hyb">Hybrid System</span></td>
-                <td class="price">&#3647;149,000</td>
-                <td class="warranty">5 ปี</td>
-                <td class="note">Residential Hybrid, 1 Phase, แบต 10,000 cycle</td>
-                <td><a href="https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">3</td>
-                <td class="model-name">BluE-S 10 KT</td>
-                <td>Inverter 10 kW + Battery 10 kWh</td>
-                <td><span class="badge b-hyb">Hybrid System</span></td>
-                <td class="price">&#3647;169,000</td>
-                <td class="warranty">5 ปี</td>
-                <td class="note">Residential / Small C&I, 3 Phase, แบต 10,000 cycle</td>
-                <td><a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">4</td>
-                <td class="model-name">BluE-S 10 KT</td>
-                <td>Inverter 10 kW + Battery 20 kWh</td>
-                <td><span class="badge b-hyb">Hybrid System</span></td>
-                <td class="price">&#3647;269,000</td>
-                <td class="warranty">5 ปี</td>
-                <td class="note">Residential / Small C&I, 3 Phase, แบต 10,000 cycle</td>
-                <td><a href="https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <!-- NEW BluePulse -->
-            <tr class="new-divider">
-                <td colspan="8"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>NEW &mdash; BluePulse Series &mdash; C&I Backup Power (ใช้ได้ตอนไฟดับ)</td>
-            </tr>
-            <tr class="new-row">
-                <td class="row-num">5</td>
-                <td class="model-name">BluePulse 50kW <span class="badge b-new">NEW</span></td>
-                <td>KAC50DP2 + BC107DE2 (107.52 kWh)</td>
-                <td><span class="badge b-hyb">Hybrid System</span></td>
-                <td class="price">&#3647;999,900</td>
-                <td class="warranty">10 ปี*</td>
-                <td class="note">C&I Backup Power, 3 Phase, CATL 280Ah LFP</td>
-                <td><a href="https://drive.google.com/file/d/1zwQMzKUMP7CiKW9XDUzDKFQC6VBH5sHA/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr class="new-row">
-                <td class="row-num">6</td>
-                <td class="model-name">BluePulse 50kW <span class="badge b-new">NEW</span></td>
-                <td>KAC50DP2 + BC240DE2A (241.15 kWh)</td>
-                <td><span class="badge b-hyb">Hybrid System</span></td>
-                <td class="price">&#3647;1,390,000</td>
-                <td class="warranty">10 ปี*</td>
-                <td class="note">C&I Backup Power, 3 Phase, EVE 314Ah LFP</td>
-                <td><a href="https://drive.google.com/file/d/1Hod-n6tEbtZ6UYqnZ_CQFdBZqDPeEIBm/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr class="new-row">
-                <td class="row-num">7</td>
-                <td class="model-name">BluePulse 125kW <span class="badge b-new">NEW</span></td>
-                <td>KAC125DP2 + BC260DE2A (261.24 kWh)</td>
-                <td><span class="badge b-hyb">Hybrid System</span></td>
-                <td class="price">&#3647;1,590,000</td>
-                <td class="warranty">10 ปี*</td>
-                <td class="note">C&I Backup Power, 3 Phase, EVE 314Ah LFP</td>
-                <td><a href="https://drive.google.com/file/d/1ImBP5RALfFgfIjm2SC9ye4lPln3zoFc-/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<!-- ===== Deye — Hybrid Inverter ===== -->
-<div class="section reveal" data-cat="inverter">
-    <div class="section-header">
-        <div class="section-icon hyb"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="section-title">Deye &mdash; Hybrid Inverter</div>
-        <div class="section-count">4 items</div>
-    </div>
-    <div class="table-wrap"><table>
-        <thead><tr><th>#</th><th>Model</th><th>Specification</th><th>Type</th><th>Price (THB)</th><th>Warranty</th><th>Note</th><th>Spec</th><th></th></tr></thead>
-        <tbody>
-            <tr>
-                <td class="row-num">1</td>
-                <td class="model-name">SUN-6K-SG06LP1 <span class="badge b-new">NEW</span></td>
-                <td>SUN-6K-SG06LP1-EU-CM2</td>
-                <td><span class="badge b-hyb">Hybrid</span></td>
-                <td class="price">&#3647;26,500</td>
-                <td class="warranty">10 ปี</td>
-                <td class="note">Hybrid Inverter, 1 Phase, 6 kW</td>
-                <td><a href="https://drive.google.com/file/d/1iLICbMvgWm1c-IWU9NG_5vg0M77MD67e/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">2</td>
-                <td class="model-name">SUN-10K-SG06LP1 <span class="badge b-new">NEW</span></td>
-                <td>SUN-10K-SG06LP1-EU-CM3</td>
-                <td><span class="badge b-hyb">Hybrid</span></td>
-                <td class="price">&#3647;47,500</td>
-                <td class="warranty">10 ปี</td>
-                <td class="note">Hybrid Inverter, 1 Phase, 10 kW</td>
-                <td><a href="https://drive.google.com/file/d/1w68GQsY_-UBxi-MyMwqpgVV6ycExx5sF/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">3</td>
-                <td class="model-name">SUN-10K-SG05LP3 <span class="badge b-new">NEW</span></td>
-                <td>SUN-10K-SG05LP3-EU-SM2</td>
-                <td><span class="badge b-hyb">Hybrid</span></td>
-                <td class="price">&#3647;55,500</td>
-                <td class="warranty">10 ปี</td>
-                <td class="note">Hybrid Inverter, 3 Phase, 10 kW</td>
-                <td><a href="https://drive.google.com/file/d/1_HWWhGiHFTRPa8NU1HWHKdTTGaS9tqHD/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-            <tr>
-                <td class="row-num">4</td>
-                <td class="model-name">SUN-15K-SG05LP3 <span class="badge b-new">NEW</span></td>
-                <td>SUN-15K-SG05LP3-EU-SM2</td>
-                <td><span class="badge b-hyb">Hybrid</span></td>
-                <td class="price">&#3647;62,500</td>
-                <td class="warranty">10 ปี</td>
-                <td class="note">Hybrid Inverter, 3 Phase, 15 kW</td>
-                <td><a href="https://drive.google.com/file/d/1sg84abC2qT2j5dmWoobnBtwBOALcQOnH/view?usp=sharing" class="spec-link" target="_blank">&#8599; Datasheet</a></td>
-            </tr>
-        </tbody>
-    </table></div>
-</div>
-
-<div id="noResults" style="display:none;text-align:center;padding:40px;color:var(--text-light);font-size:15px;">
-    &#128269; ไม่พบสินค้าที่ตรงกับคำค้นหา
-</div>
-
-</div><!-- /main -->
-
-<!-- ===== FOOTER ===== -->
-<div class="footer">
-    <div class="footer-inner">
-        <div class="footer-grid">
-            <div>
-                <h3>Terms & Conditions</h3>
-                <ul>
-                    <li>ราคายังไม่รวม VAT 7%</li>
-                    <li>ราคาอาจเปลี่ยนแปลงโดยไม่แจ้งล่วงหน้า</li>
-                    <li>สอบถามราคาพิเศษสำหรับโครงการขนาดใหญ่</li>
-                    <li>เงื่อนไขการชำระเงิน: สอบถามเพิ่มเติม</li>
-                    <li>Lead Time: สินค้าพร้อมส่ง (ยกเว้นรุ่นใหม่)</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Why SSC?</h3>
-                <p style="font-size:13px; color:#e2e8f0; line-height:1.8; margin-top:8px;">เพราะระบบโซลาร์ไม่ใช่แค่ &quot;ซื้อแล้วจบ&quot; แต่คือการมีทีมที่พร้อมดูแล ให้คำปรึกษา และอยู่เคียงข้างคุณในทุกขั้นตอน</p>
-                <p style="font-size:15px; color:#fbbf24; font-weight:700; margin-top:12px;">&#9889; เลือกสินค้าที่ดี&hellip;สำคัญ แต่เลือก &quot;ทีมดูแลที่ไว้ใจได้&quot; สำคัญกว่า</p>
-                <p style="font-size:13px; color:#f1f5f9; font-weight:500; margin-top:8px;">SSC พร้อมดูแลทั้งก่อนและหลังการขายอย่างมืออาชีพ</p>
+    <!-- CONTROLS -->
+    <div class="controls">
+        <div class="search-row">
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" id="search" placeholder="ค้นหารุ่น / แบรนด์ / ประเภท…">
             </div>
         </div>
-
-        <div class="footer-contact">
-            <div>
-                <div class="footer-contact-name">คุณธีรวัฒน์ ฉัตรพรมราช (บอย)</div>
-                <div class="footer-contact-title">Sales and Relationship Manager</div>
-            </div>
-            <div class="footer-contact-links">
-                <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="footer-chip" style="background:#06c755;border-color:#06c755;color:white;font-weight:700;">&#128172; LINE พี่บอย</a>
-                <a href="mailto:Teerawat@siamsolar.co.th" class="footer-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg> ส่งอีเมล</a>
-                <a href="tel:+66848255036" class="footer-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 084-825-5036</a>
-                <a href="contact.html" class="footer-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> Contact Page</a>
+        <div class="controls-row">
+            <div class="filter-chips" id="filters"></div>
+            <div class="view-toggle" role="tablist" aria-label="View mode">
+                <button class="view-btn" data-view="grid"><i data-lucide="layout-grid"></i> การ์ด</button>
+                <button class="view-btn" data-view="list"><i data-lucide="list"></i> รายการ</button>
             </div>
         </div>
-
-        <div class="footer-disclaimer">
-            &copy; 2026 SSC &mdash; Confidential &mdash; เอกสารนี้เป็นความลับทางการค้า กรุณาอย่าเผยแพร่โดยไม่ได้รับอนุญาต
-        </div>
     </div>
-</div>
 
-<!-- LINE Float -->
-<a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" class="line-float">
-    <span class="line-float-icon">&#128172;</span> แชทกับเซลล์
-</a>
-
-<!-- Compare Bar -->
-<div class="compare-bar" id="compareBar">
-    <span class="compare-bar-text">เปรียบเทียบ <span class="compare-bar-count" id="compareCount">0</span> รายการ</span>
-    <button class="compare-bar-btn" onclick="showCompare()">&#128203; เปรียบเทียบ</button>
-    <button class="compare-bar-clear" onclick="clearCompare()">&#10005; ยกเลิก</button>
-</div>
-
-<!-- Compare Modal -->
-<div class="compare-modal" id="compareModal">
-    <div class="compare-box">
-        <div class="compare-header">
-            <h3>&#128203; เปรียบเทียบสินค้า</h3>
-            <button class="compare-close" onclick="closeCompare()">&#10005;</button>
-        </div>
-        <div class="table-wrap">
-            <table class="compare-table" id="compareTable"></table>
-        </div>
+    <!-- GRID -->
+    <div id="grid-container"></div>
+    <div id="empty" class="empty" style="display:none">
+        <i data-lucide="search-x"></i>
+        <p>ไม่พบสินค้าที่ค้นหา ลองค้นด้วยคำอื่นดูครับ</p>
     </div>
-</div>
+</main>
 
-<!-- Share -->
-<button class="share-fab" onclick="toggleShare()" title="แชร์หน้านี้">&#128279;</button>
-<div class="share-menu" id="shareMenu">
-    <button class="share-item" onclick="shareViaLine()">&#128154; แชร์ผ่าน LINE</button>
-    <button class="share-item" onclick="copyLink()">&#128203; คัดลอกลิ้งค์</button>
-</div>
-<div class="share-toast" id="shareToast">คัดลอกลิ้งค์แล้ว!</div>
-
-<!-- Dark Mode Toggle -->
-<button class="dark-toggle" id="darkToggle" onclick="toggleDark()" title="สลับโหมดมืด/สว่าง">&#127769;</button>
-
-<!-- FABs -->
-<!-- Cart FAB -->
-<button class="cart-fab" id="cartFab" onclick="toggleCart()" title="ตะกร้าสินค้า">
-    &#128722;
-    <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+<!-- CART FAB -->
+<button class="cart-fab" id="cart-fab" title="ใบเสนอราคา">
+    <i data-lucide="file-text"></i>
+    <span class="cart-badge" id="cart-badge" style="display:none">0</span>
 </button>
 
-<!-- Cart Overlay -->
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<!-- CART PANEL -->
+<aside class="cart-panel" id="cart-panel">
+    <div class="cart-head">
+        <h3><i data-lucide="file-text"></i> ใบเสนอราคา</h3>
+        <button class="cart-close" id="cart-close"><i data-lucide="x"></i></button>
+    </div>
+    <div class="cart-body" id="cart-body"></div>
+    <div class="cart-foot" id="cart-foot" style="display:none">
+        <div class="cart-total">
+            <span class="cart-total-label">รวม (ยังไม่รวม VAT)</span>
+            <span class="cart-total-val" id="cart-total">฿0</span>
+        </div>
+        <div class="cart-vat">+ VAT 7% = <span id="cart-vat">฿0</span></div>
+        <div class="cart-actions">
+            <button class="cart-btn cart-btn-copy" id="cart-copy">
+                <i data-lucide="copy"></i> Copy ใบเสนอราคา
+            </button>
+            <a href="#" class="cart-btn cart-btn-line" id="cart-line">
+                <i data-lucide="send"></i> ส่ง LINE
+            </a>
+        </div>
+    </div>
+</aside>
 
-<!-- Cart Panel -->
-<div class="cart-panel" id="cartPanel">
-    <div class="cart-header">
-        <h2>&#128722; ตะกร้าขอใบเสนอราคา</h2>
-        <button class="cart-close" onclick="toggleCart()">&#10005;</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-        <div class="cart-empty" id="cartEmpty">
-            <div class="cart-empty-icon">&#128722;</div>
-            <div>ยังไม่มีสินค้าในตะกร้า</div>
-            <div style="font-size:13px;margin-top:8px;">กดปุ่ม <strong style="color:var(--gold);">+ เพิ่ม</strong> ที่แถวสินค้าเพื่อเริ่มต้น</div>
-        </div>
-    </div>
-    <div class="cart-footer" id="cartFooter" style="display:none">
-        <div class="cart-summary">
-            <div class="cart-row"><span>รวมก่อน VAT</span><span id="cartSubtotal">&#3647;0</span></div>
-            <div class="cart-row vat"><span>VAT 7%</span><span id="cartVat">&#3647;0</span></div>
-            <div class="cart-row total"><span>รวมทั้งสิ้น</span><span id="cartTotal">&#3647;0</span></div>
-        </div>
-        <div class="cart-note-label">หมายเหตุถึงเซลล์ (ไม่บังคับ)</div>
-        <textarea class="cart-note" id="cartNote" placeholder="เช่น ชื่อโครงการ, ต้องการส่วนลด, นัดคุยวันไหน..."></textarea>
-        <div class="cart-actions" style="margin-top:12px;">
-            <button class="cart-send-btn cart-send-line" onclick="sendViaLine()">&#128172; ส่งรายการผ่าน LINE</button>
-            <button class="cart-send-btn cart-send-email" onclick="sendViaEmail()">&#9993; ส่งรายการผ่าน Email</button>
-            <button class="cart-clear" onclick="clearCart()">&#128465; ล้างตะกร้า</button>
-        </div>
-    </div>
-</div>
+<!-- TOAST -->
+<div class="toast" id="toast"><i data-lucide="check-circle"></i> <span id="toast-msg">คัดลอกแล้ว</span></div>
 
-<button class="print-fab" onclick="window.print()" title="Print / Save PDF">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-</button>
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Scroll to top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
+<!-- FOOTER -->
+<footer class="footer">
+    <p><strong>Siam Solar Cell Co., Ltd.</strong> · ข้อมูล Q2/2569 (ราคาอาจเปลี่ยนแปลงโดยไม่แจ้งล่วงหน้า)</p>
+    <p>ติดต่อ: <a href="tel:0848255036">084-825-5036</a> · <a href="mailto:teerawat@siamsolar.co.th">teerawat@siamsolar.co.th</a> · <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank">LINE</a></p>
+</footer>
 
 <script>
-// Search
-document.getElementById('searchInput').addEventListener('input', function() {
-    var q = this.value.toLowerCase().trim();
-    var sections = document.querySelectorAll('.section');
-    var noRes = document.getElementById('noResults');
-    var any = false;
+// ===== PRODUCT DATA (จาก prices.js เดิม + รูป + datasheet placeholder) =====
+const PRODUCTS = [
+    // Inverter C&I
+    { id:'se33', cat:'inverter', name:'SolarEdge SE33.3K', brand:'SolarEdge', model:'SE33.3K', subcat:'Inverter C&I', price:69000, stock:'in', tag:'hot',
+      img:'SE33.3K.jpg',
+      specs:[{l:'AC',v:'33.3 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'2'},{l:'รับประกัน',v:'12 ปี'}] },
+    { id:'se100', cat:'inverter', name:'SolarEdge SE100K Synergy', brand:'SolarEdge', model:'SE100K', subcat:'Inverter C&I', price:129000, stock:'in', tag:'hot',
+      img:'https://cdn11.bigcommerce.com/s-3nrr5bfo5i/images/stencil/500x659/products/2342/8396/solaredge-synergy_inverter__26787.1604101548.png?c=2',
+      specs:[{l:'AC',v:'100 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'6'},{l:'รับประกัน',v:'12 ปี'}] },
+    // Inverter Residential
+    { id:'se5000h', cat:'inverter', name:'SolarEdge SE5000H-MM', brand:'SolarEdge', model:'SE5000H-MM', subcat:'Inverter บ้าน', price:39900, stock:'in', tag:'hot',
+      img:'https://d3f7dpm96o8eu9.cloudfront.net/media/catalog/product/cache/9e6e15f15c64005f80b557b19e6068ef/s/i/single-phase-inverter-with-hd-wave_4.jpg',
+      specs:[{l:'AC',v:'5 kW'},{l:'Phase',v:'1P'},{l:'Max',v:'6,800W'},{l:'รับประกัน',v:'12 ปี'}] },
+    { id:'se10k', cat:'inverter', name:'SolarEdge SE10K-RWB48', brand:'SolarEdge', model:'SE10K-RWB48', subcat:'Inverter บ้าน', price:69900, stock:'in',
+      img:'SolarEdge%20SE10K-RWB48.jpg',
+      specs:[{l:'AC',v:'10 kW'},{l:'Phase',v:'3P'},{l:'Max',v:'15,000W'},{l:'รับประกัน',v:'12 ปี'}] },
+    // Deye Hybrid
+    { id:'sun6k', cat:'inverter', name:'Deye SUN-6K Hybrid', brand:'Deye', model:'SUN-6K-SG06LP1', subcat:'Hybrid Inverter', price:26500, stock:'in', tag:'new',
+      img:'Deye.png',
+      specs:[{l:'AC',v:'6 kW'},{l:'Phase',v:'1P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
+    { id:'sun10k1', cat:'inverter', name:'Deye SUN-10K Hybrid 1P', brand:'Deye', model:'SUN-10K-SG06LP1', subcat:'Hybrid Inverter', price:47500, stock:'in', tag:'new',
+      img:'Deye.png',
+      specs:[{l:'AC',v:'10 kW'},{l:'Phase',v:'1P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
+    { id:'sun10k3', cat:'inverter', name:'Deye SUN-10K Hybrid 3P', brand:'Deye', model:'SUN-10K-SG05LP3', subcat:'Hybrid Inverter', price:55500, stock:'in', tag:'new',
+      img:'Deye.png',
+      specs:[{l:'AC',v:'10 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
+    { id:'sun15k', cat:'inverter', name:'Deye SUN-15K Hybrid 3P', brand:'Deye', model:'SUN-15K-SG05LP3', subcat:'Hybrid Inverter', price:62500, stock:'in', tag:'new',
+      img:'Deye.png',
+      specs:[{l:'AC',v:'15 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
 
-    sections.forEach(function(sec) {
-        var rows = sec.querySelectorAll('tbody tr:not(.new-divider)');
-        var match = false;
-        rows.forEach(function(r) {
-            var txt = r.textContent.toLowerCase();
-            if (!q || txt.indexOf(q) !== -1) { r.style.display = ''; match = true; }
-            else { r.style.display = 'none'; }
-        });
-        // Handle new-divider visibility
-        var divider = sec.querySelector('.new-divider');
-        if (divider) {
-            var newRows = sec.querySelectorAll('.new-row');
-            var anyNew = false;
-            newRows.forEach(function(nr) { if (nr.style.display !== 'none') anyNew = true; });
-            divider.style.display = anyNew ? '' : 'none';
-        }
-        if (q) { sec.style.display = match ? '' : 'none'; }
-        else { sec.style.display = ''; rows.forEach(function(r){ r.style.display = ''; }); match = true; }
-        if (match) any = true;
+    // Optimizers
+    { id:'s1200', cat:'optimizer', name:'SolarEdge S1200', brand:'SolarEdge', model:'S1200', subcat:'Power Optimizer', price:2190, stock:'in', tag:'hot',
+      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'630W'}] },
+    { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'in',
+      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'730W'}] },
+    { id:'s1500', cat:'optimizer', name:'SolarEdge S1500', brand:'SolarEdge', model:'S1500', subcat:'Power Optimizer', price:2390, stock:'in',
+      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'>750W'}] },
+    { id:'s650b', cat:'optimizer', name:'SolarEdge S650B (บ้าน)', brand:'SolarEdge', model:'S650B', subcat:'Power Optimizer', price:2190, stock:'in',
+      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      specs:[{l:'Mode',v:'1:1'},{l:'Max',v:'650W'}] },
+
+    // Panels
+    { id:'lp620', cat:'panel', name:'Leapton 620W (บ้าน)', brand:'Leapton', model:'LP182-210-M-66-NB', subcat:'แผงโซล่าร์', price:3094, ppw:4.99, watt:620, stock:'in',
+      img:'Leapton.jpeg',
+      specs:[{l:'Watt',v:'620W'},{l:'฿/W',v:'4.99'}] },
+    { id:'lp715', cat:'panel', name:'Leapton 715W (C&I)', brand:'Leapton', model:'LP210-210-M-66-NB', subcat:'แผงโซล่าร์', price:3568, ppw:4.99, watt:715, stock:'in', tag:'hot',
+      img:'Leapton.jpeg',
+      specs:[{l:'Watt',v:'715W'},{l:'฿/W',v:'4.99'}] },
+    { id:'ppm600', cat:'panel', name:'Solar PPM 600W (มอก.)', brand:'Solar PPM', model:'SPPM-MG12-GG', subcat:'แผงโซล่าร์ มอก.', price:7500, ppw:12.5, watt:600, stock:'in',
+      img:'PPM%20TIS.png',
+      specs:[{l:'Watt',v:'600W'},{l:'฿/W',v:'12.50'},{l:'มอก.',v:'✓'}] },
+    { id:'ppm735', cat:'panel', name:'Solar PPM 735W (มอก.)', brand:'Solar PPM', model:'SPPM-NG12-HV-72', subcat:'แผงโซล่าร์ มอก.', price:9188, ppw:12.5, watt:735, stock:'preorder',
+      img:'PPM%20TIS.png',
+      specs:[{l:'Watt',v:'735W'},{l:'฿/W',v:'12.50'},{l:'ส่ง',v:'ก.ย.69'}] },
+    { id:'longi545', cat:'panel', name:'LONGi Hi-MO X10 Light Design', brand:'LONGi', model:'LR7-60HVHL-545M', subcat:'แผงโซล่าร์ Premium', price:2861, ppw:5.25, watt:545, stock:'in',
+      img:'Longi.png',
+      specs:[{l:'Watt',v:'545W'},{l:'฿/W',v:'5.25'},{l:'รับประกัน',v:'15/30 ปี'}] },
+    { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3413, ppw:5.25, watt:650, stock:'in',
+      img:'Longi.png',
+      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.25'},{l:'รับประกัน',v:'15/30 ปี'}] },
+    { id:'longi740', cat:'panel', name:'LONGi Hi-MO 9 740W', brand:'LONGi', model:'LR9-66HYD-740M', subcat:'แผงโซล่าร์ Premium', price:3885, ppw:5.25, watt:740, stock:'in', tag:'new',
+      img:'Longi.png',
+      specs:[{l:'Watt',v:'740W'},{l:'Bifacial',v:'✓'},{l:'รับประกัน',v:'12/30 ปี'}] },
+
+    // Battery Residential
+    { id:'blueh51', cat:'battery', name:'KSTAR BluE-H 5-1', brand:'KSTAR', model:'BluE-H 5-1', subcat:'Battery บ้าน', price:99000, stock:'in',
+      img:'KSTAR%20BluE-H%205-1.jpg',
+      specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'5 kWh'}] },
+    { id:'blueh52', cat:'battery', name:'KSTAR BluE-H 5-2', brand:'KSTAR', model:'BluE-H 5-2', subcat:'Battery บ้าน', price:149000, stock:'in',
+      img:'KSTAR%20BluE-H%205-2.jpg',
+      specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'10 kWh'}] },
+    { id:'blues101', cat:'battery', name:'KSTAR BluE-S 10 KT-1', brand:'KSTAR', model:'BluE-S 10 KT-1', subcat:'Battery บ้าน', price:169000, stock:'in',
+      img:'KSTAR%20BluE-S%2010%20KT-%201.jpg',
+      specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'10 kWh'}] },
+    { id:'blues102', cat:'battery', name:'KSTAR BluE-S 10 KT-2', brand:'KSTAR', model:'BluE-S 10 KT-2', subcat:'Battery บ้าน', price:269000, stock:'in', tag:'hot',
+      img:'KSTAR%20BluE-S%2010%20KT-2.png',
+      specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'20 kWh'}] },
+    // Battery C&I
+    { id:'sunwoda16', cat:'battery', name:'Sunwoda Atrix Max-16L-P ⭐', brand:'Sunwoda', model:'Atrix Max-16L-P', subcat:'Battery C&I', price:69900, stock:'in', tag:'new',
+      img:'https://www.sunwodaess.com/static/upload/image/20260123/1769147016453506.png',
+      specs:[{l:'Capacity',v:'16 kWh'},{l:'DoD',v:'100%'},{l:'Cycles',v:'10,000'},{l:'รับประกัน',v:'10 ปี'}] },
+    { id:'cssou', cat:'battery', name:'SolarEdge CSS-OU-197 + PCS 50K', brand:'SolarEdge', model:'CSS-OU-197', subcat:'Battery C&I', price:1390000, stock:'preorder', stockNote:'45-60 วัน',
+      img:'solaredge-css-ou.png',
+      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'197 kWh'}] },
+    { id:'bp50_107', cat:'battery', name:'KSTAR BluePulse 50kW/107kWh', brand:'KSTAR', model:'KAC50DP2 + BC107DE2', subcat:'Battery C&I', price:999900, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
+      img:'KSTAR%20BluePulse%2050kW%3A107kWh.jpg',
+      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'107.5 kWh'},{l:'Cell',v:'CATL'}] },
+    { id:'bp50_241', cat:'battery', name:'KSTAR BluePulse 50kW/241kWh', brand:'KSTAR', model:'KAC50DP2 + BC240DE2A', subcat:'Battery C&I', price:1390000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
+      img:'KSTAR%20BluePulse%2050kW%3A241kWh.png',
+      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'241.2 kWh'},{l:'Cell',v:'EVE'}] },
+    { id:'bp125_261', cat:'battery', name:'KSTAR BluePulse 125kW/261kWh', brand:'KSTAR', model:'KAC125DP2 + BC260DE2A', subcat:'Battery C&I', price:1590000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
+      img:'KSTAR%20BluePulse%20125kW%3A261kWh.png',
+      specs:[{l:'Power',v:'125 kW'},{l:'Capacity',v:'261.2 kWh'},{l:'Cell',v:'EVE'}] },
+
+    // Sensors & Accessories
+    { id:'irr', cat:'accessory', name:'IMT Irradiance Sensor', brand:'IMT', model:'Si-RS485TC-2T-v-MB', subcat:'Sensor', price:17000, stock:'in',
+      img:'imt-irradiance.jpg',
+      specs:[{l:'Type',v:'Irradiance'},{l:'I/O',v:'RS485'}] },
+    { id:'amb', cat:'accessory', name:'IMT Ambient Temp Sensor', brand:'IMT', model:'Ta-ext-RS485-MB', subcat:'Sensor', price:15000, stock:'in',
+      img:'imt-ambient.jpg',
+      specs:[{l:'Type',v:'Ambient'}] },
+    { id:'mod', cat:'accessory', name:'IMT Module Temp Sensor', brand:'IMT', model:'Tmodul-SI', subcat:'Sensor', price:15500, stock:'in',
+      img:'imt-module.jpg',
+      specs:[{l:'Type',v:'Module Temp'}] },
+    { id:'wind', cat:'accessory', name:'IMT Wind Sensor', brand:'IMT', model:'Vwind-Si', subcat:'Sensor', price:35000, stock:'in',
+      img:'imt-wind.jpg',
+      specs:[{l:'Type',v:'Wind'}] },
+    { id:'clc1', cat:'accessory', name:'SolarEdge CLC1 ONE Controller', brand:'SolarEdge', model:'CLC1', subcat:'Accessory', price:42000, stock:'in',
+      img:'solaredge-clc1.jpg',
+      specs:[{l:'Type',v:'Controller'}] },
+];
+
+// ===== DATASHEET LINKS (จาก index.html เดิม) =====
+const DATASHEETS = {
+    se33:      'https://drive.google.com/file/d/1ncCj1Kd8R4kpEDXCTq0Rc8jlpnCjY2hB/view?usp=sharing',
+    se100:     'https://drive.google.com/file/d/1GSwnjiTocHDaDiartw7p_5wOUkTpNJzp/view?usp=sharing',
+    se5000h:   'https://drive.google.com/file/d/1dsz9AX5gkzz8wGYantOBGOy6-l2I0XkU/view?usp=sharing',
+    se10k:     'https://drive.google.com/file/d/1nS3u5JbrJ_7uyW3AkwUKRbXQtSgSLG-D/view?usp=sharing',
+    s1200:     'https://drive.google.com/file/d/1DD1zQjKLq1ryWPLFcygEQDNKihk1AqoT/view?usp=sharing',
+    s1400:     'https://drive.google.com/file/d/1cusf90_xXPSl7EmfkVlkFCbWDrl_CmS7/view?usp=sharing',
+    s1500:     'https://drive.google.com/file/d/1VIilqGG8odBhuNTUYw6LoeTsIHdue5u9/view?usp=sharing',
+    s650b:     'https://drive.google.com/file/d/1XH_QtDDskG1jnqhwHQcQSQluQMExf4VO/view?usp=sharing',
+    cssou:     'https://drive.google.com/file/d/1lz3bnxgvhvYBfqYY4HETsdTeklnmwT2T/view?usp=sharing',
+    sunwoda16: 'https://drive.google.com/file/d/1U-oxaOx3U_m4jKa-jDLRLpZUMcS2KK36/view?usp=share_link',
+    ppm600:    'https://drive.google.com/file/d/1hWYWM_2RBnWDYT2dHQsGXXdyD0TsqH0S/view?usp=sharing',
+    ppm735:    'https://drive.google.com/file/d/1LXC60yBb5Aoa_gavkjqXPLEmHIG9AJYL/view?usp=sharing',
+    lp620:     'https://drive.google.com/file/d/1c5jf2wMxvlcb6IIss081Q7H2ZIBIgpci/view?usp=sharing',
+    lp715:     'https://drive.google.com/file/d/1n_AMYbTDo1ddhzns1NIJBbfCy8IlObMz/view?usp=sharing',
+    longi545:  'https://static.longi.com/LR_7_60_HVHL_535_560_W_EN_8582051c27.pdf',
+    longi650:  'https://static.longi.com/LR_7_72_HVH_655_670_M_30_30_and_15_Scientist_BGV_02_20241118_EN_Draft_9293e45f42.pdf',
+    longi740:  'https://static.longi.com/GGS_LR_8_66_HYD_022_LR_8_66_HYD_630_670_M_V2_30_30_and_15_V4_1_pdf_EN_526da7cf78.pdf',
+    irr:       'https://drive.google.com/file/d/1VXKujGe-JvI3gNfPY-TWRxQUeQHrSfcK/view?usp=sharing',
+    amb:       'https://drive.google.com/file/d/1rzla9Igdnp1xZBDrXw_1VQPR0nM_0GHG/view?usp=sharing',
+    mod:       'https://drive.google.com/file/d/1f-pwKnDU8SyMJwEN1NQ3_87oPBZ0HrJ7/view?usp=sharing',
+    wind:      'https://drive.google.com/file/d/1nDeYTxmY-GoslNLlOFrAZJwD0DO0F5rh/view?usp=sharing',
+    clc1:      'https://drive.google.com/file/d/1ClfY1Jd0fcZg61BCq_AeVH59vovKrjAH/view?usp=sharing',
+    blueh51:   'https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing',
+    blueh52:   'https://drive.google.com/file/d/1gW4jB7aRLC5Eyjccc202Lhp9hPB3-0Rr/view?usp=sharing',
+    blues101:  'https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing',
+    blues102:  'https://drive.google.com/file/d/1pyNYj5ryP3TTXDXtQi5wbSuusfXcJjES/view?usp=sharing',
+    bp50_107:  'https://drive.google.com/file/d/1zwQMzKUMP7CiKW9XDUzDKFQC6VBH5sHA/view?usp=sharing',
+    bp50_241:  'https://drive.google.com/file/d/1Hod-n6tEbtZ6UYqnZ_CQFdBZqDPeEIBm/view?usp=sharing',
+    bp125_261: 'https://drive.google.com/file/d/1ImBP5RALfFgfIjm2SC9ye4lPln3zoFc-/view?usp=sharing',
+    sun6k:     'https://drive.google.com/file/d/1iLICbMvgWm1c-IWU9NG_5vg0M77MD67e/view?usp=sharing',
+    sun10k1:   'https://drive.google.com/file/d/1w68GQsY_-UBxi-MyMwqpgVV6ycExx5sF/view?usp=sharing',
+    sun10k3:   'https://drive.google.com/file/d/1_HWWhGiHFTRPa8NU1HWHKdTTGaS9tqHD/view?usp=sharing',
+    sun15k:    'https://drive.google.com/file/d/1sg84abC2qT2j5dmWoobnBtwBOALcQOnH/view?usp=sharing',
+};
+
+const CATEGORIES = [
+    { id:'all',       label:'ทั้งหมด',   icon:'layout-grid' },
+    { id:'inverter',  label:'Inverter',  icon:'zap' },
+    { id:'optimizer', label:'Optimizer', icon:'cpu' },
+    { id:'panel',     label:'แผงโซล่าร์', icon:'sun' },
+    { id:'battery',   label:'Battery',   icon:'battery-charging' },
+    { id:'accessory', label:'อุปกรณ์เสริม', icon:'wrench' },
+];
+
+const fmt = n => '฿' + n.toLocaleString('en-US');
+const cat = PRODUCTS.reduce((a,p)=>{a[p.cat]=(a[p.cat]||0)+1;return a;},{});
+cat.all = PRODUCTS.length;
+
+// ===== STATE =====
+let activeCat = 'all';
+let activeBrand = 'all';
+let searchTerm = '';
+let viewMode = localStorage.getItem('ssc-view') || 'list';
+let cart = JSON.parse(localStorage.getItem('ssc-cart') || '{}');
+
+// ===== RENDER =====
+function renderFilters() {
+    document.getElementById('filters').innerHTML = CATEGORIES.map(c =>
+        `<button class="chip ${activeCat===c.id?'active':''}" data-cat="${c.id}">
+            <i data-lucide="${c.icon}"></i> ${c.label}
+            <span class="chip-count">${cat[c.id]||0}</span>
+        </button>`).join('');
+    document.querySelectorAll('[data-cat]').forEach(el => {
+        el.addEventListener('click', () => { activeCat = el.dataset.cat; renderFilters(); renderGrid(); });
     });
-    noRes.style.display = any ? 'none' : 'block';
-});
+    lucide.createIcons();
+}
 
-// ===== CART SYSTEM =====
-var cart = [];
+function renderGrid() {
+    const filtered = PRODUCTS.filter(p => {
+        const matchCat = activeCat==='all' || p.cat===activeCat;
+        const matchBrand = activeBrand==='all' || p.brand===activeBrand;
+        const term = searchTerm.toLowerCase().trim();
+        const matchSearch = !term ||
+            p.name.toLowerCase().includes(term) ||
+            p.brand.toLowerCase().includes(term) ||
+            p.model.toLowerCase().includes(term) ||
+            (p.subcat && p.subcat.toLowerCase().includes(term));
+        return matchCat && matchBrand && matchSearch;
+    });
 
-// Add "เพิ่ม" buttons to all product rows
-document.querySelectorAll('.section tbody tr').forEach(function(row) {
-    if (row.classList.contains('new-divider')) return;
-    var modelEl = row.querySelector('.model-name');
-    var priceEl = row.querySelector('.price');
-    if (!modelEl || !priceEl) return;
+    const grouped = {};
+    filtered.forEach(p => {
+        if (!grouped[p.subcat]) grouped[p.subcat] = [];
+        grouped[p.subcat].push(p);
+    });
 
-    var model = modelEl.childNodes[0].textContent.trim();
-    var priceText = priceEl.textContent.trim();
+    const container = document.getElementById('grid-container');
+    const empty = document.getElementById('empty');
 
-    var td = document.createElement('td');
-    td.style.textAlign = 'center';
-    var btn = document.createElement('button');
-    btn.className = 'add-cart-btn';
-    btn.innerHTML = '+ เพิ่ม';
-    btn.setAttribute('data-model', model);
-    btn.setAttribute('data-price', priceText);
-    btn.onclick = function() {
-        addToCart(model, priceText);
-        btn.classList.add('added');
-        btn.innerHTML = '&#10003; เพิ่มแล้ว!';
-        setTimeout(function() {
-            btn.classList.remove('added');
-            btn.innerHTML = '+ เพิ่ม';
-        }, 1500);
-    };
-    td.appendChild(btn);
-    row.appendChild(td);
-});
-
-function parsePrice(priceText) {
-    var cleaned = priceText.replace(/[^\d.,-]/g, '').replace(/,/g, '');
-    if (cleaned.indexOf('-') !== -1) {
-        // Range like "12-13" for per-watt pricing — not summable
-        return 0;
+    if (filtered.length === 0) {
+        container.innerHTML = '';
+        empty.style.display = 'block';
+        lucide.createIcons();
+        return;
     }
-    var num = parseFloat(cleaned);
-    return isNaN(num) ? 0 : num;
+    empty.style.display = 'none';
+
+    container.innerHTML = Object.keys(grouped).map(subcat => {
+        const items = grouped[subcat];
+        const catIcon = CATEGORIES.find(c => c.id === items[0].cat)?.icon || 'package';
+        const inner = viewMode === 'list'
+            ? `<div class="list">${items.map(renderRow).join('')}</div>`
+            : `<div class="grid">${items.map(renderCard).join('')}</div>`;
+        return `
+            <section class="cat-section">
+                <h2 class="cat-title">
+                    <span class="cat-title-icon"><i data-lucide="${catIcon}"></i></span>
+                    <span class="cat-title-text">${subcat}</span>
+                    <span class="cat-title-count">${items.length} รายการ</span>
+                </h2>
+                ${inner}
+            </section>
+        `;
+    }).join('');
+
+    bindCardActions();
+    lucide.createIcons();
 }
 
-function addToCart(model, priceText) {
-    var existing = cart.find(function(item) { return item.model === model; });
-    if (existing) {
-        existing.qty++;
-    } else {
-        cart.push({ model: model, priceText: priceText, price: parsePrice(priceText), qty: 1 });
+function tagBadgeHTML(p){
+    if (p.tag === 'hot') return '<span class="tag-badge tag-hot"><i data-lucide="flame"></i> HOT</span>';
+    if (p.tag === 'new') return '<span class="tag-badge tag-new"><i data-lucide="sparkles"></i> NEW</span>';
+    return '';
+}
+
+function renderCard(p) {
+    const inCart = cart[p.id] && cart[p.id].qty > 0;
+    const stockBadge = p.stock === 'in'
+        ? '<span class="card-stock"><i data-lucide="check"></i> พร้อมส่ง</span>'
+        : `<span class="card-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
+    const img = p.img
+        ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><i data-lucide=\\'image\\'></i><span>${p.brand}</span></div>';lucide.createIcons();">`
+        : `<div class="card-img-placeholder"><i data-lucide="image"></i><span>${p.brand}</span></div>`;
+    const unit = p.cat === 'panel' ? '<div class="card-price-unit">/แผง</div>' : '';
+    const tag = tagBadgeHTML(p);
+    return `
+        <div class="card" data-id="${p.id}">
+            <div class="card-img">
+                ${tag ? `<span class="card-tag">${tag}</span>` : ''}
+                <span class="card-badge${tag?' has-tag':''}">${p.brand}</span>
+                ${stockBadge}
+                ${img}
+            </div>
+            <div class="card-body">
+                <div class="card-brand">${p.subcat}</div>
+                <div class="card-model">${p.name}</div>
+                <div class="card-specs">
+                    ${p.specs.map(s => `<div class="spec">${s.l} <strong>${s.v}</strong></div>`).join('')}
+                </div>
+                <div class="card-price-row">
+                    <div>
+                        <div class="card-price-label">ราคา (ไม่รวม VAT)</div>
+                        <div class="card-price">${fmt(p.price)}</div>
+                    </div>
+                    ${unit}
+                </div>
+            </div>
+            <div class="card-actions">
+                ${DATASHEETS[p.id]
+                    ? `<a class="btn btn-icon" href="${DATASHEETS[p.id]}" target="_blank" rel="noopener" title="ดู Datasheet (PDF)"><i data-lucide="file-text"></i></a>`
+                    : `<span class="btn btn-icon" aria-disabled="true" title="ไม่มี Datasheet"><i data-lucide="file-text"></i></span>`}
+                <button class="btn btn-ghost copy-btn" data-id="${p.id}"><i data-lucide="copy"></i> Copy</button>
+                <button class="btn btn-primary add-btn ${inCart?'added':''}" data-id="${p.id}">
+                    <i data-lucide="${inCart?'check':'plus'}"></i> ${inCart?'อยู่ในใบเสนอ':'เพิ่ม'}
+                </button>
+            </div>
+        </div>`;
+}
+
+function renderRow(p) {
+    const inCart = cart[p.id] && cart[p.id].qty > 0;
+    const stockBadge = p.stock === 'in'
+        ? '<span class="row-stock"><i data-lucide="check"></i> พร้อมส่ง</span>'
+        : `<span class="row-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
+    const img = p.img
+        ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'row-img-placeholder\\'><i data-lucide=\\'image\\'></i></div>';lucide.createIcons();">`
+        : `<div class="row-img-placeholder"><i data-lucide="image"></i></div>`;
+    const specs = p.specs.map(s => `<span class="row-spec">${s.l} <strong>${s.v}</strong></span>`).join('');
+    const unit = p.cat === 'panel' ? '<span class="row-price-unit">/แผง</span>' : '';
+    const tag = tagBadgeHTML(p);
+    return `
+        <div class="row" data-id="${p.id}">
+            <div class="row-img">${img}</div>
+            <div class="row-info">
+                <div class="row-top">
+                    <span class="row-brand">${p.brand}</span>
+                    <span class="row-model">${p.name}</span>
+                    ${tag}
+                    ${stockBadge}
+                </div>
+                <div class="row-specs">${specs}</div>
+            </div>
+            <div class="row-price">
+                <div class="row-price-val">${fmt(p.price)}</div>
+                ${unit}
+            </div>
+            <div class="row-actions">
+                ${DATASHEETS[p.id]
+                    ? `<a class="btn btn-icon" href="${DATASHEETS[p.id]}" target="_blank" rel="noopener" title="ดู Datasheet (PDF)"><i data-lucide="file-text"></i></a>`
+                    : `<span class="btn btn-icon" aria-disabled="true" title="ไม่มี Datasheet"><i data-lucide="file-text"></i></span>`}
+                <button class="btn btn-ghost copy-btn" data-id="${p.id}" title="Copy"><i data-lucide="copy"></i></button>
+                <button class="btn btn-primary add-btn ${inCart?'added':''}" data-id="${p.id}">
+                    <i data-lucide="${inCart?'check':'plus'}"></i> ${inCart?'อยู่ในใบเสนอ':'เพิ่ม'}
+                </button>
+            </div>
+        </div>`;
+}
+
+function bindCardActions() {
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => copyProduct(btn.dataset.id, btn));
+    });
+    document.querySelectorAll('.add-btn').forEach(btn => {
+        btn.addEventListener('click', () => addToCart(btn.dataset.id));
+    });
+}
+
+function renderViewToggle() {
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === viewMode);
+    });
+}
+
+function renderBrandChips() {
+    document.querySelectorAll('.brand-chip[data-brand]').forEach(chip => {
+        chip.classList.toggle('active', chip.dataset.brand === activeBrand);
+    });
+}
+
+function bindBrandChips() {
+    document.querySelectorAll('.brand-chip[data-brand]').forEach(chip => {
+        chip.addEventListener('click', () => {
+            const b = chip.dataset.brand;
+            activeBrand = (activeBrand === b) ? 'all' : b;
+            renderBrandChips();
+            renderGrid();
+        });
+    });
+}
+
+// ===== COPY =====
+function copyProduct(id, btn) {
+    const p = PRODUCTS.find(x => x.id === id);
+    if (!p) return;
+    const specsLine = p.specs.map(s => `${s.l}: ${s.v}`).join(' | ');
+    const ds = DATASHEETS[id] ? `\n📄 Datasheet: ${DATASHEETS[id]}` : '';
+    const text = `📋 ${p.name}\n${p.brand} ${p.model}\n${specsLine}\n💰 ราคา ${fmt(p.price)} (ไม่รวม VAT)${ds}\n\n— SSC Q2/2569 | ☎ 084-825-5036`;
+    copyToClipboard(text);
+    showToast('คัดลอกข้อมูลสินค้าแล้ว');
+    if (btn) {
+        btn.classList.add('btn-copied');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i data-lucide="check"></i> คัดลอกแล้ว';
+        lucide.createIcons();
+        setTimeout(() => { btn.classList.remove('btn-copied'); btn.innerHTML = original; lucide.createIcons(); }, 1800);
     }
-    renderCart();
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    renderCart();
-}
-
-function changeQty(index, delta) {
-    cart[index].qty += delta;
-    if (cart[index].qty < 1) cart[index].qty = 1;
-    renderCart();
-}
-
-function clearCart() {
-    if (confirm('ล้างสินค้าทั้งหมดในตะกร้า?')) {
-        cart = [];
-        renderCart();
+function copyToClipboard(text) {
+    if (navigator.clipboard) navigator.clipboard.writeText(text);
+    else {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta);
     }
 }
 
-function formatNum(n) {
-    return n.toLocaleString('th-TH', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+// ===== TOAST =====
+let toastTimer;
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toast-msg').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ===== CART =====
+function saveCart() { localStorage.setItem('ssc-cart', JSON.stringify(cart)); }
+
+function addToCart(id) {
+    if (!cart[id]) cart[id] = { qty: 0 };
+    cart[id].qty += 1;
+    saveCart(); renderCart(); renderGrid();
+    showToast('เพิ่มลงใบเสนอราคาแล้ว');
+}
+
+function updateQty(id, delta) {
+    if (!cart[id]) return;
+    cart[id].qty += delta;
+    if (cart[id].qty <= 0) delete cart[id];
+    saveCart(); renderCart(); renderGrid();
+}
+
+function removeFromCart(id) {
+    delete cart[id];
+    saveCart(); renderCart(); renderGrid();
 }
 
 function renderCart() {
-    var container = document.getElementById('cartItems');
-    var empty = document.getElementById('cartEmpty');
-    var footer = document.getElementById('cartFooter');
-    var badge = document.getElementById('cartBadge');
+    const body = document.getElementById('cart-body');
+    const foot = document.getElementById('cart-foot');
+    const badge = document.getElementById('cart-badge');
+    const ids = Object.keys(cart);
+    const totalItems = ids.reduce((s,id) => s + cart[id].qty, 0);
 
-    var totalQty = cart.reduce(function(s, i) { return s + i.qty; }, 0);
-    badge.textContent = totalQty;
-    badge.style.display = totalQty > 0 ? 'flex' : 'none';
+    if (totalItems > 0) {
+        badge.textContent = totalItems;
+        badge.style.display = 'flex';
+    } else {
+        badge.style.display = 'none';
+    }
 
-    if (cart.length === 0) {
-        empty.style.display = 'block';
-        footer.style.display = 'none';
-        // Remove item elements but keep empty div
-        container.querySelectorAll('.cart-item').forEach(function(el) { el.remove(); });
+    if (ids.length === 0) {
+        body.innerHTML = `<div class="cart-empty">
+            <i data-lucide="file-text"></i>
+            <p>ยังไม่มีสินค้าในใบเสนอราคา<br>กดปุ่ม <strong>"เพิ่ม"</strong> ที่การ์ดสินค้า</p>
+        </div>`;
+        foot.style.display = 'none';
+        lucide.createIcons();
         return;
     }
 
-    empty.style.display = 'none';
-    footer.style.display = 'block';
+    let total = 0;
+    body.innerHTML = ids.map(id => {
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) return '';
+        const sub = p.price * cart[id].qty;
+        total += sub;
+        return `
+        <div class="cart-item">
+            <div class="cart-item-info">
+                <div class="cart-item-name">${p.name}</div>
+                <div class="cart-item-brand">${p.brand} · ${p.model}</div>
+                <div class="cart-item-controls">
+                    <button class="qty-btn" data-act="dec" data-id="${id}">−</button>
+                    <span class="qty-val">${cart[id].qty}</span>
+                    <button class="qty-btn" data-act="inc" data-id="${id}">+</button>
+                    <button class="cart-item-remove" data-act="del" data-id="${id}" title="ลบ"><i data-lucide="trash-2"></i></button>
+                </div>
+            </div>
+            <div class="cart-item-price">${fmt(sub)}</div>
+        </div>`;
+    }).join('');
 
-    var html = '';
-    var subtotal = 0;
-    var hasPerWatt = false;
+    document.getElementById('cart-total').textContent = fmt(total);
+    document.getElementById('cart-vat').textContent = fmt(Math.round(total * 1.07));
+    foot.style.display = 'block';
 
-    cart.forEach(function(item, i) {
-        var lineTotal = item.price * item.qty;
-        subtotal += lineTotal;
-        if (item.price === 0) hasPerWatt = true;
-
-        html += '<div class="cart-item">' +
-            '<div class="cart-item-info">' +
-                '<div class="cart-item-name">' + item.model + '</div>' +
-                '<div class="cart-item-price">' + item.priceText + (item.price > 0 ? ' &times; ' + item.qty + ' = &#3647;' + formatNum(lineTotal) : ' (ราคาต่อวัตต์)') + '</div>' +
-            '</div>' +
-            '<div class="cart-qty">' +
-                '<button onclick="changeQty(' + i + ',-1)">-</button>' +
-                '<span>' + item.qty + '</span>' +
-                '<button onclick="changeQty(' + i + ',1)">+</button>' +
-            '</div>' +
-            '<button class="cart-remove" onclick="removeFromCart(' + i + ')" title="ลบ">&#128465;</button>' +
-        '</div>';
+    body.querySelectorAll('[data-act]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            if (btn.dataset.act === 'inc') updateQty(id, 1);
+            else if (btn.dataset.act === 'dec') updateQty(id, -1);
+            else if (btn.dataset.act === 'del') removeFromCart(id);
+        });
     });
-
-    // Remove old items and insert new
-    container.querySelectorAll('.cart-item').forEach(function(el) { el.remove(); });
-    container.insertAdjacentHTML('beforeend', html);
-
-    var vat = subtotal * 0.07;
-    var total = subtotal + vat;
-
-    document.getElementById('cartSubtotal').innerHTML = '&#3647;' + formatNum(subtotal);
-    document.getElementById('cartVat').innerHTML = '&#3647;' + formatNum(vat);
-    document.getElementById('cartTotal').innerHTML = '&#3647;' + formatNum(total);
-
-    if (hasPerWatt) {
-        document.getElementById('cartSubtotal').innerHTML += ' *';
-    }
+    lucide.createIcons();
 }
 
-function toggleCart() {
-    var panel = document.getElementById('cartPanel');
-    var overlay = document.getElementById('cartOverlay');
-    panel.classList.toggle('open');
-    overlay.classList.toggle('open');
-    document.body.style.overflow = panel.classList.contains('open') ? 'hidden' : '';
-}
-
-function buildMessage() {
-    var lines = ['=== SSC ขอใบเสนอราคา ===', ''];
-    var subtotal = 0;
-    cart.forEach(function(item, i) {
-        var lineTotal = item.price * item.qty;
-        subtotal += lineTotal;
-        lines.push((i + 1) + '. ' + item.model + ' x ' + item.qty + ' (' + item.priceText + ')');
+function buildQuoteText() {
+    const ids = Object.keys(cart);
+    if (ids.length === 0) return '';
+    const today = new Date().toLocaleDateString('th-TH', { year:'numeric', month:'long', day:'numeric' });
+    let lines = ['📋 *ใบเสนอราคา — SSC Q2/2569*', `วันที่: ${today}`, '────────────────────'];
+    let total = 0;
+    ids.forEach((id, i) => {
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) return;
+        const sub = p.price * cart[id].qty;
+        total += sub;
+        lines.push(`${i+1}. ${p.name}`);
+        lines.push(`   รุ่น: ${p.model}`);
+        lines.push(`   จำนวน ${cart[id].qty} × ${fmt(p.price)} = ${fmt(sub)}`);
     });
-    lines.push('');
-    lines.push('รวมก่อน VAT: ' + formatNum(subtotal) + ' บาท');
-    lines.push('VAT 7%: ' + formatNum(subtotal * 0.07) + ' บาท');
-    lines.push('รวมทั้งสิ้น: ' + formatNum(subtotal * 1.07) + ' บาท');
-    lines.push('* ราคายังไม่สุดท้าย กรุณายืนยันกับเซลล์');
-
-    var note = document.getElementById('cartNote').value.trim();
-    if (note) {
-        lines.push('');
-        lines.push('หมายเหตุ: ' + note);
-    }
-
-    lines.push('');
-    lines.push('ส่งจาก SSC Online Price List');
+    lines.push('────────────────────');
+    lines.push(`รวม (ไม่รวม VAT): ${fmt(total)}`);
+    lines.push(`VAT 7%: ${fmt(Math.round(total * 0.07))}`);
+    lines.push(`*ยอดสุทธิ: ${fmt(Math.round(total * 1.07))}*`);
+    lines.push('────────────────────');
+    lines.push('📞 ติดต่อ: 084-825-5036');
+    lines.push('✉ teerawat@siamsolar.co.th');
+    lines.push('Siam Solar Cell Co., Ltd.');
     return lines.join('\n');
 }
 
-function sendViaLine() {
-    if (cart.length === 0) return;
-    var msg = buildMessage();
-    var encoded = encodeURIComponent(msg);
-    window.open('https://line.me/ti/p/u9eTiTrfL9', '_blank');
-}
+// ===== EVENT BINDINGS =====
+document.getElementById('search').addEventListener('input', e => {
+    searchTerm = e.target.value;
+    renderGrid();
+});
 
-function sendViaEmail() {
-    if (cart.length === 0) return;
-    var msg = buildMessage();
-    var subject = encodeURIComponent('ขอใบเสนอราคา - SSC Online');
-    var body = encodeURIComponent(msg);
-    window.location.href = 'mailto:teerawat@siamsolar.co.th?subject=' + subject + '&body=' + body;
-}
+document.getElementById('cart-fab').addEventListener('click', () => {
+    document.getElementById('cart-panel').classList.toggle('open');
+});
+document.getElementById('cart-close').addEventListener('click', () => {
+    document.getElementById('cart-panel').classList.remove('open');
+});
 
-// Filter chips
-document.querySelectorAll('.filter-chip').forEach(function(chip) {
-    chip.addEventListener('click', function() {
-        document.querySelectorAll('.filter-chip').forEach(function(c) { c.classList.remove('active'); });
-        this.classList.add('active');
+document.getElementById('cart-copy').addEventListener('click', () => {
+    const text = buildQuoteText();
+    if (!text) return;
+    copyToClipboard(text);
+    showToast('คัดลอกใบเสนอราคาแล้ว — พร้อมวางใน LINE');
+});
+
+document.getElementById('cart-line').addEventListener('click', e => {
+    e.preventDefault();
+    const text = buildQuoteText();
+    if (!text) return;
+    copyToClipboard(text);
+    showToast('คัดลอกแล้ว — กำลังเปิด LINE');
+    setTimeout(() => window.open('https://line.me/ti/p/u9eTiTrfL9', '_blank'), 500);
+});
+
+document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        viewMode = btn.dataset.view;
+        localStorage.setItem('ssc-view', viewMode);
+        renderViewToggle();
+        renderGrid();
     });
 });
 
-// Scroll to top button + sticky toolbar
-window.addEventListener('scroll', function() {
-    var btn = document.getElementById('scrollTop');
-    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
-
-    // Sticky toolbar shadow
-    var toolbar = document.querySelector('.toolbar');
-    if (toolbar) {
-        toolbar.classList.toggle('stuck', window.scrollY > 300);
-    }
-});
-
-
-// ===== COMPARE SYSTEM =====
-var compareList = [];
-
-// Add compare checkboxes to all product rows
-document.querySelectorAll('.section tbody tr').forEach(function(row) {
-    if (row.classList.contains('new-divider')) return;
-    var modelEl = row.querySelector('.model-name');
-    if (!modelEl) return;
-
-    var model = modelEl.childNodes[0].textContent.trim();
-
-    // Gather row data
-    var cells = row.querySelectorAll('td');
-    var data = {
-        model: model,
-        cols: []
-    };
-    cells.forEach(function(cell, i) {
-        if (i === 0) return; // skip row number
-        if (cell.querySelector('.add-cart-btn') || cell.querySelector('.compare-check')) return;
-        data.cols.push(cell.textContent.trim());
-    });
-
-    // Add checkbox
-    var td = document.createElement('td');
-    td.style.textAlign = 'center';
-    var cb = document.createElement('input');
-    cb.type = 'checkbox';
-    cb.className = 'compare-check';
-    cb.title = 'เปรียบเทียบ ' + model;
-    cb.onchange = function() {
-        if (cb.checked) {
-            if (compareList.length >= 4) {
-                alert('เลือกได้สูงสุด 4 รายการ');
-                cb.checked = false;
-                return;
-            }
-            compareList.push(data);
-        } else {
-            compareList = compareList.filter(function(item) { return item.model !== data.model; });
-        }
-        updateCompareBar();
-    };
-    // Insert before the add-cart button
-    var cartTd = row.querySelector('.add-cart-btn');
-    if (cartTd) {
-        row.insertBefore(td, cartTd.parentElement);
-    } else {
-        row.appendChild(td);
-    }
-    td.appendChild(cb);
-});
-
-function updateCompareBar() {
-    var bar = document.getElementById('compareBar');
-    var count = document.getElementById('compareCount');
-    if (compareList.length > 0) {
-        bar.classList.add('show');
-        count.textContent = compareList.length;
-    } else {
-        bar.classList.remove('show');
-    }
-}
-
-function clearCompare() {
-    compareList = [];
-    document.querySelectorAll('.compare-check').forEach(function(cb) { cb.checked = false; });
-    updateCompareBar();
-}
-
-function showCompare() {
-    if (compareList.length < 2) {
-        alert('กรุณาเลือกอย่างน้อย 2 รายการ');
-        return;
-    }
-    var labels = ['รุ่น', 'กำลัง', 'ประเภท', 'ราคา', 'รับประกัน', 'หมายเหตุ', 'Datasheet'];
-    var html = '<thead><tr><th></th>';
-    compareList.forEach(function(item) {
-        html += '<th class="model-col">' + item.model + '</th>';
-    });
-    html += '</tr></thead><tbody>';
-
-    var maxCols = 0;
-    compareList.forEach(function(item) { if (item.cols.length > maxCols) maxCols = item.cols.length; });
-
-    for (var i = 0; i < Math.min(maxCols, labels.length); i++) {
-        html += '<tr><td>' + labels[i] + '</td>';
-        compareList.forEach(function(item) {
-            var val = item.cols[i] || '-';
-            // Highlight price
-            if (i === 3) val = '<strong style="color:var(--green);">' + val + '</strong>';
-            html += '<td>' + val + '</td>';
-        });
-        html += '</tr>';
-    }
-    html += '</tbody>';
-    document.getElementById('compareTable').innerHTML = html;
-    document.getElementById('compareModal').classList.add('show');
-}
-
-function closeCompare() {
-    document.getElementById('compareModal').classList.remove('show');
-}
-// Close modal on overlay click
-document.getElementById('compareModal').addEventListener('click', function(e) {
-    if (e.target === this) closeCompare();
-});
-
-// ===== LIVE TICKER DATA =====
-// Fetch USD/THB exchange rate
-(function() {
-    fetch('https://open.er-api.com/v6/latest/USD')
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            if (data && data.rates && data.rates.THB) {
-                var rate = data.rates.THB.toFixed(2);
-                document.getElementById('tickerFx').innerHTML = rate + ' <span class="unit">฿</span>';
-            } else {
-                document.getElementById('tickerFx').innerHTML = '~34.50 <span class="unit">฿</span>';
-            }
-        })
-        .catch(function() {
-            document.getElementById('tickerFx').innerHTML = '~34.50 <span class="unit">฿</span>';
-        });
-})();
-
-// Visitor counter using simple persistent counter
-(function() {
-    var storageKey = 'ssc-visit-total';
-    var todayKey = 'ssc-visit-today';
-    var dateKey = 'ssc-visit-date';
-    var today = new Date().toISOString().slice(0, 10);
-    var total = 0;
-    var todayCount = 0;
-    try {
-        total = parseInt(localStorage.getItem(storageKey)) || 0;
-        var storedDate = localStorage.getItem(dateKey);
-        if (storedDate === today) {
-            todayCount = parseInt(localStorage.getItem(todayKey)) || 0;
-        } else {
-            todayCount = 0;
-            localStorage.setItem(dateKey, today);
-        }
-        total++;
-        todayCount++;
-        localStorage.setItem(storageKey, total);
-        localStorage.setItem(todayKey, todayCount);
-    } catch(e) {
-        total = 1;
-        todayCount = 1;
-    }
-    // Add a realistic base number
-    var baseTotal = 1247;
-    var displayTotal = baseTotal + total;
-    document.getElementById('tickerVisitors').innerHTML =
-        '<span style="margin-right:6px;">วันนี้ ' + todayCount + '</span>' +
-        '<span class="unit">| รวม ' + displayTotal.toLocaleString() + '</span>';
-})();
-
-// ===== DARK MODE =====
-function toggleDark() {
-    document.body.classList.toggle('dark');
-    var isDark = document.body.classList.contains('dark');
-    document.getElementById('darkToggle').innerHTML = isDark ? '&#9728;' : '&#127769;';
-    try { localStorage.setItem('ssc-dark', isDark ? '1' : '0'); } catch(e) {}
-}
-// Restore dark mode
-try {
-    if (localStorage.getItem('ssc-dark') === '1') {
-        document.body.classList.add('dark');
-        document.getElementById('darkToggle').innerHTML = '&#9728;';
-    }
-} catch(e) {}
-
-// ===== SHARE =====
-function toggleShare() {
-    document.getElementById('shareMenu').classList.toggle('open');
-}
-function shareViaLine() {
-    var url = encodeURIComponent(window.location.href);
-    var text = encodeURIComponent('SSC Product Price List Q2/2569 — ดูราคาสินค้า Solar ได้ที่นี่!');
-    window.open('https://social-plugins.line.me/lineit/share?url=' + url + '&text=' + text, '_blank');
-    document.getElementById('shareMenu').classList.remove('open');
-}
-function copyLink() {
-    var url = window.location.href;
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(url);
-    } else {
-        var t = document.createElement('textarea');
-        t.value = url;
-        document.body.appendChild(t);
-        t.select();
-        document.execCommand('copy');
-        document.body.removeChild(t);
-    }
-    document.getElementById('shareMenu').classList.remove('open');
-    var toast = document.getElementById('shareToast');
-    toast.classList.add('show');
-    setTimeout(function() { toast.classList.remove('show'); }, 2000);
-}
-// Close share menu when clicking outside
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.share-fab') && !e.target.closest('.share-menu')) {
-        document.getElementById('shareMenu').classList.remove('open');
-    }
-});
+// ===== INIT =====
+renderFilters();
+renderViewToggle();
+bindBrandChips();
+renderBrandChips();
+renderGrid();
+renderCart();
+lucide.createIcons();
 </script>
-
-<script>
-// === Scroll Reveal ===
-(function() {
-    var els = document.querySelectorAll('.section, .stat-card');
-    els.forEach(function(el) { el.classList.add('reveal'); });
-    if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function(entries) {
-            entries.forEach(function(e) {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    obs.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-        els.forEach(function(el) { obs.observe(el); });
-    } else {
-        els.forEach(function(el) { el.classList.add('visible'); });
-    }
-})();
-</script>
-
 </body>
 </html>
