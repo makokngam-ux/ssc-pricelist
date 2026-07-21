@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSC Price List — แชร์ราคาให้ลูกค้า | Q2/2569</title>
-<meta name="description" content="รายการราคาอุปกรณ์โซล่าร์เซลล์ SolarEdge, Sunwoda, KSTAR, LONGi, Leapton — Q2/2569 จาก Siam Solar Cell. เลือก → คัดลอก → แชร์ผ่าน LINE ได้ทันที">
-<meta property="og:title" content="SSC Price List Q2/2569 — รายการราคาอุปกรณ์โซล่าร์เซลล์">
+<title>SSC Price List — แชร์ราคาให้ลูกค้า | Q3/2569</title>
+<meta name="description" content="รายการราคาอุปกรณ์โซล่าร์เซลล์ SolarEdge, Sunwoda, KSTAR, LONGi, Leapton — Q3/2569 จาก Siam Solar Cell. เลือก → คัดลอก → แชร์ผ่าน LINE ได้ทันที">
+<meta property="og:title" content="SSC Price List Q3/2569 — รายการราคาอุปกรณ์โซล่าร์เซลล์">
 <meta property="og:description" content="SolarEdge Inverter, Sunwoda/KSTAR Battery, LONGi/Leapton Panels — ราคาล่าสุดพร้อมแชร์ลูกค้า">
 <meta property="og:type" content="website">
 <!-- Favicon & App Icons -->
@@ -583,6 +583,8 @@ body {
     white-space: nowrap;
 }
 .row-stock.preorder { background: rgba(245,158,11,0.12); color: var(--gold-hover); }
+.card-stock.out { background: rgba(239,68,68,0.95); color: #fff; }
+.row-stock.out { background: rgba(239,68,68,0.12); color: var(--red); }
 .row-stock svg { width: 10px; height: 10px; }
 .row-specs {
     display: flex; gap: 10px; flex-wrap: wrap;
@@ -687,10 +689,36 @@ body {
     background: linear-gradient(135deg, #10b981, #14b8a6);
     color: #fff;
     box-shadow: 0 2px 6px rgba(16,185,129,0.35);
+    position: relative;
+    overflow: hidden;
+    animation: newGlow 2s ease-in-out infinite;
+    padding: 3px 10px;
+    font-size: 10.5px;
 }
+.tag-new::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, transparent 25%, rgba(255,255,255,0.55) 50%, transparent 75%);
+    animation: newShine 2.4s linear infinite;
+    pointer-events: none;
+}
+.tag-new > * { position: relative; z-index: 1; }
+.tag-new svg { animation: newSparkle 2.4s ease-in-out infinite; }
 @keyframes tagPulse {
     0%, 100% { transform: scale(1); box-shadow: 0 2px 6px rgba(239,68,68,0.4); }
     50% { transform: scale(1.05); box-shadow: 0 3px 10px rgba(239,68,68,0.55); }
+}
+@keyframes newGlow {
+    0%, 100% { box-shadow: 0 2px 6px rgba(16,185,129,0.35); }
+    50% { box-shadow: 0 3px 14px rgba(16,185,129,0.7); }
+}
+@keyframes newShine {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(120%); }
+}
+@keyframes newSparkle {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.15) rotate(15deg); }
 }
 
 /* ===== FEATURE HIGHLIGHT ===== */
@@ -988,7 +1016,7 @@ body {
             <div class="nav-brand-mark">SSC</div>
             <div class="nav-brand-text">
                 <span class="nav-brand-name">Siam Solar Cell</span>
-                <span class="nav-brand-sub">Price List · Q2/2569</span>
+                <span class="nav-brand-sub">Price List · Q3/2569</span>
             </div>
         </a>
         <div class="nav-actions">
@@ -1003,7 +1031,7 @@ body {
     <div class="hero-inner">
         <span class="hero-tag"><i data-lucide="crown"></i> Exclusive Pricelist</span>
         <h1>ราคา VIP <span class="accent">เฉพาะลูกค้าคนสำคัญ</span></h1>
-        <p>อัปเดต Q2/2569 (เมษายน-มิถุนายน 2026) — สิทธิ์เห็นราคา + สินค้าใหม่ก่อนใคร พร้อมส่วนลดและบริการพิเศษ</p>
+        <p>อัปเดต Q3/2569 (กรกฎาคม-สิงหาคม 2026) — สิทธิ์เห็นราคา + สินค้าใหม่ก่อนใคร พร้อมส่วนลดและบริการพิเศษ</p>
         <div class="hero-steps">
             <div class="hero-step"><span class="hero-step-num">1</span> เลือกสินค้าที่สนใจ</div>
             <div class="hero-step"><span class="hero-step-num">2</span> ปรับจำนวน</div>
@@ -1087,7 +1115,7 @@ body {
             <div class="stat-icon"><i data-lucide="calendar-check"></i></div>
             <div class="stat-text">
                 <span class="stat-label">อัปเดตล่าสุด</span>
-                <span class="stat-value">Q2<span class="unit">พ.ค. 2569</span></span>
+                <span class="stat-value">Q3<span class="unit">ก.ค. 2569</span></span>
             </div>
         </div>
     </div>
@@ -1174,7 +1202,7 @@ body {
 
 <!-- FOOTER -->
 <footer class="footer">
-    <p><strong>Siam Solar Cell Co., Ltd.</strong> · ข้อมูล Q2/2569 (ราคาอาจเปลี่ยนแปลงโดยไม่แจ้งล่วงหน้า)</p>
+    <p><strong>Siam Solar Cell Co., Ltd.</strong> · ข้อมูล Q3/2569 (ราคาอาจเปลี่ยนแปลงโดยไม่แจ้งล่วงหน้า)</p>
     <p>ติดต่อ: <a href="tel:0848255036">084-825-5036</a> · <a href="mailto:teerawat@siamsolar.co.th">teerawat@siamsolar.co.th</a> · <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank">LINE</a></p>
 </footer>
 
@@ -1188,7 +1216,7 @@ const PRODUCTS = [
       specs:[{l:'AC',v:'33.3 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'2'},{l:'รับประกัน',v:'12 ปี'}] },
     { id:'se100', cat:'inverter', name:'SolarEdge SE100K Synergy', brand:'SolarEdge', model:'SE100K', subcat:'Inverter C&I', price:129000, stock:'in', tag:'hot',
       feature:'Synergy 3-module · กระจายภาระความร้อน · เปลี่ยน module ง่าย', featureIcon:'layers',
-      img:'https://cdn11.bigcommerce.com/s-3nrr5bfo5i/images/stencil/500x659/products/2342/8396/solaredge-synergy_inverter__26787.1604101548.png?c=2',
+      img:'solaredge-se100k-synergy.png',
       specs:[{l:'AC',v:'100 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'6'},{l:'รับประกัน',v:'12 ปี'}] },
     // Inverter Residential
     { id:'se5000h', cat:'inverter', name:'SolarEdge SE5000H-MM', brand:'SolarEdge', model:'SE5000H-MM', subcat:'Inverter บ้าน', price:39900, stock:'in', tag:'hot',
@@ -1218,10 +1246,6 @@ const PRODUCTS = [
       specs:[{l:'AC',v:'15 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
 
     // Optimizers
-    { id:'s1200', cat:'optimizer', name:'SolarEdge S1200', brand:'SolarEdge', model:'S1200', subcat:'Power Optimizer', price:2190, stock:'in', tag:'hot',
-      feature:'DC-DC Optimizer · เพิ่ม yield · monitoring รายแผง', featureIcon:'sliders-horizontal',
-      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
-      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'630W'}] },
     { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'in',
       feature:'DC-DC Optimizer · สำหรับแผง 600-730W', featureIcon:'sliders-horizontal',
       img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
@@ -1236,14 +1260,14 @@ const PRODUCTS = [
       specs:[{l:'Mode',v:'1:1'},{l:'Max',v:'650W'}] },
 
     // Panels
-    { id:'lp620', cat:'panel', name:'Leapton 620W (บ้าน)', brand:'Leapton', model:'LP182-210-M-66-NB', subcat:'แผงโซล่าร์', price:3094, ppw:4.99, watt:620, stock:'in',
-      feature:'TopCon N-Type · 22.95% efficiency · 30 ปี Power Warranty', featureIcon:'sun',
+    { id:'lp650', cat:'panel', name:'Leapton 650W', brand:'Leapton', model:'LP182x210-M-66Q-NB', subcat:'แผงโซล่าร์', price:3575, ppw:5.5, watt:650, stock:'in', tag:'new',
+      feature:'TopCon N-Type · รุ่นใหม่ล่าสุด · 30 ปี Power Warranty', featureIcon:'sun',
       img:'leapton.jpeg',
-      specs:[{l:'Watt',v:'620W'},{l:'฿/W',v:'4.99'}] },
-    { id:'lp715', cat:'panel', name:'Leapton 715W (C&I)', brand:'Leapton', model:'LP210-210-M-66-NB', subcat:'แผงโซล่าร์', price:3568, ppw:4.99, watt:715, stock:'in', tag:'hot',
+      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.50'}] },
+    { id:'lp715', cat:'panel', name:'Leapton 715W (C&I)', brand:'Leapton', model:'LP210-210-M-66-NB', subcat:'แผงโซล่าร์', price:3933, ppw:5.5, watt:715, stock:'in', tag:'hot',
       feature:'TopCon N-Type · กำลังสูงสำหรับ C&I · 22.95% efficiency', featureIcon:'sun',
       img:'leapton.jpeg',
-      specs:[{l:'Watt',v:'715W'},{l:'฿/W',v:'4.99'}] },
+      specs:[{l:'Watt',v:'715W'},{l:'฿/W',v:'5.50'}] },
     { id:'ppm600', cat:'panel', name:'Solar PPM 600W (มอก.)', brand:'Solar PPM', model:'SPPM-MG12-GG', subcat:'แผงโซล่าร์ มอก.', price:7500, ppw:12.5, watt:600, stock:'in',
       feature:'มอก. รับรอง · ผลิตในประเทศไทย', featureIcon:'badge-check',
       img:'ppm-tis.png',
@@ -1252,18 +1276,10 @@ const PRODUCTS = [
       feature:'มอก. รับรอง · กำลังสูงสุดของ Solar PPM', featureIcon:'badge-check',
       img:'ppm-tis.png',
       specs:[{l:'Watt',v:'735W'},{l:'฿/W',v:'12.50'},{l:'ส่ง',v:'ก.ย.69'}] },
-    { id:'longi545', cat:'panel', name:'LONGi Hi-MO X10 Light Design', brand:'LONGi', model:'LR7-60HVHL-545M', subcat:'แผงโซล่าร์ Premium', price:2861, ppw:5.25, watt:545, stock:'in',
-      feature:'HPBC 2.0 BC-Cell · Light Design 1.6mm · น้ำหนักเบาที่สุด', featureIcon:'feather',
-      img:'longi.png',
-      specs:[{l:'Watt',v:'545W'},{l:'฿/W',v:'5.25'},{l:'รับประกัน',v:'15/30 ปี'}] },
-    { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3413, ppw:5.25, watt:650, stock:'in',
+    { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3575, ppw:5.5, watt:650, stock:'in',
       feature:'HPBC 2.0 BC-Cell · Single Glass · เทคโนโลยีรุ่นใหม่', featureIcon:'sun',
       img:'longi.png',
-      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.25'},{l:'รับประกัน',v:'15/30 ปี'}] },
-    { id:'longi740', cat:'panel', name:'LONGi Hi-MO 9 740W', brand:'LONGi', model:'LR9-66HYD-740M', subcat:'แผงโซล่าร์ Premium', price:3885, ppw:5.25, watt:740, stock:'in', tag:'new',
-      feature:'Bifacial · เก็บไฟ 2 ด้าน · กำลังสูงสุด 740W', featureIcon:'layers',
-      img:'longi.png',
-      specs:[{l:'Watt',v:'740W'},{l:'Bifacial',v:'✓'},{l:'รับประกัน',v:'12/30 ปี'}] },
+      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'15/30 ปี'}] },
 
     // Battery Residential
     { id:'blueh51', cat:'battery', name:'KSTAR BluE-H 5-1', brand:'KSTAR', model:'BluE-H 5-1', subcat:'Battery บ้าน', price:99000, stock:'in',
@@ -1283,7 +1299,7 @@ const PRODUCTS = [
       img:'kstar-blue-s-10-kt-2.png',
       specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'20 kWh'}] },
     // Battery C&I
-    { id:'sunwoda16', cat:'battery', name:'Sunwoda Atrix Max-16L-P ⭐', brand:'Sunwoda', model:'Atrix Max-16L-P', subcat:'Battery C&I', price:69900, stock:'in', tag:'new',
+    { id:'sunwoda16', cat:'battery', name:'Sunwoda Atrix Max-16L-P ⭐', brand:'Sunwoda', model:'Atrix Max-16L-P', subcat:'Battery C&I', price:65000, stock:'in', tag:'new',
       feature:'LFP · Fire Extinguisher ในตัว · IP65 · 10,000 cycles', featureIcon:'shield-check',
       img:'sunwoda-atrix-max-16l-p.png',
       specs:[{l:'Capacity',v:'16 kWh'},{l:'DoD',v:'100%'},{l:'Cycles',v:'10,000'},{l:'รับประกัน',v:'10 ปี'}] },
@@ -1333,7 +1349,6 @@ const DATASHEETS = {
     se100:     'https://drive.google.com/file/d/1GSwnjiTocHDaDiartw7p_5wOUkTpNJzp/view?usp=sharing',
     se5000h:   'https://drive.google.com/file/d/1dsz9AX5gkzz8wGYantOBGOy6-l2I0XkU/view?usp=sharing',
     se10k:     'https://drive.google.com/file/d/1nS3u5JbrJ_7uyW3AkwUKRbXQtSgSLG-D/view?usp=sharing',
-    s1200:     'https://drive.google.com/file/d/1DD1zQjKLq1ryWPLFcygEQDNKihk1AqoT/view?usp=sharing',
     s1400:     'https://drive.google.com/file/d/1cusf90_xXPSl7EmfkVlkFCbWDrl_CmS7/view?usp=sharing',
     s1500:     'https://drive.google.com/file/d/1VIilqGG8odBhuNTUYw6LoeTsIHdue5u9/view?usp=sharing',
     s650b:     'https://drive.google.com/file/d/1XH_QtDDskG1jnqhwHQcQSQluQMExf4VO/view?usp=sharing',
@@ -1341,11 +1356,9 @@ const DATASHEETS = {
     sunwoda16: 'https://drive.google.com/file/d/1U-oxaOx3U_m4jKa-jDLRLpZUMcS2KK36/view?usp=share_link',
     ppm600:    'https://drive.google.com/file/d/1hWYWM_2RBnWDYT2dHQsGXXdyD0TsqH0S/view?usp=sharing',
     ppm735:    'https://drive.google.com/file/d/1LXC60yBb5Aoa_gavkjqXPLEmHIG9AJYL/view?usp=sharing',
-    lp620:     'https://drive.google.com/file/d/1c5jf2wMxvlcb6IIss081Q7H2ZIBIgpci/view?usp=sharing',
+    lp650:     'https://drive.google.com/file/d/1V3yET9Eh0FsYoQT9Fk3Qy3nY_Dk_jKKS/view?usp=share_link',
     lp715:     'https://drive.google.com/file/d/1n_AMYbTDo1ddhzns1NIJBbfCy8IlObMz/view?usp=sharing',
-    longi545:  'https://static.longi.com/LR_7_60_HVHL_535_560_W_EN_8582051c27.pdf',
     longi650:  'https://static.longi.com/LR_7_72_HVH_655_670_M_30_30_and_15_Scientist_BGV_02_20241118_EN_Draft_9293e45f42.pdf',
-    longi740:  'https://static.longi.com/GGS_LR_8_66_HYD_022_LR_8_66_HYD_630_670_M_V2_30_30_and_15_V4_1_pdf_EN_526da7cf78.pdf',
     irr:       'https://drive.google.com/file/d/1VXKujGe-JvI3gNfPY-TWRxQUeQHrSfcK/view?usp=sharing',
     amb:       'https://drive.google.com/file/d/1rzla9Igdnp1xZBDrXw_1VQPR0nM_0GHG/view?usp=sharing',
     mod:       'https://drive.google.com/file/d/1f-pwKnDU8SyMJwEN1NQ3_87oPBZ0HrJ7/view?usp=sharing',
@@ -1510,6 +1523,8 @@ function renderRow(p) {
     const inCart = cart[p.id] && cart[p.id].qty > 0;
     const stockBadge = p.stock === 'in'
         ? '<span class="row-stock"><i data-lucide="check"></i> พร้อมส่ง</span>'
+        : p.stock === 'out'
+        ? '<span class="row-stock out"><i data-lucide="x-circle"></i> สินค้าหมด</span>'
         : `<span class="row-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
     const img = p.img
         ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'row-img-placeholder\\'><i data-lucide=\\'image\\'></i></div>';lucide.createIcons();">`
@@ -1584,7 +1599,7 @@ function copyProduct(id, btn) {
     if (!p) return;
     const specsLine = p.specs.map(s => `${s.l}: ${s.v}`).join(' | ');
     const ds = DATASHEETS[id] ? `\n📄 Datasheet: ${DATASHEETS[id]}` : '';
-    const text = `📋 ${p.name}\n${p.brand} ${p.model}\n${specsLine}\n💰 ราคา ${fmt(p.price)} (ไม่รวม VAT)${ds}\n\n— SSC Q2/2569 | ☎ 084-825-5036`;
+    const text = `📋 ${p.name}\n${p.brand} ${p.model}\n${specsLine}\n💰 ราคา ${fmt(p.price)} (ไม่รวม VAT)${ds}\n\n— SSC Q3/2569 | ☎ 084-825-5036`;
     copyToClipboard(text);
     showToast('คัดลอกข้อมูลสินค้าแล้ว');
     if (btn) {
@@ -1703,7 +1718,7 @@ function buildQuoteText() {
     const ids = Object.keys(cart);
     if (ids.length === 0) return '';
     const today = new Date().toLocaleDateString('th-TH', { year:'numeric', month:'long', day:'numeric' });
-    let lines = ['📋 *ใบเสนอราคา — SSC Q2/2569*', `วันที่: ${today}`, '────────────────────'];
+    let lines = ['📋 *ใบเสนอราคา — SSC Q3/2569*', `วันที่: ${today}`, '────────────────────'];
     let total = 0;
     ids.forEach((id, i) => {
         const p = PRODUCTS.find(x => x.id === id);
