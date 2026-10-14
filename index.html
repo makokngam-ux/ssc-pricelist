@@ -1061,6 +1061,7 @@ body {
             <button class="brand-chip" data-brand="KSTAR"><span class="brand-dot" style="background:#0072ce"></span>KSTAR<span class="brand-close">×</span></button>
             <button class="brand-chip" data-brand="Leapton"><span class="brand-dot" style="background:#e60012"></span>Leapton<span class="brand-close">×</span></button>
             <button class="brand-chip" data-brand="Deye"><span class="brand-dot" style="background:#005bbb"></span>Deye<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="TCL"><span class="brand-dot" style="background:#c8102e"></span>TCL<span class="brand-close">×</span></button>
             <button class="brand-chip" data-brand="Solar PPM"><span class="brand-dot" style="background:#f7941d"></span>Solar PPM<span class="brand-close">×</span></button>
             <button class="brand-chip" data-brand="IMT"><span class="brand-dot" style="background:#5a5a5a"></span>IMT<span class="brand-close">×</span></button>
         </div>
@@ -1319,6 +1320,18 @@ const PRODUCTS = [
       feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
       img:'kstar-bluepulse-125kw-261kwh.png',
       specs:[{l:'Power',v:'125 kW'},{l:'Capacity',v:'261.2 kWh'},{l:'Cell',v:'EVE'}] },
+    { id:'tcl_s', cat:'battery', name:'TCL BlueArk X1 Set S (8 kWh)', brand:'TCL', model:'8KSP + 1×BM', subcat:'TCL All-in-One Battery', price:88000, stock:'in', tag:'new',
+      feature:'All-in-One: Hybrid Inverter + Battery + UPS + EMS · IP66 · Backup 10ms', featureIcon:'battery-charging',
+      img:'tcl-bluearkx1.png',
+      specs:[{l:'AC',v:'8 kW'},{l:'Phase',v:'1P'},{l:'Battery',v:'8 kWh'},{l:'MPPT',v:'3'},{l:'รับประกัน',v:'5 ปี'}] },
+    { id:'tcl_m', cat:'battery', name:'TCL BlueArk X1 Set M (16 kWh)', brand:'TCL', model:'8KSP + 1×BM + 1×BS', subcat:'TCL All-in-One Battery', price:138000, stock:'in', tag:'new',
+      feature:'All-in-One · ส่วนลดชุด ฿2,000 · IP66 · Backup 10ms', featureIcon:'battery-charging',
+      img:'tcl-bluearkx1.png',
+      specs:[{l:'AC',v:'8 kW'},{l:'Phase',v:'1P'},{l:'Battery',v:'16 kWh'},{l:'MPPT',v:'3'},{l:'รับประกัน',v:'5 ปี'}] },
+    { id:'tcl_l', cat:'battery', name:'TCL BlueArk X1 Set L (32 kWh)', brand:'TCL', model:'8KSP + 2×BM + 2×BS', subcat:'TCL All-in-One Battery', price:238000, stock:'in', tag:'new',
+      feature:'All-in-One · ส่วนลดชุด ฿3,000 · กำลังแบต 8 kW · IP66', featureIcon:'battery-charging',
+      img:'tcl-bluearkx1.png',
+      specs:[{l:'AC',v:'8 kW'},{l:'Phase',v:'1P'},{l:'Battery',v:'32 kWh'},{l:'MPPT',v:'3'},{l:'รับประกัน',v:'5 ปี'}] },
 
     // Sensors & Accessories
     { id:'irr', cat:'accessory', name:'IMT Irradiance Sensor', brand:'IMT', model:'Si-RS485TC-2T-v-MB', subcat:'Sensor', price:24900, stock:'in',
@@ -1371,6 +1384,9 @@ const DATASHEETS = {
     bp50_107:  'https://drive.google.com/file/d/1zwQMzKUMP7CiKW9XDUzDKFQC6VBH5sHA/view?usp=sharing',
     bp50_241:  'https://drive.google.com/file/d/1Hod-n6tEbtZ6UYqnZ_CQFdBZqDPeEIBm/view?usp=sharing',
     bp125_261: 'https://drive.google.com/file/d/1ImBP5RALfFgfIjm2SC9ye4lPln3zoFc-/view?usp=sharing',
+    tcl_s:     'https://drive.google.com/file/d/1nsjwjMwPm7eUwi8M2TSofoB0ZEaD1AFW/view?usp=sharing',
+    tcl_m:     'https://drive.google.com/file/d/1nsjwjMwPm7eUwi8M2TSofoB0ZEaD1AFW/view?usp=sharing',
+    tcl_l:     'https://drive.google.com/file/d/1nsjwjMwPm7eUwi8M2TSofoB0ZEaD1AFW/view?usp=sharing',
     sun6k:     'https://drive.google.com/file/d/1iLICbMvgWm1c-IWU9NG_5vg0M77MD67e/view?usp=sharing',
     sun10k1:   'https://drive.google.com/file/d/1w68GQsY_-UBxi-MyMwqpgVV6ycExx5sF/view?usp=sharing',
     sun10k3:   'https://drive.google.com/file/d/1_HWWhGiHFTRPa8NU1HWHKdTTGaS9tqHD/view?usp=sharing',
