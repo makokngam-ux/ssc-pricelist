@@ -17,6 +17,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0f172a">
+<!-- Prevent iOS standalone-mode cache -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
@@ -1805,6 +1809,22 @@ document.querySelectorAll('.view-btn').forEach(btn => {
         localStorage.setItem('ssc-am-hidden', '1');
     });
 })();
+
+// ===== AUTO-RELOAD เมื่อ VIP app ถูก suspend นาน (iOS Add to Home Screen) =====
+// Problem: iOS cache web app แรงมาก — ลูกค้า VIP เปิดแอป 2-3 วันทีไม่เห็นราคาใหม่
+// Fix: ถ้าผู้ใช้ไม่ได้เปิดแอปนานกว่า 10 นาที → reload อัตโนมัติเมื่อกลับมาเปิด
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        const last = parseInt(sessionStorage.getItem('ssc-last-active') || '0');
+        const now = Date.now();
+        if (last && (now - last) > 10 * 60 * 1000) {
+            location.reload();
+            return;
+        }
+    }
+    sessionStorage.setItem('ssc-last-active', Date.now().toString());
+});
+sessionStorage.setItem('ssc-last-active', Date.now().toString());
 
 // ===== INIT =====
 renderFilters();
