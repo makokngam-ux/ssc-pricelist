@@ -594,6 +594,23 @@ body {
 .card-stock.out { background: rgba(239,68,68,0.95); color: #fff; }
 .row-stock.out { background: rgba(239,68,68,0.12); color: var(--red); }
 .row-stock svg { width: 10px; height: 10px; }
+.row-glass, .card-glass {
+    display: inline-flex; align-items: center; gap: 3px;
+    background: rgba(220,38,38,0.08); color: #dc2626;
+    padding: 1px 7px; border-radius: 999px;
+    font-size: 10px; font-weight: 800;
+    white-space: nowrap;
+    border: 1px solid rgba(220,38,38,0.25);
+}
+.row-glass svg, .card-glass svg { width: 10px; height: 10px; }
+.card-glass {
+    position: absolute; z-index: 3;
+    top: 36px; right: 10px;
+    background: rgba(220,38,38,0.95); color: #fff;
+    border: none;
+    padding: 2px 8px;
+    font-size: 10px;
+}
 .row-specs {
     display: flex; gap: 10px; flex-wrap: wrap;
     font-size: 11.5px; color: var(--text-mid);
@@ -1943,10 +1960,14 @@ const PRODUCTS = [
       feature:'มอก. รับรอง · กำลังสูงสุดของ Solar PPM', featureIcon:'badge-check',
       img:'ppm-tis.png',
       specs:[{l:'Watt',v:'735W'},{l:'฿/W',v:'12.50'},{l:'ส่ง',v:'ก.ย.69'}] },
-    { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3575, ppw:5.5, watt:650, stock:'in',
-      feature:'HPBC 2.0 BC-Cell · Single Glass · เทคโนโลยีรุ่นใหม่', featureIcon:'sun',
+    { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist LR7-72HVH-650M', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Mono-facial · บ้านพักอาศัย', price:3575, ppw:5.5, watt:650, stock:'in', glassType:'กระจกด้านเดียว',
+      feature:'เหมาะกับบ้านพักอาศัย · Mono-facial Single Glass 3.2mm · เบา 28.5 kg · 144 cells (6×24) · Max Eff. 24.8%', featureIcon:'house',
       img:'longi.png',
-      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'15/30 ปี'}] },
+      specs:[{l:'Watt',v:'650W'},{l:'น้ำหนัก',v:'28.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'}] },
+    { id:'longi650_lr8', cat:'panel', name:'LONGi Hi-MO X10 Scientist LR8-66HVD-650M', brand:'LONGi', model:'LR8-66HVD-650M', subcat:'แผงโซล่าร์ Bifacial · โรงงาน C&I', price:3575, ppw:5.5, watt:650, stock:'preorder', stockNote:'30-45 วัน', glassType:'กระจก 2 ด้าน',
+      feature:'เหมาะกับโรงงาน/C&I · Bifacial Dual Glass 2+2mm · 33.5 kg · 132 cells (6×22) · +25% พลังงานจากด้านหลัง · 75% bifaciality', featureIcon:'factory',
+      img:'longi.png',
+      specs:[{l:'Watt',v:'650W (+25% หลัง)'},{l:'น้ำหนัก',v:'33.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'}] },
 
     // Battery Residential
     { id:'blueh51', cat:'battery', name:'KSTAR BluE-H 5-1', brand:'KSTAR', model:'BluE-H 5-1', subcat:'Battery บ้าน', price:99000, stock:'in',
@@ -2037,7 +2058,8 @@ const DATASHEETS = {
     ppm735:    'https://drive.google.com/file/d/1LXC60yBb5Aoa_gavkjqXPLEmHIG9AJYL/view?usp=sharing',
     lp650:     'https://drive.google.com/file/d/1V3yET9Eh0FsYoQT9Fk3Qy3nY_Dk_jKKS/view?usp=share_link',
     lp715:     'https://drive.google.com/file/d/1n_AMYbTDo1ddhzns1NIJBbfCy8IlObMz/view?usp=sharing',
-    longi650:  'https://drive.google.com/file/d/1hZnRT0vxx_kPIT3zNy-7Y43OPKh89jpD/view?usp=sharing',
+    longi650:      'https://drive.google.com/file/d/1q921eLIMLRbsWsprC52iX7xoMmErlAnT/view?usp=sharing',
+    longi650_lr8:  'https://drive.google.com/file/d/1hZnRT0vxx_kPIT3zNy-7Y43OPKh89jpD/view?usp=sharing',
     irr:       'https://drive.google.com/file/d/1VXKujGe-JvI3gNfPY-TWRxQUeQHrSfcK/view?usp=sharing',
     amb:       'https://drive.google.com/file/d/1rzla9Igdnp1xZBDrXw_1VQPR0nM_0GHG/view?usp=sharing',
     mod:       'https://drive.google.com/file/d/1f-pwKnDU8SyMJwEN1NQ3_87oPBZ0HrJ7/view?usp=sharing',
@@ -2156,6 +2178,13 @@ function featureHTML(p){
     return `<span class="feature-highlight"><i data-lucide="${icon}"></i> ${p.feature}</span>`;
 }
 
+function glassBadgeHTML(p, variant){
+    if (!p.glassType) return '';
+    const cls = variant === 'card' ? 'card-glass' : 'row-glass';
+    const icon = /2\s*ด้าน/.test(p.glassType) ? 'layers' : 'rectangle-horizontal';
+    return `<span class="${cls}"><i data-lucide="${icon}"></i> ${p.glassType}</span>`;
+}
+
 function renderCard(p) {
     const inCart = cart[p.id] && cart[p.id].qty > 0;
     const stockBadge = p.stock === 'in'
@@ -2173,6 +2202,7 @@ function renderCard(p) {
                 ${tag ? `<span class="card-tag">${tag}</span>` : ''}
                 <span class="card-badge${tag?' has-tag':''}">${p.brand}</span>
                 ${stockBadge}
+                ${glassBadgeHTML(p, 'card')}
                 ${img}
             </div>
             <div class="card-body">
@@ -2225,6 +2255,7 @@ function renderRow(p) {
                     <span class="row-model">${p.name}</span>
                     ${tag}
                     ${stockBadge}
+                    ${glassBadgeHTML(p, 'row')}
                     ${featureHTML(p)}
                 </div>
                 <div class="row-specs">${specs}</div>
