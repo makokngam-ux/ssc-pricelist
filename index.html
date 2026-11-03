@@ -611,6 +611,26 @@ body {
     padding: 2px 8px;
     font-size: 10px;
 }
+.row-pair, .card-pair {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(234,88,12,0.1); color: #c2410c;
+    padding: 2px 8px; border-radius: 6px;
+    font-size: 11px; font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid rgba(234,88,12,0.3);
+    margin-top: 4px;
+}
+.row-pair svg, .card-pair svg { width: 11px; height: 11px; }
+.row-hint, .card-hint {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(100,116,139,0.08); color: #475569;
+    padding: 2px 8px; border-radius: 6px;
+    font-size: 11px; font-weight: 600;
+    white-space: nowrap;
+    border: 1px dashed rgba(100,116,139,0.35);
+    margin-top: 4px;
+}
+.row-hint svg, .card-hint svg { width: 11px; height: 11px; }
 .row-specs {
     display: flex; gap: 10px; flex-wrap: wrap;
     font-size: 11.5px; color: var(--text-mid);
@@ -1905,7 +1925,7 @@ const PRODUCTS = [
     // Inverter Residential
     { id:'se5000h', cat:'inverter', name:'SolarEdge SE5000H-MM', brand:'SolarEdge', model:'SE5000H-MM', subcat:'Inverter บ้าน', price:39900, stock:'in', tag:'hot',
       feature:'HD-Wave · Energy Meter SE-MTR-3Y-400V-A ในตัว', featureIcon:'zap',
-      img:'https://d3f7dpm96o8eu9.cloudfront.net/media/catalog/product/cache/9e6e15f15c64005f80b557b19e6068ef/s/i/single-phase-inverter-with-hd-wave_4.jpg',
+      img:'solaredge-se5000h.png',
       specs:[{l:'AC',v:'5 kW'},{l:'Phase',v:'1P'},{l:'Max',v:'6,800W'},{l:'รับประกัน',v:'12 ปี'}] },
     { id:'se10k', cat:'inverter', name:'SolarEdge SE10K-RWB48', brand:'SolarEdge', model:'SE10K-RWB48', subcat:'Inverter บ้าน', price:69900, stock:'in',
       feature:'3 Phase สำหรับบ้านใหญ่ · พร้อมต่อ Battery', featureIcon:'house',
@@ -1932,15 +1952,15 @@ const PRODUCTS = [
     // Optimizers
     { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'in',
       feature:'DC-DC Optimizer · สำหรับแผง 600-730W', featureIcon:'sliders-horizontal',
-      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      img:'solaredge-optimizer.png',
       specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'730W'}] },
     { id:'s1500', cat:'optimizer', name:'SolarEdge S1500', brand:'SolarEdge', model:'S1500', subcat:'Power Optimizer', price:2390, stock:'in',
       feature:'DC-DC Optimizer · รองรับแผงกำลังสูง >750W', featureIcon:'sliders-horizontal',
-      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      img:'solaredge-optimizer.png',
       specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'>750W'}] },
     { id:'s650b', cat:'optimizer', name:'SolarEdge S650B (บ้าน)', brand:'SolarEdge', model:'S650B', subcat:'Power Optimizer', price:2190, stock:'in',
       feature:'DC-DC Optimizer สำหรับ Residential 1:1', featureIcon:'sliders-horizontal',
-      img:'https://www.jedsenergy.com/cdn/shop/files/9-252F4-252F3-252F5-252F943528aab9a5f185d4e1a71bd33478de0ae1198c_det_iva_se_power_optimizer_s650b.jpg?v=1720783505&width=600',
+      img:'solaredge-optimizer.png',
       specs:[{l:'Mode',v:'1:1'},{l:'Max',v:'650W'}] },
 
     // Panels
@@ -2024,6 +2044,7 @@ const PRODUCTS = [
     { id:'irr', cat:'accessory', name:'IMT Irradiance Sensor', brand:'IMT', model:'Si-RS485TC-2T-v-MB', subcat:'Sensor', price:24900, stock:'in',
       feature:'วัดความเข้มแสงอาทิตย์ · คำนวณ PR ของระบบ', featureIcon:'sun',
       img:'imt-irradiance.jpg',
+      pairHint:'มีช่องเสียบ Module Temp Sensor ในตัว',
       specs:[{l:'Type',v:'Irradiance'},{l:'I/O',v:'RS485'}] },
     { id:'amb', cat:'accessory', name:'IMT Ambient Temp Sensor', brand:'IMT', model:'Ta-ext-RS485-MB', subcat:'Sensor', price:15000, stock:'in',
       feature:'วัดอุณหภูมิอากาศรอบข้าง · วิเคราะห์ประสิทธิภาพระบบ', featureIcon:'thermometer',
@@ -2031,7 +2052,8 @@ const PRODUCTS = [
       specs:[{l:'Type',v:'Ambient'}] },
     { id:'mod', cat:'accessory', name:'IMT Module Temp Sensor', brand:'IMT', model:'Tmodul-SI', subcat:'Sensor', price:15500, stock:'in',
       feature:'วัดอุณหภูมิด้านหลังแผง · ติดเซ็นเซอร์ PT1000', featureIcon:'thermometer-sun',
-      img:'imt-module.jpg',
+      img:'imt-module.png',
+      pairWith:'ต้องเสียบขั้วเข้ากับ Irradiance Sensor',
       specs:[{l:'Type',v:'Module Temp'}] },
     { id:'wind', cat:'accessory', name:'IMT Wind Sensor', brand:'IMT', model:'Vwind-Si', subcat:'Sensor', price:35000, stock:'in',
       feature:'วัดความเร็วลม · มาตรฐาน MEA / SCADA', featureIcon:'wind',
@@ -2185,6 +2207,18 @@ function glassBadgeHTML(p, variant){
     return `<span class="${cls}"><i data-lucide="${icon}"></i> ${p.glassType}</span>`;
 }
 
+function pairBadgeHTML(p, variant){
+    if (p.pairWith) {
+        const cls = variant === 'card' ? 'card-pair' : 'row-pair';
+        return `<span class="${cls}"><i data-lucide="link-2"></i> ${p.pairWith}</span>`;
+    }
+    if (p.pairHint) {
+        const cls = variant === 'card' ? 'card-hint' : 'row-hint';
+        return `<span class="${cls}"><i data-lucide="plus-circle"></i> ${p.pairHint}</span>`;
+    }
+    return '';
+}
+
 function renderCard(p) {
     const inCart = cart[p.id] && cart[p.id].qty > 0;
     const stockBadge = p.stock === 'in'
@@ -2209,6 +2243,7 @@ function renderCard(p) {
                 <div class="card-brand">${p.subcat}</div>
                 <div class="card-model">${p.name}</div>
                 ${featureHTML(p)}
+                ${pairBadgeHTML(p, 'card')}
                 <div class="card-specs">
                     ${p.specs.map(s => `<div class="spec">${s.l} <strong>${s.v}</strong></div>`).join('')}
                 </div>
@@ -2257,6 +2292,7 @@ function renderRow(p) {
                     ${stockBadge}
                     ${glassBadgeHTML(p, 'row')}
                     ${featureHTML(p)}
+                    ${pairBadgeHTML(p, 'row')}
                 </div>
                 <div class="row-specs">${specs}</div>
             </div>
