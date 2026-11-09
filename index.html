@@ -593,6 +593,9 @@ body {
 .row-stock.preorder { background: rgba(245,158,11,0.12); color: var(--gold-hover); }
 .card-stock.out { background: rgba(239,68,68,0.95); color: #fff; }
 .row-stock.out { background: rgba(239,68,68,0.12); color: var(--red); }
+.card-stock.low { background: rgba(245,158,11,0.95); color: #fff; animation: lowPulse 2s ease-in-out infinite; }
+.row-stock.low { background: rgba(245,158,11,0.15); color: var(--gold-hover); animation: lowPulse 2s ease-in-out infinite; }
+@keyframes lowPulse { 0%,100% { opacity:1; } 50% { opacity:0.75; } }
 .row-stock svg { width: 10px; height: 10px; }
 .row-glass, .card-glass {
     display: inline-flex; align-items: center; gap: 3px;
@@ -1950,7 +1953,7 @@ const PRODUCTS = [
       specs:[{l:'AC',v:'15 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
 
     // Optimizers
-    { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'in',
+    { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'low', stockNote:'สต็อกน้อย · เช็คก่อนเสนอราคา',
       feature:'DC-DC Optimizer · สำหรับแผง 600-730W', featureIcon:'sliders-horizontal',
       img:'solaredge-optimizer.png',
       specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'730W'}] },
@@ -2223,6 +2226,10 @@ function renderCard(p) {
     const inCart = cart[p.id] && cart[p.id].qty > 0;
     const stockBadge = p.stock === 'in'
         ? '<span class="card-stock"><i data-lucide="check"></i> พร้อมส่ง</span>'
+        : p.stock === 'out'
+        ? '<span class="card-stock out"><i data-lucide="x-circle"></i> สินค้าหมด</span>'
+        : p.stock === 'low'
+        ? `<span class="card-stock low"><i data-lucide="alert-triangle"></i> ${p.stockNote||'สต็อกน้อย'}</span>`
         : `<span class="card-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
     const img = p.img
         ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><i data-lucide=\\'image\\'></i><span>${p.brand}</span></div>';lucide.createIcons();">`
@@ -2273,6 +2280,8 @@ function renderRow(p) {
         ? '<span class="row-stock"><i data-lucide="check"></i> พร้อมส่ง</span>'
         : p.stock === 'out'
         ? '<span class="row-stock out"><i data-lucide="x-circle"></i> สินค้าหมด</span>'
+        : p.stock === 'low'
+        ? `<span class="row-stock low"><i data-lucide="alert-triangle"></i> ${p.stockNote||'สต็อกน้อย'}</span>`
         : `<span class="row-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
     const img = p.img
         ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'row-img-placeholder\\'><i data-lucide=\\'image\\'></i></div>';lucide.createIcons();">`
