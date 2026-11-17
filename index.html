@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSC — Exclusive Pricelist | Q4/2569 (v2)</title>
-<meta name="description" content="รายการราคาอุปกรณ์โซล่าร์เซลล์ SolarEdge, Sunwoda, KSTAR, LONGi, Leapton — Q4/2569 จาก Siam Solar Cell. เลือก → คัดลอก → แชร์ผ่าน LINE ได้ทันที">
-<meta property="og:title" content="SSC Price List Q4/2569 — รายการราคาอุปกรณ์โซล่าร์เซลล์">
-<meta property="og:description" content="SolarEdge Inverter, Sunwoda/KSTAR Battery, LONGi/Leapton Panels — ราคาล่าสุดพร้อมแชร์ลูกค้า">
+<title>SSC — Exclusive Pricelist | Q4/2569</title>
+<meta name="description" content="สินค้าของ SSC ที่คุณเลือกได้ — SolarEdge, Deye, Sunwoda, KSTAR, TCL, LONGi, Leapton, Solar PPM, IMT ราคา Q4/2569 จาก Siam Solar Cell เลือกสินค้า ปรับจำนวน แล้วขอใบเสนอราคาได้ทันที">
+<meta property="og:title" content="สินค้าของ SSC ที่คุณเลือกได้ — Price List Q4/2569">
+<meta property="og:description" content="Inverter SolarEdge/Deye · Battery Sunwoda/KSTAR/TCL · แผง LONGi/Leapton/Solar PPM · อุปกรณ์เสริม IMT — เลือกสินค้าแล้วขอใบเสนอราคาได้ทันที">
 <meta property="og:type" content="website">
 <!-- Favicon & App Icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -22,7 +22,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link id="ssc-fonts" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://unpkg.com/lucide@1.74.0/dist/umd/lucide.min.js"></script>
 <style>
 :root {
     --navy: #0f172a;
@@ -1976,8 +1976,129 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
  .row .row-price-val { font-size:22px !important; }
 }
 </style>
+<style>
+/* SSC category motion: native scrolling, persistent selection, no dependencies. */
+.category-rail { position:relative; }
+#filters { position:relative; scroll-snap-type:x mandatory; scroll-padding-inline:2px; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
+#filters .chip { scroll-snap-align:start; transition:color 180ms ease; box-shadow:none; }
+#filters .chip.active { box-shadow:none; }
+#filters .category-thumb { transition:transform 240ms cubic-bezier(.2,.7,.3,1); }
+#filters .chip:active .category-thumb { transform:scale(.95); }
+#filters .chip:focus-visible { outline:2px solid var(--d-accent); outline-offset:-2px; border-radius:6px; }
+.category-indicator { position:absolute; left:0; bottom:8px; height:2px; background:var(--d-accent); border-radius:2px; pointer-events:none; transition:transform 280ms cubic-bezier(.2,.7,.3,1),width 280ms ease; }
+.category-rail::before,.category-rail::after { content:''; position:absolute; z-index:2; top:0; bottom:6px; width:22px; opacity:0; pointer-events:none; transition:opacity 180ms ease; }
+.category-rail::before { left:0; background:linear-gradient(90deg,var(--d-bg),transparent); }
+.category-rail::after { right:0; background:linear-gradient(270deg,var(--d-bg),transparent); }
+.category-rail.has-left::before,.category-rail.has-right::after { opacity:1; }
+.category-arrow { position:absolute; top:27px; z-index:3; width:32px; height:32px; border:1px solid #d9dadd; border-radius:50%; background:#fff; color:#44454a; font:26px/1 Inter,sans-serif; cursor:pointer; box-shadow:0 2px 8px #0000000d; transition:opacity 180ms ease,transform 180ms ease; }
+.category-prev { left:-14px; } .category-next { right:-14px; }
+.category-arrow:disabled { opacity:0; pointer-events:none; visibility:hidden; }
+.category-arrow:active { transform:scale(.94); }
+@media (hover:hover) and (pointer:fine) { #filters .chip:hover .category-thumb { transform:translateY(-3px) scale(1.045); } }
+@keyframes categoryArrival { from { opacity:0; transform:translateY(7px); } to { opacity:1; transform:translateY(0); } }
+#filters.category-enter .category-thumb { animation:categoryArrival 280ms ease both !important; animation-delay:var(--entry-delay) !important; }
+@media(max-width:600px) { .category-arrow { display:none; } .category-indicator { bottom:4px; } }
+@media(prefers-reduced-motion:reduce) {
+ #filters *, .category-rail::before,.category-rail::after,.category-arrow { transition:none !important; animation:none !important; }
+ #filters.category-enter .category-thumb { animation:none !important; }
+ #filters .chip:hover .category-thumb,#filters .chip:active .category-thumb { transform:none; }
+}
+</style>
+<style>
+/* iPhone refinement: true alpha icons; no blending or compositing assumptions. */
+#filters .category-thumb { width:110px; height:80px; }
+#filters .category-thumb img { width:80px; height:80px; mix-blend-mode:normal; }
+#filters .category-all { position:relative; width:80px; height:80px; margin-inline:15px; border-radius:50%; background:#e9e9ee; overflow:hidden; isolation:isolate; }
+#filters .category-all img { position:absolute; width:39px; height:48px; object-fit:contain; }
+#filters .category-all img:nth-child(1) { left:3px; top:9px; transform:rotate(-9deg); }
+#filters .category-all img:nth-child(2) { left:31px; top:2px; transform:rotate(7deg); }
+#filters .category-all img:nth-child(3) { left:32px; top:32px; }
+#filters .category-all img:nth-child(4) { left:1px; top:39px; width:33px; height:35px; }
+#filters .category-all img:nth-child(5) { left:51px; top:29px; width:27px; height:32px; }
+.mobile-dock { display:contents; }
+.mobile-contact { display:none; }
+#chat-open svg { display:block; width:25px; height:25px; stroke:currentColor; flex-shrink:0; }
+#chat-panel { max-height:calc(100dvh - 120px); overflow-y:auto; }
+#page-scroll { display:contents; }
+@media(max-width:720px) {
+ html,body { height:100%; overflow:hidden; }
+ body { position:fixed; inset:0; width:100%; overflow:clip; }
+ #page-scroll { display:block; height:calc(100vh - 65px - env(safe-area-inset-bottom,0px)); height:calc(100dvh - 65px - env(safe-area-inset-bottom,0px)); overflow-y:auto; overscroll-behavior-y:contain; }
+ .mobile-dock { position:fixed; z-index:900; bottom:0; left:0; right:0; display:flex; align-items:center; justify-content:space-around; height:calc(65px + env(safe-area-inset-bottom,0px)); padding:5px 10px calc(5px + env(safe-area-inset-bottom,0px)); background:#fff; border-top:1px solid #dedee3; }
+ .mobile-dock .mobile-contact,.mobile-dock #cart-fab,.mobile-dock #chat-open { position:relative !important; inset:auto !important; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; width:64px; height:52px; border:0; border-radius:12px; background:transparent !important; box-shadow:none !important; color:#424348 !important; text-decoration:none; font:500 10px 'IBM Plex Sans Thai',sans-serif; transform:none !important; }
+ .mobile-dock #chat-open { color:#216b38 !important; }
+ .mobile-dock svg { width:21px !important; height:21px !important; }
+ .mobile-dock #chat-open::after,.mobile-dock #cart-fab::after { content:attr(data-label); position:static; border:0; width:auto; height:auto; border-radius:0; }
+ .mobile-dock #cart-badge { right:7px; top:0; }
+ #am-card { display:none !important; }
+ #chat-panel { left:12px; right:12px; bottom:calc(77px + env(safe-area-inset-bottom,0px)); width:auto; max-height:calc(100dvh - 100px - env(safe-area-inset-bottom,0px)); }
+ .nav { background:var(--d-bg) !important; border-bottom:0 !important; box-shadow:none !important; }
+ .nav .nav-inner { height:36px !important; justify-content:center !important; }
+ .nav-actions { width:100%; justify-content:space-between; }
+ .trust-inner { flex-wrap:wrap !important; overflow:visible !important; justify-content:flex-start !important; gap:6px 16px !important; }
+ .trust-item { white-space:nowrap; font-size:9px !important; }
+ .brand-strip-inner { flex-wrap:wrap !important; overflow:visible !important; justify-content:flex-start !important; gap:2px 4px !important; }
+ .brand-strip { overflow:visible !important; }
+ .brand-strip .brand-list { flex-wrap:wrap !important; overflow:visible !important; gap:2px 5px; }
+ .mobile-dock #chat-open::before { display:none !important; }
+ .search-row { flex-wrap:nowrap; gap:8px; }
+ .search-box { flex:1 1 auto; min-width:0; }
+ .search-box input { font-size:11px; min-width:0; }
+ .view-toggle { flex:0 0 auto; margin:0; }
+ .view-btn { padding:8px 7px !important; gap:3px; }
+ .view-btn svg { width:13px; height:13px; }
+ #filters .category-thumb { width:80px; height:60px; }
+ #filters .category-thumb img { width:60px; height:60px; }
+ #filters .category-all { width:60px; height:60px; margin-inline:10px; }
+ #filters .category-all img:nth-child(1) { width:29px; height:36px; left:2px; top:6px; }
+ #filters .category-all img:nth-child(2) { width:29px; height:36px; left:23px; top:2px; }
+ #filters .category-all img:nth-child(3) { width:29px; height:36px; left:24px; top:24px; }
+ #filters .category-all img:nth-child(4) { width:25px; height:26px; left:1px; top:29px; }
+ #filters .category-all img:nth-child(5) { width:20px; height:24px; left:38px; top:22px; }
+}
+</style>
+<style>@media(max-width:720px){.nav{display:none !important}.hero{padding-top:calc(20px + env(safe-area-inset-top,0px)) !important}}</style>
+<style>.tis-badge{display:flex;align-items:center;gap:7px;margin-top:8px;font-size:11px;line-height:1.4;color:#55565c}.tis-badge img{width:22px;height:22px;object-fit:contain;flex:none}.tis-badge-large{font-size:13px;margin-top:12px}.tis-badge-large img{width:48px;height:48px}.row .tis-badge{margin-top:7px}@media(max-width:720px){.row .tis-badge{font-size:10px;gap:5px}.row .tis-badge img{width:20px;height:20px}}</style>
+<style>/* hero colour wave: plays once on load, then settles to page background */
+.hero-wash{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:0;-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 40%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 40%,transparent 100%);animation:heroWashFade 6.5s linear .15s forwards !important}
+.hero-wash::before{content:'';position:absolute;top:0;bottom:0;left:0;width:400%;background:linear-gradient(90deg,#fde4ef 0%,#fde9de 14%,#fff3cf 28%,#f1fbd9 42%,#d8f0fd 58%,#e6e4fb 72%,#fde4ef 86%,#fde9de 100%);will-change:transform;animation:heroWashDrift 6.5s cubic-bezier(.45,0,.25,1) .15s forwards !important}
+@keyframes heroWashFade{0%{opacity:0}10%{opacity:1}72%{opacity:1}100%{opacity:0}}
+@keyframes heroWashDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-75%,0,0)}}
+@media(prefers-reduced-motion:reduce){.hero-wash{display:none !important}}
+</style>
+<style>/* brand strip hover movement (mouse only) */
+.brand-strip .brand-list .brand-chip{transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease !important}
+.brand-strip .brand-list .brand-chip .brand-dot{transition:transform .32s cubic-bezier(.34,1.56,.64,1),box-shadow .28s ease !important}
+@media (hover:hover) and (pointer:fine){
+ .brand-strip .brand-list .brand-chip:hover{transform:translateY(-2px) !important;color:#202124 !important}
+ .brand-strip .brand-list .brand-chip:hover .brand-dot{transform:scale(1.4);box-shadow:0 0 0 3px color-mix(in srgb,var(--c,#888) 22%,transparent)}
+}
+.brand-strip .brand-list .brand-chip:active{transform:scale(.96) !important}
+@media(prefers-reduced-motion:reduce){.brand-strip .brand-list .brand-chip,.brand-strip .brand-list .brand-chip .brand-dot{transition:none !important;transform:none !important}}
+</style>
+<style>.qty-input{width:58px;height:28px;text-align:center;border:1px solid #d9dadd;border-radius:8px;background:#fff;color:#202124;font-size:16px;padding:0 4px;-moz-appearance:textfield;appearance:textfield}
+.qty-input::-webkit-outer-spin-button,.qty-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.qty-input:focus{outline:2px solid #9a490d;outline-offset:1px;border-color:transparent}
+</style>
+<style>/* desktop: quotation button bottom-left, account manager card beside it */
+@media(min-width:721px){
+ #cart-fab{left:20px !important;right:auto !important;bottom:20px !important}
+ #am-card{left:100px !important}
+ #cart-panel{left:20px !important;right:auto !important;bottom:100px !important}
+}
+</style>
+<style>/* desktop: quotation button shows its name */
+@media(min-width:721px){
+ #cart-fab{width:auto !important;height:56px !important;padding:0 20px 0 16px !important;border-radius:28px !important;gap:9px}
+ #cart-fab svg{width:22px;height:22px}
+ #cart-fab::after{content:'ใบเสนอราคา';font-family:'IBM Plex Sans Thai','Inter',sans-serif;font-size:14px;font-weight:600;white-space:nowrap}
+ #am-card{left:188px !important}
+}
+</style>
+<style>.cart-ship-note{font-size:11px;color:#86868b;text-align:right;margin-top:4px}</style>
 </head>
 <body>
+<div id="page-scroll">
 <div class="scroll-progress" id="scroll-progress"></div>
 <!-- Quick View Modal -->
 <aside id="quick-view" class="qv-overlay" aria-hidden="true">
@@ -2014,6 +2135,7 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
 
 <!-- HERO (with cinematic layers) -->
 <section class="hero">
+    <div class="hero-wash" aria-hidden="true"></div>
     <!-- Optional: user can drop a video file as 'hero-video.mp4' in the folder -->
     <video class="hero-video" id="hero-video" autoplay muted loop playsinline></video>
     <div class="hero-rays"></div>
@@ -2022,9 +2144,7 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
     <div class="hero-inner">
         <div class="hero-copy">
             <span class="hero-tag"><i data-lucide="crown"></i> SSC Exclusive Pricelist <span class="hero-quarter">Q4/2569</span></span>
-            <h1>รายการราคา <span class="type-latin">SSC.</span><span class="accent">โซลาร์ที่คุณเลือกได้</span></h1>
-            <p>ตุลาคม–ธันวาคม 2569 · สำหรับลูกค้า Siam Solar Cell</p>
-            <div class="hero-terms">ราคาไม่รวม VAT 7% · กรุณายืนยันราคาและสต็อกก่อนสั่งซื้อ</div>
+            <h1>สินค้าของ <span class="type-latin">SSC</span><span class="accent">ที่คุณเลือกได้</span></h1>
         </div>
         <div class="hero-steps" aria-label="ขั้นตอนขอใบเสนอราคา">
             <div class="hero-step"><span class="hero-step-num">1</span> เลือกสินค้าที่สนใจ</div>
@@ -2049,15 +2169,15 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
     <div class="brand-strip-inner">
         <span class="brand-strip-label"><i data-lucide="handshake"></i> แบรนด์สินค้า</span>
         <div class="brand-list" id="brand-filters">
-            <button class="brand-chip" data-brand="SolarEdge"><span class="brand-dot" style="background:#ed1c24"></span>SolarEdge<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="Sunwoda"><span class="brand-dot" style="background:#0a4595"></span>Sunwoda<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="LONGi"><span class="brand-dot" style="background:#003c71"></span>LONGi<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="KSTAR"><span class="brand-dot" style="background:#0072ce"></span>KSTAR<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="Leapton"><span class="brand-dot" style="background:#e60012"></span>Leapton<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="Deye"><span class="brand-dot" style="background:#005bbb"></span>Deye<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="TCL"><span class="brand-dot" style="background:#c8102e"></span>TCL<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="Solar PPM"><span class="brand-dot" style="background:#f7941d"></span>Solar PPM<span class="brand-close">×</span></button>
-            <button class="brand-chip" data-brand="IMT"><span class="brand-dot" style="background:#5a5a5a"></span>IMT<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="SolarEdge"><span class="brand-dot" style="background:#ed1c24;--c:#ed1c24"></span>SolarEdge<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Sunwoda"><span class="brand-dot" style="background:#0a4595;--c:#0a4595"></span>Sunwoda<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="LONGi"><span class="brand-dot" style="background:#003c71;--c:#003c71"></span>LONGi<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="KSTAR"><span class="brand-dot" style="background:#0072ce;--c:#0072ce"></span>KSTAR<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Leapton"><span class="brand-dot" style="background:#e60012;--c:#e60012"></span>Leapton<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Deye"><span class="brand-dot" style="background:#005bbb;--c:#005bbb"></span>Deye<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="TCL"><span class="brand-dot" style="background:#c8102e;--c:#c8102e"></span>TCL<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="Solar PPM"><span class="brand-dot" style="background:#f7941d;--c:#f7941d"></span>Solar PPM<span class="brand-close">×</span></button>
+            <button class="brand-chip" data-brand="IMT"><span class="brand-dot" style="background:#5a5a5a;--c:#5a5a5a"></span>IMT<span class="brand-close">×</span></button>
         </div>
     </div>
 </div>
@@ -2148,7 +2268,7 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
 <aside class="am-card" id="am-card">
     <button class="am-close" id="am-close" title="ซ่อน"><i data-lucide="x"></i></button>
     <div class="am-photo">
-        <img src="account-manager.png" alt="Account Manager" onerror="this.parentElement.innerHTML='<i data-lucide=user style=color:white;width:24px;height:24px></i>';lucide.createIcons();">
+        <img src="img-v3/account-manager.webp" alt="Account Manager" onerror="this.parentElement.innerHTML='<i data-lucide=user style=color:white;width:24px;height:24px></i>';lucide.createIcons();">
     </div>
     <div class="am-info">
         <span class="am-label"><i data-lucide="badge-check"></i> Your Account Manager</span>
@@ -2181,6 +2301,7 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
             <span class="cart-total-val" id="cart-total">฿0</span>
         </div>
         <div class="cart-vat">+ VAT 7% = <span id="cart-vat">฿0</span></div>
+        <div class="cart-ship-note">ราคาสินค้ายังไม่รวมค่าจัดส่ง</div>
         <div class="cart-actions">
             <button class="cart-btn cart-btn-copy" id="cart-copy">
                 <i data-lucide="copy"></i> Copy
@@ -2201,6 +2322,7 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
 <!-- FOOTER -->
 <footer class="footer">
     <p><strong>Siam Solar Cell Co., Ltd.</strong> · ข้อมูล Q4/2569 (ราคาอาจเปลี่ยนแปลงโดยไม่แจ้งล่วงหน้า)</p>
+    <p>ราคาสินค้ายังไม่รวมค่าจัดส่ง</p>
     <p>ติดต่อ: <a href="tel:0848255036">084-825-5036</a> · <a href="mailto:teerawat@siamsolar.co.th">teerawat@siamsolar.co.th</a> · <a href="https://line.me/ti/p/u9eTiTrfL9" target="_blank">LINE</a></p>
 </footer>
 
@@ -2214,7 +2336,7 @@ const PRODUCTS = [
       specs:[{l:'AC',v:'33.3 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'2'},{l:'รับประกัน',v:'12 ปี'}] },
     { id:'se100', cat:'inverter', name:'SolarEdge SE100K Synergy', brand:'SolarEdge', model:'SE100K', subcat:'Inverter C&I', price:129000, stock:'in', tag:'hot',
       feature:'Synergy 3-module · กระจายภาระความร้อน · เปลี่ยน module ง่าย', featureIcon:'layers',
-      img:'img-v3/solaredge-se100k-synergy.webp',
+      img:'img-v3/solaredge-se100k-synergy-v2.webp',
       specs:[{l:'AC',v:'100 kW'},{l:'Phase',v:'3P'},{l:'Strings',v:'6'},{l:'รับประกัน',v:'12 ปี'}] },
     // Inverter Residential
     { id:'se5000h', cat:'inverter', name:'SolarEdge SE5000H-MM', brand:'SolarEdge', model:'SE5000H-MM', subcat:'Inverter บ้าน', price:39900, stock:'in', tag:'hot',
@@ -2244,62 +2366,67 @@ const PRODUCTS = [
       specs:[{l:'AC',v:'15 kW'},{l:'Phase',v:'3P'},{l:'Type',v:'Hybrid'},{l:'รับประกัน',v:'10 ปี'}] },
 
     // Optimizers
-    { id:'s1400', cat:'optimizer', name:'SolarEdge S1400', brand:'SolarEdge', model:'S1400', subcat:'Power Optimizer', price:2290, stock:'low', stockNote:'สต็อกน้อย · เช็คก่อนเสนอราคา',
-      feature:'DC-DC Optimizer · สำหรับแผง 600-730W', featureIcon:'sliders-horizontal',
-      img:'img-v3/solaredge-optimizer.webp',
-      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'730W'}] },
     { id:'s1500', cat:'optimizer', name:'SolarEdge S1500', brand:'SolarEdge', model:'S1500', subcat:'Power Optimizer', price:2390, stock:'in',
       feature:'DC-DC Optimizer · รองรับแผงกำลังสูง >750W', featureIcon:'sliders-horizontal',
       img:'img-v3/solaredge-optimizer.webp',
-      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'>750W'}] },
+      specs:[{l:'Mode',v:'2:1'},{l:'Max',v:'>750W'},{l:'รับประกัน',v:'25 ปี'}] },
     { id:'s650b', cat:'optimizer', name:'SolarEdge S650B (บ้าน)', brand:'SolarEdge', model:'S650B', subcat:'Power Optimizer', price:2190, stock:'in',
       feature:'DC-DC Optimizer สำหรับ Residential 1:1', featureIcon:'sliders-horizontal',
       img:'img-v3/solaredge-optimizer.webp',
-      specs:[{l:'Mode',v:'1:1'},{l:'Max',v:'650W'}] },
+      specs:[{l:'Mode',v:'1:1'},{l:'Max',v:'650W'},{l:'รับประกัน',v:'25 ปี'}] },
 
     // Panels
-    { id:'lp650', cat:'panel', name:'Leapton 650W', brand:'Leapton', model:'LP182x210-M-66Q-NB', subcat:'แผงโซล่าร์', price:3575, ppw:5.5, watt:650, stock:'in', tag:'new',
+    { id:'lp650', tis:'61730 เล่ม 2-2567', cat:'panel', name:'Leapton 650W', brand:'Leapton', model:'LP182x210-M-66Q-NB', subcat:'แผงโซล่าร์', price:3575, ppw:5.5, watt:650, stock:'in', tag:'new',
       feature:'TopCon N-Type · รุ่นใหม่ล่าสุด · 30 ปี Power Warranty', featureIcon:'sun',
       img:'img-v3/leapton.webp',
-      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.50'}] },
-    { id:'lp715', cat:'panel', name:'Leapton 715W (C&I)', brand:'Leapton', model:'LP210-210-M-66-NB', subcat:'แผงโซล่าร์', price:3933, ppw:5.5, watt:715, stock:'in', tag:'hot',
+      specs:[{l:'Watt',v:'650W'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'25 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'},{l:'ประสิทธิภาพ',v:'24.06%'},{l:'ขนาด',v:'2382 × 1134 × 30 mm'},{l:'น้ำหนัก',v:'31 kg'},{l:'กระจก',v:'2 ด้าน 2.0 + 2.0 mm'},{l:'Bifaciality',v:'85 ± 5%'}] },
+    { id:'lp715', tis:'61730 เล่ม 2-2567', cat:'panel', name:'Leapton 715W (C&I)', brand:'Leapton', model:'LP210-210-M-66-NB', subcat:'แผงโซล่าร์', price:3933, ppw:5.5, watt:715, stock:'in', tag:'hot',
       feature:'TopCon N-Type · กำลังสูงสำหรับ C&I · 22.95% efficiency', featureIcon:'sun',
       img:'img-v3/leapton.webp',
-      specs:[{l:'Watt',v:'715W'},{l:'฿/W',v:'5.50'}] },
+      specs:[{l:'Watt',v:'715W'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'25 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'},{l:'ขนาด',v:'2384 × 1303 × 33 mm'},{l:'น้ำหนัก',v:'37.5 kg'},{l:'กระจก',v:'2 ด้าน 2.0 + 2.0 mm'},{l:'Bifaciality',v:'80 ± 5%'}] },
     { id:'ppm600', cat:'panel', name:'Solar PPM 600W (มอก.)', brand:'Solar PPM', model:'SPPM-MG12-GG', subcat:'แผงโซล่าร์ มอก.', price:7500, ppw:12.5, watt:600, stock:'in',
       feature:'มอก. รับรอง · ผลิตในประเทศไทย', featureIcon:'badge-check',
       img:'img-v3/ppm-tis.webp',
-      specs:[{l:'Watt',v:'600W'},{l:'฿/W',v:'12.50'},{l:'มอก.',v:'✓'}] },
+      specs:[{l:'Watt',v:'600W'},{l:'฿/W',v:'12.50'},{l:'มอก.',v:'✓'},{l:'รับประกัน',v:'15 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี (80%)'}] },
     { id:'ppm735', cat:'panel', name:'Solar PPM 735W (มอก.)', brand:'Solar PPM', model:'SPPM-NG12-HV-72', subcat:'แผงโซล่าร์ มอก.', price:9188, ppw:12.5, watt:735, stock:'preorder',
       feature:'มอก. รับรอง · กำลังสูงสุดของ Solar PPM', featureIcon:'badge-check',
       img:'img-v3/ppm-tis.webp',
-      specs:[{l:'Watt',v:'735W'},{l:'฿/W',v:'12.50'},{l:'ส่ง',v:'ก.ย.69'}] },
-    { id:'longi650', cat:'panel', name:'LONGi Hi-MO X10 Scientist LR7-72HVH-650M', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3575, ppw:5.5, watt:650, stock:'in', glassType:'กระจกด้านเดียว',
+      specs:[{l:'Watt',v:'735W'},{l:'฿/W',v:'12.50'}] },
+    { id:'longi650', tis:'61730 เล่ม 2-2567', cat:'panel', name:'LONGi Hi-MO X10 Scientist LR7-72HVH-650M', brand:'LONGi', model:'LR7-72HVH-650M', subcat:'แผงโซล่าร์ Premium', price:3575, ppw:5.5, watt:650, stock:'in', glassType:'กระจกด้านเดียว',
       feature:'เหมาะกับบ้านพักอาศัย · Mono-facial Single Glass 3.2mm · เบา 28.5 kg · 144 cells (6×24) · Max Eff. 24.8%', featureIcon:'house',
       img:'img-v3/longi.webp',
-      specs:[{l:'Watt',v:'650W'},{l:'น้ำหนัก',v:'28.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'}] },
-    { id:'longi650_lr8', cat:'panel', name:'LONGi Hi-MO X10 Scientist LR8-66HVD-650M', brand:'LONGi', model:'LR8-66HVD-650M', subcat:'แผงโซล่าร์ Premium', price:3575, ppw:5.5, watt:650, stock:'preorder', stockNote:'30-45 วัน', glassType:'กระจก 2 ด้าน',
+      specs:[{l:'Watt',v:'650W'},{l:'น้ำหนัก',v:'28.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'15 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'}] },
+    { id:'longi650_lr8', tis:'61730 เล่ม 2-2567', cat:'panel', name:'LONGi Hi-MO X10 Scientist LR8-66HVD-650M', brand:'LONGi', model:'LR8-66HVD-650M', subcat:'แผงโซล่าร์ Premium', price:3575, ppw:5.5, watt:650, stock:'preorder', stockNote:'30-45 วัน', glassType:'กระจก 2 ด้าน',
       feature:'เหมาะกับโรงงาน/C&I · Bifacial Dual Glass 2+2mm · 33.5 kg · 132 cells (6×22) · +25% พลังงานจากด้านหลัง · 75% bifaciality', featureIcon:'factory',
       img:'img-v3/longi.webp',
-      specs:[{l:'Watt',v:'650W (+25% หลัง)'},{l:'น้ำหนัก',v:'33.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'}] },
+      specs:[{l:'Watt',v:'650W (+25% หลัง)'},{l:'น้ำหนัก',v:'33.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'15 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'}] },
 
     // Battery Residential
     { id:'blueh51', cat:'battery', name:'KSTAR BluE-H 5-1', brand:'KSTAR', model:'BluE-H 5-1', subcat:'Battery บ้าน', price:99000, stock:'in',
       feature:'Hybrid 5kW + แบต 5kWh · สำหรับบ้านขนาดเล็ก', featureIcon:'house',
       img:'img-v3/kstar-blue-h-5-1.webp',
-      specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'5 kWh'}] },
+      specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'5 kWh'},{l:'รับประกัน',v:'5 ปี'}],
+      more:[{l:'โมดูลแบต',v:'1 × BluE-PACK 5.1 (5.12 kWh)'},{l:'MPPT',v:'2'},{l:'Backup',v:'5,000 VA'},{l:'ชนิดแบต',v:'LFP (CATL)'},{l:'อายุใช้งาน',v:'10,000 รอบ'},{l:'กันน้ำกันฝุ่น',v:'IP65'},{l:'รับประกันประสิทธิภาพแบต',v:'10 ปี'}] },
     { id:'blueh52', cat:'battery', name:'KSTAR BluE-H 5-2', brand:'KSTAR', model:'BluE-H 5-2', subcat:'Battery บ้าน', price:149000, stock:'in',
       feature:'Hybrid 5kW + แบต 10kWh · สำหรับบ้านขนาดกลาง', featureIcon:'house',
-      img:'kstar-blue-h-5-2.jpg',
-      specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'10 kWh'}] },
+      img:'img-v3/kstar-blue-h-5-2-flat.webp',
+      specs:[{l:'Power',v:'5 kW'},{l:'Capacity',v:'10 kWh'},{l:'รับประกัน',v:'5 ปี'}],
+      more:[{l:'โมดูลแบต',v:'2 × BluE-PACK 5.1 (10.24 kWh)'},{l:'MPPT',v:'2'},{l:'Backup',v:'5,000 VA'},{l:'ชนิดแบต',v:'LFP (CATL)'},{l:'อายุใช้งาน',v:'10,000 รอบ'},{l:'กันน้ำกันฝุ่น',v:'IP65'},{l:'รับประกันประสิทธิภาพแบต',v:'10 ปี'}] },
     { id:'blues101', cat:'battery', name:'KSTAR BluE-S 10 KT-1', brand:'KSTAR', model:'BluE-S 10 KT-1', subcat:'Battery บ้าน', price:169000, stock:'in',
       feature:'Hybrid 10kW + แบต 10kWh · 3 Phase', featureIcon:'house',
-      img:'kstar-blue-s-10-kt-1.jpg',
-      specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'10 kWh'}] },
+      img:'img-v3/kstar-blue-s-10kt-10kwh-flat.webp',
+      specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'10 kWh'},{l:'รับประกัน',v:'5 ปี'}],
+      more:[{l:'โมดูลแบต',v:'2 × BluE-PACK 5.1 (10.24 kWh)'},{l:'ชนิดแบต',v:'LFP (CATL)'},{l:'อายุใช้งาน',v:'10,000 รอบ'},{l:'กันน้ำกันฝุ่น',v:'IP65'},{l:'รับประกันประสิทธิภาพแบต',v:'10 ปี'}] },
     { id:'blues102', cat:'battery', name:'KSTAR BluE-S 10 KT-2', brand:'KSTAR', model:'BluE-S 10 KT-2', subcat:'Battery บ้าน', price:269000, stock:'in', tag:'hot',
       feature:'Hybrid 10kW + แบต 20kWh · 3 Phase สำหรับบ้านใหญ่', featureIcon:'house',
       img:'img-v3/kstar-blue-s-10-kt-2.webp',
-      specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'20 kWh'}] },
+      specs:[{l:'Power',v:'10 kW'},{l:'Capacity',v:'20 kWh'},{l:'รับประกัน',v:'5 ปี'}],
+      more:[{l:'โมดูลแบต',v:'4 × BluE-PACK 5.1 (20.48 kWh)'},{l:'ชนิดแบต',v:'LFP (CATL)'},{l:'อายุใช้งาน',v:'10,000 รอบ'},{l:'กันน้ำกันฝุ่น',v:'IP65'},{l:'รับประกันประสิทธิภาพแบต',v:'10 ปี'}] },
     // Battery C&I
     { id:'sunwoda16', cat:'battery', name:'Sunwoda Atrix Max-16L-P ⭐', brand:'Sunwoda', model:'Atrix Max-16L-P', subcat:'Battery C&I', price:65000, stock:'in', tag:'new',
       feature:'LFP · Fire Extinguisher ในตัว · IP65 · 10,000 cycles', featureIcon:'shield-check',
@@ -2308,26 +2435,29 @@ const PRODUCTS = [
     { id:'cssou', cat:'battery', name:'SolarEdge CSS-OU-197 + PCS 50K', brand:'SolarEdge', model:'CSS-OU-197', subcat:'Battery C&I', price:1390000, stock:'preorder', stockNote:'45-60 วัน',
       feature:'Outdoor cabinet · ติดตั้งกลางแจ้ง · 197 kWh', featureIcon:'cloud',
       img:'img-v3/solaredge-css-ou.webp',
-      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'197 kWh'}] },
+      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'197 kWh'},{l:'รับประกัน',v:'10 ปี'}],
+      more:[{l:'รับประกันประสิทธิภาพแบต',v:'8,000 รอบ หรือ 10 ปี (SoH 70%)'}] },
     { id:'bp50_107', cat:'battery', name:'KSTAR BluePulse 50kW/107kWh', brand:'KSTAR', model:'KAC50DP2 + BC107DE2', subcat:'Battery C&I', price:999000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
       feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
       img:'img-v3/kstar-bluepulse-50kw-107kwh.webp',
-      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'107.5 kWh'},{l:'Cell',v:'CATL'}] },
+      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'107.5 kWh'},{l:'Cell',v:'CATL'},{l:'รับประกัน',v:'5 ปี'}] },
     { id:'bp50_241', cat:'battery', name:'KSTAR BluePulse 50kW/241kWh', brand:'KSTAR', model:'KAC50DP2 + BC240DE2A', subcat:'Battery C&I', price:1390000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
       feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
       img:'kstar-bluepulse-50kw-241kwh.png',
-      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'241.2 kWh'},{l:'Cell',v:'EVE'}] },
+      specs:[{l:'Power',v:'50 kW'},{l:'Capacity',v:'241.2 kWh'},{l:'Cell',v:'EVE'},{l:'รับประกัน',v:'5 ปี'}],
+      more:[{l:'รับประกันประสิทธิภาพแบต',v:'10 ปี'}] },
     { id:'bp125_261', cat:'battery', name:'KSTAR BluePulse 125kW/261kWh', brand:'KSTAR', model:'KAC125DP2 + BC260DE2A', subcat:'Battery C&I', price:1590000, stock:'preorder', stockNote:'45-60 วัน', tag:'new',
       feature:'Backup Power · ใช้ได้ตอนไฟดับ', featureIcon:'plug-zap',
-      img:'kstar-bluepulse-125kw-261kwh.png',
-      specs:[{l:'Power',v:'125 kW'},{l:'Capacity',v:'261.2 kWh'},{l:'Cell',v:'EVE'}] },
+      img:'img-v3/kstar-bluepulse-125kw-261kwh-owner.webp',
+      specs:[{l:'Power',v:'125 kW'},{l:'Capacity',v:'261.2 kWh'},{l:'Cell',v:'EVE'},{l:'รับประกัน',v:'5 ปี'}],
+      more:[{l:'รับประกันประสิทธิภาพแบต',v:'10 ปี'}] },
     { id:'tcl_s', cat:'battery', name:'TCL BlueArk X1 Set S (8 kWh)', brand:'TCL', model:'8KSP + 1×BM', subcat:'TCL All-in-One Battery', price:88000, stock:'in', tag:'new', featured:true,
       feature:'All-in-One: Hybrid Inverter + Battery + UPS + EMS · IP66 · Backup 10ms', featureIcon:'battery-charging',
-      img:'img-v3/tcl-bluearkx1-packshot-front.webp',
+      img:'img-v3/tcl-bluearkx1-1pack-v2.webp',
       specs:[{l:'AC',v:'8 kW'},{l:'Phase',v:'1P'},{l:'Battery',v:'8 kWh'},{l:'MPPT',v:'3'},{l:'รับประกัน',v:'5 ปี'}] },
     { id:'tcl_m', cat:'battery', name:'TCL BlueArk X1 Set M (16 kWh)', brand:'TCL', model:'8KSP + 1×BM + 1×BS', subcat:'TCL All-in-One Battery', price:138000, stock:'in', tag:'new', featured:true,
       feature:'All-in-One · ส่วนลดชุด ฿2,000 · IP66 · Backup 10ms', featureIcon:'battery-charging',
-      img:'img-v3/tcl-bluearkx1-packshot-front.webp',
+      img:'img-v3/tcl-bluearkx1-2pack-v2.webp',
       specs:[{l:'AC',v:'8 kW'},{l:'Phase',v:'1P'},{l:'Battery',v:'16 kWh'},{l:'MPPT',v:'3'},{l:'รับประกัน',v:'5 ปี'}] },
     { id:'tcl_l', cat:'battery', name:'TCL BlueArk X1 Set L (32 kWh)', brand:'TCL', model:'8KSP + 2×BM + 2×BS', subcat:'TCL All-in-One Battery', price:238000, stock:'in', tag:'new', featured:true,
       feature:'All-in-One · ส่วนลดชุด ฿3,000 · กำลังแบต 8 kW · IP66', featureIcon:'battery-charging',
@@ -2337,13 +2467,13 @@ const PRODUCTS = [
     // Sensors & Accessories
     { id:'irr', cat:'accessory', name:'IMT Irradiance Sensor', brand:'IMT', model:'Si-RS485TC-2T-v-MB', subcat:'Sensor', price:24900, stock:'in',
       feature:'วัดความเข้มแสงอาทิตย์ · คำนวณ PR ของระบบ', featureIcon:'sun',
-      img:'imt-irradiance.jpg',
+      img:'img-v3/imt-irradiance-owner.webp',
       pairHint:'มีช่องเสียบ Module Temp Sensor ในตัว',
       specs:[{l:'Type',v:'Irradiance'},{l:'I/O',v:'RS485'}] },
     { id:'amb', cat:'accessory', name:'IMT Ambient Temp Sensor', brand:'IMT', model:'Ta-ext-RS485-MB', subcat:'Sensor', price:15000, stock:'in',
       feature:'วัดอุณหภูมิอากาศรอบข้าง · วิเคราะห์ประสิทธิภาพระบบ', featureIcon:'thermometer',
-      img:'imt-ambient.jpg',
-      specs:[{l:'Type',v:'Ambient'}] },
+      img:'img-v3/imt-ambient-owner.webp',
+      specs:[{l:'Type',v:'Ambient'},{l:'รับประกัน',v:'1 ปี'}] },
     { id:'mod', cat:'accessory', name:'IMT Module Temp Sensor', brand:'IMT', model:'Tmodul-SI', subcat:'Sensor', price:15500, stock:'in',
       feature:'วัดอุณหภูมิด้านหลังแผง · ติดเซ็นเซอร์ PT1000', featureIcon:'thermometer-sun',
       img:'img-v3/imt-module.webp',
@@ -2352,11 +2482,11 @@ const PRODUCTS = [
     { id:'wind', cat:'accessory', name:'IMT Wind Sensor', brand:'IMT', model:'Vwind-Si', subcat:'Sensor', price:35000, stock:'in',
       feature:'วัดความเร็วลม · มาตรฐาน MEA / SCADA', featureIcon:'wind',
       img:'img-v3/imt-wind.webp',
-      specs:[{l:'Type',v:'Wind'}] },
+      specs:[{l:'Type',v:'Wind'},{l:'รับประกัน',v:'1 ปี'}] },
     { id:'clc1', cat:'accessory', name:'SolarEdge CLC1 ONE Controller', brand:'SolarEdge', model:'CLC1', subcat:'Accessory', price:42000, stock:'in',
       feature:'Smart Controller · จัดการ Solar + Battery + Grid ในตัวเดียว', featureIcon:'cpu',
       img:'img-v3/solaredge-clc1.webp',
-      specs:[{l:'Type',v:'Controller'}] },
+      specs:[{l:'Type',v:'Controller'},{l:'รับประกัน',v:'5 ปี'}] },
 ];
 
 // ===== DATASHEET LINKS (จาก index.html เดิม) =====
@@ -2365,7 +2495,6 @@ const DATASHEETS = {
     se100:     'https://drive.google.com/file/d/1GSwnjiTocHDaDiartw7p_5wOUkTpNJzp/view?usp=sharing',
     se5000h:   'https://drive.google.com/file/d/1dsz9AX5gkzz8wGYantOBGOy6-l2I0XkU/view?usp=sharing',
     se10k:     'https://drive.google.com/file/d/1nS3u5JbrJ_7uyW3AkwUKRbXQtSgSLG-D/view?usp=sharing',
-    s1400:     'https://drive.google.com/file/d/1cusf90_xXPSl7EmfkVlkFCbWDrl_CmS7/view?usp=sharing',
     s1500:     'https://drive.google.com/file/d/1VIilqGG8odBhuNTUYw6LoeTsIHdue5u9/view?usp=sharing',
     s650b:     'https://drive.google.com/file/d/1XH_QtDDskG1jnqhwHQcQSQluQMExf4VO/view?usp=sharing',
     cssou:     'https://drive.google.com/file/d/1lz3bnxgvhvYBfqYY4HETsdTeklnmwT2T/view?usp=sharing',
@@ -2416,22 +2545,58 @@ let activeBrand = 'all';
 let searchTerm = '';
 let viewMode = localStorage.getItem('ssc-view') || 'list';
 let cart = JSON.parse(localStorage.getItem('ssc-cart') || '{}');
+cart = Object.fromEntries(Object.entries(cart).filter(([id]) => PRODUCTS.some(p => p.id === id)));
+localStorage.setItem('ssc-cart', JSON.stringify(cart));
 
 // ===== RENDER =====
 function renderFilters() {
-    const categoryImages = { inverter:'se33-3k.jpg', optimizer:'solaredge-optimizer.png', panel:'leapton.jpeg', battery:'sunwoda-atrix-max-16l-p.png', accessory:'imt-irradiance.jpg' };
-    document.getElementById('filters').innerHTML = CATEGORIES.map(c => {
-        const image = c.id === 'all'
-            ? '<span class="category-thumb category-all"><img src="se33-3k.jpg" alt=""><img src="leapton.jpeg" alt=""><img src="sunwoda-atrix-max-16l-p.png" alt=""></span>'
-            : `<span class="category-thumb"><img src="${categoryImages[c.id]}" alt=""></span>`;
-        return `<button class="chip ${activeCat===c.id?'active':''}" data-cat="${c.id}" aria-pressed="${activeCat===c.id}">
-            ${image}<span class="category-caption">${c.label} <span class="chip-count">${cat[c.id]||0}</span></span>
-        </button>`;
-    }).join('');
-    document.querySelectorAll('[data-cat]').forEach(el => {
-        el.addEventListener('click', () => { activeCat = el.dataset.cat; renderFilters(); renderGrid(); });
+    const strip = document.getElementById('filters');
+    const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!strip.children.length) {
+        const categoryImages = Object.fromEntries(['inverter','optimizer','panel','battery','accessory'].map(k=>[k,'img-v3/cat-'+k+'.webp']));
+        strip.innerHTML = CATEGORIES.map((c,i) => {
+            const image = c.id === 'all'
+                ? `<span class="category-thumb category-all">${['inverter','panel','battery','optimizer','accessory'].map(k=>`<img src="${categoryImages[k]}" alt="">`).join('')}</span>`
+                : `<span class="category-thumb"><img src="${categoryImages[c.id]}" alt=""></span>`;
+            return `<button class="chip" data-cat="${c.id}" style="--entry-delay:${i*35}ms">${image}<span class="category-caption">${c.label} <span class="chip-count">${cat[c.id]||0}</span></span></button>`;
+        }).join('') + '<span class="category-indicator" aria-hidden="true"></span>';
+        const shell = strip.parentElement;
+        shell.classList.add('category-rail');
+        shell.insertAdjacentHTML('beforeend','<button class="category-arrow category-prev" aria-label="เลื่อนหมวดไปทางซ้าย" aria-controls="filters">‹</button><button class="category-arrow category-next" aria-label="เลื่อนหมวดไปทางขวา" aria-controls="filters">›</button>');
+        const prev = shell.querySelector('.category-prev'), next = shell.querySelector('.category-next');
+        const edges = () => {
+            const left = strip.scrollLeft > 2, right = strip.scrollLeft < strip.scrollWidth-strip.clientWidth-2;
+            shell.classList.toggle('has-left',left); shell.classList.toggle('has-right',right);
+            prev.disabled=!left; next.disabled=!right;
+        };
+        strip.addEventListener('scroll',edges,{passive:true});
+        prev.addEventListener('click',()=>strip.scrollBy({left:-strip.clientWidth*.75,behavior:reduced()?'instant':'smooth'}));
+        next.addEventListener('click',()=>strip.scrollBy({left:strip.clientWidth*.75,behavior:reduced()?'instant':'smooth'}));
+        strip.querySelectorAll('[data-cat]').forEach(el => el.addEventListener('click',()=>{
+            activeCat=el.dataset.cat;
+            renderFilters(); renderGrid();
+            strip.scrollTo({left:el.offsetLeft-(strip.clientWidth-el.offsetWidth)/2,behavior:reduced()?'instant':'smooth'});
+        }));
+        const resize = () => { positionCategoryIndicator(); edges(); };
+        new ResizeObserver(resize).observe(strip);
+        document.fonts.ready.then(resize);
+        strip.classList.add('category-enter');
+        setTimeout(()=>strip.classList.remove('category-enter'),550);
+        edges();
+    }
+    strip.querySelectorAll('[data-cat]').forEach(el=>{
+        el.classList.toggle('active',el.dataset.cat===activeCat);
+        el.setAttribute('aria-pressed',el.dataset.cat===activeCat);
     });
-    lucide.createIcons();
+    positionCategoryIndicator();
+}
+function positionCategoryIndicator() {
+    const strip=document.getElementById('filters'), active=strip.querySelector('.chip.active');
+    if (!active) return;
+    const marker=strip.querySelector('.category-indicator');
+    const width=Math.min(active.offsetWidth-12,Math.max(38,active.querySelector('.category-caption').offsetWidth));
+    marker.style.width=width+'px';
+    marker.style.transform=`translateX(${active.offsetLeft+(active.offsetWidth-width)/2}px)`;
 }
 
 function renderGrid() {
@@ -2517,6 +2682,11 @@ function pairBadgeHTML(p, variant){
     return '';
 }
 
+function tisLabel(p) { return p.tis ? 'มอก. '+p.tis : ''; }
+function tisBadgeHTML(p, large=false) {
+    return p.tis ? `<div class="tis-badge${large?' tis-badge-large':''}"><img src="img-v3/tis-mark.png" alt="เครื่องหมายมาตรฐานบังคับ มอก." width="22" height="22"><span>${tisLabel(p)}</span></div>` : '';
+}
+
 function renderCard(p) {
     const inCart = cart[p.id] && cart[p.id].qty > 0;
     const stockBadge = p.stock === 'in'
@@ -2549,6 +2719,7 @@ function renderCard(p) {
                 <div class="card-specs">
                     ${p.specs.map(s => `<div class="spec">${s.l} <strong>${s.v}</strong></div>`).join('')}
                 </div>
+                ${tisBadgeHTML(p)}
                 <div class="card-price-row">
                     <div>
                         <div class="card-price-label">ราคาไม่รวม VAT 7%</div>
@@ -2559,8 +2730,8 @@ function renderCard(p) {
             </div>
             <div class="card-actions">
                 <button class="btn btn-detail detail-btn" data-id="${p.id}" aria-label="ดูเพิ่มเติม ${p.name}">ดูเพิ่มเติม <span aria-hidden="true">›</span></button>
-                <button class="btn btn-primary add-btn ${inCart?'added':''}" data-id="${p.id}" title="เพิ่มสินค้าในใบเสนอราคา">
-                    ${inCart?'<i data-lucide="check"></i> อยู่ในใบเสนอ':'ซื้อ'}
+                <button class="btn btn-primary add-btn ${inCart?'added':''}" data-id="${p.id}" title="${inCart?'เปิดดูใบเสนอราคา':'เพิ่มสินค้าในใบเสนอราคา'}">
+                    ${inCart?'<i data-lucide="check"></i> อยู่ในใบเสนอ':'ขอราคา'}
                 </button>
             </div>
         </div>`;
@@ -2596,6 +2767,7 @@ function renderRow(p) {
                     ${pairBadgeHTML(p, 'row')}
                 </div>
                 <div class="row-specs">${specs}</div>
+                ${tisBadgeHTML(p)}
             </div>
             <div class="row-footer">
             <div class="row-price">
@@ -2605,8 +2777,8 @@ function renderRow(p) {
             </div>
             <div class="row-actions">
                 <button class="btn btn-detail detail-btn" data-id="${p.id}" aria-label="ดูเพิ่มเติม ${p.name}">ดูเพิ่มเติม <span aria-hidden="true">›</span></button>
-                <button class="btn btn-primary add-btn ${inCart?'added':''}" data-id="${p.id}" title="เพิ่มสินค้าในใบเสนอราคา">
-                    ${inCart?'<i data-lucide="check"></i> อยู่ในใบเสนอ':'ซื้อ'}
+                <button class="btn btn-primary add-btn ${inCart?'added':''}" data-id="${p.id}" title="${inCart?'เปิดดูใบเสนอราคา':'เพิ่มสินค้าในใบเสนอราคา'}">
+                    ${inCart?'<i data-lucide="check"></i> อยู่ในใบเสนอ':'ขอราคา'}
                 </button>
             </div>
             </div>
@@ -2621,7 +2793,11 @@ function bindCardActions() {
         btn.addEventListener('click', () => copyProduct(btn.dataset.id, btn));
     });
     document.querySelectorAll('.add-btn').forEach(btn => {
-        btn.addEventListener('click', () => addToCart(btn.dataset.id));
+        btn.addEventListener('click', () => {
+            // already chosen: show the quotation instead of silently adding one more
+            if (cart[btn.dataset.id]) document.getElementById('cart-panel').classList.add('open');
+            else addToCart(btn.dataset.id);
+        });
     });
 }
 
@@ -2652,7 +2828,7 @@ function bindBrandChips() {
 function copyProduct(id, btn) {
     const p = PRODUCTS.find(x => x.id === id);
     if (!p) return;
-    const specsLine = p.specs.map(s => `${s.l}: ${s.v}`).join(' | ');
+    const specsLine = [...p.specs.map(s => `${s.l}: ${s.v}`), ...(p.tis ? [tisLabel(p)] : [])].join(' | ');
     const ds = DATASHEETS[id] ? `\n📄 Datasheet: ${DATASHEETS[id]}` : '';
     const text = `📋 ${p.name}\n${p.brand} ${p.model}\n${specsLine}\n💰 ราคา ${fmt(p.price)} (ไม่รวม VAT)${ds}\n\n— SSC Q4/2569 | ☎ 084-825-5036`;
     copyToClipboard(text);
@@ -2696,6 +2872,13 @@ function addToCart(id) {
     showToast('เลือกสินค้าแล้ว — อยู่ในใบเสนอราคา');
 }
 
+function setQty(id, value) {
+    if (!cart[id]) return;
+    const n = Math.floor(Number(value));
+    cart[id].qty = Number.isFinite(n) && n >= 1 ? Math.min(n, 99999) : 1;
+    saveCart(); renderCart(); renderGrid();
+}
+
 function updateQty(id, delta) {
     if (!cart[id]) return;
     cart[id].qty += delta;
@@ -2725,7 +2908,7 @@ function renderCart() {
     if (ids.length === 0) {
         body.innerHTML = `<div class="cart-empty">
             <i data-lucide="file-text"></i>
-            <p>ยังไม่มีสินค้าในใบเสนอราคา<br>กดปุ่ม <strong>"ซื้อ"</strong> ที่สินค้าเพื่อเพิ่มลงใบเสนอราคา</p>
+            <p>ยังไม่มีสินค้าในใบเสนอราคา<br>กดปุ่ม <strong>"ขอราคา"</strong> ที่สินค้าเพื่อเพิ่มลงใบเสนอราคา</p>
         </div>`;
         foot.style.display = 'none';
         lucide.createIcons();
@@ -2741,11 +2924,11 @@ function renderCart() {
         return `
         <div class="cart-item">
             <div class="cart-item-info">
-                <div class="cart-item-name">${p.name}</div>
+                <div class="cart-item-name">${p.name}${p.tis ? `<small style="display:block;font-weight:400">${tisLabel(p)}</small>` : ''}</div>
                 <div class="cart-item-brand">${p.brand} · ${p.model}</div>
                 <div class="cart-item-controls">
                     <button class="qty-btn" data-act="dec" data-id="${id}">−</button>
-                    <span class="qty-val">${cart[id].qty}</span>
+                    <input class="qty-val qty-input" type="number" inputmode="numeric" min="1" max="99999" step="1" value="${cart[id].qty}" data-id="${id}" aria-label="จำนวน ${p.name}">
                     <button class="qty-btn" data-act="inc" data-id="${id}">+</button>
                     <button class="cart-item-remove" data-act="del" data-id="${id}" title="ลบ"><i data-lucide="trash-2"></i></button>
                 </div>
@@ -2758,6 +2941,11 @@ function renderCart() {
     document.getElementById('cart-vat').textContent = fmt(Math.round(total * 1.07));
     foot.style.display = 'block';
 
+    body.querySelectorAll('.qty-input').forEach(inp => {
+        inp.addEventListener('focus', () => inp.select());
+        inp.addEventListener('change', () => setQty(inp.dataset.id, inp.value));
+        inp.addEventListener('keydown', e => { if (e.key === 'Enter') inp.blur(); });
+    });
     body.querySelectorAll('[data-act]').forEach(btn => {
         btn.addEventListener('click', () => {
             const id = btn.dataset.id;
@@ -2780,7 +2968,7 @@ function buildQuoteText() {
         if (!p) return;
         const sub = p.price * cart[id].qty;
         total += sub;
-        lines.push(`${i+1}. ${p.name}`);
+        lines.push(`${i+1}. ${p.name}${p.tis ? ' · '+tisLabel(p) : ''}`);
         lines.push(`   รุ่น: ${p.model}`);
         lines.push(`   จำนวน ${cart[id].qty} × ${fmt(p.price)} = ${fmt(sub)}`);
     });
@@ -2788,6 +2976,7 @@ function buildQuoteText() {
     lines.push(`รวม (ไม่รวม VAT): ${fmt(total)}`);
     lines.push(`VAT 7%: ${fmt(Math.round(total * 0.07))}`);
     lines.push(`*ยอดสุทธิ: ${fmt(Math.round(total * 1.07))}*`);
+    lines.push('(ราคาสินค้ายังไม่รวมค่าจัดส่ง)');
     lines.push('────────────────────');
     lines.push('📞 ติดต่อ: 084-825-5036');
     lines.push('✉ teerawat@siamsolar.co.th');
@@ -2979,7 +3168,7 @@ function openQuickView(productId) {
     const p = PRODUCTS.find(x => x.id === productId);
     if (!p) return;
     const overlay = document.getElementById('quick-view');
-    const specs = p.specs.map(s => `<div class="qv-spec-row"><span class="qv-spec-label">${s.l}</span><span class="qv-spec-value">${s.v}</span></div>`).join('');
+    const specs = [...p.specs, ...(p.more || [])].map(s => `<div class="qv-spec-row"><span class="qv-spec-label">${s.l}</span><span class="qv-spec-value">${s.v}</span></div>`).join('');
     const feature = p.feature ? `<div class="qv-feature"><i data-lucide="${p.featureIcon||'sparkles'}"></i> ${p.feature}</div>` : '';
     const ds = DATASHEETS[p.id];
     const dsBtn = ds ? `<a href="${ds}" target="_blank" class="btn btn-ghost"><i data-lucide="file-text"></i> Datasheet</a>` : '';
@@ -3000,14 +3189,15 @@ function openQuickView(productId) {
             <div class="qv-model">รุ่น: ${p.model}</div>
             <div>${stock}${tag}</div>
             ${feature}
-            <div class="qv-specs">${specs}</div>
+            ${tisBadgeHTML(p,true)}
+            <div class="qv-specs">${specs}${p.tis ? `<div class="qv-spec-row"><span class="qv-spec-label">มอก.</span><span class="qv-spec-value">${p.tis}</span></div>` : ''}</div>
             <div class="qv-price-row"><div class="qv-price">${fmt(p.price)}</div>${unit}<span class="qv-vat-label">ไม่รวม VAT 7%</span></div>
             <div class="qv-actions">
                 ${dsBtn}
                 <button class="btn btn-ghost" onclick="copyProduct('${p.id}')"><i data-lucide="copy"></i> คัดลอก</button>
-                <button class="btn btn-primary" onclick="addToCart('${p.id}');closeQuickView();" title="เพิ่มสินค้าในใบเสนอราคา">ซื้อ</button>
+                <button class="btn btn-primary" onclick="addToCart('${p.id}');closeQuickView();" title="เพิ่มสินค้าในใบเสนอราคา">ขอราคา</button>
             </div>
-            <div class="qv-hint">กด “ซื้อ” เพื่อเพิ่มสินค้าในใบเสนอราคา</div>
+            <div class="qv-hint">กด “ขอราคา” เพื่อเพิ่มสินค้าในใบเสนอราคา</div>
         </div>
     `;
     overlay.classList.add('open');
@@ -3048,7 +3238,7 @@ function exportPDF() {
         if (!p) return;
         const sub = p.price * cart[id].qty;
         total += sub;
-        rows += `<tr><td>${i+1}</td><td><strong>${p.name}</strong><br><small style="color:#86868b">${p.brand} · ${p.model}</small></td><td class="num">${cart[id].qty}</td><td class="num">${fmt(p.price)}</td><td class="num"><strong>${fmt(sub)}</strong></td></tr>`;
+        rows += `<tr><td>${i+1}</td><td><strong>${p.name}</strong>${p.tis ? '<br><small>'+tisLabel(p)+'</small>' : ''}<br><small style="color:#86868b">${p.brand} · ${p.model}</small></td><td class="num">${cart[id].qty}</td><td class="num">${fmt(p.price)}</td><td class="num"><strong>${fmt(sub)}</strong></td></tr>`;
     });
     const vat = Math.round(total * 0.07);
     const grand = total + vat;
@@ -3287,7 +3477,35 @@ td{padding:14px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-ali
 /* Hero inner above all layers */
 .hero-inner { position: relative; z-index: 2; }
 
-</style></head><body>
+</style><style>
+/* SSC category motion: native scrolling, persistent selection, no dependencies. */
+.category-rail { position:relative; }
+#filters { position:relative; scroll-snap-type:x mandatory; scroll-padding-inline:2px; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
+#filters .chip { scroll-snap-align:start; transition:color 180ms ease; box-shadow:none; }
+#filters .chip.active { box-shadow:none; }
+#filters .category-thumb { transition:transform 240ms cubic-bezier(.2,.7,.3,1); }
+#filters .chip:active .category-thumb { transform:scale(.95); }
+#filters .chip:focus-visible { outline:2px solid var(--d-accent); outline-offset:-2px; border-radius:6px; }
+.category-indicator { position:absolute; left:0; bottom:8px; height:2px; background:var(--d-accent); border-radius:2px; pointer-events:none; transition:transform 280ms cubic-bezier(.2,.7,.3,1),width 280ms ease; }
+.category-rail::before,.category-rail::after { content:''; position:absolute; z-index:2; top:0; bottom:6px; width:22px; opacity:0; pointer-events:none; transition:opacity 180ms ease; }
+.category-rail::before { left:0; background:linear-gradient(90deg,var(--d-bg),transparent); }
+.category-rail::after { right:0; background:linear-gradient(270deg,var(--d-bg),transparent); }
+.category-rail.has-left::before,.category-rail.has-right::after { opacity:1; }
+.category-arrow { position:absolute; top:27px; z-index:3; width:32px; height:32px; border:1px solid #d9dadd; border-radius:50%; background:#fff; color:#44454a; font:26px/1 Inter,sans-serif; cursor:pointer; box-shadow:0 2px 8px #0000000d; transition:opacity 180ms ease,transform 180ms ease; }
+.category-prev { left:-14px; } .category-next { right:-14px; }
+.category-arrow:disabled { opacity:0; pointer-events:none; visibility:hidden; }
+.category-arrow:active { transform:scale(.94); }
+@media (hover:hover) and (pointer:fine) { #filters .chip:hover .category-thumb { transform:translateY(-3px) scale(1.045); } }
+@keyframes categoryArrival { from { opacity:0; transform:translateY(7px); } to { opacity:1; transform:translateY(0); } }
+#filters.category-enter .category-thumb { animation:categoryArrival 280ms ease both !important; animation-delay:var(--entry-delay) !important; }
+@media(max-width:600px) { .category-arrow { display:none; } .category-indicator { bottom:4px; } }
+@media(prefers-reduced-motion:reduce) {
+ #filters *, .category-rail::before,.category-rail::after,.category-arrow { transition:none !important; animation:none !important; }
+ #filters.category-enter .category-thumb { animation:none !important; }
+ #filters .chip:hover .category-thumb,#filters .chip:active .category-thumb { transform:none; }
+}
+</style>
+</head><body>
 <button class="print-btn no-print" onclick="window.print()">📄 Save as PDF / พิมพ์</button>
 <div class="head">
     <div><div class="logo">Siam Solar Cell</div><div class="logo-sub">บริษัท สยาม โซล่าร์ เซลล์ จำกัด</div></div>
@@ -3324,14 +3542,14 @@ td{padding:14px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-ali
 
 <!-- Chat FAB -->
 <button class="chat-fab chat-fab-pulse" id="chat-open" title="สอบถามเพิ่มเติม" aria-label="แชทสอบถาม">
-    <i data-lucide="message-circle-more"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
 </button>
 
 <!-- Chat Panel -->
 <aside id="chat-panel" class="chat-panel" aria-hidden="true">
     <div class="chat-head">
         <div>
-            <div class="chat-head-title"><i data-lucide="message-circle-more"></i> สอบถามเพิ่มเติม</div>
+            <div class="chat-head-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg> สอบถามเพิ่มเติม</div>
             <div class="chat-head-sub">ตอบกลับใน 1 ชั่วโมง</div>
         </div>
         <button class="chat-close" id="chat-close" aria-label="ปิด"><i data-lucide="x"></i></button>
@@ -3365,7 +3583,7 @@ td{padding:14px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-ali
 // ============================================
 
 // --- Chat Widget ---
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
     const fab = document.getElementById('chat-open');
     const panel = document.getElementById('chat-panel');
     const close = document.getElementById('chat-close');
@@ -3432,7 +3650,12 @@ td{padding:14px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-ali
 
     // Pulse stops after first interaction
     fab.addEventListener('click', () => fab.classList.remove('chat-fab-pulse'), { once: true });
-})();
+    lucide.createIcons();
+    const dock=document.getElementById('mobile-dock');
+    dock.append(fab,document.getElementById('cart-fab'));
+    fab.dataset.label='สอบถาม';
+    document.getElementById('cart-fab').dataset.label='ใบเสนอราคา';
+});
 
 // --- Hero Video: try load local hero-video.mp4, fade in if exists ---
 (function() {
@@ -3480,14 +3703,14 @@ setTimeout(observePrices, 150);
 
 <!-- Chat FAB -->
 <button class="chat-fab chat-fab-pulse" id="chat-open" title="สอบถามเพิ่มเติม" aria-label="แชทสอบถาม">
-    <i data-lucide="message-circle-more"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
 </button>
 
 <!-- Chat Panel -->
 <aside id="chat-panel" class="chat-panel" aria-hidden="true">
     <div class="chat-head">
         <div>
-            <div class="chat-head-title"><i data-lucide="message-circle-more"></i> สอบถามเพิ่มเติม</div>
+            <div class="chat-head-title"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg> สอบถามเพิ่มเติม</div>
             <div class="chat-head-sub">ตอบกลับใน 1 ชั่วโมง</div>
         </div>
         <button class="chat-close" id="chat-close" aria-label="ปิด"><i data-lucide="x"></i></button>
@@ -3505,5 +3728,11 @@ setTimeout(observePrices, 150);
     </div>
 </aside>
 
+</div>
+<nav id="mobile-dock" class="mobile-dock" aria-label="ติดต่อและใบเสนอราคา">
+<a class="mobile-contact" href="tel:0848255036"><i data-lucide="phone"></i>โทร</a>
+<a class="mobile-contact" href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>LINE</a>
+<a class="mobile-contact" href="mailto:teerawat@siamsolar.co.th"><i data-lucide="mail"></i>อีเมล</a>
+</nav>
 </body>
 </html>
