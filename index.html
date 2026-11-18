@@ -2405,6 +2405,16 @@ const PRODUCTS = [
       img:'img-v3/longi.webp',
       specs:[{l:'Watt',v:'650W (+25% หลัง)'},{l:'น้ำหนัก',v:'33.5 kg'},{l:'Eff.',v:'24.1%'},{l:'฿/W',v:'5.50'},{l:'รับประกัน',v:'15 ปี'}],
       more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'}] },
+    { id:'longi540', cat:'panel', name:'LONGi Hi-MO X10 Guardian LR7-60HVHL-540M', brand:'LONGi', model:'LR7-60HVHL-540M', subcat:'แผงโซล่าร์ Premium', price:null, watt:540, stock:'soon', tag:'new', glassType:'กระจกด้านเดียว',
+      feature:'แผงน้ำหนักเบา 16.3 kg · ไม่เป็นภาระโครงสร้าง · เหมาะกับโรงงานที่ไม่ต้องการปรับหรือเสริมโครงสร้างหลังคาใหม่', featureIcon:'feather',
+      img:'img-v3/longi-guardian-540.png',
+      specs:[{l:'Watt',v:'540W'},{l:'น้ำหนัก',v:'16.3 kg'},{l:'Eff.',v:'23.9%'},{l:'รับประกัน',v:'15 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'},{l:'ขนาด',v:'1990 × 1134 × 30 mm'},{l:'กระจก',v:'ด้านเดียว 1.6 mm'},{l:'เซลล์',v:'120 (6×20)'},{l:'รับแรงกดด้านหน้า / ด้านหลัง',v:'3600 / 2400 Pa'}] },
+    { id:'longi625', cat:'panel', name:'LONGi Hi-MO X6 Max Scientist LR8-66HTD-625M', brand:'LONGi', model:'LR8-66HTD-625M', subcat:'แผงโซล่าร์ Premium', price:2875, ppw:4.6, watt:625, stock:'soon', tag:'new', glassType:'กระจก 2 ด้าน',
+      feature:'เหมาะกับโรงงาน/C&I · Bifacial Dual Glass 2+2mm · 33.5 kg · 132 cells (6×22) · +25% พลังงานจากด้านหลัง · 70% bifaciality', featureIcon:'factory',
+      img:'img-v3/longi-x6max-625.png',
+      specs:[{l:'Watt',v:'625W (+25% หลัง)'},{l:'น้ำหนัก',v:'33.5 kg'},{l:'Eff.',v:'23.14%'},{l:'฿/W',v:'4.60'},{l:'รับประกัน',v:'15 ปี'}],
+      more:[{l:'รับประกันกำลังผลิต',v:'30 ปี'},{l:'ขนาด',v:'2382 × 1134 × 30 mm'},{l:'กระจก',v:'2 ด้าน 2.0 + 2.0 mm'},{l:'เซลล์',v:'132 (6×22)'},{l:'Bifaciality',v:'70 ± 5%'},{l:'รับแรงกดด้านหน้า / ด้านหลัง',v:'5400 / 2400 Pa'}] },
 
     // Battery Residential
     { id:'blueh51', cat:'battery', name:'KSTAR BluE-H 5-1', brand:'KSTAR', model:'BluE-H 5-1', subcat:'Battery บ้าน', price:99000, stock:'in',
@@ -2505,6 +2515,8 @@ const DATASHEETS = {
     lp715:     'https://drive.google.com/file/d/1n_AMYbTDo1ddhzns1NIJBbfCy8IlObMz/view?usp=sharing',
     longi650:      'https://drive.google.com/file/d/1q921eLIMLRbsWsprC52iX7xoMmErlAnT/view?usp=sharing',
     longi650_lr8:  'https://drive.google.com/file/d/1hZnRT0vxx_kPIT3zNy-7Y43OPKh89jpD/view?usp=sharing',
+    longi540:      'https://drive.google.com/file/d/1K8JdpGumI2_b4iOeKigrfsTHb81W80hu/view?usp=share_link',
+    longi625:      'https://drive.google.com/file/d/1FO6mZ5rHCbSKVA0FdawfpDBEjjc4-6SG/view?usp=share_link',
     irr:       'https://drive.google.com/file/d/1VXKujGe-JvI3gNfPY-TWRxQUeQHrSfcK/view?usp=sharing',
     amb:       'https://drive.google.com/file/d/1rzla9Igdnp1xZBDrXw_1VQPR0nM_0GHG/view?usp=sharing',
     mod:       'https://drive.google.com/file/d/1f-pwKnDU8SyMJwEN1NQ3_87oPBZ0HrJ7/view?usp=sharing',
@@ -2535,7 +2547,7 @@ const CATEGORIES = [
     { id:'accessory', label:'อุปกรณ์เสริม', icon:'wrench' },
 ];
 
-const fmt = n => '฿' + n.toLocaleString('en-US');
+const fmt = n => n == null ? 'ราคาเร็ว ๆ นี้' : '฿' + n.toLocaleString('en-US');
 const cat = PRODUCTS.reduce((a,p)=>{a[p.cat]=(a[p.cat]||0)+1;return a;},{});
 cat.all = PRODUCTS.length;
 
@@ -2695,11 +2707,13 @@ function renderCard(p) {
         ? '<span class="card-stock out"><i data-lucide="x-circle"></i> สินค้าหมด</span>'
         : p.stock === 'low'
         ? `<span class="card-stock low"><i data-lucide="alert-triangle"></i> ${p.stockNote||'สต็อกน้อย'}</span>`
+        : p.stock === 'soon'
+        ? '<span class="card-stock preorder"><i data-lucide="clock"></i> Coming soon</span>'
         : `<span class="card-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
     const img = p.img
         ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'card-img-placeholder\\'><i data-lucide=\\'image\\'></i><span>${p.brand}</span></div>';lucide.createIcons();">`
         : `<div class="card-img-placeholder"><i data-lucide="image"></i><span>${p.brand}</span></div>`;
-    const unit = p.cat === 'panel' ? '<div class="card-price-unit">/แผง</div>' : '';
+    const unit = p.cat === 'panel' && p.price != null ? '<div class="card-price-unit">/แผง</div>' : '';
     const tag = tagBadgeHTML(p);
     const featured = p.featured ? ' featured' : '';
     return `
@@ -2745,12 +2759,14 @@ function renderRow(p) {
         ? '<span class="row-stock out"><i data-lucide="x-circle"></i> สินค้าหมด</span>'
         : p.stock === 'low'
         ? `<span class="row-stock low"><i data-lucide="alert-triangle"></i> ${p.stockNote||'สต็อกน้อย'}</span>`
+        : p.stock === 'soon'
+        ? '<span class="row-stock preorder"><i data-lucide="clock"></i> Coming soon</span>'
         : `<span class="row-stock preorder"><i data-lucide="clock"></i> Pre-order${p.stockNote?' '+p.stockNote:''}</span>`;
     const img = p.img
         ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'row-img-placeholder\\'><i data-lucide=\\'image\\'></i></div>';lucide.createIcons();">`
         : `<div class="row-img-placeholder"><i data-lucide="image"></i></div>`;
     const specs = p.specs.map(s => `<span class="row-spec">${s.l} <strong>${s.v}</strong></span>`).join('');
-    const unit = p.cat === 'panel' ? '<span class="row-price-unit">/แผง</span>' : '';
+    const unit = p.cat === 'panel' && p.price != null ? '<span class="row-price-unit">/แผง</span>' : '';
     const tag = tagBadgeHTML(p);
     const featured = p.featured ? ' featured' : '';
     return `
@@ -2919,7 +2935,7 @@ function renderCart() {
     body.innerHTML = ids.map(id => {
         const p = PRODUCTS.find(x => x.id === id);
         if (!p) return '';
-        const sub = p.price * cart[id].qty;
+        const sub = (p.price || 0) * cart[id].qty;
         total += sub;
         return `
         <div class="cart-item">
@@ -2933,7 +2949,7 @@ function renderCart() {
                     <button class="cart-item-remove" data-act="del" data-id="${id}" title="ลบ"><i data-lucide="trash-2"></i></button>
                 </div>
             </div>
-            <div class="cart-item-price">${fmt(sub)}</div>
+            <div class="cart-item-price">${p.price == null ? fmt(null) : fmt(sub)}</div>
         </div>`;
     }).join('');
 
@@ -2966,11 +2982,11 @@ function buildQuoteText() {
     ids.forEach((id, i) => {
         const p = PRODUCTS.find(x => x.id === id);
         if (!p) return;
-        const sub = p.price * cart[id].qty;
+        const sub = (p.price || 0) * cart[id].qty;
         total += sub;
         lines.push(`${i+1}. ${p.name}${p.tis ? ' · '+tisLabel(p) : ''}`);
         lines.push(`   รุ่น: ${p.model}`);
-        lines.push(`   จำนวน ${cart[id].qty} × ${fmt(p.price)} = ${fmt(sub)}`);
+        lines.push(`   จำนวน ${cart[id].qty} ${p.price == null ? '· '+fmt(null) : '× '+fmt(p.price)+' = '+fmt(sub)}`);
     });
     lines.push('────────────────────');
     lines.push(`รวม (ไม่รวม VAT): ${fmt(total)}`);
@@ -3172,8 +3188,8 @@ function openQuickView(productId) {
     const feature = p.feature ? `<div class="qv-feature"><i data-lucide="${p.featureIcon||'sparkles'}"></i> ${p.feature}</div>` : '';
     const ds = DATASHEETS[p.id];
     const dsBtn = ds ? `<a href="${ds}" target="_blank" class="btn btn-ghost"><i data-lucide="file-text"></i> Datasheet</a>` : '';
-    const unit = p.cat === 'panel' ? '<span class="qv-price-unit">/แผง</span>' : '';
-    const stockMap = {in:['in','พร้อมส่ง','check'], preorder:['preorder','Pre-order '+(p.stockNote||''),'clock'], out:['out','สินค้าหมด','x-circle']};
+    const unit = p.cat === 'panel' && p.price != null ? '<span class="qv-price-unit">/แผง</span>' : '';
+    const stockMap = {in:['in','พร้อมส่ง','check'], preorder:['preorder','Pre-order '+(p.stockNote||''),'clock'], out:['out','สินค้าหมด','x-circle'], soon:['preorder','Coming soon','clock']};
     const [sc, st, si] = stockMap[p.stock] || stockMap.in;
     const stock = `<span class="qv-stock ${sc}"><i data-lucide="${si}"></i> ${st}</span>`;
     const tag = p.tag === 'hot' ? '<span class="qv-tag hot"><i data-lucide="flame"></i> HOT</span>' :
@@ -3236,9 +3252,9 @@ function exportPDF() {
     ids.forEach((id, i) => {
         const p = PRODUCTS.find(x => x.id === id);
         if (!p) return;
-        const sub = p.price * cart[id].qty;
+        const sub = (p.price || 0) * cart[id].qty;
         total += sub;
-        rows += `<tr><td>${i+1}</td><td><strong>${p.name}</strong>${p.tis ? '<br><small>'+tisLabel(p)+'</small>' : ''}<br><small style="color:#86868b">${p.brand} · ${p.model}</small></td><td class="num">${cart[id].qty}</td><td class="num">${fmt(p.price)}</td><td class="num"><strong>${fmt(sub)}</strong></td></tr>`;
+        rows += `<tr><td>${i+1}</td><td><strong>${p.name}</strong>${p.tis ? '<br><small>'+tisLabel(p)+'</small>' : ''}<br><small style="color:#86868b">${p.brand} · ${p.model}</small></td><td class="num">${cart[id].qty}</td><td class="num">${fmt(p.price)}</td><td class="num"><strong>${p.price == null ? fmt(null) : fmt(sub)}</strong></td></tr>`;
     });
     const vat = Math.round(total * 0.07);
     const grand = total + vat;
