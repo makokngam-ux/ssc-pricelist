@@ -2096,6 +2096,15 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
 }
 </style>
 <style>.cart-ship-note{font-size:11px;color:#86868b;text-align:right;margin-top:4px}</style>
+<style>
+/* ลิงก์ไปหน้าโปรโมชัน (เพิ่ม 19 พ.ย. 2026) */
+.promo-link-bar{background:#faf0e2;border-bottom:1px solid #ecdcc4}
+.promo-link{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;max-width:1180px;margin:0 auto;padding:11px 20px;text-decoration:none;color:#5c3408;font-size:14px;font-weight:500;text-align:center}
+.promo-link b{background:#9a490d;color:#fff;font-size:11px;font-weight:700;letter-spacing:.4px;padding:3px 10px;border-radius:999px}
+.promo-link strong{font-weight:700}
+.promo-link span.go{font-weight:700;color:#9a490d;white-space:nowrap}
+.promo-link:hover span.go{text-decoration:underline}
+</style>
 </head>
 <body>
 <div id="page-scroll">
@@ -2153,6 +2162,9 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
         </div>
     </div>
 </section>
+
+<!-- PROMO LINK -->
+<div class="promo-link-bar"><a class="promo-link" href="promo-tcl-longi625.html"><b>โปรโมชัน</b><span>ชุด TCL BlueArk X1 + แผง LONGi 625W ราคาแผง <strong>4.60 บาท/วัตต์</strong></span><span class="go">ดูชุดโปรโมชัน ›</span></a></div>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
@@ -3750,5 +3762,13 @@ setTimeout(observePrices, 150);
 <a class="mobile-contact" href="https://line.me/ti/p/u9eTiTrfL9" target="_blank" rel="noopener"><i data-lucide="message-circle"></i>LINE</a>
 <a class="mobile-contact" href="mailto:teerawat@siamsolar.co.th"><i data-lucide="mail"></i>อีเมล</a>
 </nav>
+<script>
+// เปิดใบเสนอราคาเมื่อมาจากหน้าโปรโมชัน (index.html#quote)
+if (location.hash === '#quote') {
+    var qp = document.getElementById('cart-panel');
+    if (qp) qp.classList.add('open');
+    history.replaceState(null, '', location.pathname + location.search);
+}
+</script>
 </body>
 </html>
