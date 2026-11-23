@@ -2105,6 +2105,40 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
 .promo-link span.go{font-weight:700;color:#9a490d;white-space:nowrap}
 .promo-link:hover span.go{text-decoration:underline}
 </style>
+<style>/* ปรับหน้าตา 23 พ.ย. 2026: การ์ด Account Manager ย่อได้, หมวดบนมือถือ 2 แถว, แถบหมวดติดบน + เรียงราคา */
+@media(min-width:721px){
+ #am-card.am-min{height:56px;padding:6px 20px 6px 6px !important;border-radius:28px !important;border-left:0 !important;gap:10px;cursor:pointer;max-width:none}
+ #am-card.am-min .am-photo{width:44px !important;height:44px !important;flex:none}
+ #am-card.am-min .am-close,#am-card.am-min .am-label,#am-card.am-min .am-role,#am-card.am-min .am-actions{display:none !important}
+ #am-card.am-min .am-name{font-size:14px;font-weight:600;white-space:nowrap}
+ #am-card.am-min .am-name::after{content:' · ติดต่อ';font-weight:500;color:#65666b}
+ #am-card.am-min:hover{box-shadow:0 8px 26px #00000022 !important}
+}
+@media(max-width:720px){
+ .filter-chips{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 8px !important;overflow:visible !important;padding-bottom:4px}
+ .filter-chips .chip{flex:none !important;width:auto;min-width:0;align-items:center}
+ .filter-chips .category-indicator,.category-rail .category-arrow{display:none !important}
+ .category-rail::before,.category-rail::after{display:none !important}
+ .search-row{flex-wrap:wrap !important}
+ .search-row .search-box{flex:1 1 100% !important}
+ .search-row .sort-select{flex:1 1 auto}
+}
+.sort-select{appearance:none;-webkit-appearance:none;font-family:inherit;font-size:13px;font-weight:500;color:#202124;background:#f0f0f3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2365666b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;border:0;border-radius:999px;padding:10px 32px 10px 16px;cursor:pointer;min-height:38px}
+.sort-select:focus-visible{outline:2px solid #9a490d;outline-offset:2px}
+.quick-bar{position:fixed;left:0;right:0;top:0;z-index:95;background:rgba(250,250,252,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e7e7e9;transform:translateY(-120%);visibility:hidden;transition:transform .2s ease,visibility 0s .2s}
+.quick-bar.show{transform:none;visibility:visible;transition:transform .2s ease}
+.quick-inner{max-width:1200px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:12px}
+.quick-cats{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;padding:2px}
+.quick-cats::-webkit-scrollbar{display:none}
+.quick-cats button{flex:none;border:0;background:#f0f0f3;border-radius:999px;padding:7px 14px;font-family:inherit;font-size:13px;font-weight:500;color:#202124;cursor:pointer;white-space:nowrap}
+.quick-cats button span{color:#86868b;font-size:11.5px;margin-left:2px}
+.quick-cats button.active{background:#9a490d;color:#fff}
+.quick-cats button.active span{color:#f3d9c4}
+.quick-cats button:focus-visible{outline:2px solid #9a490d;outline-offset:2px}
+.quick-bar .sort-select{flex:none;padding:7px 30px 7px 14px;min-height:0}
+@media(max-width:720px){.quick-inner{padding:7px 12px;gap:8px}.quick-bar .sort-select{max-width:132px}}
+@media(prefers-reduced-motion:reduce){.quick-bar,.quick-bar.show{transition:none}}
+</style>
 </head>
 <body>
 <div id="page-scroll">
@@ -2261,6 +2295,11 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
                 <i data-lucide="search"></i>
                 <input type="text" id="search" aria-label="ค้นหารุ่น แบรนด์ หรือประเภทสินค้า" placeholder="ค้นหารุ่น / แบรนด์ / ประเภท…">
             </div>
+            <select class="sort-select" id="sort-select" aria-label="เรียงสินค้า">
+                <option value="default">เรียงตามหมวด</option>
+                <option value="asc">ราคาต่ำ → สูง</option>
+                <option value="desc">ราคาสูง → ต่ำ</option>
+            </select>
             <div class="view-toggle" role="tablist" aria-label="View mode">
                 <button class="view-btn" data-view="grid"><i data-lucide="layout-grid"></i> การ์ด</button>
                 <button class="view-btn" data-view="list"><i data-lucide="list"></i> รายการ</button>
@@ -2316,13 +2355,13 @@ button,input,textarea { font-family:'IBM Plex Sans Thai','Inter',sans-serif; }
         <div class="cart-ship-note">ราคาสินค้ายังไม่รวมค่าจัดส่ง</div>
         <div class="cart-actions">
             <button class="cart-btn cart-btn-copy" id="cart-copy">
-                <i data-lucide="copy"></i> Copy
+                <i data-lucide="copy"></i> คัดลอก
             </button>
             <button class="cart-btn cart-btn-pdf" id="cart-pdf" style="background: #475569; color: #fff;">
-                <i data-lucide="file-down"></i> PDF
+                <i data-lucide="file-down"></i> บันทึก PDF
             </button>
             <a href="#" class="cart-btn cart-btn-line" id="cart-line">
-                <i data-lucide="send"></i> LINE
+                <i data-lucide="send"></i> ส่ง LINE
             </a>
         </div>
     </div>
@@ -2572,6 +2611,7 @@ cat.all = PRODUCTS.length;
 
 // ===== STATE =====
 let activeCat = 'all';
+let sortMode = 'default'; // 'default' | 'asc' | 'desc' (เรียงตามราคา)
 let activeBrand = 'all';
 let searchTerm = '';
 let viewMode = localStorage.getItem('ssc-view') || 'list';
@@ -2644,10 +2684,16 @@ function renderGrid() {
     });
 
     const grouped = {};
-    filtered.forEach(p => {
-        if (!grouped[p.subcat]) grouped[p.subcat] = [];
-        grouped[p.subcat].push(p);
-    });
+    if (sortMode === 'default') {
+        filtered.forEach(p => {
+            if (!grouped[p.subcat]) grouped[p.subcat] = [];
+            grouped[p.subcat].push(p);
+        });
+    } else if (filtered.length) {
+        // เรียงตามราคา: รวมเป็นกลุ่มเดียว รุ่นที่ยังไม่มีราคาอยู่ท้ายสุด
+        const priced = filtered.filter(p => p.price != null).sort((a,b) => sortMode === 'asc' ? a.price - b.price : b.price - a.price);
+        grouped[sortMode === 'asc' ? 'เรียงตามราคา ต่ำไปสูง' : 'เรียงตามราคา สูงไปต่ำ'] = priced.concat(filtered.filter(p => p.price == null));
+    }
 
     const container = document.getElementById('grid-container');
     const empty = document.getElementById('empty');
@@ -3776,6 +3822,77 @@ if (location.hash === '#quote') {
     if (qp) qp.classList.add('open');
     history.replaceState(null, '', location.pathname + location.search);
 }
+</script>
+<div class="quick-bar" id="quick-bar" aria-label="ทางลัดหมวดสินค้า">
+    <div class="quick-inner">
+        <div class="quick-cats" id="quick-cats"></div>
+        <select class="sort-select" id="quick-sort" aria-label="เรียงสินค้า">
+            <option value="default">เรียงตามหมวด</option>
+            <option value="asc">ราคาต่ำ → สูง</option>
+            <option value="desc">ราคาสูง → ต่ำ</option>
+        </select>
+    </div>
+</div>
+<script>
+// ===== ปรับหน้าตา 23 พ.ย. 2026 =====
+// 1) การ์ด Account Manager: เริ่มแบบย่อเป็นปุ่ม กดแล้วกางออก กด × หรือคลิกที่อื่นแล้วย่อกลับ
+(function(){
+    const card = document.getElementById('am-card');
+    if (!card) return;
+    try { localStorage.removeItem('ssc-am-hidden'); } catch (e) {}
+    card.style.display = '';
+    const setMin = on => { card.classList.toggle('am-min', on); card.setAttribute('aria-expanded', String(!on)); };
+    card.setAttribute('role', 'group');
+    card.setAttribute('aria-label', 'ติดต่อ Account Manager');
+    card.tabIndex = 0;
+    setMin(true);
+    card.addEventListener('click', e => {
+        if (e.target.closest('#am-close')) { e.stopPropagation(); e.preventDefault(); setMin(true); return; }
+        if (card.classList.contains('am-min')) { e.preventDefault(); setMin(false); }
+    }, true);
+    card.addEventListener('keydown', e => {
+        if ((e.key === 'Enter' || e.key === ' ') && e.target === card && card.classList.contains('am-min')) { e.preventDefault(); setMin(false); }
+        if (e.key === 'Escape') setMin(true);
+    });
+    document.addEventListener('click', e => { if (!card.contains(e.target)) setMin(true); });
+})();
+// 2) แถบหมวดติดบนตอนเลื่อน + เรียงตามราคา
+(function(){
+    const bar = document.getElementById('quick-bar'), cats = document.getElementById('quick-cats');
+    const controls = document.querySelector('.controls'), nav = document.querySelector('.nav');
+    const selects = [document.getElementById('sort-select'), document.getElementById('quick-sort')].filter(Boolean);
+    if (!bar || !cats || !controls) return;
+    cats.innerHTML = CATEGORIES.map(c => `<button type="button" data-qcat="${c.id}">${c.label}<span>${cat[c.id] || 0}</span></button>`).join('');
+    const navH = () => { if (!nav) return 0; const r = nav.getBoundingClientRect(); return r.bottom > 0 && getComputedStyle(nav).display !== 'none' ? Math.round(r.bottom) : 0; };
+    const sync = () => {
+        cats.querySelectorAll('button').forEach(b => { const on = b.dataset.qcat === activeCat; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); });
+        selects.forEach(s => { s.value = sortMode; });
+    };
+    // จอมือถือเลื่อนอยู่ใน #page-scroll ไม่ใช่ทั้งหน้าต่าง
+    const ps = document.getElementById('page-scroll');
+    const scroller = () => (ps && /auto|scroll/.test(getComputedStyle(ps).overflowY) && ps.scrollHeight > ps.clientHeight) ? ps : null;
+    const toGrid = () => {
+        const off = document.getElementById('grid-container').getBoundingClientRect().top - (navH() + bar.offsetHeight + 12);
+        const sc = scroller();
+        if (sc) sc.scrollTo({ top: Math.max(0, sc.scrollTop + off) });
+        else window.scrollTo({ top: Math.max(0, window.scrollY + off) });
+    };
+    cats.addEventListener('click', e => {
+        const b = e.target.closest('button[data-qcat]'); if (!b) return;
+        activeCat = b.dataset.qcat; renderFilters(); renderGrid(); sync(); toGrid();
+    });
+    selects.forEach(s => s.addEventListener('change', () => { sortMode = s.value; renderGrid(); sync(); if (s.id === 'quick-sort') toGrid(); }));
+    document.getElementById('filters').addEventListener('click', () => setTimeout(sync, 0));
+    const update = () => {
+        const top = navH();
+        bar.style.top = top + 'px';
+        bar.classList.toggle('show', controls.getBoundingClientRect().bottom < top);
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    if (ps) ps.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    sync(); update();
+})();
 </script>
 </body>
 </html>
