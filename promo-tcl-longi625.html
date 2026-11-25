@@ -233,7 +233,7 @@ td.num, th.num { font-family:'Inter',sans-serif; }
           <div>
             <div class="prod-brand">TCL</div>
             <h3>BlueArk X1 All-in-One (8K-SP)</h3>
-            <div class="badges"><span class="badge ok">พร้อมส่ง</span><span class="badge ok">รับประกัน 5 ปี</span></div>
+            <div class="badges"><span class="badge ok">พร้อมส่ง</span><span class="badge ok">รับประกัน 10 ปี</span></div>
           </div>
         </div>
         <div class="specs">
@@ -295,16 +295,18 @@ td.num, th.num { font-family:'Inter',sans-serif; }
 </main>
 
 <script>
-// ราคาในหน้านี้ต้องตรงกับ PRODUCTS ใน index.html (tcl_s / tcl_m / tcl_l / longi625)
+// ราคาในหน้านี้ต้องตรงกับ PRODUCTS ใน index.html (tcl_inv / tcl_bm / tcl_bs / longi625)
+const TCL = { inv:{ id:'tcl_inv', price:39000 }, bm:{ id:'tcl_bm', price:56000 }, bs:{ id:'tcl_bs', price:49000 } };
 const PANEL = { id:'longi625', watt:625, ppw:4.6, price:2875 };
 const SETS = [
-  { id:'tcl_s', key:'S', chip:'ชุดเริ่มต้น', model:'8KSP + 1×BM', battery:8,  battKw:4, setPrice:88000,  panels:12, strings:'6 + 6', img:'img-v3/tcl-bluearkx1-1pack-v2.webp',
+  { key:'S', chip:'ชุดเริ่มต้น', model:'8KSP + 1×BM', bm:1, bs:0, battery:8,  battKw:4, panels:12, strings:'6 + 6', img:'img-v3/tcl-bluearkx1-1pack-v2.webp',
     note:'ชุดนี้จ่ายไฟจากแบตเตอรี่ได้สูงสุด 4 kW' },
-  { id:'tcl_m', key:'M', chip:'แบตเตอรี่ 2 เท่าของชุด S', mid:true, model:'8KSP + 1×BM + 1×BS', battery:16, battKw:8, setPrice:138000, panels:14, strings:'7 + 7', img:'img-v3/tcl-bluearkx1-2pack-v2.webp' },
-  { id:'tcl_l', key:'L', chip:'แบตเตอรี่มากที่สุด', model:'8KSP + 2×BM + 2×BS', battery:32, battKw:8, setPrice:238000, panels:16, strings:'8 + 8', img:'img-v3/tcl-bluearkx1-packshot-front.webp' }
+  { key:'M', chip:'แบตเตอรี่ 2 เท่าของชุด S', mid:true, model:'8KSP + 1×BM + 1×BS', bm:1, bs:1, battery:16, battKw:8, panels:14, strings:'7 + 7', img:'img-v3/tcl-bluearkx1-2pack-v2.webp' },
+  { key:'L', chip:'แบตเตอรี่มากที่สุด', model:'8KSP + 2×BM + 2×BS', bm:2, bs:2, battery:32, battKw:8, panels:16, strings:'8 + 8', img:'img-v3/tcl-bluearkx1-packshot-front.webp' }
 ];
 const baht = n => '฿' + n.toLocaleString('en-US');
 const kwp = s => (s.panels * PANEL.watt / 1000).toLocaleString('en-US', { maximumFractionDigits: 2 });
+SETS.forEach(s => { s.setPrice = TCL.inv.price + s.bm * TCL.bm.price + s.bs * TCL.bs.price; });
 const total = s => s.setPrice + s.panels * PANEL.price;
 const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke-width="1.6"/><path d="M8 12.4l2.7 2.7L16.2 9.5"/></svg>';
 
@@ -321,11 +323,11 @@ document.getElementById('set-cards').innerHTML = SETS.map(s => `
         <div class="fact"><b>8</b><small>kW Inverter</small></div>
       </div>
       <ul class="items">
-        <li>${CHECK}<div class="what">TCL BlueArk X1 Set ${s.key} (${s.battery} kWh)<small>${s.model} · รับประกัน 5 ปี</small></div><div class="amt">${baht(s.setPrice)}</div></li>
+        <li>${CHECK}<div class="what">TCL BlueArk X1 Inverter + แบตเตอรี่ ${s.battery} kWh<small>${s.model} · รับประกัน 10 ปี</small></div><div class="amt">${baht(s.setPrice)}</div></li>
         <li>${CHECK}<div class="what">แผง LONGi 625W × ${s.panels} แผง<small>${PANEL.ppw.toFixed(2)} บาท/วัตต์ · ${baht(PANEL.price)}/แผง · ต่อ 2 string (${s.strings})</small></div><div class="amt">${baht(s.panels * PANEL.price)}</div></li>
       </ul>
       ${s.note ? `<div class="note">${s.note}</div>` : ''}
-      <div class="cta"><button class="btn" data-set="${s.id}" data-panels="${s.panels}">ใส่ชุดนี้ในใบเสนอราคา</button></div>
+      <div class="cta"><button class="btn" data-set="${s.key}">ใส่ชุดนี้ในใบเสนอราคา</button></div>
     </div>
   </article>`).join('');
 
@@ -336,7 +338,7 @@ document.getElementById('compare').innerHTML =
   row('จ่ายไฟจากแบตเตอรี่สูงสุด', s => s.battKw + ' kW') +
   row('แผง LONGi 625W', s => s.panels + ' แผง', ' ') +
   row('ขนาดแผงรวม', s => kwp(s) + ' kWp') +
-  row('ชุด TCL BlueArk X1', s => baht(s.setPrice)) +
+  row('TCL Inverter + แบตเตอรี่', s => baht(s.setPrice)) +
   row('แผง (4.60 บาท/วัตต์)', s => baht(s.panels * PANEL.price)) +
   row('ราคารวม ไม่รวม VAT', s => baht(total(s))) + '</tbody>';
 
@@ -346,8 +348,12 @@ document.getElementById('set-cards').addEventListener('click', e => {
   if (!b) return;
   let cart = {};
   try { cart = JSON.parse(localStorage.getItem('ssc-cart') || '{}') || {}; } catch (err) { cart = {}; }
-  cart[b.dataset.set] = { qty: 1 };
-  cart[PANEL.id] = { qty: Number(b.dataset.panels) };
+  const set = SETS.find(x => x.key === b.dataset.set);
+  if (!set) return;
+  cart[TCL.inv.id] = { qty: 1 };
+  cart[TCL.bm.id] = { qty: set.bm };
+  if (set.bs > 0) cart[TCL.bs.id] = { qty: set.bs }; else delete cart[TCL.bs.id];
+  cart[PANEL.id] = { qty: set.panels };
   try { localStorage.setItem('ssc-cart', JSON.stringify(cart)); } catch (err) {}
   window.location.href = 'index.html#quote';
 });
